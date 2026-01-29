@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comece Aqui - Business Lendarios</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons (Flaticon UIcons) -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Source Serif 4', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              gold: '#C9B298',
+              'gold-light': '#D4C4B0',
+              'gold-dark': '#A89878',
+              yellow: '#FFCC00',
+              'yellow-dark': '#D1A700',
+              blue: '#007AFF',
+              green: '#34C759',
+              red: '#FF3B30',
+              orange: '#FF9500',
+              pink: '#FF2D55',
+              indigo: '#5856D6',
+              cyan: '#32ADE6',
+              mint: '#00C7BE',
+            },
+          },
+          borderRadius: {
+            luxury: '2.5rem',
+          },
+          animation: {
+            'fade-in': 'fade-in 0.5s ease-out forwards',
+            'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+            'scale-in': 'scale-in 0.3s ease-out forwards',
+            'float': 'float 3s ease-in-out infinite',
+            'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 2s linear infinite',
+          },
+          keyframes: {
+            'fade-in': {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            'scale-in': {
+              '0%': { transform: 'scale(0.95)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            'pulse-slow': {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.1)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- CSS Variables & Custom Styles -->
+  <style>
+    :root, .dark {
+      --background: 0 0% 0%;
+      --foreground: 0 0% 98%;
+      --card: 0 0% 3%;
+      --card-foreground: 0 0% 98%;
+      --primary: 32 27% 69%;
+      --primary-foreground: 30 20% 11%;
+      --secondary: 0 0% 9%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 0 0% 9%;
+      --muted-foreground: 0 0% 63%;
+      --accent: 0 0% 9%;
+      --accent-foreground: 0 0% 98%;
+      --destructive: 0 62% 30%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 0 0% 12%;
+      --input: 0 0% 12%;
+      --ring: 32 27% 69%;
+      --radius: 0.75rem;
+    }
+
+    * {
+      border-color: #1f1f1f;
+    }
+
+    html, body {
+      background-color: #000000 !important;
+      color: #fafafa !important;
+      min-height: 100%;
+    }
+
+    /* Force dark theme on all containers */
+    .max-w-3xl {
+      background-color: #000000;
+    }
+
+    /* Utility Classes - Forced for embed compatibility */
+    .bg-background { background-color: #000000 !important; }
+    .bg-foreground { background-color: #fafafa !important; }
+    .bg-card { background-color: #080808 !important; }
+    .bg-primary { background-color: #C9B298 !important; }
+    .bg-secondary { background-color: #171717 !important; }
+    .bg-muted { background-color: #171717 !important; }
+    .bg-accent { background-color: #171717 !important; }
+    .bg-destructive { background-color: hsl(var(--destructive)) !important; }
+
+    .text-foreground { color: #fafafa !important; }
+    .text-card-foreground { color: #fafafa !important; }
+    .text-primary { color: #C9B298 !important; }
+    .text-primary-foreground { color: #231F1B !important; }
+    .text-secondary-foreground { color: #fafafa !important; }
+    .text-muted-foreground { color: #a1a1a1 !important; }
+    .text-accent-foreground { color: #fafafa !important; }
+    .text-destructive { color: hsl(var(--destructive)) !important; }
+
+    .border-border { border-color: #1f1f1f !important; }
+    .border-input { border-color: #1f1f1f !important; }
+    .border-primary { border-color: #C9B298 !important; }
+
+    .ring-ring { --tw-ring-color: hsl(var(--ring)); }
+
+    /* Gradient Text */
+    .text-gradient-brand {
+      background: linear-gradient(135deg, #C9B298 0%, #F2EBE4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glow Effect */
+    .shadow-glow {
+      box-shadow: 0 0 20px rgba(201, 178, 152, 0.15);
+    }
+
+    .shadow-glow-strong {
+      box-shadow: 0 0 30px rgba(201, 178, 152, 0.3);
+    }
+
+    /* Custom Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: hsl(var(--border));
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--muted-foreground));
+    }
+
+    /* Hero Pulse Animation */
+    .hero-pulse::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(201, 178, 152, 0.1) 0%, transparent 50%);
+      animation: pulse-slow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body class="dark overflow-x-hidden font-sans custom-scrollbar">
+
+  <div class="max-w-3xl mx-auto px-6 py-10">
+
+    <!-- Hero Section -->
+    <div class="hero-pulse relative text-center py-16 px-6 bg-gradient-to-br from-brand-gold/10 to-brand-gold/5 rounded-luxury border border-brand-gold/25 mb-10 overflow-hidden animate-fade-in">
+      <div class="relative z-10">
+        <span class="inline-flex items-center rounded-full border px-4 py-1 text-[9px] font-black uppercase tracking-[0.3em] bg-primary text-primary-foreground border-transparent mb-6">
+          <i class="fi fi-sr-marker mr-2"></i>
+          COMECE POR AQUI
+        </span>
+        <h1 class="text-gradient-brand text-4xl md:text-5xl font-bold mb-4">
+          Bem-vindo ao Business Lendarios!
+        </h1>
+        <p class="text-lg text-muted-foreground font-serif max-w-xl mx-auto">
+          Seu caminho para faturar R$10k+/mes comeca agora. Em 90 dias, voce tera seus primeiros clientes e receita recorrente.
+        </p>
+      </div>
+    </div>
+
+    <!-- SECAO: O que e o Business -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.1s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-info text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">O que e o Business?</h2>
+      </div>
+
+      <div class="text-muted-foreground font-serif">
+        <p class="mb-4">
+          O Business Lendarios e o programa para quem quer <strong class="text-foreground">MONETIZAR</strong> com IA, transformar suas habilidades tecnicas em um negocio lucrativo e conquistar seus primeiros clientes.
+        </p>
+
+        <ul class="space-y-0">
+          <li class="flex items-start gap-3 py-4 border-b border-border">
+            <div class="w-7 h-7 bg-brand-gold/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fi fi-rr-dollar text-sm text-brand-gold"></i>
+            </div>
+            <div>
+              <strong class="text-foreground block mb-1">Foco em resultado</strong>
+              <span class="text-muted-foreground text-sm">Nosso metodo e venda-primeiro. Voce aprende enquanto conquista clientes.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-4 border-b border-border">
+            <div class="w-7 h-7 bg-brand-gold/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fi fi-rr-check text-sm text-brand-gold"></i>
+            </div>
+            <div>
+              <strong class="text-foreground block mb-1">Clientes de verdade</strong>
+              <span class="text-muted-foreground text-sm">Seu objetivo sao vendas reais, nao exercicios teoricos.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-4 border-b border-border">
+            <div class="w-7 h-7 bg-brand-gold/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fi fi-rr-bell text-sm text-brand-gold"></i>
+            </div>
+            <div>
+              <strong class="text-foreground block mb-1">Suporte completo</strong>
+              <span class="text-muted-foreground text-sm">Mentorias tecnicas 8x/semana + Mentorias de negocios 2x/semana. Nenhum bloqueio sobrevive.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-4 border-b border-border">
+            <div class="w-7 h-7 bg-brand-gold/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fi fi-rr-users text-sm text-brand-gold"></i>
+            </div>
+            <div>
+              <strong class="text-foreground block mb-1">Tribo de Lendarios</strong>
+              <span class="text-muted-foreground text-sm">Conecte-se com quem, como voce, esta monetizando IA.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-4">
+            <div class="w-7 h-7 bg-brand-gold/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fi fi-rr-laptop text-sm text-brand-gold"></i>
+            </div>
+            <div>
+              <strong class="text-foreground block mb-1">Ferramentas de IA para Negocios</strong>
+              <span class="text-muted-foreground text-sm">Acesso exclusivo as ferramentas internas que usamos para faturar R$200M+.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECAO: O Que Voce Recebe -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.2s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-book-alt text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">O Que Voce Recebe</h2>
+      </div>
+
+      <!-- Plataforma Lendaria - DESTAQUE PRINCIPAL -->
+      <div class="bg-gradient-to-br from-brand-gold/15 to-brand-gold/5 border-2 border-brand-gold rounded-luxury p-8 mb-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-brand-gold/20 to-transparent rounded-bl-full"></div>
+
+        <span class="inline-flex items-center rounded-md px-3 py-1.5 text-[10px] font-black uppercase tracking-widest bg-primary text-primary-foreground mb-4">
+          <i class="fi fi-sr-star mr-1.5"></i>
+          PRODUTO PRINCIPAL
+        </span>
+
+        <div class="flex items-center gap-4 mb-4">
+          <i class="fi fi-rr-infinity text-4xl text-brand-gold"></i>
+          <h3 class="text-xl font-bold">Plataforma Lendaria</h3>
+        </div>
+
+        <p class="text-muted-foreground font-serif mb-5 leading-relaxed">
+          <strong class="text-foreground">Aqui e onde seu aprendizado Business acontece.</strong> Sua trilha de aprendizado e execucao completa. Metodo Growth IA, Framework de Marketing de Precisao, Playbook de Vendas, templates, scripts e todas as ferramentas que voce precisa para faturar R$10k+/mes.
+        </p>
+
+        <div class="inline-flex items-center gap-2 bg-brand-orange/20 text-brand-orange px-4 py-2.5 rounded-xl text-sm font-medium">
+          <i class="fi fi-rr-spinner animate-spin-slow"></i>
+          Acesso liberado apos o Onboarding de quarta-feira
+        </div>
+      </div>
+
+      <!-- Complementos -->
+      <p class="text-muted-foreground text-sm mb-4 pl-3 border-l-2 border-border">
+        Alem da plataforma, voce tambem ganhou acesso a:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Comunidade -->
+        <div class="rounded-luxury border border-border bg-card p-6 transition-all duration-300 hover:border-brand-gold/50 hover:shadow-glow hover:-translate-y-0.5">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-users text-xl text-brand-gold"></i>
+            <h3 class="text-lg font-semibold">Comunidade</h3>
+          </div>
+          <p class="text-muted-foreground text-sm font-serif mb-4">
+            Espaco de conexao e troca com outros membros. Networking, discussoes, cases e suporte da comunidade.
+          </p>
+          <a href="https://comunidade.vidalendaria.com.br/c/primeiro-passo/" target="_blank" class="inline-flex items-center gap-2 text-brand-gold font-medium text-sm hover:gap-3 transition-all">
+            Acessar Comunidade
+            <i class="fi fi-rr-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="rounded-luxury border border-border bg-card p-6 transition-all duration-300 hover:border-brand-gold/50 hover:shadow-glow hover:-translate-y-0.5">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-comment text-xl text-brand-gold"></i>
+            <h3 class="text-lg font-semibold">Grupo WhatsApp Business</h3>
+          </div>
+          <p class="text-muted-foreground text-sm font-serif mb-4">
+            Canal direto para comunicacoes, avisos importantes e networking rapido.
+          </p>
+          <a href="https://chat.whatsapp.com/CkSkL7FB3pc9xtksFxfT9z" target="_blank" class="inline-flex items-center gap-2 text-brand-gold font-medium text-sm hover:gap-3 transition-all">
+            Entrar no Grupo
+            <i class="fi fi-rr-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECAO: Encontros ao Vivo -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.3s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-video-camera-alt text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">Encontros ao Vivo</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rounded-luxury border border-border bg-card p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-code-simple text-xl text-brand-gold"></i>
+            <h3 class="text-base font-semibold">Mentorias Tecnicas ao Vivo</h3>
+          </div>
+          <span class="inline-block bg-brand-gold/20 text-brand-gold px-3 py-1 rounded-md text-xs font-semibold mb-2">
+            8x POR SEMANA
+          </span>
+          <p class="text-muted-foreground text-sm font-serif">
+            Tire duvidas tecnicas em tempo real. Problemas com automacoes, codigo, deploy:tudo resolvido ao vivo.
+          </p>
+        </div>
+
+        <div class="rounded-luxury border border-border bg-card p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-chart-line-up text-xl text-brand-gold"></i>
+            <h3 class="text-base font-semibold">Mentorias de Negocios e Marketing</h3>
+          </div>
+          <span class="inline-block bg-brand-gold/20 text-brand-gold px-3 py-1 rounded-md text-xs font-semibold mb-2">
+            2x POR SEMANA (Terca e Quinta)
+          </span>
+          <p class="text-muted-foreground text-sm font-serif">
+            Estrategias para crescer seu negocio: posicionamento, oferta, precificacao, aquisicao e vendas.
+          </p>
+        </div>
+
+        <div class="rounded-luxury border border-border bg-card p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-play-circle text-xl text-brand-gold"></i>
+            <h3 class="text-base font-semibold">Onboarding Coletivo Business</h3>
+          </div>
+          <span class="inline-block bg-brand-gold/20 text-brand-gold px-3 py-1 rounded-md text-xs font-semibold mb-2">
+            SEMANAL AS QUARTAS 20:00
+          </span>
+          <p class="text-muted-foreground text-sm font-serif">
+            Sessao para novos membros. Acompanhe o grupo do WhatsApp para link de acesso.
+          </p>
+        </div>
+
+        <div class="rounded-luxury border border-border bg-card p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fi fi-rr-users text-xl text-brand-gold"></i>
+            <h3 class="text-base font-semibold">Onboarding Comunidade</h3>
+          </div>
+          <span class="inline-block bg-brand-gold/20 text-brand-gold px-3 py-1 rounded-md text-xs font-semibold mb-2">
+            QUINZENAL (Opcional)
+          </span>
+          <p class="text-muted-foreground text-sm font-serif">
+            Aprenda a usar a comunidade ao maximo e conecte-se com outros membros.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECAO: Plataforma vs Comunidade -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.4s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-stats text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">Plataforma vs Comunidade</h2>
+      </div>
+
+      <div class="rounded-luxury border border-border overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-primary text-primary-foreground">
+              <th class="p-4 text-left font-semibold">
+                <i class="fi fi-rr-infinity mr-2"></i>Plataforma Lendaria
+              </th>
+              <th class="p-4 text-left font-semibold border-l border-primary-foreground/20">
+                <i class="fi fi-rr-users mr-2"></i>Comunidade
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-card">
+            <tr class="border-b border-border">
+              <td class="p-4 text-muted-foreground">Conteudo estruturado</td>
+              <td class="p-4 text-muted-foreground border-l border-border">Conexao e networking</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-4 text-muted-foreground">Metodo Growth IA</td>
+              <td class="p-4 text-muted-foreground border-l border-border">Discussoes e estrategias</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-4 text-muted-foreground">Playbooks de vendas</td>
+              <td class="p-4 text-muted-foreground border-l border-border">Compartilhar cases</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-4 text-muted-foreground">Templates e scripts</td>
+              <td class="p-4 text-muted-foreground border-l border-border">Duvidas rapidas</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-foreground">Voce APRENDE e EXECUTA</td>
+              <td class="p-4 font-semibold text-foreground border-l border-border">Voce CONECTA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-gradient-to-br from-brand-gold/10 to-brand-gold/5 border border-brand-gold/30 rounded-luxury p-4 mt-4 text-center">
+        <p class="text-foreground">
+          <strong>Resumo:</strong> Plataforma = APRENDIZADO . Comunidade = PESSOAS . Use os dois!
+        </p>
+      </div>
+    </section>
+
+    <!-- SECAO: Dicas de Ouro -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.5s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-star text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">Dicas de Ouro</h2>
+      </div>
+
+      <div class="bg-gradient-to-br from-brand-gold/10 to-brand-gold/5 border border-brand-gold/30 rounded-luxury p-6">
+        <h4 class="flex items-center gap-2 text-lg font-semibold text-brand-gold mb-4">
+          <i class="fi fi-rr-bolt"></i>
+          O que diferencia quem fatura R$10k+
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex items-start gap-2 text-muted-foreground">
+            <span class="text-brand-green">-></span>
+            <span>Envia o Resumo toda semana</span>
+          </div>
+          <div class="flex items-start gap-2 text-muted-foreground">
+            <span class="text-brand-green">-></span>
+            <span>Pede ajuda quando trava</span>
+          </div>
+          <div class="flex items-start gap-2 text-muted-foreground">
+            <span class="text-brand-green">-></span>
+            <span>Faz conversas todos os dias</span>
+          </div>
+          <div class="flex items-start gap-2 text-muted-foreground">
+            <span class="text-brand-green">-></span>
+            <span>Nao espera a oferta "perfeita"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECAO: Comece Agora -->
+    <section class="mb-10 animate-fade-in-up" style="animation-delay: 0.6s">
+      <div class="flex items-center gap-3 mb-5 pb-3 border-b border-border">
+        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center">
+          <i class="fi fi-rr-checkbox text-white"></i>
+        </div>
+        <h2 class="text-2xl font-bold">Comece Agora</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Passo 1 -->
+        <div class="rounded-luxury border border-border bg-card p-6 flex gap-5 items-start transition-all duration-300 hover:border-brand-gold/50">
+          <div class="w-12 h-12 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center text-xl font-black text-primary-foreground flex-shrink-0">
+            1
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold mb-1">Entre no Grupo de WhatsApp</h3>
+            <p class="text-muted-foreground text-sm font-serif mb-3">
+              Fique por dentro de todas as comunicacoes e atualizacoes. E por la que voce vai saber de tudo!
+            </p>
+            <a href="https://chat.whatsapp.com/CkSkL7FB3pc9xtksFxfT9z" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-2xl text-[10px] font-black uppercase tracking-[0.25em] h-12 px-6 bg-primary text-primary-foreground shadow-lg hover:bg-brand-gold-light transition-all active:scale-[0.98]">
+              Entrar no Grupo
+              <i class="fi fi-rr-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="rounded-luxury border border-border bg-card p-6 flex gap-5 items-start transition-all duration-300 hover:border-brand-gold/50">
+          <div class="w-12 h-12 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center text-xl font-black text-primary-foreground flex-shrink-0">
+            2
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold mb-1">Onboarding Business</h3>
+            <p class="text-muted-foreground text-sm font-serif mb-3">
+              Sessao ao vivo para voce comecar com o pe direito. Acompanhe o grupo do WhatsApp para link de acesso.
+            </p>
+            <span class="inline-block bg-brand-green/15 text-brand-green px-3 py-1 rounded-md text-xs font-medium mb-3">
+              Semanal as quartas 20:00
+            </span>
+            <br>
+            <a href="https://cal.com/team/academia-lendaria-cs/lendarios-business-onboarding" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-2xl text-[10px] font-black uppercase tracking-[0.25em] h-12 px-6 bg-primary text-primary-foreground shadow-lg hover:bg-brand-gold-light transition-all active:scale-[0.98]">
+              Agendar Onboarding
+              <i class="fi fi-rr-calendar ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="rounded-luxury border border-border bg-card p-6 flex gap-5 items-start transition-all duration-300 hover:border-brand-gold/50">
+          <div class="w-12 h-12 bg-gradient-to-br from-brand-gold to-brand-gold-dark rounded-xl flex items-center justify-center text-xl font-black text-primary-foreground flex-shrink-0">
+            3
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold mb-1">Participe do Onboarding da Comunidade</h3>
+            <p class="text-muted-foreground text-sm font-serif mb-3">
+              Entenda como aproveitar ao maximo a comunidade e se conectar com outros membros.
+            </p>
+            <span class="inline-block bg-muted text-muted-foreground px-3 py-1 rounded-md text-xs font-medium">
+              Opcional . Quinzenal
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPORTE -->
+    <div class="rounded-luxury border border-border bg-card p-6 mb-10 animate-fade-in-up" style="animation-delay: 0.7s">
+      <h4 class="flex items-center gap-2 text-lg font-semibold mb-4">
+        <i class="fi fi-rr-interrogation text-brand-gold"></i>
+        Precisa de Ajuda?
+      </h4>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://wa.me/5548988000116" target="_blank" class="flex items-center gap-2 text-muted-foreground text-sm px-4 py-2 bg-muted rounded-lg hover:bg-brand-gold/10 hover:text-brand-gold transition-all">
+          <i class="fi fi-rr-comment"></i>
+          WhatsApp: +55 48 8800-0116
+        </a>
+        <a href="mailto:suporte@academialendaria.ai" class="flex items-center gap-2 text-muted-foreground text-sm px-4 py-2 bg-muted rounded-lg hover:bg-brand-gold/10 hover:text-brand-gold transition-all">
+          <i class="fi fi-rr-envelope"></i>
+          suporte@academialendaria.ai
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 text-muted-foreground text-sm animate-fade-in">
+      <div class="flex items-center justify-center gap-2 mb-3">
+        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+          <i class="fi fi-rr-infinity text-primary-foreground"></i>
+        </div>
+        <span class="text-xl font-semibold text-foreground">Business Lendarios</span>
+      </div>
+      <p>Equipe Academia Lendar[IA]</p>
+    </footer>
+
+  </div>
+</body>
+</html>

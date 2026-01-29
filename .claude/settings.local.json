@@ -18,7 +18,21 @@
       "Bash(where:*)",
       "Bash(dir \"C:\\\\Program Files\\\\GitHub CLI\")",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Setup projeto Academia Lendária\n\n- Adiciona DIRETRIZES-HTML.md com guia completo de design system\n- Adiciona configuração do Claude Code \\(.claude/\\)\n- Adiciona .gitignore\n- Inclui páginas HTML existentes \\(business.html, makers.html\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\business-lendaria.html\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\business-lendaria2.html\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\makers2.html\")",
+      "WebFetch(domain:cohort.lendario.ai)",
+      "Bash(start chrome \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\email-confirmacao-cohort.html\")",
+      "Bash(tree:*)",
+      "Bash(ls -la \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\aios-core\\\\.aios-core\\\\development\"\" && echo \"---\" && ls -la \"C:UsersdaianProjetoshtml businesaios-core.aios-corecore\"\")",
+      "WebFetch(domain:www.academialendaria.ai)",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\paginas_html\\\\onboarding-makers.html\")",
+      "WebFetch(domain:ps.academialendaria.ai)",
+      "WebSearch",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\html busines\\\\paginas_html\\\\onboarding-business.html\")",
+      "Bash(gh repo create:*)"
     ]
   }
 }

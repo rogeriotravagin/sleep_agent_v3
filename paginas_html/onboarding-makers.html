@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Makers | Academia Lendária</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons (Flaticon UIcons) -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Source Serif 4', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              gold: '#C9B298',
+              purple: '#7C6AFA',
+              'purple-light': '#9D8FFF',
+              'purple-dark': '#5B4AD4',
+              yellow: '#FFCC00',
+              blue: '#007AFF',
+              green: '#34C759',
+              red: '#FF3B30',
+              orange: '#FF9500',
+            },
+          },
+          borderRadius: {
+            luxury: '2.5rem',
+          },
+          animation: {
+            'fade-in': 'fade-in 0.5s ease-out forwards',
+            'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+            'scale-in': 'scale-in 0.3s ease-out forwards',
+            'float': 'float 3s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            'slide-up': 'slide-up 0.5s ease-out forwards',
+          },
+          keyframes: {
+            'fade-in': {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            'scale-in': {
+              '0%': { transform: 'scale(0.95)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            'pulse-glow': {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(124, 106, 250, 0.3)' },
+              '50%': { boxShadow: '0 0 40px rgba(124, 106, 250, 0.6)' },
+            },
+            'slide-up': {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    :root {
+      --background: 240 10% 4%;
+      --foreground: 0 0% 98%;
+      --card: 240 10% 6%;
+      --card-foreground: 0 0% 98%;
+      --primary: 250 93% 70%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 240 10% 10%;
+      --muted: 240 10% 15%;
+      --muted-foreground: 240 5% 65%;
+      --border: 240 10% 15%;
+      --accent: 250 93% 70%;
+    }
+
+    body {
+      background: linear-gradient(180deg, hsl(var(--background)) 0%, #0a0a12 100%);
+      color: hsl(var(--foreground));
+    }
+
+    .bg-card { background-color: hsl(var(--card)); }
+    .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+    .border-border { border-color: hsl(var(--border)); }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #9D8FFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gradient-purple {
+      background: linear-gradient(135deg, #7C6AFA 0%, #5B4AD4 100%);
+    }
+
+    .glow-purple {
+      box-shadow: 0 0 30px rgba(124, 106, 250, 0.3);
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124, 106, 250, 0.3), transparent);
+    }
+
+    /* Slide indicator */
+    .slide-indicator {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 50;
+    }
+
+    .slide-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(124, 106, 250, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .slide-dot:hover,
+    .slide-dot.active {
+      background: #7C6AFA;
+      transform: scale(1.3);
+    }
+
+    /* Scroll snap */
+    .snap-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    .snap-section {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .slide-indicator {
+        display: none;
+      }
+      .snap-section {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+      }
+      .snap-container {
+        scroll-snap-type: none;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+  <!-- Slide Indicator -->
+  <nav class="slide-indicator hidden lg:flex">
+    <div class="slide-dot active" data-section="0" title="Boas-vindas"></div>
+    <div class="slide-dot" data-section="1" title="O que é o Makers"></div>
+    <div class="slide-dot" data-section="2" title="WhatsApp"></div>
+    <div class="slide-dot" data-section="3" title="Comunidade"></div>
+    <div class="slide-dot" data-section="4" title="Plataforma"></div>
+    <div class="slide-dot" data-section="5" title="Mentorias"></div>
+    <div class="slide-dot" data-section="6" title="Trilha"></div>
+    <div class="slide-dot" data-section="7" title="Próximos Passos"></div>
+    <div class="slide-dot" data-section="8" title="Q&A"></div>
+    <div class="slide-dot" data-section="9" title="Fechamento"></div>
+  </nav>
+
+  <div class="snap-container" id="main-container">
+
+    <!-- ========================================
+         SLIDE 1: BOAS-VINDAS + CONTEXTO
+    ========================================= -->
+    <section class="snap-section" id="section-0">
+      <div class="max-w-5xl mx-auto text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 gradient-purple text-white px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-8 animate-fade-in">
+          <i class="fi fi-rr-rocket"></i>
+          Onboarding Makers
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 gradient-text animate-fade-in-up">
+          Bem-vindo ao Makers!
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl md:text-2xl text-muted-foreground font-serif max-w-3xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.2s">
+          Sua jornada de <span class="text-brand-purple font-semibold font-sans">0 ao Deploy</span> começa agora.<br>
+          Em 30 dias, você terá seu primeiro app com IA funcionando.
+        </p>
+
+        <!-- Highlight Box -->
+        <div class="bg-card border border-border rounded-3xl p-8 max-w-2xl mx-auto animate-fade-in-up glow-purple" style="animation-delay: 0.4s">
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <div class="w-16 h-16 gradient-purple rounded-2xl flex items-center justify-center">
+              <i class="fi fi-sr-hammer text-3xl text-white"></i>
+            </div>
+          </div>
+          <p class="text-lg text-white font-medium">
+            O Makers é para quem quer <strong class="text-brand-purple">CONSTRUIR</strong> com IA.<br>
+            Não é curso teórico. É prática orientada com entrega real.
+          </p>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="mt-16 animate-float">
+          <i class="fi fi-rr-angle-down text-2xl text-brand-purple opacity-60"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 2: O QUE É O MAKERS
+    ========================================= -->
+    <section class="snap-section" id="section-1">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-info"></i>
+            Sobre o Programa
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            O que é o Makers?
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            Programa intensivo de 30 dias focado em transformar ideias em sistemas funcionais.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-card border border-border rounded-3xl p-8 hover:border-brand-purple/50 transition-all duration-300 group">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="fi fi-rr-hammer-crash text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Aprender Fazendo</h3>
+            <p class="text-muted-foreground font-serif">
+              Nosso método é projeto-primeiro. Você aprende enquanto constrói algo real para o seu contexto.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-card border border-border rounded-3xl p-8 hover:border-brand-purple/50 transition-all duration-300 group">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="fi fi-rr-cloud-upload-alt text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Deployar de Verdade</h3>
+            <p class="text-muted-foreground font-serif">
+              Seu app vai estar no ar, funcionando, acessível. Não é exercício de aula, é produto real.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-card border border-border rounded-3xl p-8 hover:border-brand-purple/50 transition-all duration-300 group">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="fi fi-rr-users-alt text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Mentorias ao Vivo</h3>
+            <p class="text-muted-foreground font-serif">
+              8 sessões por semana. Travou em algo? Traz pra mentoria que resolvemos juntos.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-card border border-border rounded-3xl p-8 hover:border-brand-purple/50 transition-all duration-300 group">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="fi fi-rr-network-cloud text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Tribo de Builders</h3>
+            <p class="text-muted-foreground font-serif">
+              Comunidade de +15 mil membros construindo o futuro com IA. Networking e parcerias reais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 3: WHATSAPP
+    ========================================= -->
+    <section class="snap-section" id="section-2">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 bg-brand-green/20 text-brand-green px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+          <i class="fi fi-rr-check"></i>
+          Passo Obrigatório
+        </span>
+
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mb-6">
+          Grupo WhatsApp Makers
+        </h2>
+
+        <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto mb-10">
+          Seu canal direto para comunicações, atualizações e suporte em tempo real.
+        </p>
+
+        <!-- WhatsApp Card -->
+        <div class="bg-card border-2 border-brand-green/30 rounded-3xl p-10 max-w-xl mx-auto glow-purple animate-pulse-glow">
+          <div class="w-20 h-20 bg-brand-green rounded-3xl flex items-center justify-center mx-auto mb-6">
+            <i class="fi fi-brands-whatsapp text-4xl text-white"></i>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">Entre Agora no Grupo</h3>
+
+          <ul class="text-left text-muted-foreground space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green mt-1"></i>
+              <span>Receba avisos de mentorias e encontros</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green mt-1"></i>
+              <span>Tire dúvidas rápidas com a equipe</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green mt-1"></i>
+              <span>Conecte-se com outros Makers da sua turma</span>
+            </li>
+          </ul>
+
+          <a href="https://chat.whatsapp.com/K1tGajLGaSK1u8YbXfA2Fk" target="_blank"
+             class="inline-flex items-center gap-3 bg-brand-green hover:bg-brand-green/90 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all hover:scale-105 active:scale-95">
+            <i class="fi fi-brands-whatsapp text-xl"></i>
+            Entrar no Grupo
+            <i class="fi fi-rr-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 4: COMUNIDADE
+    ========================================= -->
+    <section class="snap-section" id="section-3">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-users"></i>
+            Networking Lendário
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            Comunidade Lendária
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            Mais de 15 mil builders construindo o futuro com IA.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Left: Benefits -->
+          <div class="space-y-4">
+            <div class="bg-card border border-border rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fi fi-rr-comments text-xl text-brand-purple"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Discussões Técnicas</h4>
+                <p class="text-sm text-muted-foreground">Tire dúvidas, compartilhe descobertas, aprenda com a tribo.</p>
+              </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fi fi-rr-handshake text-xl text-brand-purple"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Networking Real</h4>
+                <p class="text-sm text-muted-foreground">Encontre parceiros, co-founders e oportunidades de negócio.</p>
+              </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fi fi-rr-marker text-xl text-brand-purple"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Hubs Presenciais</h4>
+                <p class="text-sm text-muted-foreground">Encontros em diversas cidades do Brasil e do mundo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: CTA Card -->
+          <div class="bg-gradient-to-br from-brand-purple/10 to-transparent border border-brand-purple/30 rounded-3xl p-8 flex flex-col justify-center">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-brand-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fi fi-sr-building text-3xl text-brand-purple"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">Acesse a Comunidade</h3>
+              <p class="text-muted-foreground mb-6">
+                Veja os primeiros passos e comece a se conectar.
+              </p>
+              <a href="https://comunidade.vidalendaria.com.br/c/primeiro-passo/" target="_blank"
+                 class="inline-flex items-center gap-2 gradient-purple text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105">
+                <i class="fi fi-rr-door-open"></i>
+                Entrar na Comunidade
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="mt-10 bg-card border border-border rounded-2xl overflow-hidden">
+          <div class="grid md:grid-cols-2">
+            <div class="p-6 border-b md:border-b-0 md:border-r border-border">
+              <h4 class="font-bold text-brand-purple mb-3 flex items-center gap-2">
+                <i class="fi fi-sr-building"></i> Comunidade
+              </h4>
+              <p class="text-muted-foreground text-sm">Conexão, networking, discussões, compartilhar progresso</p>
+              <p class="text-white font-semibold mt-2">Você CONECTA</p>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-brand-purple mb-3 flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+                  <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/>
+                </svg>
+                Plataforma
+              </h4>
+              <p class="text-muted-foreground text-sm">Conteúdo estruturado, aulas, trilhas, templates</p>
+              <p class="text-white font-semibold mt-2">Você APRENDE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 5: PLATAFORMA
+    ========================================= -->
+    <section class="snap-section" id="section-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-layout-fluid"></i>
+            Seu Ambiente de Aprendizado
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            Plataforma Lendária
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            O coração do Makers. Aqui sua jornada acontece.
+          </p>
+        </div>
+
+        <!-- Main Platform Card -->
+        <div class="bg-gradient-to-br from-brand-purple/20 to-transparent border-2 border-brand-purple rounded-3xl p-10 mb-8">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-24 h-24 gradient-purple rounded-3xl flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="w-12 h-12">
+                <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/>
+              </svg>
+            </div>
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold text-white mb-3">Tudo que você precisa para ir do zero ao deploy</h3>
+              <p class="text-muted-foreground font-serif text-lg">
+                Trilha de aprendizado estruturada, método Cloud Code Profundo, tutoriais passo a passo,
+                templates prontos e todos os recursos para construir seu primeiro app.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-card border border-border rounded-2xl p-6 text-center">
+            <i class="fi fi-rr-graduation-cap text-3xl text-brand-purple mb-4"></i>
+            <h4 class="font-bold text-white mb-2">Cloud Code Profundo</h4>
+            <p class="text-sm text-muted-foreground">Do conceito ao deploy profissional</p>
+          </div>
+          <div class="bg-card border border-border rounded-2xl p-6 text-center">
+            <i class="fi fi-rr-workflow text-3xl text-brand-purple mb-4"></i>
+            <h4 class="font-bold text-white mb-2">Sprint Automação</h4>
+            <p class="text-sm text-muted-foreground">14 dias para dominar N8N e Make</p>
+          </div>
+          <div class="bg-card border border-border rounded-2xl p-6 text-center">
+            <i class="fi fi-rr-document text-3xl text-brand-purple mb-4"></i>
+            <h4 class="font-bold text-white mb-2">Templates Prontos</h4>
+            <p class="text-sm text-muted-foreground">Chatbots, agentes e automações validadas</p>
+          </div>
+        </div>
+
+        <!-- Access Note -->
+        <div class="mt-8 bg-brand-orange/10 border border-brand-orange/30 rounded-2xl p-6 flex items-center gap-4">
+          <i class="fi fi-rr-clock text-2xl text-brand-orange"></i>
+          <p class="text-white">
+            <strong>Acesso liberado após este Onboarding.</strong> Você receberá o link no grupo do WhatsApp.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 6: MENTORIAS AO VIVO / PRONTO SOCORRO TÉCNICO
+    ========================================= -->
+    <section class="snap-section" id="section-5">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-ambulance"></i>
+            Suporte ao Vivo
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            Pronto Socorro Técnico
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            Mentorias ao vivo para você nunca ficar travado.
+          </p>
+        </div>
+
+        <!-- Main Highlight -->
+        <div class="bg-gradient-to-br from-brand-red/20 to-transparent border-2 border-brand-red/50 rounded-3xl p-10 mb-8 text-center">
+          <div class="flex items-center justify-center gap-6 mb-6">
+            <div class="text-6xl font-black text-brand-red">8x</div>
+            <div class="text-left">
+              <p class="text-2xl font-bold text-white">por semana</p>
+              <p class="text-muted-foreground">Mentorias técnicas ao vivo</p>
+            </div>
+          </div>
+          <p class="text-lg text-white max-w-2xl mx-auto">
+            Travou em algo? <strong class="text-brand-red">Não fique sozinho.</strong> Entre na mentoria, compartilhe sua tela e resolva em tempo real com nossos especialistas.
+          </p>
+        </div>
+
+        <!-- Types of Sessions -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-bug text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">Destrave Técnico</h4>
+            <p class="text-sm text-muted-foreground">Resolvemos bugs, erros e bloqueios que estão te impedindo de avançar.</p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-cloud-upload-alt text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">Cloud & Deploy</h4>
+            <p class="text-sm text-muted-foreground">Ajuda para colocar seu projeto no ar e configurar infraestrutura.</p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-link-alt text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">APIs & Integrações</h4>
+            <p class="text-sm text-muted-foreground">OpenAI, Anthropic, bancos vetoriais e outras integrações.</p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-code-simple text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">Code Review</h4>
+            <p class="text-sm text-muted-foreground">Revisão do seu código com feedback para melhorar qualidade.</p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-workflow text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">Automações</h4>
+            <p class="text-sm text-muted-foreground">N8N, Make e fluxos de automação com IA.</p>
+          </div>
+
+          <div class="bg-card border border-border rounded-2xl p-6 hover:border-brand-purple/50 transition-all">
+            <div class="w-12 h-12 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <i class="fi fi-rr-hammer text-xl text-brand-purple"></i>
+            </div>
+            <h4 class="font-bold text-white mb-2">Build Days</h4>
+            <p class="text-sm text-muted-foreground">Sessões intensivas para construir projetos juntos.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-card border border-border rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 bg-brand-red/20 rounded-2xl flex items-center justify-center">
+              <i class="fi fi-rr-calendar text-2xl text-brand-red"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white">Agenda de Mentorias</h4>
+              <p class="text-sm text-muted-foreground">Veja os horários e participe ao vivo</p>
+            </div>
+          </div>
+          <a href="https://ps.academialendaria.ai/" target="_blank"
+             class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red/90 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105">
+            <i class="fi fi-rr-calendar"></i>
+            Ver Agenda Completa
+            <i class="fi fi-rr-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 7: TRILHA DE EXECUÇÃO + SUPORTE
+    ========================================= -->
+    <section class="snap-section" id="section-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-road"></i>
+            Sua Jornada
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            Trilha de Execução
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            30 dias estruturados para você sair do zero ao deploy.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative">
+          <!-- Line -->
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-purple via-brand-purple to-transparent hidden md:block"></div>
+
+          <div class="space-y-6">
+            <!-- Week 1-2 -->
+            <div class="flex gap-6 items-start">
+              <div class="w-16 h-16 gradient-purple rounded-2xl flex items-center justify-center flex-shrink-0 z-10">
+                <span class="text-white font-black text-xl">1-2</span>
+              </div>
+              <div class="bg-card border border-border rounded-2xl p-6 flex-1">
+                <span class="text-xs font-bold text-brand-purple uppercase tracking-widest">Semanas 1-2</span>
+                <h4 class="text-lg font-bold text-white mt-2 mb-2">Cloud Code Profundo</h4>
+                <p class="text-muted-foreground text-sm">
+                  Fundamentos de arquitetura, APIs (OpenAI, Anthropic), databases vetoriais e seu primeiro projeto deployado.
+                </p>
+              </div>
+            </div>
+
+            <!-- Week 3-4 -->
+            <div class="flex gap-6 items-start">
+              <div class="w-16 h-16 gradient-purple rounded-2xl flex items-center justify-center flex-shrink-0 z-10">
+                <span class="text-white font-black text-xl">3-4</span>
+              </div>
+              <div class="bg-card border border-border rounded-2xl p-6 flex-1">
+                <span class="text-xs font-bold text-brand-purple uppercase tracking-widest">Semanas 3-4</span>
+                <h4 class="text-lg font-bold text-white mt-2 mb-2">Sprint Automação</h4>
+                <p class="text-muted-foreground text-sm">
+                  Domine N8N e Make. Crie automações complexas integradas com IA que rodam 24/7 em produção.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="mt-12 bg-gradient-to-r from-brand-purple/10 to-transparent border border-brand-purple/30 rounded-3xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <i class="fi fi-rr-life-ring text-brand-purple"></i>
+            Suporte Durante a Jornada
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl font-black text-brand-purple mb-2">8x</div>
+              <p class="text-white font-semibold">Mentorias por semana</p>
+              <p class="text-muted-foreground text-sm mt-1">Suporte técnico ao vivo</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-brand-purple mb-2">24h</div>
+              <p class="text-white font-semibold">WhatsApp direto</p>
+              <p class="text-muted-foreground text-sm mt-1">Acesso aos professores</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-brand-purple mb-2">15k+</div>
+              <p class="text-white font-semibold">Comunidade ativa</p>
+              <p class="text-muted-foreground text-sm mt-1">Suporte da tribo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 8: PRÓXIMOS PASSOS
+    ========================================= -->
+    <section class="snap-section" id="section-7">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <i class="fi fi-rr-flag-alt"></i>
+            Ação Imediata
+          </span>
+          <h2 class="text-4xl md:text-6xl font-black gradient-text mb-4">
+            Seus Próximos Passos
+          </h2>
+          <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
+            O que fazer agora para começar com o pé direito.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <div class="flex gap-6 items-start bg-card border border-border rounded-2xl p-6 hover:border-brand-green transition-all">
+            <div class="w-14 h-14 bg-brand-green rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-black text-xl">1</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <h4 class="text-lg font-bold text-white">Entre no Grupo de WhatsApp</h4>
+                <span class="px-2 py-0.5 bg-brand-green/20 text-brand-green text-xs font-bold rounded-full">OBRIGATÓRIO</span>
+              </div>
+              <p class="text-muted-foreground mb-4">
+                Todas as comunicações, links e avisos importantes passam por lá.
+              </p>
+              <a href="https://chat.whatsapp.com/K1tGajLGaSK1u8YbXfA2Fk" target="_blank"
+                 class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green/90 text-white font-semibold py-2 px-5 rounded-xl transition-all">
+                <i class="fi fi-brands-whatsapp"></i>
+                Entrar Agora
+              </a>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6 items-start bg-card border border-border rounded-2xl p-6 hover:border-brand-purple transition-all">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-black text-xl">2</span>
+            </div>
+            <div class="flex-1">
+              <h4 class="text-lg font-bold text-white mb-2">Acesse a Comunidade</h4>
+              <p class="text-muted-foreground mb-4">
+                Faça seu primeiro post, se apresente e comece a fazer networking.
+              </p>
+              <a href="https://comunidade.vidalendaria.com.br/c/primeiro-passo/" target="_blank"
+                 class="inline-flex items-center gap-2 gradient-purple text-white font-semibold py-2 px-5 rounded-xl transition-all hover:opacity-90">
+                <i class="fi fi-rr-door-open"></i>
+                Acessar Comunidade
+              </a>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6 items-start bg-card border border-border rounded-2xl p-6 hover:border-brand-purple transition-all">
+            <div class="w-14 h-14 gradient-purple rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-black text-xl">3</span>
+            </div>
+            <div class="flex-1">
+              <h4 class="text-lg font-bold text-white mb-2">Aguarde o Acesso à Plataforma</h4>
+              <p class="text-muted-foreground">
+                O link será enviado no grupo do WhatsApp logo após este onboarding. Fique atento!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 9: Q&A
+    ========================================= -->
+    <section class="snap-section" id="section-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 bg-brand-purple/20 text-brand-purple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+          <i class="fi fi-rr-interrogation"></i>
+          Tire suas Dúvidas
+        </span>
+
+        <h2 class="text-4xl md:text-6xl font-black gradient-text mb-6">
+          Perguntas & Respostas
+        </h2>
+
+        <p class="text-xl text-muted-foreground font-serif max-w-2xl mx-auto mb-12">
+          Momento para esclarecer qualquer dúvida sobre o programa.
+        </p>
+
+        <!-- Q&A Illustration -->
+        <div class="relative inline-block">
+          <div class="w-40 h-40 gradient-purple rounded-full flex items-center justify-center mx-auto animate-float glow-purple">
+            <i class="fi fi-rr-comment-question text-6xl text-white"></i>
+          </div>
+          <!-- Floating question marks -->
+          <div class="absolute -top-4 -left-8 text-4xl text-brand-purple/40 animate-float" style="animation-delay: 0.5s">?</div>
+          <div class="absolute -top-2 -right-10 text-3xl text-brand-purple/30 animate-float" style="animation-delay: 1s">?</div>
+          <div class="absolute -bottom-2 -left-12 text-2xl text-brand-purple/20 animate-float" style="animation-delay: 1.5s">?</div>
+        </div>
+
+        <div class="mt-12 text-lg text-muted-foreground">
+          <p>Abra o microfone ou use o chat!</p>
+          <p class="text-brand-purple font-semibold mt-2">Agora é sua vez de perguntar.</p>
+        </div>
+
+        <!-- Common Questions -->
+        <div class="mt-12 grid md:grid-cols-2 gap-4 text-left">
+          <div class="bg-card border border-border rounded-2xl p-6">
+            <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+              <i class="fi fi-rr-clock text-brand-purple"></i>
+              Quanto tempo devo dedicar?
+            </h4>
+            <p class="text-sm text-muted-foreground">1-2 horas por dia durante 30 dias para melhores resultados.</p>
+          </div>
+          <div class="bg-card border border-border rounded-2xl p-6">
+            <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+              <i class="fi fi-rr-code-simple text-brand-purple"></i>
+              Preciso saber programar?
+            </h4>
+            <p class="text-sm text-muted-foreground">Não. Muitos Makers começam do zero e deployam em 30 dias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SLIDE 10: FECHAMENTO COM ENERGIA
+    ========================================= -->
+    <section class="snap-section" id="section-9">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Celebration -->
+        <div class="mb-8">
+          <span class="text-6xl">🚀</span>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl lg:text-7xl font-black gradient-text mb-6">
+          Hora de Construir!
+        </h2>
+
+        <p class="text-xl md:text-2xl text-muted-foreground font-serif max-w-2xl mx-auto mb-10">
+          Em 30 dias, você terá seu app no ar.<br>
+          <span class="text-white font-semibold">A jornada começa agora.</span>
+        </p>
+
+        <!-- Mindset Box -->
+        <div class="bg-gradient-to-br from-brand-purple/20 to-transparent border border-brand-purple rounded-3xl p-10 mb-10 glow-purple">
+          <h3 class="text-2xl font-bold text-white mb-6">Mindset Maker</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-left">
+            <div class="flex items-center gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green text-xl"></i>
+              <span class="text-white"><strong>Feito > Perfeito</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green text-xl"></i>
+              <span class="text-white"><strong>Peça ajuda cedo</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green text-xl"></i>
+              <span class="text-white"><strong>Documente seu progresso</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fi fi-rr-check-circle text-brand-green text-xl"></i>
+              <span class="text-white"><strong>Construa em público</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="https://chat.whatsapp.com/K1tGajLGaSK1u8YbXfA2Fk" target="_blank"
+             class="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green/90 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all hover:scale-105">
+            <i class="fi fi-brands-whatsapp text-xl"></i>
+            Entrar no WhatsApp
+          </a>
+          <a href="https://comunidade.vidalendaria.com.br/c/primeiro-passo/" target="_blank"
+             class="inline-flex items-center justify-center gap-3 gradient-purple text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all hover:scale-105">
+            <i class="fi fi-rr-door-open text-xl"></i>
+            Acessar Comunidade
+          </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="pt-10 border-t border-border">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-10 h-10 gradient-purple rounded-full flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="w-5 h-5">
+                <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white">Makers</span>
+          </div>
+          <p class="text-muted-foreground">
+            Academia Lendár[IA] — Construindo o futuro com IA
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript for navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('main-container');
+      const dots = document.querySelectorAll('.slide-dot');
+      const sections = document.querySelectorAll('.snap-section');
+
+      // Click on dots to navigate
+      dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          const sectionIndex = parseInt(this.dataset.section);
+          const targetSection = document.getElementById(`section-${sectionIndex}`);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Update active dot on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            const sectionIndex = sectionId.replace('section-', '');
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            const activeDot = document.querySelector(`.slide-dot[data-section="${sectionIndex}"]`);
+            if (activeDot) {
+              activeDot.classList.add('active');
+            }
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.5
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
