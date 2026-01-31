@@ -1,0 +1,81 @@
+# Regras de Delegação
+# Define qual agente atende cada tipo de pedido
+
+extensao_marketing:
+  # Agente Copywriter
+  copywriter:
+    agente: extensoes/marketing/agentes/COPYWRITER.md
+    gatilhos:
+      - headline
+      - titulo
+      - copy
+      - texto de venda
+      - persuasão
+      - bullet points
+      - benefícios
+      - promessa
+      - gancho
+      - lead
+      - big idea
+    tarefas:
+      - criar-headline
+      - criar-email
+
+  # Agente Estrategista
+  estrategista:
+    agente: extensoes/marketing/agentes/ESTRATEGISTA.md
+    gatilhos:
+      - estratégia
+      - posicionamento
+      - público-alvo
+      - persona
+      - proposta de valor
+      - diferencial
+      - concorrência
+      - mercado
+      - oferta
+      - precificação
+    tarefas:
+      - criar-oferta
+
+  # Agente Tráfego
+  trafego:
+    agente: extensoes/marketing/agentes/TRAFEGO.md
+    gatilhos:
+      - anúncio
+      - ads
+      - facebook ads
+      - google ads
+      - tráfego pago
+      - campanha
+      - segmentação
+      - público
+      - criativo
+      - cpc
+      - cpm
+      - roas
+    tarefas: []
+
+# Regras de prioridade
+prioridade:
+  # Se mencionar múltiplos gatilhos, qual agente prevalece
+  ordem:
+    - estrategista   # Primeiro: visão estratégica
+    - copywriter     # Segundo: criação de textos
+    - trafego        # Terceiro: distribuição
+
+# Casos especiais
+casos_especiais:
+  # Pedidos que precisam de múltiplos agentes
+  multi_agente:
+    - gatilho: "lançamento"
+      workflow: extensoes/marketing/workflows/lancamento.yaml
+    - gatilho: "campanha completa"
+      workflow: extensoes/marketing/workflows/campanha.yaml
+
+  # Pedidos que devem explorar antes de delegar
+  explorar_primeiro:
+    - "preciso vender"
+    - "quero faturar"
+    - "aumentar vendas"
+    - "ganhar dinheiro"
