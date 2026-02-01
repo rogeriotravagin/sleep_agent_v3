@@ -1,0 +1,251 @@
+# ============================================
+# EXTENSÃO CRIADOR - Sleep Agent
+# ============================================
+# Meta-framework para criar novas extensões,
+# agentes, tarefas e workflows de forma
+# padronizada e automatizada via Ralph
+# ============================================
+
+nome: Criador
+slug: criador
+versao: "1.0"
+comando: /criador
+status: ativo
+descricao: |
+  Extensão interna para criar novas áreas, extensões, agentes e workflows
+  seguindo os padrões do Sleep Agent. Automatiza a criação de novos módulos
+  usando o Ralph para geração estruturada.
+
+tipo: interno  # Extensão especial para administração do sistema
+
+# ============================================
+# AGENTES ESPECIALIZADOS
+# ============================================
+
+agentes:
+  - id: arquiteto-extensoes
+    arquivo: agentes/ARQUITETO-EXTENSOES.md
+    comando: /arquiteto
+    especialidades:
+      - Arquitetura de extensões
+      - Estrutura de diretórios
+      - Padrões do Sleep Agent
+      - Clean Architecture
+      - Planejamento de módulos
+      - Integração entre extensões
+
+  - id: designer-agentes
+    arquivo: agentes/DESIGNER-AGENTES.md
+    comando: /designer-agente
+    especialidades:
+      - Criação de agentes
+      - Definição de personas
+      - Gatilhos e delegação
+      - Tom de voz
+      - Especialidades e competências
+      - Regras de comportamento
+
+  - id: criador-workflows
+    arquivo: agentes/CRIADOR-WORKFLOWS.md
+    comando: /criar-workflow
+    especialidades:
+      - Design de workflows
+      - Fases e etapas
+      - Integrações com Ralph
+      - User stories
+      - Checkpoints e validações
+      - Entregáveis
+
+# ============================================
+# TAREFAS DISPONÍVEIS
+# ============================================
+
+tarefas:
+  # Fase: Planejamento
+  - fase: planejamento
+    comando: /planejar-extensao
+    arquivo: tarefas/planejar-extensao.yaml
+    agente: arquiteto-extensoes
+    descricao: Planejar nova extensão com escopo e estrutura
+
+  # Fase: Estrutura
+  - fase: estrutura
+    comando: /criar-extensao
+    arquivo: tarefas/criar-extensao.yaml
+    agente: arquiteto-extensoes
+    descricao: Criar estrutura completa de nova extensão
+
+  - fase: estrutura
+    comando: /criar-agente
+    arquivo: tarefas/criar-agente.yaml
+    agente: designer-agentes
+    descricao: Criar novo agente especializado
+
+  # Fase: Funcionalidades
+  - fase: funcionalidades
+    comando: /criar-tarefa
+    arquivo: tarefas/criar-tarefa.yaml
+    agente: criador-workflows
+    descricao: Criar nova tarefa para extensão
+
+  - fase: funcionalidades
+    comando: /criar-workflow-extensao
+    arquivo: tarefas/criar-workflow-extensao.yaml
+    agente: criador-workflows
+    descricao: Criar novo workflow completo
+
+  # Fase: Conhecimento
+  - fase: conhecimento
+    comando: /criar-conhecimento
+    arquivo: tarefas/criar-conhecimento.yaml
+    agente: arquiteto-extensoes
+    descricao: Criar base de conhecimento para extensão
+
+  # Fase: Integração
+  - fase: integracao
+    comando: /integrar-ralph
+    arquivo: tarefas/integrar-ralph.yaml
+    agente: criador-workflows
+    descricao: Criar templates Ralph para extensão
+
+  - fase: integracao
+    comando: /finalizar-extensao
+    arquivo: tarefas/finalizar-extensao.yaml
+    agente: arquiteto-extensoes
+    descricao: Finalizar e registrar extensão no sistema
+
+# ============================================
+# WORKFLOWS DISPONÍVEIS
+# ============================================
+
+workflows:
+  - id: extensao-completa
+    comando: /extensao-completa
+    arquivo: workflows/extensao-completa.yaml
+    descricao: Criar extensão completa do zero (7 fases)
+    fases:
+      - DESCOBERTA
+      - ARQUITETURA
+      - AGENTES
+      - CONHECIMENTO
+      - TAREFAS
+      - WORKFLOWS
+      - INTEGRAÇÃO
+
+  - id: modo-iniciante-extensao
+    comando: /iniciante-extensao
+    arquivo: workflows/modo-iniciante-extensao.yaml
+    descricao: Criar extensão rapidamente (5 perguntas + Ralph)
+    integracao: ralph
+
+  - id: agente-rapido
+    comando: /agente-rapido
+    arquivo: workflows/agente-rapido.yaml
+    descricao: Criar agente rapidamente
+
+# ============================================
+# BASE DE CONHECIMENTO
+# ============================================
+
+conhecimento:
+  - estrutura-extensoes.md
+  - padroes-agentes.md
+  - padroes-tarefas.md
+  - padroes-workflows.md
+  - integracao-ralph.md
+  - boas-praticas.md
+
+# ============================================
+# TEMPLATES INTERNOS
+# ============================================
+
+templates:
+  extensao:
+    - extensao.yaml
+    - README.md
+  agente:
+    - AGENTE-TEMPLATE.md
+  tarefa:
+    - tarefa-template.yaml
+  workflow:
+    - workflow-template.yaml
+  conhecimento:
+    - conhecimento-template.md
+
+# ============================================
+# REFERÊNCIAS E PADRÕES
+# ============================================
+
+referencias:
+  arquitetura:
+    - Clean Architecture (Robert C. Martin)
+    - Domain-Driven Design (Eric Evans)
+    - Microservices Patterns
+
+  agentes:
+    - Personas e Arquétipos
+    - Design de Conversação
+    - Prompt Engineering
+
+  workflows:
+    - BPMN (Business Process Model)
+    - User Story Mapping
+    - Jobs to Be Done
+
+# ============================================
+# INTEGRAÇÕES
+# ============================================
+
+integracoes:
+  ralph:
+    ativo: true
+    templates:
+      - prd-extensao.json
+      - prompt-extensao.md
+    scripts:
+      - ralph-extensao.sh
+
+  sistema:
+    arquivos_atualizados:
+      - core/orquestrador/delegacao.yaml
+      - .claude/CLAUDE.md
+
+# ============================================
+# SAÍDAS
+# ============================================
+
+output:
+  extensoes: extensoes/
+  templates: extensoes/criador/templates/
+  logs: output/criador/
+
+# ============================================
+# VALIDAÇÕES
+# ============================================
+
+validacoes:
+  extensao:
+    - "extensao.yaml existe e está válido"
+    - "README.md existe"
+    - "Pelo menos 1 agente definido"
+    - "Pelo menos 1 tarefa definida"
+    - "Conhecimento base criado"
+
+  agente:
+    - "Arquivo .md no padrão"
+    - "Identidade definida"
+    - "Especialidades listadas"
+    - "Regras de comportamento"
+
+  tarefa:
+    - "Arquivo .yaml no padrão"
+    - "Entradas definidas"
+    - "Passos documentados"
+    - "Saída com template"
+    - "Gates de qualidade"
+
+  workflow:
+    - "Fases definidas"
+    - "Etapas com entregáveis"
+    - "Checkpoints configurados"
+    - "Entrega final especificada"

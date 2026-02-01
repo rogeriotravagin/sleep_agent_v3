@@ -1,6 +1,60 @@
 # Regras de Delegação
 # Define qual agente atende cada tipo de pedido
 
+# ============================================
+# CONFIGURAÇÕES GLOBAIS DE OUTPUT
+# ============================================
+
+output:
+  # REGRA OBRIGATÓRIA: Todo output deve ser organizado por produto
+  estrutura: por_produto
+
+  # Antes de salvar qualquer arquivo, o sistema DEVE:
+  # 1. Identificar ou perguntar o nome do produto
+  # 2. Converter para slug (minúsculas, hífen no lugar de espaços)
+  # 3. Salvar em output/[produto]/[tipo]/
+
+  caminho_padrao: "output/{produto}/{tipo}/"
+
+  # Convenção de nomes para produtos
+  convencao_nome:
+    formato: slug
+    exemplos:
+      - entrada: "Curso de Marketing Digital"
+        saida: "curso-de-marketing-digital"
+      - entrada: "Academia Fitness Pro"
+        saida: "academia-fitness-pro"
+      - entrada: "Consultoria Empresarial"
+        saida: "consultoria-empresarial"
+
+  # Tipos de conteúdo suportados
+  tipos:
+    - headlines
+    - emails
+    - copies
+    - estrategias
+    - campanhas
+    - landing-pages
+    - cursos
+    - aulas
+    - atividades
+    - avaliacoes
+    - produtos/estrategias
+    - produtos/okrs
+    - produtos/discovery
+    - produtos/metricas
+    - produtos/priorizacoes
+    - produtos/roadmaps
+
+  # Ação obrigatória antes de salvar
+  antes_de_salvar:
+    - verificar_produto_definido: true
+    - perguntar_se_nao_definido: "Qual é o nome do produto/projeto para organizar este conteúdo?"
+
+# ============================================
+# EXTENSÃO MARKETING
+# ============================================
+
 extensao_marketing:
   # Agente Copywriter
   copywriter:
@@ -79,3 +133,555 @@ casos_especiais:
     - "quero faturar"
     - "aumentar vendas"
     - "ganhar dinheiro"
+
+# ============================================
+# EXTENSÃO BRANDING
+# ============================================
+
+extensao_branding:
+  # Agente Design Analyst (NOVO)
+  design_analyst:
+    agente: extensoes/branding/agentes/DESIGN-ANALYST.md
+    gatilhos:
+      - analisar referência
+      - analisar referencia
+      - analisar print
+      - analisar screenshot
+      - analisar página
+      - analisar pagina
+      - analisar site
+      - extrair design
+      - extrair diretrizes
+      - extrair padrões
+      - extrair padroes
+      - criar style guide
+      - criar styleguide
+      - diretrizes de design
+      - reverse engineering
+      - desconstruir design
+      - copiar design
+      - replicar design
+    tarefas:
+      - analisar-referencia
+      - extrair-diretrizes
+      - criar-styleguide
+
+  # Agente Designer
+  designer:
+    agente: extensoes/branding/agentes/DESIGNER.md
+    gatilhos:
+      - logo
+      - identidade visual
+      - paleta de cores
+      - tipografia
+      - design gráfico
+      - design grafico
+      - elementos visuais
+      - marca visual
+    tarefas:
+      - criar-logo
+      - paleta-cores
+
+  # Agente UI/UX
+  uiux:
+    agente: extensoes/branding/agentes/UI-UX.md
+    gatilhos:
+      - landing page
+      - interface
+      - wireframe
+      - protótipo
+      - prototipo
+      - design system
+      - componentes
+      - UI
+      - UX
+    tarefas:
+      - criar-landing
+      - design-system
+
+  # Agente Brand Strategist
+  brand_strategist:
+    agente: extensoes/branding/agentes/BRAND-STRATEGIST.md
+    gatilhos:
+      - estratégia de marca
+      - estrategia de marca
+      - posicionamento
+      - brand voice
+      - arquétipo
+      - arquetipo
+      - golden circle
+      - personal branding
+      - marca pessoal
+    tarefas:
+      - posicionamento-marca
+      - personal-branding
+      - definir-marca
+
+# Regras de prioridade para branding
+prioridade_branding:
+  ordem:
+    - design_analyst     # Primeiro: análise de referências
+    - brand_strategist   # Segundo: estratégia
+    - designer           # Terceiro: identidade visual
+    - uiux               # Quarto: interfaces
+
+# Casos especiais branding
+casos_especiais_branding:
+  multi_agente:
+    - gatilho: "brand completo"
+      workflow: extensoes/branding/workflows/brand-completo.yaml
+    - gatilho: "identidade completa"
+      workflow: extensoes/branding/workflows/identidade-visual.yaml
+    - gatilho: "analisar e criar"
+      workflow: extensoes/branding/workflows/analise-design.yaml
+
+  explorar_primeiro:
+    - "quero criar uma marca"
+    - "preciso de identidade visual"
+    - "quero copiar esse design"
+    - "fazer igual a essa página"
+
+# ============================================
+# EXTENSÃO EDUCACIONAL
+# ============================================
+
+extensao_educacional:
+  # Agente Designer Instrucional
+  designer_instrucional:
+    agente: extensoes/educacional/agentes/DESIGNER-INSTRUCIONAL.md
+    gatilhos:
+      - curso
+      - estrutura de curso
+      - grade curricular
+      - módulo
+      - trilha de aprendizagem
+      - objetivos de aprendizagem
+      - bloom
+      - design instrucional
+      - plano de ensino
+    tarefas:
+      - estruturar-curso
+      - criar-modulo
+      - criar-trilha
+      - definir-objetivos
+
+  # Agente Conteudista
+  conteudista:
+    agente: extensoes/educacional/agentes/CONTEUDISTA.md
+    gatilhos:
+      - aula
+      - plano de aula
+      - roteiro
+      - vídeo-aula
+      - material didático
+      - apostila
+      - apresentação
+      - slides
+      - conteúdo educacional
+    tarefas:
+      - criar-aula
+      - criar-roteiro
+      - criar-material
+      - criar-apresentacao
+
+  # Agente Especialista em Avaliação
+  especialista_avaliacao:
+    agente: extensoes/educacional/agentes/ESPECIALISTA-AVALIACAO.md
+    gatilhos:
+      - exercício
+      - atividade
+      - prova
+      - quiz
+      - teste
+      - avaliação
+      - rubrica
+      - checklist
+      - gamificação
+      - badge
+      - pontos
+    tarefas:
+      - criar-atividade
+      - criar-exercicio
+      - criar-prova
+      - criar-rubrica
+      - criar-checklist
+      - gamificar
+
+# Regras de prioridade para educacional
+prioridade_educacional:
+  ordem:
+    - designer_instrucional  # Primeiro: visão estrutural
+    - conteudista            # Segundo: criação de conteúdo
+    - especialista_avaliacao # Terceiro: avaliações e engajamento
+
+# Casos especiais educacionais
+casos_especiais_educacional:
+  multi_agente:
+    - gatilho: "criar curso completo"
+      workflow: extensoes/educacional/workflows/curso-completo.yaml
+    - gatilho: "curso do zero"
+      workflow: extensoes/educacional/workflows/curso-completo.yaml
+
+  explorar_primeiro:
+    - "quero ensinar"
+    - "criar um curso"
+    - "montar treinamento"
+    - "capacitar equipe"
+
+# ============================================
+# EXTENSÃO CRIADOR (META-FRAMEWORK)
+# ============================================
+
+extensao_criador:
+  # Agente Arquiteto de Extensões
+  arquiteto_extensoes:
+    agente: extensoes/criador/agentes/ARQUITETO-EXTENSOES.md
+    gatilhos:
+      - criar extensão
+      - nova extensão
+      - nova área
+      - novo setor
+      - estrutura de extensão
+      - arquitetura de extensão
+      - extensao.yaml
+      - registrar extensão
+    tarefas:
+      - criar-extensao
+      - finalizar-extensao
+
+  # Agente Designer de Agentes
+  designer_agentes:
+    agente: extensoes/criador/agentes/DESIGNER-AGENTES.md
+    gatilhos:
+      - criar agente
+      - novo agente
+      - persona de agente
+      - identidade de agente
+      - especialista
+      - especialidades
+      - regras do agente
+    tarefas:
+      - criar-agente
+
+  # Agente Criador de Workflows
+  criador_workflows:
+    agente: extensoes/criador/agentes/CRIADOR-WORKFLOWS.md
+    gatilhos:
+      - criar workflow
+      - novo workflow
+      - criar tarefa
+      - nova tarefa
+      - fluxo de trabalho
+      - processo
+      - fases
+      - etapas
+    tarefas:
+      - criar-tarefa
+      - criar-workflow-extensao
+
+# Regras de prioridade para criador
+prioridade_criador:
+  ordem:
+    - arquiteto_extensoes  # Primeiro: visão arquitetural
+    - designer_agentes     # Segundo: criação de agentes
+    - criador_workflows    # Terceiro: workflows e tarefas
+
+# Casos especiais criador
+casos_especiais_criador:
+  multi_agente:
+    - gatilho: "criar extensão completa"
+      workflow: extensoes/criador/workflows/extensao-completa.yaml
+    - gatilho: "extensão do zero"
+      workflow: extensoes/criador/workflows/extensao-completa.yaml
+    - gatilho: "nova área completa"
+      workflow: extensoes/criador/workflows/extensao-completa.yaml
+
+  explorar_primeiro:
+    - "quero criar uma extensão"
+    - "adicionar nova área"
+    - "expandir o sistema"
+    - "criar novo setor"
+
+# ============================================
+# EXTENSÃO CUSTOMER SUCCESS
+# ============================================
+
+extensao_customer_success:
+  # Agente CSM Estrategista
+  csm_estrategista:
+    agente: extensoes/customer-success/agentes/CSM-ESTRATEGISTA.md
+    gatilhos:
+      - customer success
+      - CS
+      - health score
+      - segmentacao de clientes
+      - segmentação de clientes
+      - metricas de CS
+      - métricas de CS
+      - churn
+      - retencao
+      - retenção
+      - NRR
+      - analise de base
+      - análise de base
+      - jornada do cliente
+    tarefas:
+      - analise-base-clientes
+      - criar-health-score
+      - mapear-jornada
+
+  # Agente Especialista em Onboarding
+  onboarding_specialist:
+    agente: extensoes/customer-success/agentes/ONBOARDING-SPECIALIST.md
+    gatilhos:
+      - onboarding
+      - ativacao
+      - ativação
+      - primeiro valor
+      - TTFV
+      - time to value
+      - boas-vindas
+      - boas vindas
+      - kickoff
+      - playbook de onboarding
+    tarefas:
+      - criar-playbook-onboarding
+      - criar-checklist-ativacao
+      - criar-sequencia-boas-vindas
+
+  # Agente Especialista em Retencao
+  retention_expert:
+    agente: extensoes/customer-success/agentes/RETENTION-EXPERT.md
+    gatilhos:
+      - retencao de clientes
+      - retenção de clientes
+      - anti-churn
+      - prevenir churn
+      - save play
+      - cliente em risco
+      - QBR
+      - business review
+      - expansion
+      - upsell
+      - cross-sell
+      - NPS
+    tarefas:
+      - criar-plano-retencao
+      - criar-qbr
+      - criar-plano-risco
+
+# Regras de prioridade para customer success
+prioridade_customer_success:
+  ordem:
+    - csm_estrategista      # Primeiro: visão estratégica
+    - onboarding_specialist # Segundo: ativação de clientes
+    - retention_expert      # Terceiro: retenção e growth
+
+# Casos especiais customer success
+casos_especiais_customer_success:
+  multi_agente:
+    - gatilho: "programa CS completo"
+      workflow: extensoes/customer-success/workflows/cs-completo.yaml
+    - gatilho: "customer success do zero"
+      workflow: extensoes/customer-success/workflows/cs-completo.yaml
+
+  explorar_primeiro:
+    - "quero reduzir churn"
+    - "preciso reter clientes"
+    - "melhorar onboarding"
+    - "criar programa de CS"
+    - "customer success"
+
+# ============================================
+# EXTENSÃO PRODUTOS (PMO / GESTÃO DE PRODUTO)
+# ============================================
+
+extensao_produtos:
+  # Agente Product Strategist
+  product_strategist:
+    agente: extensoes/produtos/agentes/PRODUCT-STRATEGIST.md
+    gatilhos:
+      - estratégia de produto
+      - estrategia de produto
+      - visão de produto
+      - visao de produto
+      - missão do produto
+      - OKR
+      - OKRs
+      - product-market fit
+      - PMF
+      - posicionamento de produto
+      - go-to-market
+      - GTM
+      - product operating model
+      - SVPG
+    tarefas:
+      - definir-visao
+      - criar-okrs
+      - validar-pmf
+
+  # Agente Discovery Lead
+  discovery_lead:
+    agente: extensoes/produtos/agentes/DISCOVERY-LEAD.md
+    gatilhos:
+      - discovery
+      - continuous discovery
+      - opportunity solution tree
+      - OST
+      - entrevistas de usuario
+      - entrevistas de usuário
+      - jobs to be done
+      - JTBD
+      - validação de hipótese
+      - validacao de hipotese
+      - Teresa Torres
+      - dual-track
+      - dual track
+    tarefas:
+      - mapear-oportunidades
+      - planejar-entrevistas
+      - analisar-jobs
+
+  # Agente Delivery Manager
+  delivery_manager:
+    agente: extensoes/produtos/agentes/DELIVERY-MANAGER.md
+    gatilhos:
+      - priorização
+      - priorizacao
+      - RICE
+      - Kano
+      - MoSCoW
+      - backlog
+      - roadmap
+      - métricas de produto
+      - metricas de produto
+      - North Star
+      - AARRR
+      - HEART
+      - pirate metrics
+      - funil de métricas
+      - funil de metricas
+    tarefas:
+      - priorizar-backlog
+      - criar-roadmap
+      - definir-metricas
+
+# Regras de prioridade para produtos
+prioridade_produtos:
+  ordem:
+    - product_strategist  # Primeiro: visão estratégica
+    - discovery_lead      # Segundo: discovery e validação
+    - delivery_manager    # Terceiro: priorização e execução
+
+# Casos especiais produtos
+casos_especiais_produtos:
+  multi_agente:
+    - gatilho: "estruturar produto completo"
+      workflow: extensoes/produtos/workflows/produto-completo.yaml
+    - gatilho: "produto do zero"
+      workflow: extensoes/produtos/workflows/produto-completo.yaml
+    - gatilho: "discovery sprint"
+      workflow: extensoes/produtos/workflows/discovery-sprint.yaml
+
+  explorar_primeiro:
+    - "quero estruturar meu produto"
+    - "preciso de estratégia de produto"
+    - "gestão de produto"
+    - "product management"
+    - "criar roadmap"
+    - "definir métricas"
+
+# ============================================
+# EXTENSÃO DADOS (DATA INTELLIGENCE)
+# ============================================
+
+extensao_dados:
+  # Agente Cientista de Dados
+  cientista_dados:
+    agente: extensoes/dados/agentes/CIENTISTA-DADOS.md
+    gatilhos:
+      - pesquisa profunda
+      - pesquisar dados
+      - analise exploratoria
+      - EDA
+      - data mining
+      - descobrir padroes
+      - validar hipotese
+      - hipoteses
+      - modelagem estatistica
+      - ciencia de dados
+      - data science
+    tarefas:
+      - pesquisa-profunda
+      - analise-exploratoria
+
+  # Agente Analista de Dados
+  analista_dados:
+    agente: extensoes/dados/agentes/ANALISTA-DADOS.md
+    gatilhos:
+      - relatorio
+      - relatório
+      - dashboard
+      - KPI
+      - KPIs
+      - metricas
+      - métricas
+      - analise de dados
+      - análise de dados
+      - dados internos
+      - business intelligence
+      - BI
+      - visualizacao
+      - visualização
+      - storytelling dados
+    tarefas:
+      - analise-dados-internos
+      - criar-dashboard
+      - relatorio-executivo
+
+  # Agente Pesquisador de Mercado
+  pesquisador_mercado:
+    agente: extensoes/dados/agentes/PESQUISADOR-MERCADO.md
+    gatilhos:
+      - pesquisa de mercado
+      - inteligencia competitiva
+      - inteligência competitiva
+      - benchmark
+      - benchmarking
+      - concorrentes
+      - analise de mercado
+      - análise de mercado
+      - tendencias
+      - tendências
+      - consumer insights
+      - TAM SAM SOM
+      - tamanho de mercado
+    tarefas:
+      - pesquisa-mercado
+      - benchmark-competitivo
+      - analise-tendencias
+
+# Regras de prioridade para dados
+prioridade_dados:
+  ordem:
+    - cientista_dados      # Primeiro: pesquisa e descoberta
+    - pesquisador_mercado  # Segundo: contexto de mercado
+    - analista_dados       # Terceiro: relatorios e dashboards
+
+# Casos especiais dados
+casos_especiais_dados:
+  multi_agente:
+    - gatilho: "pesquisa completa"
+      workflow: extensoes/dados/workflows/pesquisa-completa.yaml
+    - gatilho: "analise de mercado completa"
+      workflow: extensoes/dados/workflows/pesquisa-completa.yaml
+    - gatilho: "analise completa"
+      workflow: extensoes/dados/workflows/analise-completa.yaml
+
+  explorar_primeiro:
+    - "preciso de dados"
+    - "quero analisar"
+    - "preciso de pesquisa"
+    - "preciso entender o mercado"
+    - "criar dashboard"
+    - "montar relatorio"

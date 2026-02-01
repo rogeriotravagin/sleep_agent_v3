@@ -1,0 +1,259 @@
+# ============================================
+# TAREFA: Finalizar Extensão
+# ============================================
+
+id: finalizar-extensao
+nome: Finalizar e Registrar Extensão
+descricao: Validar, registrar e integrar extensão no sistema Sleep Agent
+agente: arquiteto-extensoes
+comando: /finalizar-extensao
+versao: "1.0"
+categoria: integracao
+
+# ============================================
+# ENTRADAS
+# ============================================
+
+entradas:
+  obrigatorias:
+    - nome: extensao
+      pergunta: "Qual extensão finalizar?"
+      tipo: texto
+      exemplo: "educacional"
+
+  opcionais:
+    - nome: validar_apenas
+      pergunta: "Apenas validar sem registrar?"
+      tipo: escolha
+      opcoes:
+        - "Não, validar e registrar"
+        - "Sim, apenas validar"
+      padrao: "Não, validar e registrar"
+
+# ============================================
+# PROCESSO
+# ============================================
+
+passos:
+  - numero: 1
+    acao: "Validar estrutura"
+    detalhes:
+      - "Verificar extensao.yaml existe e é válido"
+      - "Verificar README.md existe"
+      - "Verificar diretórios criados"
+      - "Verificar nomenclatura correta"
+
+  - numero: 2
+    acao: "Validar agentes"
+    detalhes:
+      - "Pelo menos 1 agente existe"
+      - "Cada agente tem identidade"
+      - "Especialidades definidas"
+      - "Regras documentadas"
+
+  - numero: 3
+    acao: "Validar tarefas"
+    detalhes:
+      - "Pelo menos 1 tarefa existe"
+      - "Entradas definidas"
+      - "Templates de saída"
+      - "Gates de qualidade"
+
+  - numero: 4
+    acao: "Validar workflows"
+    detalhes:
+      - "Pelo menos 1 workflow existe"
+      - "Fases documentadas"
+      - "Entrega final especificada"
+
+  - numero: 5
+    acao: "Validar conhecimento"
+    detalhes:
+      - "Base de conhecimento criada"
+      - "Arquivos referenciados existem"
+
+  - numero: 6
+    acao: "Atualizar delegacao.yaml"
+    detalhes:
+      - "Adicionar extensão"
+      - "Configurar agentes"
+      - "Definir gatilhos"
+      - "Configurar prioridades"
+
+  - numero: 7
+    acao: "Atualizar CLAUDE.md"
+    detalhes:
+      - "Adicionar na tabela de extensões"
+      - "Adicionar nos modos de trabalho"
+      - "Atualizar comportamento padrão"
+
+  - numero: 8
+    acao: "Criar estrutura de output"
+    detalhes:
+      - "Criar pastas em output/"
+      - "Configurar projetos/"
+
+  - numero: 9
+    acao: "Gerar relatório final"
+    detalhes:
+      - "Resumo da extensão"
+      - "Comandos disponíveis"
+      - "Status de validação"
+
+# ============================================
+# SAÍDA
+# ============================================
+
+saida:
+  formato: markdown
+  local: output/criador/
+  template: |
+    # Relatório de Finalização: {{extensao}}
+
+    ## Status: {{status}}
+
+    ---
+
+    ## Validação de Estrutura
+
+    | Item | Status | Observação |
+    |------|--------|------------|
+    | extensao.yaml | {{estrutura.extensao_yaml}} | {{estrutura.obs_yaml}} |
+    | README.md | {{estrutura.readme}} | {{estrutura.obs_readme}} |
+    | Diretórios | {{estrutura.diretorios}} | {{estrutura.obs_dirs}} |
+    | Nomenclatura | {{estrutura.nomenclatura}} | {{estrutura.obs_nome}} |
+
+    ## Validação de Componentes
+
+    ### Agentes ({{agentes.total}})
+    {{#each agentes.lista}}
+    - [{{this.status}}] **{{this.nome}}** - {{this.observacao}}
+    {{/each}}
+
+    ### Tarefas ({{tarefas.total}})
+    {{#each tarefas.lista}}
+    - [{{this.status}}] **{{this.nome}}** - {{this.observacao}}
+    {{/each}}
+
+    ### Workflows ({{workflows.total}})
+    {{#each workflows.lista}}
+    - [{{this.status}}] **{{this.nome}}** - {{this.observacao}}
+    {{/each}}
+
+    ### Conhecimento ({{conhecimento.total}})
+    {{#each conhecimento.lista}}
+    - [{{this.status}}] {{this.arquivo}}
+    {{/each}}
+
+    ---
+
+    ## Integração no Sistema
+
+    ### delegacao.yaml
+    ```yaml
+    extensao_{{extensao}}:
+      {{#each agentes.lista}}
+      {{this.id}}:
+        agente: extensoes/{{../extensao}}/agentes/{{this.arquivo}}
+        gatilhos:
+          {{#each this.gatilhos}}
+          - "{{this}}"
+          {{/each}}
+        tarefas:
+          {{#each this.tarefas}}
+          - {{this}}
+          {{/each}}
+      {{/each}}
+    ```
+
+    ### CLAUDE.md
+    - [{{integracao.claude_tabela}}] Tabela de extensões atualizada
+    - [{{integracao.claude_modos}}] Modos de trabalho atualizados
+    - [{{integracao.claude_comportamento}}] Comportamento padrão atualizado
+
+    ### Output
+    - [{{integracao.output}}] Pastas de output criadas
+
+    ---
+
+    ## Comandos Disponíveis
+
+    ### Extensão
+    ```
+    /{{extensao}}  - Carregar extensão
+    ```
+
+    ### Agentes
+    {{#each agentes.lista}}
+    ```
+    /{{this.comando}}  - {{this.descricao}}
+    ```
+    {{/each}}
+
+    ### Tarefas
+    {{#each tarefas.lista}}
+    ```
+    /{{this.comando}}  - {{this.descricao}}
+    ```
+    {{/each}}
+
+    ### Workflows
+    {{#each workflows.lista}}
+    ```
+    /{{this.comando}}  - {{this.descricao}}
+    ```
+    {{/each}}
+
+    ---
+
+    ## Resumo
+
+    - **Extensão:** {{extensao}}
+    - **Status:** {{status}}
+    - **Agentes:** {{agentes.total}}
+    - **Tarefas:** {{tarefas.total}}
+    - **Workflows:** {{workflows.total}}
+    - **Conhecimento:** {{conhecimento.total}} arquivos
+
+    {{#if pendencias}}
+    ## Pendências
+
+    {{#each pendencias}}
+    - [ ] {{this}}
+    {{/each}}
+    {{/if}}
+
+    ---
+
+    **Extensão {{status_final}}!**
+
+# ============================================
+# CONHECIMENTO UTILIZADO
+# ============================================
+
+conhecimento:
+  - conhecimento/estrutura-extensoes.md
+  - conhecimento/boas-praticas.md
+
+# ============================================
+# GATES DE QUALIDADE
+# ============================================
+
+gates:
+  - "extensao.yaml existe e é válido?"
+  - "Pelo menos 1 agente com identidade?"
+  - "Pelo menos 1 tarefa com template?"
+  - "Pelo menos 1 workflow documentado?"
+  - "Base de conhecimento criada?"
+  - "delegacao.yaml atualizado?"
+  - "CLAUDE.md atualizado?"
+
+# ============================================
+# PRÓXIMOS PASSOS SUGERIDOS
+# ============================================
+
+proximos_passos:
+  - "Testar a extensão manualmente"
+  - "Criar mais tarefas se necessário"
+  - "Expandir conhecimento base"
+  - "Configurar Ralph se aplicável"

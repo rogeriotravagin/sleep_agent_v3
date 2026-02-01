@@ -1,0 +1,237 @@
+# ============================================
+# TAREFA: Criar Nova Tarefa
+# ============================================
+
+id: criar-tarefa
+nome: Criar Nova Tarefa
+descricao: Criar tarefa estruturada com entradas, processo e saída padronizados
+agente: criador-workflows
+comando: /criar-tarefa
+versao: "1.0"
+categoria: criacao
+
+# ============================================
+# ENTRADAS
+# ============================================
+
+entradas:
+  obrigatorias:
+    - nome: extensao
+      pergunta: "Para qual extensão é esta tarefa?"
+      tipo: texto
+      exemplo: "educacional"
+
+    - nome: agente
+      pergunta: "Qual agente executa esta tarefa?"
+      tipo: texto
+      exemplo: "conteudista"
+
+    - nome: nome
+      pergunta: "Qual o nome da tarefa? (verbo-objeto)"
+      tipo: texto
+      exemplo: "criar-aula"
+
+    - nome: descricao
+      pergunta: "O que esta tarefa entrega?"
+      tipo: texto
+      exemplo: "Plano de aula completo com estrutura, conteúdo e exercícios"
+
+    - nome: entradas_obrigatorias
+      pergunta: "Quais informações são obrigatórias? (perguntas)"
+      tipo: lista
+      exemplo:
+        - "Qual o título da aula?"
+        - "Qual o objetivo de aprendizagem?"
+        - "Quais os pontos principais?"
+
+  opcionais:
+    - nome: categoria
+      pergunta: "Qual a categoria?"
+      tipo: escolha
+      opcoes:
+        - "criacao"
+        - "analise"
+        - "estrategia"
+        - "planejamento"
+        - "avaliacao"
+      padrao: "criacao"
+
+    - nome: entradas_opcionais
+      pergunta: "Quais informações são opcionais?"
+      tipo: lista
+      exemplo:
+        - "Duração da aula?"
+        - "Nível dos alunos?"
+
+    - nome: conhecimento
+      pergunta: "Quais arquivos de conhecimento usar?"
+      tipo: lista
+      exemplo:
+        - "design-instrucional.md"
+        - "roteiros-videoaulas.md"
+
+# ============================================
+# PROCESSO
+# ============================================
+
+passos:
+  - numero: 1
+    acao: "Definir identificação"
+    detalhes:
+      - "ID único (kebab-case)"
+      - "Nome descritivo"
+      - "Comando (verbo-objeto)"
+      - "Categoria correta"
+
+  - numero: 2
+    acao: "Estruturar entradas"
+    detalhes:
+      - "Listar obrigatórias com exemplos"
+      - "Listar opcionais com defaults"
+      - "Definir tipos corretos"
+      - "Criar perguntas claras"
+
+  - numero: 3
+    acao: "Documentar processo"
+    detalhes:
+      - "4-7 passos claros"
+      - "Verbos de ação"
+      - "Detalhes quando necessário"
+      - "Ordem lógica"
+
+  - numero: 4
+    acao: "Criar template de saída"
+    detalhes:
+      - "Definir formato (markdown/yaml)"
+      - "Criar template completo"
+      - "Mapear variáveis"
+      - "Incluir seções úteis"
+
+  - numero: 5
+    acao: "Configurar qualidade"
+    detalhes:
+      - "Gates de validação"
+      - "Referências de conhecimento"
+      - "Próximos passos sugeridos"
+
+# ============================================
+# SAÍDA
+# ============================================
+
+saida:
+  formato: yaml
+  local: extensoes/{{extensao}}/tarefas/
+  template: |
+    # ============================================
+    # TAREFA: {{nome_formatado}}
+    # ============================================
+
+    id: {{id}}
+    nome: {{nome_formatado}}
+    descricao: {{descricao}}
+    agente: {{agente}}
+    comando: /{{id}}
+    versao: "1.0"
+    categoria: {{categoria}}
+
+    # ============================================
+    # ENTRADAS
+    # ============================================
+
+    entradas:
+      obrigatorias:
+        {{#each entradas_obrigatorias}}
+        - nome: {{this.var}}
+          pergunta: "{{this.pergunta}}"
+          tipo: {{this.tipo}}
+          exemplo: "{{this.exemplo}}"
+        {{/each}}
+
+      opcionais:
+        {{#each entradas_opcionais}}
+        - nome: {{this.var}}
+          pergunta: "{{this.pergunta}}"
+          tipo: {{this.tipo}}
+          padrao: "{{this.padrao}}"
+        {{/each}}
+
+    # ============================================
+    # PROCESSO
+    # ============================================
+
+    passos:
+      {{#each passos}}
+      - numero: {{@index_plus_one}}
+        acao: "{{this.acao}}"
+        {{#if this.detalhes}}
+        detalhes:
+          {{#each this.detalhes}}
+          - "{{this}}"
+          {{/each}}
+        {{/if}}
+      {{/each}}
+
+    # ============================================
+    # SAÍDA
+    # ============================================
+
+    saida:
+      formato: markdown
+      local: output/{{tipo_output}}/
+      template: |
+        {{template_saida}}
+
+    # ============================================
+    # CONHECIMENTO UTILIZADO
+    # ============================================
+
+    conhecimento:
+      {{#each conhecimento}}
+      - conhecimento/{{this}}
+      {{/each}}
+
+    # ============================================
+    # GATES DE QUALIDADE
+    # ============================================
+
+    gates:
+      {{#each gates}}
+      - "{{this}}"
+      {{/each}}
+
+    # ============================================
+    # PRÓXIMOS PASSOS SUGERIDOS
+    # ============================================
+
+    proximos_passos:
+      {{#each proximos_passos}}
+      - "{{this}}"
+      {{/each}}
+
+# ============================================
+# CONHECIMENTO UTILIZADO
+# ============================================
+
+conhecimento:
+  - conhecimento/padroes-tarefas.md
+  - conhecimento/estrutura-extensoes.md
+
+# ============================================
+# GATES DE QUALIDADE
+# ============================================
+
+gates:
+  - "O ID é único e segue kebab-case?"
+  - "As entradas são claras com exemplos?"
+  - "Os passos são específicos e ordenados?"
+  - "O template de saída está completo?"
+  - "Os gates de qualidade são verificáveis?"
+
+# ============================================
+# PRÓXIMOS PASSOS SUGERIDOS
+# ============================================
+
+proximos_passos:
+  - "Criar outra tarefa para o agente"
+  - "/criar-workflow-extensao - Criar workflow que usa esta tarefa"
+  - "Testar a tarefa manualmente"

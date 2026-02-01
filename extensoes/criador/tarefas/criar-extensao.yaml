@@ -1,0 +1,218 @@
+# ============================================
+# TAREFA: Criar Nova Extensão
+# ============================================
+
+id: criar-extensao
+nome: Criar Nova Extensão
+descricao: Criar estrutura completa de uma nova extensão do Sleep Agent
+agente: arquiteto-extensoes
+comando: /criar-extensao
+versao: "1.0"
+categoria: criacao
+
+# ============================================
+# ENTRADAS
+# ============================================
+
+entradas:
+  obrigatorias:
+    - nome: nome
+      pergunta: "Qual o nome da extensão?"
+      tipo: texto
+      exemplo: "Financeiro"
+
+    - nome: descricao
+      pergunta: "O que esta extensão faz? (2-3 frases)"
+      tipo: texto
+      exemplo: "Gerenciamento financeiro pessoal e empresarial. Inclui orçamentos, fluxo de caixa e análises."
+
+    - nome: publico
+      pergunta: "Quem vai usar esta extensão?"
+      tipo: texto
+      exemplo: "Empreendedores e gestores que precisam organizar finanças"
+
+    - nome: problemas
+      pergunta: "Quais problemas resolve? (liste os principais)"
+      tipo: lista
+      exemplo:
+        - "Desorganização financeira"
+        - "Falta de visibilidade do fluxo de caixa"
+        - "Dificuldade em criar orçamentos"
+
+  opcionais:
+    - nome: num_agentes
+      pergunta: "Quantos agentes terá? (recomendado: 3)"
+      tipo: numero
+      padrao: 3
+
+    - nome: agentes
+      pergunta: "Quais agentes? (nomes sugeridos)"
+      tipo: lista
+      exemplo:
+        - "Analista Financeiro"
+        - "Planejador"
+        - "Controller"
+
+    - nome: integrar_ralph
+      pergunta: "Integrar com Ralph para geração autônoma?"
+      tipo: escolha
+      opcoes:
+        - "Sim"
+        - "Não"
+      padrao: "Sim"
+
+# ============================================
+# PROCESSO
+# ============================================
+
+passos:
+  - numero: 1
+    acao: "Validar escopo da extensão"
+    detalhes:
+      - "Verificar se não duplica extensão existente"
+      - "Confirmar que escopo é claro"
+      - "Validar que resolve problema real"
+
+  - numero: 2
+    acao: "Criar estrutura de diretórios"
+    detalhes:
+      - "Criar extensoes/[slug]/"
+      - "Criar subdiretórios: agentes/, conhecimento/, tarefas/, workflows/, exemplos/"
+
+  - numero: 3
+    acao: "Gerar extensao.yaml"
+    detalhes:
+      - "Configurar metadados"
+      - "Listar agentes planejados"
+      - "Definir tarefas principais"
+      - "Configurar integrações"
+
+  - numero: 4
+    acao: "Criar README.md"
+    detalhes:
+      - "Documentar propósito"
+      - "Listar comandos"
+      - "Explicar estrutura"
+      - "Incluir exemplos de uso"
+
+  - numero: 5
+    acao: "Configurar integração"
+    detalhes:
+      - "Atualizar delegacao.yaml"
+      - "Atualizar CLAUDE.md"
+      - "Criar pastas de output"
+
+  - numero: 6
+    acao: "Gerar próximos passos"
+    detalhes:
+      - "Lista de agentes a criar"
+      - "Lista de tarefas a criar"
+      - "Sugestão de conhecimento base"
+
+# ============================================
+# SAÍDA
+# ============================================
+
+saida:
+  formato: pasta
+  local: extensoes/{{slug}}/
+  template: |
+    ## Extensão Criada: {{nome}}
+
+    ### Estrutura Gerada
+
+    ```
+    extensoes/{{slug}}/
+    ├── extensao.yaml
+    ├── README.md
+    ├── agentes/
+    ├── conhecimento/
+    ├── tarefas/
+    ├── workflows/
+    └── exemplos/
+    ```
+
+    ### Configuração (extensao.yaml)
+
+    ```yaml
+    nome: "{{nome}}"
+    slug: "{{slug}}"
+    versao: "1.0"
+    comando: "/{{slug}}"
+    status: "ativo"
+    descricao: |
+      {{descricao}}
+
+    agentes:
+      {{#each agentes}}
+      - id: {{kebab this}}
+        arquivo: agentes/{{upper this}}.md
+        comando: /{{kebab this}}
+      {{/each}}
+
+    tarefas: []  # A definir
+
+    workflows:
+      - id: modo-iniciante-{{slug}}
+        comando: /iniciante-{{slug}}
+        arquivo: workflows/modo-iniciante.yaml
+
+    conhecimento: []  # A criar
+
+    integracoes:
+      ralph:
+        ativo: {{integrar_ralph}}
+    ```
+
+    ### Próximos Passos
+
+    1. **Criar Agentes:**
+       {{#each agentes}}
+       - [ ] `/criar-agente` → {{this}}
+       {{/each}}
+
+    2. **Criar Conhecimento Base:**
+       - [ ] Metodologias da área
+       - [ ] Referências principais
+       - [ ] Templates úteis
+
+    3. **Criar Tarefas:**
+       - [ ] Identificar tarefas principais
+       - [ ] Usar `/criar-tarefa` para cada
+
+    4. **Criar Workflows:**
+       - [ ] Modo iniciante
+       - [ ] Workflow completo (se aplicável)
+
+    5. **Finalizar:**
+       - [ ] `/finalizar-extensao` para registrar
+
+# ============================================
+# CONHECIMENTO UTILIZADO
+# ============================================
+
+conhecimento:
+  - conhecimento/estrutura-extensoes.md
+  - conhecimento/boas-praticas.md
+
+# ============================================
+# GATES DE QUALIDADE
+# ============================================
+
+gates:
+  - "O nome é claro e descritivo?"
+  - "O escopo não sobrepõe extensões existentes?"
+  - "O público-alvo está bem definido?"
+  - "Os problemas são reais e relevantes?"
+  - "A estrutura segue o padrão?"
+
+# ============================================
+# PRÓXIMOS PASSOS SUGERIDOS
+# ============================================
+
+proximos_passos:
+  - "/criar-agente - Criar cada agente da extensão"
+  - "/criar-conhecimento - Criar base de conhecimento"
+  - "/criar-tarefa - Criar tarefas principais"
+  - "/criar-workflow-extensao - Criar workflows"
+  - "/finalizar-extensao - Registrar no sistema"

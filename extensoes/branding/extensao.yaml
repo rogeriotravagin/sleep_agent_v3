@@ -10,7 +10,7 @@ status: ativo
 comando: /branding
 
 mensagem_ativacao: |
-  **Sleep Agent - Extensao Branding & Visual v1.0**
+  **Sleep Agent - Extensao Branding & Visual v1.1**
 
   Framework completo baseado nas maiores referencias mundiais:
   - Paul Rand, Saul Bass, Milton Glaser (Logo Design)
@@ -19,16 +19,19 @@ mensagem_ativacao: |
   - Simon Sinek (Golden Circle)
   - Jakob Nielsen (Usability Heuristics)
   - Oli Gardner (Conversion-Centered Design)
+  - Josef Muller-Brockmann, Dieter Rams (Analise Visual)
 
   **Agentes Disponiveis:**
   - `/designer` - Designer Visual (logos, identidade, graficos)
   - `/uiux` - UI/UX Specialist (interfaces, landing pages)
   - `/brand` - Brand Strategist (estrategia, posicionamento)
+  - `/design-analyst` - Design Analyst (analise de referencias, diretrizes)
 
   **Workflows Completos:**
   - `/brand-completo` - Do zero a identidade completa (8 fases)
   - `/landing-completa` - Landing page de alta conversao
   - `/identidade-visual` - Sistema de identidade visual
+  - `/analise-design` - Analisar referencia e criar style guide
 
   **Tarefas Rapidas:**
   - `/criar-logo` - Conceito e briefing de logo
@@ -38,6 +41,9 @@ mensagem_ativacao: |
   - `/personal-brand` - Marca pessoal/empresario
   - `/design-system` - Criar design system
   - `/paleta-cores` - Definir paleta de cores
+  - `/analisar-referencia` - Analisar print, link ou pagina
+  - `/extrair-diretrizes` - Extrair diretrizes de design
+  - `/criar-styleguide` - Criar style guide do produto
 
   O que voce gostaria de fazer?
 
@@ -76,6 +82,16 @@ agentes:
       - Brand voice
       - Arquitetura de marca
       - Personal branding
+
+  - id: design-analyst
+    arquivo: agentes/DESIGN-ANALYST.md
+    comando: /design-analyst
+    especialidades:
+      - Analise de referencias visuais
+      - Reverse engineering de design
+      - Extracao de padroes
+      - Criacao de style guides
+      - Diretrizes de design
 
 # =====================================================
 # TAREFAS
@@ -121,6 +137,22 @@ tarefas:
     comando: /criar-landing
     fase: aplicacao
 
+  # Fase 0: Analise (nova fase)
+  - id: analisar-referencia
+    arquivo: tarefas/analisar-referencia.yaml
+    comando: /analisar-referencia
+    fase: analise
+
+  - id: extrair-diretrizes
+    arquivo: tarefas/extrair-diretrizes.yaml
+    comando: /extrair-diretrizes
+    fase: analise
+
+  - id: criar-styleguide
+    arquivo: tarefas/criar-styleguide.yaml
+    comando: /criar-styleguide
+    fase: analise
+
 # =====================================================
 # WORKFLOWS
 # =====================================================
@@ -141,6 +173,11 @@ workflows:
     comando: /identidade-visual
     descricao: Sistema de identidade visual completo
 
+  - id: analise-design
+    arquivo: workflows/analise-design.yaml
+    comando: /analise-design
+    descricao: Analisar referencia e criar style guide do produto
+
 # =====================================================
 # BASE DE CONHECIMENTO
 # =====================================================
@@ -153,6 +190,7 @@ conhecimento:
   - landing-pages.md
   - personal-branding.md
   - design-systems.md
+  - analise-visual.md
 
 exemplos:
   - logo-exemplo.md
@@ -166,6 +204,12 @@ framework_execucao:
   arquivo: ../../core/FRAMEWORK-BRANDING.md
 
   fases:
+    - numero: 0
+      nome: ANALISE
+      tarefas: [analisar-referencia, extrair-diretrizes, criar-styleguide]
+      agente: design-analyst
+      descricao: Analisar referencias visuais e criar diretrizes de design
+
     - numero: 1
       nome: DESCOBERTA
       tarefas: [pesquisa-visual, analise-concorrentes]

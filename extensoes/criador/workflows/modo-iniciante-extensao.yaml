@@ -1,0 +1,434 @@
+# ============================================
+# WORKFLOW: Modo Iniciante - Criar Extensão
+# ============================================
+# Caminho rápido para criar extensão com
+# 5 perguntas + geração autônoma via Ralph
+# ============================================
+
+id: modo-iniciante-extensao
+nome: Modo Iniciante - Criar Extensão Rápida
+descricao: Criar extensão completa em 5 perguntas + geração autônoma via Ralph
+comando: /iniciante-extensao
+versao: "1.0"
+
+# ============================================
+# VISÃO GERAL
+# ============================================
+
+visao_geral:
+  objetivo: "Criar extensão rapidamente para usuários que querem expandir o sistema"
+  duracao_estimada: "15-20 minutos"
+  resultado: "Extensão funcional com estrutura completa"
+
+  diferencial: |
+    Este modo simplifica a criação de extensões:
+    - Apenas 5 perguntas essenciais
+    - Sistema processa e expande automaticamente
+    - Ralph gera todos os componentes
+
+  integracao_ralph: true
+
+# ============================================
+# FASES
+# ============================================
+
+fases:
+  # ------------------------------------------
+  # FASE 1: BRIEFING EXPRESS
+  # ------------------------------------------
+  - numero: 1
+    nome: BRIEFING EXPRESS
+    descricao: "Coletar informações essenciais em 5 perguntas"
+    agente: arquiteto-extensoes
+    tempo_estimado: "3-5 minutos"
+
+    etapas:
+      - id: 5-perguntas
+        nome: "5 Perguntas Essenciais"
+        descricao: "Briefing simplificado"
+
+        perguntas:
+          - pergunta: "🎯 Qual área/tema da extensão? (nome)"
+            tipo: texto
+            obrigatorio: true
+            exemplo: "Financeiro"
+            var: nome
+
+          - pergunta: "📝 O que esta extensão faz? (descrição breve)"
+            tipo: texto
+            obrigatorio: true
+            exemplo: "Gerenciamento de finanças pessoais e empresariais"
+            var: descricao
+
+          - pergunta: "👤 Quem vai usar? (público-alvo)"
+            tipo: texto
+            obrigatorio: true
+            exemplo: "Empreendedores que precisam organizar finanças"
+            var: publico
+
+          - pergunta: "❓ Quais problemas resolve? (3-5 principais)"
+            tipo: lista
+            obrigatorio: true
+            exemplo:
+              - "Desorganização financeira"
+              - "Falta de controle de gastos"
+              - "Dificuldade em fazer orçamentos"
+            var: problemas
+
+          - pergunta: "🎁 Quais resultados entrega? (principais entregas)"
+            tipo: lista
+            obrigatorio: true
+            exemplo:
+              - "Orçamentos organizados"
+              - "Relatórios de fluxo de caixa"
+              - "Análises financeiras"
+            var: resultados
+
+        entregavel: briefing-express.md
+
+    saida_fase: |
+      ## Briefing Express
+
+      - **Nome:** {{nome}}
+      - **Descrição:** {{descricao}}
+      - **Público:** {{publico}}
+      - **Problemas:** {{problemas}}
+      - **Resultados:** {{resultados}}
+
+  # ------------------------------------------
+  # FASE 2: PROCESSAMENTO
+  # ------------------------------------------
+  - numero: 2
+    nome: PROCESSAMENTO
+    descricao: "Sistema processa e expande informações automaticamente"
+    agente: arquiteto-extensoes
+    tempo_estimado: "2-3 minutos"
+    automatico: true
+
+    etapas:
+      - id: definir-agentes
+        nome: "Definir Agentes"
+        descricao: "Sugerir agentes baseado nos problemas/resultados"
+        automatico: true
+
+        processo:
+          - "Analisar problemas listados"
+          - "Identificar competências necessárias"
+          - "Sugerir 3 agentes complementares"
+          - "Definir especialidades de cada um"
+
+        entregavel: agentes-sugeridos.md
+
+      - id: definir-tarefas
+        nome: "Definir Tarefas"
+        descricao: "Sugerir tarefas baseado nos resultados"
+        automatico: true
+
+        processo:
+          - "Analisar resultados esperados"
+          - "Mapear ações necessárias"
+          - "Criar lista de tarefas"
+          - "Vincular a agentes"
+
+        entregavel: tarefas-sugeridas.md
+
+      - id: definir-conhecimento
+        nome: "Definir Conhecimento"
+        descricao: "Identificar base de conhecimento necessária"
+        automatico: true
+
+        processo:
+          - "Identificar metodologias da área"
+          - "Listar referências principais"
+          - "Definir temas de conhecimento"
+
+        entregavel: conhecimento-sugerido.md
+
+    saida_fase: |
+      ## Processamento Completo
+
+      ✅ 3 agentes sugeridos
+      ✅ Tarefas mapeadas
+      ✅ Conhecimento identificado
+      ✅ Estrutura definida
+
+  # ------------------------------------------
+  # FASE 3: PREPARAR RALPH
+  # ------------------------------------------
+  - numero: 3
+    nome: PREPARAR RALPH
+    descricao: "Montar PRD para execução autônoma do Ralph"
+    agente: criador-workflows
+    tempo_estimado: "1-2 minutos"
+    automatico: true
+
+    etapas:
+      - id: montar-prd
+        nome: "Montar PRD"
+        descricao: "Criar documento de requisitos para o Ralph"
+        automatico: true
+
+        user_stories:
+          - id: US001
+            titulo: "Criar estrutura da extensão"
+            descricao: "Criar extensao.yaml, README e diretórios"
+            criterios:
+              - "extensao.yaml válido"
+              - "README documentado"
+              - "Diretórios criados"
+
+          - id: US002
+            titulo: "Criar agentes especializados"
+            descricao: "Criar 3 agentes com identidade e especialidades"
+            criterios:
+              - "Identidade clara"
+              - "Especialidades definidas"
+              - "Regras documentadas"
+              - "Processo de trabalho"
+
+          - id: US003
+            titulo: "Criar base de conhecimento"
+            descricao: "Criar arquivos de conhecimento da área"
+            criterios:
+              - "Metodologias documentadas"
+              - "Referências incluídas"
+              - "Exemplos práticos"
+
+          - id: US004
+            titulo: "Criar tarefas principais"
+            descricao: "Criar 5-7 tarefas para os agentes"
+            criterios:
+              - "Entradas definidas"
+              - "Templates de saída"
+              - "Gates de qualidade"
+
+          - id: US005
+            titulo: "Criar workflows"
+            descricao: "Criar workflow completo e modo iniciante"
+            criterios:
+              - "Fases documentadas"
+              - "Checkpoints definidos"
+              - "Integração Ralph"
+
+          - id: US006
+            titulo: "Integrar no sistema"
+            descricao: "Atualizar delegacao.yaml e CLAUDE.md"
+            criterios:
+              - "Extensão registrada"
+              - "Gatilhos configurados"
+              - "Comandos documentados"
+
+        entregavel: prd-extensao.json
+
+      - id: gerar-prompt
+        nome: "Gerar Prompt"
+        descricao: "Criar prompt otimizado para Ralph"
+        automatico: true
+
+        entregavel: prompt-ralph.md
+
+    saida_fase: |
+      ## PRD Preparado
+
+      📋 PRD com 6 user stories
+      🎯 Critérios de aceitação definidos
+      📝 Prompt otimizado gerado
+
+  # ------------------------------------------
+  # FASE 4: EXECUTAR RALPH
+  # ------------------------------------------
+  - numero: 4
+    nome: EXECUTAR RALPH
+    descricao: "Ralph executa geração autônoma da extensão"
+    agente: ralph
+    tempo_estimado: "5-10 minutos"
+
+    execucao:
+      comando: "./frameworks/ralph/scripts/ralph.sh 30"
+
+      parametros:
+        prd: "output/criador/{{slug}}/prd-extensao.json"
+        prompt: "output/criador/{{slug}}/prompt-ralph.md"
+        output: "extensoes/{{slug}}/"
+        max_iteracoes: 30
+
+    etapas:
+      - id: ralph-estrutura
+        nome: "Gerar Estrutura"
+        user_stories: ["US001"]
+
+      - id: ralph-agentes
+        nome: "Gerar Agentes"
+        user_stories: ["US002"]
+
+      - id: ralph-conhecimento
+        nome: "Gerar Conhecimento"
+        user_stories: ["US003"]
+
+      - id: ralph-tarefas
+        nome: "Gerar Tarefas"
+        user_stories: ["US004"]
+
+      - id: ralph-workflows
+        nome: "Gerar Workflows"
+        user_stories: ["US005"]
+
+      - id: ralph-integracao
+        nome: "Integrar Sistema"
+        user_stories: ["US006"]
+
+    saida_fase: |
+      ## Ralph Executado
+
+      ✅ Estrutura criada
+      ✅ Agentes gerados
+      ✅ Conhecimento desenvolvido
+      ✅ Tarefas criadas
+      ✅ Workflows configurados
+      ✅ Sistema integrado
+
+  # ------------------------------------------
+  # FASE 5: ENTREGA
+  # ------------------------------------------
+  - numero: 5
+    nome: ENTREGA
+    descricao: "Apresentar resultado e oferecer refinamentos"
+    agente: arquiteto-extensoes
+    tempo_estimado: "2-3 minutos"
+
+    etapas:
+      - id: apresentar
+        nome: "Apresentar Resultado"
+        descricao: "Mostrar o que foi criado"
+
+        template_apresentacao: |
+          ## 🎉 Extensão {{nome}} Criada!
+
+          ### Estrutura
+          ```
+          extensoes/{{slug}}/
+          ├── extensao.yaml
+          ├── README.md
+          ├── agentes/ ({{num_agentes}} agentes)
+          ├── conhecimento/ ({{num_conhecimento}} arquivos)
+          ├── tarefas/ ({{num_tarefas}} tarefas)
+          └── workflows/ ({{num_workflows}} workflows)
+          ```
+
+          ### Comandos Disponíveis
+          - `/{{slug}}` - Carregar extensão
+          - `/iniciante-{{slug}}` - Modo rápido
+
+          ### Agentes Criados
+          {{#each agentes}}
+          - **{{this.nome}}** - {{this.descricao}}
+          {{/each}}
+
+      - id: refinamentos
+        nome: "Oferecer Refinamentos"
+        descricao: "Perguntar se quer ajustar algo"
+
+        opcoes_refinamento:
+          - "Ajustar agentes"
+          - "Adicionar mais tarefas"
+          - "Expandir conhecimento"
+          - "Refinar workflows"
+          - "Está perfeito!"
+
+        entregavel: resumo-final.md
+
+# ============================================
+# ENTREGA FINAL
+# ============================================
+
+entrega_final:
+  formato: pasta
+  local: extensoes/{{slug}}/
+  estrutura: |
+    {{slug}}/
+    ├── extensao.yaml
+    ├── README.md
+    ├── agentes/
+    │   ├── AGENTE-1.md
+    │   ├── AGENTE-2.md
+    │   └── AGENTE-3.md
+    ├── conhecimento/
+    │   └── [arquivos de conhecimento]
+    ├── tarefas/
+    │   └── [tarefas criadas]
+    └── workflows/
+        ├── workflow-completo.yaml
+        └── modo-iniciante.yaml
+
+# ============================================
+# INTEGRAÇÃO RALPH
+# ============================================
+
+ralph:
+  template_prd: frameworks/ralph/templates/prd-extensao.json
+  template_prompt: frameworks/ralph/templates/prompt-extensao.md
+
+  configuracao:
+    max_iteracoes: 30
+    paralelismo: false
+    validacao: true
+
+  fallback:
+    se_ralph_falhar:
+      acao: "gerar_manualmente"
+      mensagem: "Ralph encontrou dificuldade. Gerando manualmente..."
+
+# ============================================
+# EXECUÇÃO
+# ============================================
+
+execucao:
+  comando: /iniciante-extensao
+
+  fluxo:
+    1: "Fazer 5 perguntas essenciais"
+    2: "Processar e expandir informações"
+    3: "Montar PRD para Ralph"
+    4: "Executar Ralph (geração autônoma)"
+    5: "Apresentar resultado"
+    6: "Oferecer refinamentos"
+
+  mensagem_inicial: |
+    ## 🚀 Modo Iniciante - Criar Extensão
+
+    Vou te ajudar a criar uma nova extensão para o Sleep Agent em poucos minutos!
+
+    Preciso de apenas **5 informações** para começar. Depois, o sistema gera tudo automaticamente.
+
+    Vamos lá?
+
+  mensagem_final: |
+    ## ✅ Extensão Criada com Sucesso!
+
+    Sua extensão **{{nome}}** está pronta com:
+    - Estrutura completa
+    - Agentes especializados
+    - Tarefas configuradas
+    - Workflows funcionais
+    - Base de conhecimento
+
+    **Para usar:** `/{{slug}}`
+
+    Quer criar mais alguma coisa?
+
+# ============================================
+# FALLBACKS
+# ============================================
+
+fallbacks:
+  se_area_vaga:
+    acao: "pedir_clarificacao"
+    mensagem: "Pode ser mais específico sobre a área? Por exemplo, em vez de 'negócios', seria 'gestão de projetos' ou 'vendas B2B'?"
+
+  se_problemas_genericos:
+    acao: "sugerir"
+    mensagem: "Os problemas estão um pouco genéricos. Pode dar exemplos mais específicos do dia a dia?"
+
+  se_extensao_similar:
+    acao: "avisar"
+    mensagem: "Já existe a extensão {{similar}} que é parecida. Deseja continuar criando uma nova ou expandir a existente?"

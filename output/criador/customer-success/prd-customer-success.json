@@ -1,0 +1,353 @@
+{
+  "project": "Customer Success",
+  "mode": "content",
+  "branchName": "",
+  "outputDir": "extensoes/customer-success",
+  "tipo": "extensao",
+  "versao": "1.0",
+  "descricao": "Extensao completa para gestao de Customer Success, onboarding, retencao e sucesso do cliente",
+
+  "contexto": {
+    "publico_alvo": "Gestores de Customer Success, empreendedores que querem reter mais clientes, times de atendimento e suporte, empresas SaaS, educacao e servicos",
+    "problemas_resolvidos": [
+      "Alto churn de clientes sem acompanhamento adequado",
+      "Onboarding desorganizado que nao gera valor inicial",
+      "Falta de metricas claras de sucesso do cliente",
+      "Clientes insatisfeitos sem acompanhamento proativo",
+      "Dificuldade em criar e mapear jornadas de sucesso",
+      "Ausencia de processos de QBR e review",
+      "Equipe sem playbooks e processos padronizados"
+    ],
+    "resultados_esperados": [
+      "Playbooks de onboarding estruturados e replicaveis",
+      "Health Score com metricas claras definidas",
+      "Jornadas de sucesso completas mapeadas",
+      "Estrategias de retencao e reducao de churn",
+      "Processos de QBR e Business Review padronizados",
+      "Planos de acao para clientes em risco",
+      "Automacoes de acompanhamento configuradas"
+    ]
+  },
+
+  "agentes_sugeridos": [
+    {
+      "id": "csm-estrategista",
+      "nome": "CSM Estrategista",
+      "slug": "CSM-ESTRATEGISTA",
+      "especialidades": [
+        "Estrategia de Customer Success",
+        "Metricas e Health Score",
+        "Segmentacao de clientes",
+        "Planejamento de jornadas",
+        "Analise de churn"
+      ]
+    },
+    {
+      "id": "onboarding-specialist",
+      "nome": "Especialista em Onboarding",
+      "slug": "ONBOARDING-SPECIALIST",
+      "especialidades": [
+        "Design de onboarding",
+        "First Value Delivery",
+        "Playbooks de ativacao",
+        "Marcos de sucesso",
+        "Automacoes de boas-vindas"
+      ]
+    },
+    {
+      "id": "retention-expert",
+      "nome": "Especialista em Retencao",
+      "slug": "RETENTION-EXPERT",
+      "especialidades": [
+        "Estrategias de retencao",
+        "Prevencao de churn",
+        "Reativacao de clientes",
+        "Expansion revenue",
+        "NPS e pesquisas"
+      ]
+    }
+  ],
+
+  "userStories": [
+    {
+      "id": "US001",
+      "titulo": "Criar estrutura da extensao Customer Success",
+      "descricao": "Criar extensao.yaml, README.md e estrutura de diretorios completa",
+      "criterios_aceitacao": [
+        "extensao.yaml com configuracoes validas seguindo padrao marketing",
+        "README.md com documentacao completa da extensao",
+        "Diretorios agentes/, conhecimento/, tarefas/, workflows/ criados",
+        "Nomenclatura seguindo padrao kebab-case",
+        "Comando /customer-success configurado"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/extensao.yaml",
+        "extensoes/customer-success/README.md"
+      ],
+      "prioridade": "alta",
+      "passes": false
+    },
+    {
+      "id": "US002",
+      "titulo": "Criar agente CSM Estrategista",
+      "descricao": "Criar agente especializado em estrategia de Customer Success",
+      "criterios_aceitacao": [
+        "Identidade clara como estrategista de CS",
+        "Especialidades em metricas, health score, segmentacao",
+        "Regras de comportamento documentadas",
+        "Processo de trabalho em 5+ passos",
+        "Referencias a Lincoln Murphy, Gainsight, ChurnZero"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/agentes/CSM-ESTRATEGISTA.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "passes": false
+    },
+    {
+      "id": "US003",
+      "titulo": "Criar agente Especialista em Onboarding",
+      "descricao": "Criar agente especializado em onboarding e ativacao de clientes",
+      "criterios_aceitacao": [
+        "Identidade clara como especialista em onboarding",
+        "Especialidades em first value, playbooks, ativacao",
+        "Regras de comportamento documentadas",
+        "Processo de trabalho em 5+ passos",
+        "Metodologias de Time to First Value"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/agentes/ONBOARDING-SPECIALIST.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "passes": false
+    },
+    {
+      "id": "US004",
+      "titulo": "Criar agente Especialista em Retencao",
+      "descricao": "Criar agente especializado em retencao e prevencao de churn",
+      "criterios_aceitacao": [
+        "Identidade clara como especialista em retencao",
+        "Especialidades em anti-churn, expansion, NPS",
+        "Regras de comportamento documentadas",
+        "Processo de trabalho em 5+ passos",
+        "Frameworks de retencao incluidos"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/agentes/RETENTION-EXPERT.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "passes": false
+    },
+    {
+      "id": "US005",
+      "titulo": "Criar base de conhecimento - Fundamentos CS",
+      "descricao": "Criar arquivos de conhecimento sobre fundamentos de Customer Success",
+      "criterios_aceitacao": [
+        "fundamentos-cs.md com conceitos basicos",
+        "metricas-cs.md com Health Score, NPS, CSAT, CES",
+        "jornada-cliente.md com fases e touchpoints",
+        "Referencias a Lincoln Murphy, Gainsight incluidas",
+        "Exemplos praticos em cada arquivo"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/conhecimento/fundamentos-cs.md",
+        "extensoes/customer-success/conhecimento/metricas-cs.md",
+        "extensoes/customer-success/conhecimento/jornada-cliente.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "passes": false
+    },
+    {
+      "id": "US006",
+      "titulo": "Criar base de conhecimento - Praticas Avancadas",
+      "descricao": "Criar arquivos sobre praticas avancadas de CS",
+      "criterios_aceitacao": [
+        "onboarding-framework.md com metodologias",
+        "retencao-estrategias.md com frameworks anti-churn",
+        "qbr-playbook.md com estrutura de Business Reviews",
+        "Minimo 5 estrategias documentadas por arquivo",
+        "Templates e exemplos incluidos"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/conhecimento/onboarding-framework.md",
+        "extensoes/customer-success/conhecimento/retencao-estrategias.md",
+        "extensoes/customer-success/conhecimento/qbr-playbook.md"
+      ],
+      "dependencias": ["US005"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US007",
+      "titulo": "Criar tarefas de descoberta e analise",
+      "descricao": "Criar tarefas para analise de base de clientes e diagnostico",
+      "criterios_aceitacao": [
+        "analise-base-clientes.yaml - segmentacao e diagnostico",
+        "criar-health-score.yaml - definir metricas",
+        "mapear-jornada.yaml - mapear jornada atual",
+        "Entradas obrigatorias e opcionais definidas",
+        "Templates de saida completos"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/tarefas/analise-base-clientes.yaml",
+        "extensoes/customer-success/tarefas/criar-health-score.yaml",
+        "extensoes/customer-success/tarefas/mapear-jornada.yaml"
+      ],
+      "dependencias": ["US002", "US003", "US004"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US008",
+      "titulo": "Criar tarefas de onboarding",
+      "descricao": "Criar tarefas para estruturar onboarding de clientes",
+      "criterios_aceitacao": [
+        "criar-playbook-onboarding.yaml - playbook completo",
+        "criar-checklist-ativacao.yaml - marcos de ativacao",
+        "criar-sequencia-boas-vindas.yaml - comunicacao inicial",
+        "Gates de qualidade definidos",
+        "Vinculos com agente Onboarding corretos"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/tarefas/criar-playbook-onboarding.yaml",
+        "extensoes/customer-success/tarefas/criar-checklist-ativacao.yaml",
+        "extensoes/customer-success/tarefas/criar-sequencia-boas-vindas.yaml"
+      ],
+      "dependencias": ["US003", "US006"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US009",
+      "titulo": "Criar tarefas de retencao e acompanhamento",
+      "descricao": "Criar tarefas para retencao e prevencao de churn",
+      "criterios_aceitacao": [
+        "criar-plano-retencao.yaml - estrategia anti-churn",
+        "criar-qbr.yaml - Business Review estruturado",
+        "criar-plano-risco.yaml - acao para clientes em risco",
+        "Templates de saida com exemplos",
+        "Vinculos com agente Retencao corretos"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/tarefas/criar-plano-retencao.yaml",
+        "extensoes/customer-success/tarefas/criar-qbr.yaml",
+        "extensoes/customer-success/tarefas/criar-plano-risco.yaml"
+      ],
+      "dependencias": ["US004", "US006"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US010",
+      "titulo": "Criar workflow CS Completo",
+      "descricao": "Criar workflow profissional com todas as fases do processo de CS",
+      "criterios_aceitacao": [
+        "6 fases: Diagnostico, Estrategia, Onboarding, Acompanhamento, Retencao, Expansion",
+        "Agente responsavel por cada fase definido",
+        "Checkpoints de validacao entre fases",
+        "Entrega final com programa CS completo",
+        "Mensagens de inicio e conclusao"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/workflows/cs-completo.yaml"
+      ],
+      "dependencias": ["US007", "US008", "US009"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US011",
+      "titulo": "Criar modo iniciante CS",
+      "descricao": "Criar workflow rapido com 5 perguntas + geracao Ralph",
+      "criterios_aceitacao": [
+        "5 perguntas essenciais definidas",
+        "Processamento automatico de respostas",
+        "Integracao com Ralph configurada",
+        "PRD e prompt templates criados",
+        "Fallbacks para respostas vagas"
+      ],
+      "arquivos": [
+        "extensoes/customer-success/workflows/modo-iniciante-cs.yaml"
+      ],
+      "dependencias": ["US010"],
+      "prioridade": "media",
+      "passes": false
+    },
+    {
+      "id": "US012",
+      "titulo": "Integrar extensao no sistema Sleep Agent",
+      "descricao": "Atualizar delegacao.yaml e CLAUDE.md para registrar a extensao",
+      "criterios_aceitacao": [
+        "Extensao adicionada em delegacao.yaml com gatilhos",
+        "CLAUDE.md atualizado com nova extensao na tabela",
+        "Comandos /customer-success e /iniciante-cs documentados",
+        "Modos de trabalho atualizados",
+        "Output directories configurados"
+      ],
+      "arquivos": [
+        "core/orquestrador/delegacao.yaml",
+        ".claude/CLAUDE.md"
+      ],
+      "dependencias": ["US011"],
+      "prioridade": "alta",
+      "passes": false
+    }
+  ],
+
+  "arquitetura": {
+    "padrao": "Clean Architecture",
+    "estrutura": {
+      "raiz": "extensoes/customer-success/",
+      "agentes": "extensoes/customer-success/agentes/",
+      "conhecimento": "extensoes/customer-success/conhecimento/",
+      "tarefas": "extensoes/customer-success/tarefas/",
+      "workflows": "extensoes/customer-success/workflows/"
+    }
+  },
+
+  "referencias": {
+    "mestres_cs": [
+      "Lincoln Murphy (Sixteen Ventures, Customer Success)",
+      "Nick Mehta (Gainsight CEO)",
+      "Dan Steinman (Customer Success)",
+      "Jason Lemkin (SaaStr)"
+    ],
+    "frameworks": [
+      "DEAR Framework (Gainsight)",
+      "Customer Health Score",
+      "Time to First Value (TTFV)",
+      "Customer Effort Score (CES)",
+      "Net Promoter Score (NPS)"
+    ],
+    "plataformas": [
+      "Gainsight",
+      "ChurnZero",
+      "Totango",
+      "ClientSuccess"
+    ]
+  },
+
+  "validacao": {
+    "gates": [
+      "extensao.yaml existe e e valido",
+      "3 agentes com identidade completa",
+      "Minimo 6 arquivos de conhecimento",
+      "Minimo 9 tarefas funcionais",
+      "2 workflows completos",
+      "Modo iniciante configurado",
+      "delegacao.yaml atualizado",
+      "CLAUDE.md atualizado"
+    ]
+  },
+
+  "configuracao_ralph": {
+    "max_iteracoes": 30,
+    "paralelismo": false,
+    "validacao_continua": true,
+    "output_dir": "extensoes/customer-success/"
+  }
+}

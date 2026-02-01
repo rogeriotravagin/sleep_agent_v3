@@ -1,0 +1,380 @@
+# ============================================
+# WORKFLOW: Criação de Extensão Completa
+# ============================================
+
+id: extensao-completa
+nome: Criação de Extensão Completa
+descricao: Criar extensão profissional do zero com todos os componentes
+comando: /extensao-completa
+versao: "1.0"
+
+# ============================================
+# VISÃO GERAL
+# ============================================
+
+visao_geral:
+  objetivo: "Criar extensão completa e profissional para o Sleep Agent"
+  duracao_estimada: "2-4 horas de trabalho"
+  resultado: "Extensão funcional com agentes, tarefas, workflows e conhecimento"
+
+  baseado_em:
+    - "Clean Architecture"
+    - "Domain-Driven Design"
+    - "Padrões do Sleep Agent"
+
+# ============================================
+# FASES
+# ============================================
+
+fases:
+  # ------------------------------------------
+  # FASE 1: DESCOBERTA
+  # ------------------------------------------
+  - numero: 1
+    nome: DESCOBERTA
+    descricao: "Entender escopo, público e necessidades da extensão"
+    agente: arquiteto-extensoes
+    tempo_estimado: "20-30 minutos"
+
+    etapas:
+      - id: briefing
+        nome: "Briefing da Extensão"
+        descricao: "Coletar informações essenciais"
+
+        perguntas:
+          - pergunta: "Qual o nome/área da extensão?"
+            tipo: texto
+            obrigatorio: true
+            var: nome
+
+          - pergunta: "O que esta extensão faz? (descrição)"
+            tipo: texto
+            obrigatorio: true
+            var: descricao
+
+          - pergunta: "Quem vai usar?"
+            tipo: texto
+            obrigatorio: true
+            var: publico
+
+          - pergunta: "Quais problemas resolve? (liste)"
+            tipo: lista
+            obrigatorio: true
+            var: problemas
+
+          - pergunta: "Quais resultados entrega?"
+            tipo: lista
+            obrigatorio: true
+            var: resultados
+
+        entregavel: briefing.md
+
+      - id: validacao-escopo
+        nome: "Validação de Escopo"
+        descricao: "Confirmar que não duplica extensão existente"
+
+        processo:
+          - "Verificar extensões existentes"
+          - "Confirmar diferenciação"
+          - "Validar escopo claro"
+
+        entregavel: validacao-escopo.md
+
+    checkpoint:
+      pergunta: "O escopo está claro e não duplica extensões existentes?"
+      acao_se_nao: "Refinar escopo ou integrar em extensão existente"
+
+  # ------------------------------------------
+  # FASE 2: ARQUITETURA
+  # ------------------------------------------
+  - numero: 2
+    nome: ARQUITETURA
+    descricao: "Definir estrutura e componentes da extensão"
+    agente: arquiteto-extensoes
+    tempo_estimado: "30-45 minutos"
+
+    etapas:
+      - id: estrutura
+        nome: "Definir Estrutura"
+        descricao: "Criar estrutura de diretórios e extensao.yaml"
+
+        usar_tarefa: criar-extensao
+
+        entregavel: extensao.yaml
+
+      - id: planejamento-agentes
+        nome: "Planejar Agentes"
+        descricao: "Definir quais agentes a extensão terá"
+
+        perguntas:
+          - pergunta: "Quantos agentes? (recomendado: 3)"
+            tipo: numero
+            var: num_agentes
+
+          - pergunta: "Quais agentes? (nomes e funções)"
+            tipo: lista
+            var: agentes
+
+        entregavel: planejamento-agentes.md
+
+      - id: planejamento-tarefas
+        nome: "Planejar Tarefas"
+        descricao: "Listar tarefas que a extensão oferecerá"
+
+        perguntas:
+          - pergunta: "Quais as principais tarefas?"
+            tipo: lista
+            var: tarefas
+
+        entregavel: planejamento-tarefas.md
+
+    checkpoint:
+      pergunta: "A arquitetura cobre todas as necessidades?"
+      acao_se_nao: "Ajustar componentes"
+
+  # ------------------------------------------
+  # FASE 3: AGENTES
+  # ------------------------------------------
+  - numero: 3
+    nome: AGENTES
+    descricao: "Criar agentes especializados da extensão"
+    agente: designer-agentes
+    tempo_estimado: "45-60 minutos"
+
+    etapas:
+      - id: criar-agentes
+        nome: "Criar Agentes"
+        descricao: "Criar cada agente planejado"
+
+        usar_tarefa: criar-agente
+        repetir_para: "cada agente planejado"
+
+        entregavel: agentes/
+
+    checkpoint:
+      pergunta: "Todos os agentes têm identidade clara e especialidades definidas?"
+      acao_se_nao: "Refinar agentes"
+
+  # ------------------------------------------
+  # FASE 4: CONHECIMENTO
+  # ------------------------------------------
+  - numero: 4
+    nome: CONHECIMENTO
+    descricao: "Criar base de conhecimento da extensão"
+    agente: arquiteto-extensoes
+    tempo_estimado: "30-45 minutos"
+
+    etapas:
+      - id: identificar-conhecimento
+        nome: "Identificar Conhecimento Necessário"
+        descricao: "Listar temas de conhecimento"
+
+        perguntas:
+          - pergunta: "Quais metodologias/frameworks usar?"
+            tipo: lista
+            var: metodologias
+
+          - pergunta: "Quais referências principais?"
+            tipo: lista
+            var: referencias
+
+        entregavel: lista-conhecimento.md
+
+      - id: criar-conhecimento
+        nome: "Criar Arquivos de Conhecimento"
+        descricao: "Desenvolver base de conhecimento"
+
+        processo:
+          - "Criar arquivos .md para cada tema"
+          - "Documentar metodologias"
+          - "Incluir exemplos práticos"
+
+        entregavel: conhecimento/
+
+    checkpoint:
+      pergunta: "A base de conhecimento cobre as necessidades dos agentes?"
+      acao_se_nao: "Expandir conhecimento"
+
+  # ------------------------------------------
+  # FASE 5: TAREFAS
+  # ------------------------------------------
+  - numero: 5
+    nome: TAREFAS
+    descricao: "Criar tarefas disponíveis na extensão"
+    agente: criador-workflows
+    tempo_estimado: "45-60 minutos"
+
+    etapas:
+      - id: criar-tarefas
+        nome: "Criar Tarefas"
+        descricao: "Criar cada tarefa planejada"
+
+        usar_tarefa: criar-tarefa
+        repetir_para: "cada tarefa planejada"
+
+        entregavel: tarefas/
+
+    checkpoint:
+      pergunta: "As tarefas cobrem os principais casos de uso?"
+      acao_se_nao: "Adicionar tarefas faltantes"
+
+  # ------------------------------------------
+  # FASE 6: WORKFLOWS
+  # ------------------------------------------
+  - numero: 6
+    nome: WORKFLOWS
+    descricao: "Criar workflows que orquestram as tarefas"
+    agente: criador-workflows
+    tempo_estimado: "30-45 minutos"
+
+    etapas:
+      - id: workflow-principal
+        nome: "Criar Workflow Principal"
+        descricao: "Workflow completo da extensão"
+
+        usar_tarefa: criar-workflow-extensao
+
+        entregavel: workflows/workflow-completo.yaml
+
+      - id: modo-iniciante
+        nome: "Criar Modo Iniciante"
+        descricao: "Versão rápida com integração Ralph"
+
+        perguntas:
+          - pergunta: "Criar modo iniciante com Ralph?"
+            tipo: escolha
+            opcoes: ["Sim", "Não"]
+            var: criar_iniciante
+
+        entregavel: workflows/modo-iniciante.yaml
+
+    checkpoint:
+      pergunta: "Os workflows cobrem os principais fluxos de uso?"
+      acao_se_nao: "Ajustar workflows"
+
+  # ------------------------------------------
+  # FASE 7: INTEGRAÇÃO
+  # ------------------------------------------
+  - numero: 7
+    nome: INTEGRAÇÃO
+    descricao: "Registrar extensão no sistema e finalizar"
+    agente: arquiteto-extensoes
+    tempo_estimado: "15-20 minutos"
+
+    etapas:
+      - id: finalizar
+        nome: "Finalizar Extensão"
+        descricao: "Validar, registrar e integrar"
+
+        usar_tarefa: finalizar-extensao
+
+        entregavel: relatorio-final.md
+
+      - id: teste
+        nome: "Testar Extensão"
+        descricao: "Verificar funcionamento básico"
+
+        processo:
+          - "Testar comando principal"
+          - "Testar uma tarefa"
+          - "Verificar integração"
+
+        entregavel: resultado-teste.md
+
+# ============================================
+# ENTREGA FINAL
+# ============================================
+
+entrega_final:
+  formato: pasta
+  local: extensoes/{{slug}}/
+  estrutura: |
+    extensoes/{{slug}}/
+    ├── extensao.yaml
+    ├── README.md
+    ├── agentes/
+    │   ├── AGENTE-1.md
+    │   ├── AGENTE-2.md
+    │   └── AGENTE-3.md
+    ├── conhecimento/
+    │   ├── tema-1.md
+    │   └── tema-2.md
+    ├── tarefas/
+    │   ├── tarefa-1.yaml
+    │   └── tarefa-2.yaml
+    ├── workflows/
+    │   ├── workflow-completo.yaml
+    │   └── modo-iniciante.yaml
+    └── exemplos/
+
+# ============================================
+# EXECUÇÃO
+# ============================================
+
+execucao:
+  comando: /extensao-completa
+
+  fluxo:
+    1: "Coletar briefing da extensão"
+    2: "Validar escopo"
+    3: "Criar estrutura e extensao.yaml"
+    4: "Planejar agentes e tarefas"
+    5: "Criar agentes especializados"
+    6: "Desenvolver base de conhecimento"
+    7: "Criar tarefas"
+    8: "Criar workflows"
+    9: "Finalizar e registrar no sistema"
+    10: "Testar extensão"
+
+  mensagem_inicial: |
+    ## Criação de Extensão Completa
+
+    Vou te guiar na criação de uma extensão profissional para o Sleep Agent.
+
+    **Fases:**
+    1. Descoberta - Entender escopo
+    2. Arquitetura - Definir estrutura
+    3. Agentes - Criar especialistas
+    4. Conhecimento - Base de referência
+    5. Tarefas - Ações disponíveis
+    6. Workflows - Processos completos
+    7. Integração - Registrar no sistema
+
+    Tempo estimado: 2-4 horas
+
+    Vamos começar?
+
+  mensagem_final: |
+    ## Extensão Criada com Sucesso!
+
+    Sua extensão **{{nome}}** está pronta com:
+    - {{num_agentes}} agentes especializados
+    - {{num_tarefas}} tarefas disponíveis
+    - {{num_workflows}} workflows configurados
+    - Base de conhecimento completa
+
+    **Comandos disponíveis:**
+    - `/{{slug}}` - Carregar extensão
+    - `/iniciante-{{slug}}` - Modo rápido
+
+    **Próximos passos:**
+    - Testar a extensão em cenários reais
+    - Expandir conhecimento base
+    - Adicionar mais tarefas conforme necessidade
+
+# ============================================
+# FALLBACKS
+# ============================================
+
+fallbacks:
+  se_escopo_duplicado:
+    acao: sugerir_integracao
+    mensagem: "Esta área pode ser integrada à extensão {{extensao_existente}}. Deseja continuar separado ou integrar?"
+
+  se_agente_vago:
+    acao: pedir_refinamento
+    mensagem: "Este agente está muito genérico. Pode especificar melhor suas especialidades?"
+
+  se_tarefa_incompleta:
+    acao: completar
+    mensagem: "Faltam campos obrigatórios nesta tarefa. Vou ajudar a completar."

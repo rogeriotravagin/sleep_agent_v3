@@ -1,0 +1,237 @@
+# ============================================
+# TAREFA: Criar Novo Agente
+# ============================================
+
+id: criar-agente
+nome: Criar Novo Agente
+descricao: Criar agente especializado com identidade, competências e comportamento definidos
+agente: designer-agentes
+comando: /criar-agente
+versao: "1.0"
+categoria: criacao
+
+# ============================================
+# ENTRADAS
+# ============================================
+
+entradas:
+  obrigatorias:
+    - nome: extensao
+      pergunta: "Para qual extensão é este agente?"
+      tipo: texto
+      exemplo: "educacional"
+
+    - nome: nome
+      pergunta: "Qual o nome do agente?"
+      tipo: texto
+      exemplo: "Designer Instrucional"
+
+    - nome: proposito
+      pergunta: "Qual o propósito/missão do agente? (1 frase)"
+      tipo: texto
+      exemplo: "Arquitetar experiências de aprendizagem que geram resultados"
+
+    - nome: especialidades
+      pergunta: "Quais as principais especialidades? (5-8 itens)"
+      tipo: lista
+      exemplo:
+        - "Arquitetura de cursos"
+        - "Objetivos de aprendizagem"
+        - "Taxonomia de Bloom"
+        - "Metodologias ativas"
+        - "Design de trilhas"
+
+  opcionais:
+    - nome: arquetipo
+      pergunta: "Qual arquétipo base?"
+      tipo: escolha
+      opcoes:
+        - "Estrategista (planejamento)"
+        - "Criador (produção)"
+        - "Avaliador (qualidade)"
+        - "Mentor (ensino)"
+        - "Arquiteto (estrutura)"
+      padrao: "Criador (produção)"
+
+    - nome: tom_voz
+      pergunta: "Características do tom de voz? (3-4)"
+      tipo: lista
+      exemplo:
+        - "Didático"
+        - "Estruturado"
+        - "Prático"
+        - "Orientado a resultados"
+
+    - nome: frameworks
+      pergunta: "Frameworks/metodologias que usa?"
+      tipo: lista
+      exemplo:
+        - "Taxonomia de Bloom"
+        - "ADDIE"
+        - "9 Eventos de Gagné"
+
+# ============================================
+# PROCESSO
+# ============================================
+
+passos:
+  - numero: 1
+    acao: "Definir identidade"
+    detalhes:
+      - "Nome descritivo"
+      - "Propósito/missão clara"
+      - "Arquétipo base"
+      - "Diferencial único"
+
+  - numero: 2
+    acao: "Mapear competências"
+    detalhes:
+      - "5-8 especialidades principais"
+      - "Frameworks e metodologias"
+      - "Conhecimento base necessário"
+      - "Entregas que produz"
+
+  - numero: 3
+    acao: "Estabelecer comportamento"
+    detalhes:
+      - "Tom de voz (3-4 características)"
+      - "Regras de operação (5-7)"
+      - "Perguntas essenciais"
+      - "Processo de trabalho"
+
+  - numero: 4
+    acao: "Configurar integração"
+    detalhes:
+      - "Comando de ativação"
+      - "Gatilhos de delegação"
+      - "Relação com outros agentes"
+      - "Tarefas vinculadas"
+
+  - numero: 5
+    acao: "Gerar arquivo do agente"
+    detalhes:
+      - "Criar arquivo .md no padrão"
+      - "Incluir todas as seções"
+      - "Revisar consistência"
+
+# ============================================
+# SAÍDA
+# ============================================
+
+saida:
+  formato: markdown
+  local: extensoes/{{extensao}}/agentes/
+  template: |
+    # {{nome}}
+
+    ## Identidade
+
+    Sou o **{{nome}}**, especialista em {{area_principal}}.
+    Minha missão é {{proposito}}.
+
+    ## Comando
+
+    ```
+    /{{comando}}
+    ```
+
+    ## Especialidades
+
+    {{#each especialidades}}
+    ### {{@index_plus_one}}. {{this.nome}}
+    {{#each this.subitens}}
+    - {{this}}
+    {{/each}}
+    {{/each}}
+
+    ## Frameworks que Utilizo
+
+    {{#each frameworks}}
+    ### {{this.nome}}
+
+    {{this.descricao}}
+
+    **Quando usar:** {{this.quando_usar}}
+    {{/each}}
+
+    ## Processo de Trabalho
+
+    {{#each fases_trabalho}}
+    ### Fase {{@index_plus_one}}: {{this.nome}}
+    ```
+    {{#each this.passos}}
+    {{@index_plus_one}}. {{this}}
+    {{/each}}
+    ```
+    {{/each}}
+
+    ## Tom de Voz
+
+    {{#each tom_voz}}
+    - **{{this.caracteristica}}:** {{this.descricao}}
+    {{/each}}
+
+    ## Regras
+
+    {{#each regras}}
+    {{@index_plus_one}}. **{{this}}**
+    {{/each}}
+
+    ## Perguntas Essenciais
+
+    Antes de {{acao_principal}}, preciso saber:
+
+    {{#each perguntas}}
+    {{@index_plus_one}}. **{{this.categoria}}:** {{this.pergunta}}
+    {{/each}}
+
+    ## Conhecimento Base
+
+    ```
+    {{#each conhecimento}}
+    conhecimento/{{this}}
+    {{/each}}
+    ```
+
+    ## Entregas
+
+    | Entrega | Formato | Descrição |
+    |---------|---------|-----------|
+    {{#each entregas}}
+    | {{this.nome}} | {{this.formato}} | {{this.descricao}} |
+    {{/each}}
+
+    ## Integração com Outros Agentes
+
+    {{#each integracoes}}
+    - **{{this.agente}}:** {{this.relacao}}
+    {{/each}}
+
+# ============================================
+# CONHECIMENTO UTILIZADO
+# ============================================
+
+conhecimento:
+  - conhecimento/padroes-agentes.md
+  - conhecimento/estrutura-extensoes.md
+
+# ============================================
+# GATES DE QUALIDADE
+# ============================================
+
+gates:
+  - "A identidade é clara e única?"
+  - "As especialidades são específicas (não genéricas)?"
+  - "O tom de voz está bem definido?"
+  - "As regras são acionáveis (não vagas)?"
+  - "O processo de trabalho está documentado?"
+  - "O arquivo segue o padrão?"
+
+# ============================================
+# PRÓXIMOS PASSOS SUGERIDOS
+# ============================================
+
+proximos_passos:
+  - "Criar outro agente para a extensão"
+  - "/criar-tarefa - Criar tarefas para este agente"
+  - "Atualizar delegacao.yaml com gatilhos"

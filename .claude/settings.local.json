@@ -57,7 +57,17 @@
       "Bash(else echo \"✗ copy/swipe/meta NÃO EXISTE\")",
       "Bash(if [ -d \"copy/swipe/_meta\" ])",
       "Bash(then echo \"✗ copy/swipe/_meta ainda existe\")",
-      "Bash(else echo \"✓ copy/swipe/_meta removido \\(correto\\)\")"
+      "Bash(else echo \"✓ copy/swipe/_meta removido \\(correto\\)\")",
+      "Bash(start \"\" \"c:/Users/daian/Projetos/sleep_agent_Vtotal/output/sleep-agent-marketing/landing-pages/index.html\")",
+      "WebFetch(domain:www.behance.net)",
+      "WebFetch(domain:br.pinterest.com)",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_Vtotal\\\\output\\\\sleep-agent-marketing\\\\landing-pages\\\\index-finch.html\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_Vtotal\\\\output\\\\sleep-agent-marketing\\\\landing-pages\\\\index-racing.html\")",
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" status)",
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" log --oneline -5)",
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" remote -v)",
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" diff --stat)",
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" add .claude/CLAUDE.md .claude/settings.local.json core/orquestrador/delegacao.yaml extensoes/branding/ extensoes/criador/ extensoes/customer-success/ extensoes/dados/ extensoes/educacional/ extensoes/produtos/ frameworks/ralph/templates/prd-curso.json frameworks/ralph/templates/prd-extensao.json frameworks/ralph/templates/prompt-curso.md frameworks/ralph/templates/prompt-extensao.md output/branding-design-analyst-agent/ output/criador/ output/sleep-agent-marketing/)"
     ]
   }
 }

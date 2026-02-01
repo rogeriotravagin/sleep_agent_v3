@@ -19,7 +19,10 @@ sleep_agent/
 │   └── comandos/              # Comandos globais
 ├── extensoes/                 # CASOS DE USO - Módulos por área
 │   ├── marketing/             # Copywriting, estratégia, ads
-│   └── branding/              # Design, UI/UX, identidade visual
+│   ├── branding/              # Design, UI/UX, identidade visual
+│   ├── educacional/           # Cursos, aulas, atividades
+│   ├── dados/                 # Data intelligence, pesquisa, relatórios
+│   └── criador/               # Meta-framework para criar extensões
 ├── frameworks/                # INFRAESTRUTURA - Engines de execução
 │   ├── ralph/                 # Loop autônomo de desenvolvimento
 │   ├── copy/                  # Framework de copywriting avançado
@@ -29,13 +32,21 @@ sleep_agent/
 │   ├── estrategia.md          # Estratégia de produto
 │   ├── diretrizes-html.md     # Design system HTML
 │   └── blacklist-frases-llm.md # Frases a evitar
-├── output/                    # CRIAÇÕES DOS AGENTES
-│   ├── headlines/             # Headlines geradas
-│   ├── emails/                # Emails criados
-│   ├── copies/                # Textos de copy
-│   ├── estrategias/           # Planos estratégicos
-│   ├── campanhas/             # Campanhas completas
-│   └── landing-pages/         # Páginas de conversão
+├── output/                    # CRIAÇÕES DOS AGENTES (por produto)
+│   └── [produto]/             # Pasta do produto/projeto
+│       ├── headlines/         # Headlines geradas
+│       ├── emails/            # Emails criados
+│       ├── copies/            # Textos de copy
+│       ├── estrategias/       # Planos estratégicos
+│       ├── campanhas/         # Campanhas completas
+│       ├── landing-pages/     # Páginas de conversão
+│       └── produtos/          # Gestão de produto
+│           ├── estrategias/   # Visão, missão, estratégia
+│           ├── okrs/          # OKRs trimestrais
+│           ├── discovery/     # OSTs, entrevistas, JTBD
+│           ├── metricas/      # North Star, AARRR
+│           ├── priorizacoes/  # RICE, Kano
+│           └── roadmaps/      # Roadmaps outcome-driven
 ├── projetos/                  # Projetos do usuário
 └── docs/                      # Documentação
 ```
@@ -52,6 +63,11 @@ O Sleep Agent funciona através de **extensões** que adicionam capacidades espe
 |----------|---------|-----------|
 | Marketing | `/marketing` | Copywriting, estratégia, tráfego pago |
 | Branding | `/branding` | Design, UI/UX, identidade visual |
+| Educacional | `/educacional` | Cursos, aulas, atividades, gamificação |
+| Customer Success | `/customer-success` | Onboarding, retenção, health score, CS |
+| Produtos | `/produtos` | Gestão de produto, OKRs, discovery, roadmap |
+| Dados | `/dados` | Pesquisa de dados, análise, relatórios, dashboards |
+| Criador | `/criador` | Meta-framework para criar novas extensões |
 
 ### Carregando uma Extensão
 
@@ -85,9 +101,10 @@ Ver: `frameworks/ralph/README.md`
 
 Sigo as regras em `core/orquestrador/ORQUESTRADOR.md`:
 - Entender o que o usuário precisa
+- **Identificar/perguntar o nome do produto** antes de iniciar
 - Delegar para o agente correto
 - Garantir qualidade das entregas
-- Salvar resultados em `output/` ou `projetos/`
+- Salvar resultados em `output/[produto]/` ou `projetos/[produto]/`
 
 ### Delegação de Tarefas
 
@@ -102,6 +119,7 @@ Sigo as regras em `core/orquestrador/ORQUESTRADOR.md`:
 
 Workflows otimizados para diferentes níveis e objetivos.
 
+### Marketing
 | Modo | Comando | Para quem | Resultado |
 |------|---------|-----------|-----------|
 | **Iniciante** | `/iniciante` | Primeiro usuário | Página de vendas HTML |
@@ -109,7 +127,40 @@ Workflows otimizados para diferentes níveis e objetivos.
 | **Lançamento** | `/lancamento` | Lançamentos | Funil de lançamento |
 | **Oferta Completa** | `/oferta-completa` | Processo profundo | Oferta do zero |
 
-### Modo Iniciante (Recomendado para começar)
+### Educacional
+| Modo | Comando | Para quem | Resultado |
+|------|---------|-----------|-----------|
+| **Iniciante Curso** | `/iniciante-curso` | Primeiro curso | Estrutura completa |
+| **Curso Completo** | `/curso-completo` | Processo profundo | Curso profissional |
+
+### Customer Success
+| Modo | Comando | Para quem | Resultado |
+|------|---------|-----------|-----------|
+| **Iniciante CS** | `/iniciante-cs` | Primeiro programa CS | Programa básico funcional |
+| **CS Completo** | `/cs-completo` | Processo profundo | Programa CS profissional |
+
+### Produtos (Gestão de Produto / PMO)
+| Modo | Comando | Para quem | Resultado |
+|------|---------|-----------|-----------|
+| **Iniciante Produtos** | `/iniciante-produtos` | Estruturar produto rápido | Estrutura básica completa |
+| **Produto Completo** | `/produto-completo` | Processo profundo (7 fases) | Produto estruturado profissionalmente |
+| **Discovery Sprint** | `/discovery-sprint` | Ciclo de discovery | Hipóteses validadas em 5 dias |
+
+### Modo Iniciante Produtos (Recomendado para gestão de produto)
+
+O caminho mais rápido para estruturar seu produto:
+
+1. Responda 5 perguntas simples
+2. Sistema processa automaticamente
+3. Receba: visão, OKRs, métricas, roadmap
+
+```
+/iniciante-produtos
+```
+
+Ver: `extensoes/produtos/workflows/modo-iniciante-produtos.yaml`
+
+### Modo Iniciante Marketing (Recomendado para vendas)
 
 O caminho mais rápido para sua primeira página de vendas:
 
@@ -122,6 +173,47 @@ O caminho mais rápido para sua primeira página de vendas:
 ```
 
 Ver: `extensoes/marketing/workflows/modo-iniciante.yaml`
+
+### Modo Iniciante Curso (Recomendado para educação)
+
+O caminho mais rápido para estruturar seu curso:
+
+1. Responda 5 perguntas simples
+2. Sistema processa automaticamente
+3. Ralph gera estrutura completa do curso
+
+```
+/iniciante-curso
+```
+
+Ver: `extensoes/educacional/workflows/modo-iniciante-educacional.yaml`
+
+### Dados (Data Intelligence)
+| Modo | Comando | Para quem | Resultado |
+|------|---------|-----------|-----------|
+| **Iniciante Dados** | `/iniciante-dados` | Primeira análise | Análise básica com insights |
+| **Pesquisa Completa** | `/pesquisa-completa` | Pesquisa profunda | Relatório de pesquisa completo |
+| **Análise Completa** | `/analise-completa` | Dados internos | Dashboard + relatório |
+
+### Criador (Meta-framework)
+| Modo | Comando | Para quem | Resultado |
+|------|---------|-----------|-----------|
+| **Iniciante Extensão** | `/iniciante-extensao` | Criar extensão rápida | Extensão básica funcional |
+| **Extensão Completa** | `/extensao-completa` | Processo profundo | Extensão profissional completa |
+
+### Modo Iniciante Extensão (Recomendado para expandir o sistema)
+
+O caminho mais rápido para criar uma nova extensão:
+
+1. Responda 5 perguntas simples
+2. Sistema processa automaticamente
+3. Ralph gera a extensão completa
+
+```
+/iniciante-extensao
+```
+
+Ver: `extensoes/criador/workflows/modo-iniciante-extensao.yaml`
 
 ---
 
@@ -143,13 +235,23 @@ Ver: `extensoes/marketing/workflows/modo-iniciante.yaml`
 ```
 Olá! Eu sou o Sleep Agent.
 
-Seu assistente com agentes especializados para marketing e branding.
+Seu assistente com agentes especializados para marketing, branding, educação, customer success, gestão de produto, data intelligence e criação de extensões.
 
 Comandos rápidos:
-- /iniciante  - Criar sua primeira página de vendas (5 min)
-- /marketing  - Extensão completa de Marketing
-- /branding   - Extensão de Design e Identidade
-- /ajuda      - Menu de ajuda
+- /iniciante          - Criar sua primeira página de vendas
+- /iniciante-curso    - Criar estrutura do seu curso
+- /iniciante-cs       - Criar seu programa de Customer Success
+- /iniciante-produtos - Estruturar seu produto (visão, OKRs, métricas)
+- /iniciante-dados    - Sua primeira análise de dados
+- /iniciante-extensao - Criar uma nova extensão
+- /marketing          - Extensão completa de Marketing
+- /branding           - Extensão de Design e Identidade
+- /educacional        - Extensão de Cursos e Educação
+- /customer-success   - Extensão de Customer Success
+- /produtos           - Extensão de Gestão de Produto
+- /dados              - Extensão de Data Intelligence (pesquisa, análise, relatórios)
+- /criador            - Meta-framework para criar extensões
+- /ajuda              - Menu de ajuda
 
 Como posso ajudar?
 ```
@@ -161,8 +263,33 @@ Como posso ajudar?
 - Foco em resultados práticos
 
 ### Salvando Resultados
-- Conteúdo gerado: `output/[tipo]/[nome].md`
-- Projetos completos: `projetos/[nome]/`
+- **REGRA OBRIGATÓRIA**: Todo output deve ser organizado por produto
+- Conteúdo gerado: `output/[produto]/[tipo]/[nome].md`
+- Projetos completos: `projetos/[produto]/`
+
+### Estrutura de Output por Produto
+
+Ao criar um novo projeto ou gerar conteúdo, **SEMPRE** pergunte ou identifique o nome do produto primeiro.
+
+```
+output/
+├── meu-curso-de-ingles/       # Produto 1
+│   ├── headlines/
+│   ├── emails/
+│   ├── copies/
+│   └── landing-pages/
+├── academia-fitness/          # Produto 2
+│   ├── headlines/
+│   ├── emails/
+│   └── campanhas/
+└── consultoria-empresarial/   # Produto 3
+    ├── estrategias/
+    └── copies/
+```
+
+**Convenção de nomes para produtos:**
+- Use slug (minúsculas, hífen no lugar de espaços)
+- Exemplo: "Curso de Marketing Digital" → `curso-de-marketing-digital`
 
 ---
 
@@ -173,7 +300,8 @@ Como posso ajudar?
 3. **Seguir templates** de `core/templates/` e da extensão
 4. **Delegar corretamente** via `delegacao.yaml`
 5. **Verificar qualidade** via `qualidade.yaml`
-6. **Salvar criações** em `output/` por tipo
+6. **OBRIGATÓRIO: Organizar output por produto** - Sempre perguntar/identificar o produto antes de salvar
+7. **Salvar criações** em `output/[produto]/[tipo]/` seguindo a convenção de nomes
 
 ---
 

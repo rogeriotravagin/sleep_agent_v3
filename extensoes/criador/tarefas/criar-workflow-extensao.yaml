@@ -1,0 +1,260 @@
+# ============================================
+# TAREFA: Criar Workflow para Extensão
+# ============================================
+
+id: criar-workflow-extensao
+nome: Criar Workflow para Extensão
+descricao: Criar workflow estruturado com fases, etapas e integração opcional com Ralph
+agente: criador-workflows
+comando: /criar-workflow-extensao
+versao: "1.0"
+categoria: criacao
+
+# ============================================
+# ENTRADAS
+# ============================================
+
+entradas:
+  obrigatorias:
+    - nome: extensao
+      pergunta: "Para qual extensão é este workflow?"
+      tipo: texto
+      exemplo: "educacional"
+
+    - nome: nome
+      pergunta: "Qual o nome do workflow?"
+      tipo: texto
+      exemplo: "curso-completo"
+
+    - nome: objetivo
+      pergunta: "Qual o objetivo final do workflow?"
+      tipo: texto
+      exemplo: "Criar curso profissional completo do zero ao lançamento"
+
+    - nome: fases
+      pergunta: "Quais as principais fases? (3-7)"
+      tipo: lista
+      exemplo:
+        - "DESCOBERTA"
+        - "ARQUITETURA"
+        - "CONTEÚDO"
+        - "AVALIAÇÕES"
+        - "ENTREGA"
+
+  opcionais:
+    - nome: tipo
+      pergunta: "Qual o tipo de workflow?"
+      tipo: escolha
+      opcoes:
+        - "Modo Iniciante (rápido, 5 perguntas)"
+        - "Modo Completo (profissional, detalhado)"
+        - "Workflow Rápido (foco único)"
+      padrao: "Modo Completo (profissional, detalhado)"
+
+    - nome: integrar_ralph
+      pergunta: "Integrar com Ralph para geração autônoma?"
+      tipo: escolha
+      opcoes:
+        - "Sim"
+        - "Não"
+      padrao: "Não"
+
+    - nome: duracao
+      pergunta: "Duração estimada?"
+      tipo: texto
+      padrao: "2-4 horas"
+
+# ============================================
+# PROCESSO
+# ============================================
+
+passos:
+  - numero: 1
+    acao: "Definir estrutura geral"
+    detalhes:
+      - "Tipo de workflow"
+      - "Objetivo final"
+      - "Duração estimada"
+      - "Resultado esperado"
+
+  - numero: 2
+    acao: "Mapear fases"
+    detalhes:
+      - "3-7 fases principais"
+      - "Agente responsável por fase"
+      - "Tempo estimado por fase"
+      - "Entregáveis por fase"
+
+  - numero: 3
+    acao: "Detalhar etapas"
+    detalhes:
+      - "Etapas dentro de cada fase"
+      - "Perguntas/entradas necessárias"
+      - "Processo de execução"
+      - "Template de entregável"
+
+  - numero: 4
+    acao: "Configurar checkpoints"
+    detalhes:
+      - "Validações entre fases"
+      - "Critérios de avanço"
+      - "Fallbacks se não passar"
+
+  - numero: 5
+    acao: "Definir entrega final"
+    detalhes:
+      - "Estrutura de saída"
+      - "Local de salvamento"
+      - "Mensagem de conclusão"
+
+  - numero: 6
+    acao: "Configurar integração Ralph (se aplicável)"
+    detalhes:
+      - "PRD template"
+      - "User stories"
+      - "Prompt otimizado"
+
+# ============================================
+# SAÍDA
+# ============================================
+
+saida:
+  formato: yaml
+  local: extensoes/{{extensao}}/workflows/
+  template: |
+    # ============================================
+    # WORKFLOW: {{nome_formatado}}
+    # ============================================
+
+    id: {{id}}
+    nome: {{nome_formatado}}
+    descricao: {{objetivo}}
+    comando: /{{id}}
+    versao: "1.0"
+
+    # ============================================
+    # VISÃO GERAL
+    # ============================================
+
+    visao_geral:
+      objetivo: "{{objetivo}}"
+      duracao_estimada: "{{duracao}}"
+      resultado: "{{resultado}}"
+
+    # ============================================
+    # FASES
+    # ============================================
+
+    fases:
+      {{#each fases}}
+      - numero: {{@index_plus_one}}
+        nome: {{this.nome}}
+        descricao: "{{this.descricao}}"
+        agente: {{this.agente}}
+        tempo_estimado: "{{this.tempo}}"
+
+        etapas:
+          {{#each this.etapas}}
+          - id: {{this.id}}
+            nome: "{{this.nome}}"
+            descricao: "{{this.descricao}}"
+
+            {{#if this.perguntas}}
+            perguntas:
+              {{#each this.perguntas}}
+              - pergunta: "{{this.pergunta}}"
+                tipo: {{this.tipo}}
+                obrigatorio: {{this.obrigatorio}}
+              {{/each}}
+            {{/if}}
+
+            entregavel: {{this.entregavel}}
+          {{/each}}
+
+        {{#if this.checkpoint}}
+        checkpoint:
+          pergunta: "{{this.checkpoint.pergunta}}"
+          acao_se_nao: "{{this.checkpoint.acao}}"
+        {{/if}}
+      {{/each}}
+
+    # ============================================
+    # ENTREGA FINAL
+    # ============================================
+
+    entrega_final:
+      formato: pasta
+      local: "{{output_path}}"
+      estrutura: |
+        {{estrutura_saida}}
+
+    # ============================================
+    # EXECUÇÃO
+    # ============================================
+
+    execucao:
+      comando: /{{id}}
+      fluxo:
+        {{#each fluxo}}
+        {{@index_plus_one}}: "{{this}}"
+        {{/each}}
+
+      mensagem_inicial: |
+        ## {{nome_formatado}}
+
+        {{mensagem_inicial}}
+
+      mensagem_final: |
+        ## Concluído!
+
+        {{mensagem_final}}
+
+    # ============================================
+    # FALLBACKS
+    # ============================================
+
+    fallbacks:
+      se_informacao_incompleta:
+        acao: perguntar
+        mensagem: "Preciso de mais informações sobre {{campo}}"
+
+    {{#if integrar_ralph}}
+    # ============================================
+    # INTEGRAÇÃO RALPH
+    # ============================================
+
+    ralph:
+      template_prd: frameworks/ralph/templates/prd-{{extensao}}.json
+      template_prompt: frameworks/ralph/templates/prompt-{{extensao}}.md
+      configuracao:
+        max_iteracoes: 30
+    {{/if}}
+
+# ============================================
+# CONHECIMENTO UTILIZADO
+# ============================================
+
+conhecimento:
+  - conhecimento/padroes-workflows.md
+  - conhecimento/integracao-ralph.md
+
+# ============================================
+# GATES DE QUALIDADE
+# ============================================
+
+gates:
+  - "As fases cobrem todo o processo?"
+  - "Cada fase tem agente responsável?"
+  - "Os checkpoints validam qualidade?"
+  - "A entrega final está bem estruturada?"
+  - "O fluxo de execução é claro?"
+
+# ============================================
+# PRÓXIMOS PASSOS SUGERIDOS
+# ============================================
+
+proximos_passos:
+  - "Criar modo iniciante se ainda não existe"
+  - "/integrar-ralph - Configurar templates Ralph"
+  - "Testar workflow manualmente"
+  - "/finalizar-extensao - Registrar no sistema"
