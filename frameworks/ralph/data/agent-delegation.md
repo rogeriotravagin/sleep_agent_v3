@@ -1,6 +1,6 @@
 # Ralph Persona Assumption Map
 
-> **AIOS Integration:** Ralph ASSUME a persona de agents especializados conforme o tipo de tarefa.
+> **SAF Integration:** Ralph ASSUME a persona de agents especializados conforme o tipo de tarefa.
 > Ralph é o **maestro** que pode se transformar no especialista necessário.
 
 ## Como Funciona
@@ -208,7 +208,7 @@ delegate_to: "@ralph"
 
 ---
 
-## AIOS Agents Reference
+## SAF Agents Reference
 
 | Agent | ID | Name | Specialty |
 |-------|-----|------|-----------|

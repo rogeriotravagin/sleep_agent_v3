@@ -1,0 +1,280 @@
+# Tarefa: Apelacao Criminal
+# Fundamento: Art. 593 do CPP
+
+id: apelacao
+nome: Apelacao Criminal
+comando: /apelacao
+fase: recursos
+agente: especialista-recursos
+
+descricao: |
+  Elaborar recurso de apelacao criminal conforme art. 593 do CPP.
+  Recurso cabivel contra sentencas definitivas de condenacao ou absolvicao
+  e decisoes definitivas ou com forca de definitivas.
+
+fundamento_legal:
+  - Art. 593 CPP - Hipoteses de cabimento
+  - Art. 594 CPP - (Revogado - nao exige recolhimento a prisao)
+  - Art. 600 CPP - Razoes de apelacao
+  - Art. 601 CPP - Contrarrazoes
+  - Art. 617 CPP - Vedacao da reformatio in pejus
+
+prazos:
+  interposicao: 5 dias (da intimacao da sentenca)
+  razoes: 8 dias (apos intimacao para apresentar razoes)
+  contrarrazoes: 8 dias (apos intimacao da parte contraria)
+  fundamento: Art. 593, caput, e art. 600, par. 1o, CPP
+
+hipoteses_cabimento_art593:
+  inciso_I:
+    descricao: Sentencas definitivas de condenacao ou absolvicao do juiz singular
+  inciso_II:
+    descricao: Decisoes definitivas ou com forca de definitiva do juiz singular
+    ressalva: Nao cabivel se houver recurso especifico (RESE)
+  inciso_III:
+    descricao: Decisoes do Tribunal do Juri
+    alineas:
+      a: Quando ocorrer nulidade posterior a pronuncia
+      b: Quando for a sentenca do juiz presidente contraria a lei expressa ou decisao dos jurados
+      c: Quando houver erro ou injustica no tocante a aplicacao da pena ou medida de seguranca
+      d: Quando for a decisao dos jurados manifestamente contraria a prova dos autos
+
+efeitos_apelacao:
+  devolutivo:
+    descricao: Transfere ao tribunal o conhecimento da materia impugnada
+    regra: Tantum devolutum quantum appellatum
+    excecao: Efeito devolutivo amplo (materia de ordem publica)
+  suspensivo:
+    regra_condenacao: Nao tem efeito suspensivo automatico
+    regra_absolvicao: Reu absolvido permanece em liberdade
+    fundamento: Art. 596 e 597 CPP
+
+principios_recursais:
+  - Vedacao da reformatio in pejus (art. 617 CPP)
+  - Tantum devolutum quantum appellatum
+  - Fungibilidade recursal
+  - Unicidade recursal
+  - Dialeticidade
+  - Voluntariedade
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime pelo qual o cliente foi condenado?"
+      campo: crime
+      exemplo: "Art. 157, par. 2o, II e V, CP (roubo majorado)"
+
+    - pergunta: "Qual a pena aplicada na sentenca?"
+      campo: pena_aplicada
+      exemplo: "5 anos e 4 meses de reclusao em regime inicial fechado"
+
+    - pergunta: "Qual a data da intimacao da sentenca?"
+      campo: data_intimacao
+      exemplo: "15/01/2024"
+
+    - pergunta: "Quais os fundamentos da condenacao?"
+      campo: fundamentos_condenacao
+      exemplo: "Reconhecimento pela vitima e confissao parcial"
+
+    - pergunta: "Quais as teses a serem sustentadas no recurso?"
+      campo: teses_recurso
+      opcoes:
+        - absolvicao_insuficiencia_provas
+        - absolvicao_atipicidade
+        - absolvicao_excludente
+        - desclassificacao
+        - afastamento_qualificadoras_majorantes
+        - reducao_pena_base
+        - reconhecimento_atenuantes
+        - correcao_regime
+        - substituicao_prd
+
+    - pergunta: "O cliente esta preso ou em liberdade?"
+      campo: situacao_prisional
+      opcoes: [preso, solto]
+
+  opcionais:
+    - pergunta: "Ha nulidades a serem arguidas?"
+      campo: nulidades
+      exemplo: "Ausencia de defesa tecnica efetiva"
+
+    - pergunta: "Quais provas sustentam a tese recursal?"
+      campo: provas_recurso
+      exemplo: "Contradicoes nos depoimentos, reconhecimento irregular"
+
+    - pergunta: "Ha erros na dosimetria da pena?"
+      campo: erros_dosimetria
+      exemplo: "Pena-base acima do minimo sem fundamentacao idonea"
+
+    - pergunta: "O cliente tem antecedentes?"
+      campo: antecedentes
+      opcoes: [primario, reincidente]
+
+    - pergunta: "Ha confissao a ser compensada?"
+      campo: confissao
+      opcoes: [sim, nao]
+
+    - pergunta: "Qual o numero do processo?"
+      campo: numero_processo
+      exemplo: "0001234-56.2023.8.26.0100"
+
+estrutura_peca:
+  peticao_interposicao:
+    cabecalho:
+      - Enderecamento ao juizo a quo
+      - Numero do processo
+      - Qualificacao do apelante
+      - Titulo "APELACAO CRIMINAL"
+    corpo:
+      - Tempestividade
+      - Legitimidade e interesse recursal
+      - Pedido de recebimento e processamento
+      - Reserva para razoes em apartado
+    pedido:
+      - Recebimento do recurso
+      - Intimacao para razoes
+      - Remessa ao Tribunal
+
+  razoes_apelacao:
+    cabecalho:
+      - Enderecamento ao Tribunal ad quem
+      - Numero do processo
+      - Apelante e apelado
+      - Titulo "RAZOES DE APELACAO"
+    corpo:
+      - I - DOS FATOS
+        - Sintese da acusacao
+        - Instrucao processual
+        - Sentenca recorrida
+      - II - DO CABIMENTO E TEMPESTIVIDADE
+        - Art. 593, I, CPP
+        - Prazo legal
+      - III - DAS PRELIMINARES (se houver)
+        - Nulidades
+        - Questoes processuais
+      - IV - DO MERITO
+        - Tese principal com fundamentacao
+        - Analise das provas
+        - Erro de julgamento
+      - V - DA DOSIMETRIA (se aplicavel)
+        - Erros na fixacao da pena
+        - Circunstancias judiciais
+        - Atenuantes e agravantes
+        - Regime prisional
+        - Substituicao por PRD
+      - VI - DA JURISPRUDENCIA
+        - Precedentes do Tribunal
+        - STJ e STF
+        - Sumulas
+      - VII - DOS PEDIDOS
+
+modelo_peticao_interposicao: |
+  EXCELENTISSIMO(A) SENHOR(A) DOUTOR(A) JUIZ(A) DE DIREITO DA ___ VARA
+  CRIMINAL DA COMARCA DE ___
+
+  Processo n.: [numero]
+
+  [NOME DO CLIENTE], ja qualificado nos autos em epigrafe, por seu advogado
+  que esta subscreve, vem, respeitosamente, a presenca de Vossa Excelencia,
+  inconformado com a r. sentenca de fls. [X], interpor
+
+  APELACAO CRIMINAL
+
+  com fundamento no art. 593, I, do Codigo de Processo Penal, requerendo seja
+  o presente recurso recebido e processado, com a posterior remessa dos autos
+  ao Egregio Tribunal de Justica do Estado de [X].
+
+  Requer, ainda, seja intimado para apresentacao das razoes recursais no
+  prazo legal.
+
+  Termos em que pede deferimento.
+
+  [Local], [data].
+
+  _________________________
+  [NOME DO ADVOGADO]
+  OAB/[UF] n. [numero]
+
+modelo_pedido_razoes: |
+  Ante o exposto, requer seja dado PROVIMENTO ao presente recurso de
+  apelacao para:
+
+  PRELIMINARMENTE:
+  a) [Se houver nulidades] Reconhecer a nulidade [especificar] e anular
+     o processo desde [marco], determinando a renovacao dos atos
+     processuais;
+
+  NO MERITO:
+
+  b) REFORMAR a r. sentenca para ABSOLVER o apelante da imputacao contida
+     na denuncia, com fundamento no art. 386, [inciso], do CPP, por
+     [fundamento];
+
+  SUBSIDIARIAMENTE:
+
+  c) DESCLASSIFICAR a conduta para [crime menos grave], aplicando-se a
+     pena correspondente;
+
+  d) AFASTAR a(s) [qualificadora(s)/majorante(s)] reconhecida(s) na
+     sentenca, por [fundamento];
+
+  e) REDUZIR a pena-base ao minimo legal, afastando-se [circunstancia
+     judicial valorada indevidamente];
+
+  f) RECONHECER a atenuante da [confissao espontanea/menoridade], nos
+     termos do art. 65, [inciso], do CP, com a devida compensacao/reducao;
+
+  g) FIXAR o regime inicial [aberto/semiaberto], em consonancia com o
+     art. 33, par. 2o, [alinea], do CP;
+
+  h) SUBSTITUIR a pena privativa de liberdade por restritivas de direitos,
+     nos termos do art. 44 do CP;
+
+  i) [Se preso] DETERMINAR a expedicao de alvara de soltura em favor do
+     apelante;
+
+  Termos em que pede deferimento.
+
+teses_recursais:
+  merito:
+    - Insuficiencia de provas para condenacao
+    - Absolvicao por atipicidade
+    - Absolvicao por excludente de ilicitude
+    - Desclassificacao para tipo penal diverso
+    - Afastamento de qualificadoras ou majorantes
+  dosimetria:
+    - Reducao da pena-base (circunstancias judiciais favoraveis)
+    - Reconhecimento de atenuantes
+    - Compensacao confissao x reincidencia (STJ)
+    - Correcao do regime inicial
+    - Substituicao da PPL por PRD
+  nulidades:
+    - Cerceamento de defesa
+    - Incompetencia do juizo
+    - Ausencia de fundamentacao
+    - Provas ilicitas
+
+sumulas_uteis:
+  stf:
+    - "Sumula 718 - A opiniao do julgador sobre a gravidade em abstrato do crime nao constitui motivacao idonea para a imposicao de regime mais severo"
+    - "Sumula 719 - A imposicao do regime de cumprimento mais severo do que a pena aplicada permitir exige motivacao idonea"
+  stj:
+    - "Sumula 231 - A incidencia da circunstancia atenuante nao pode conduzir a reducao da pena abaixo do minimo legal"
+    - "Sumula 440 - Fixada a pena-base no minimo legal, e vedado o estabelecimento de regime mais gravoso com base na gravidade abstrata do delito"
+    - "Sumula 545 - Quando a confissao for utilizada para a formacao do convencimento do julgador, deve incidir a atenuante prevista no art. 65, III, d, do CP"
+
+checklist_qualidade:
+  - Tempestividade demonstrada
+  - Cabimento fundamentado (art. 593 CPP)
+  - Legitimidade e interesse presentes
+  - Preliminares corretamente arguidas (se houver)
+  - Teses de merito bem fundamentadas
+  - Provas analisadas em confronto com sentenca
+  - Dosimetria revista (se aplicavel)
+  - Jurisprudencia pertinente citada
+  - Pedidos claros e hierarquizados
+  - Vedacao da reformatio in pejus respeitada
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/recursos/
+  arquivo: apelacao-[nome-cliente]-[data].md

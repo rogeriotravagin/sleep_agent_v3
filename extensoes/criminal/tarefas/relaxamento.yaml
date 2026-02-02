@@ -1,0 +1,184 @@
+# Tarefa: Pedido de Relaxamento de Prisao
+# Fundamento: Art. 310 do CPP
+
+id: relaxamento
+nome: Pedido de Relaxamento de Prisao
+comando: /relaxamento
+fase: defesa
+agente: criminalista
+
+descricao: |
+  Elaborar pedido de relaxamento de prisao ilegal, conforme art. 310 do CPP e art. 5o, LXV, CF.
+  O relaxamento e cabivel quando a prisao e ILEGAL, diferente da revogacao (quando nao ha
+  mais merito para manutencao) e da liberdade provisoria (quando a prisao e legal mas dispensavel).
+
+fundamento_legal:
+  - Art. 5o, LXV, CF - Relaxamento imediato de prisao ilegal
+  - Art. 310 CPP - Analise da prisao em flagrante pelo juiz
+  - Art. 302 CPP - Hipoteses de flagrante delito
+  - Art. 303 CPP - Flagrante proprio, improprio e presumido
+  - Art. 304 CPP - Formalidades do auto de prisao em flagrante
+  - Art. 306 CPP - Comunicacao da prisao
+  - Art. 283 CPP - Prisao somente por ordem escrita e fundamentada
+
+prazo: Sem prazo (urgente - deve ser feito imediatamente apos constatar ilegalidade)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 33, Lei 11.343/06 (trafico de drogas)"
+
+    - pergunta: "Quando e como ocorreu a prisao?"
+      campo: circunstancias_prisao
+      exemplo: "Preso em 15/01/2024 por policiais militares em abordagem de rotina"
+
+    - pergunta: "Qual a ilegalidade da prisao?"
+      campo: ilegalidade
+      opcoes:
+        - flagrante_inexistente
+        - flagrante_forjado
+        - ausencia_situacao_flagrancial
+        - nulidade_formal_apf
+        - excesso_prazo_comunicacao
+        - ausencia_audiencia_custodia
+        - prova_ilicita_originaria
+        - atipicidade_evidente
+        - falta_fundamentacao_conversao
+
+    - pergunta: "Ha prova documental da ilegalidade?"
+      campo: prova_ilegalidade
+      exemplo: "Videos, testemunhos, documentos do APF com vicio"
+
+  opcionais:
+    - pergunta: "Houve audiencia de custodia?"
+      campo: audiencia_custodia
+      opcoes: [sim, nao, nao_realizada_no_prazo]
+
+    - pergunta: "O APF foi comunicado ao juiz no prazo legal?"
+      campo: comunicacao_prazo
+      opcoes: [sim, nao]
+
+    - pergunta: "Ha elementos de tortura ou maus-tratos?"
+      campo: maus_tratos
+      opcoes: [sim, nao, suspeita]
+
+    - pergunta: "Houve busca domiciliar? Se sim, foi legal?"
+      campo: busca_domiciliar
+      opcoes: [nao_houve, com_mandado, sem_mandado_consentida, sem_mandado_forcada]
+
+    - pergunta: "O cliente foi informado de seus direitos na prisao?"
+      campo: informacao_direitos
+      opcoes: [sim, nao, parcialmente]
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo competente
+    - Numero do processo/inquerito
+    - Qualificacao do requerente (preso)
+    - Titulo "PEDIDO DE RELAXAMENTO DE PRISAO"
+
+  corpo:
+    - I - DOS FATOS
+      - Circunstancias da prisao
+      - Imputacao feita ao requerente
+    - II - DA ILEGALIDADE DA PRISAO
+      - Identificacao precisa do vicio
+      - Fundamentacao juridica
+      - Provas da ilegalidade
+    - III - DA DIFERENCA ENTRE RELAXAMENTO E REVOGACAO
+      - Relaxamento = ilegalidade (vicio na origem)
+      - Revogacao = merito (cessacao dos motivos)
+      - Consequencia: nao cabe medidas cautelares no relaxamento
+    - IV - DO FLAGRANTE E SUAS MODALIDADES
+      - Flagrante proprio (art. 302, I e II)
+      - Flagrante improprio (art. 302, III)
+      - Flagrante presumido (art. 302, IV)
+      - Ausencia de qualquer modalidade no caso
+    - V - DAS NULIDADES FORMAIS (se aplicavel)
+      - Ausencia de comunicacao no prazo
+      - Falta de nota de culpa
+      - Vicio no auto de prisao
+    - VI - DA PROVA ILICITA (se aplicavel)
+      - Teoria dos frutos da arvore envenenada
+      - Contaminacao de toda a prova
+    - VII - DA JURISPRUDENCIA
+      - Sumulas e precedentes pertinentes
+    - VIII - DOS PEDIDOS
+
+  pedidos_possiveis:
+    - Relaxamento imediato da prisao
+    - Expedicao de alvara de soltura
+    - Reconhecimento da ilegalidade
+    - Desentranhamento de provas ilicitas (se for o caso)
+
+hipoteses_flagrante_ilegal:
+  flagrante_material:
+    - Ausencia de situacao flagrancial (nenhuma das hipoteses do art. 302)
+    - Prisao fora do contexto temporal de flagrancia
+    - Flagrante preparado/provocado (Sumula 145 STF)
+    - Flagrante forjado (crime inexistente)
+    - Flagrante esperado que se tornou provocado
+
+  flagrante_formal:
+    - Ausencia de comunicacao ao juiz em 24h (art. 306 CPP)
+    - Nao realizacao de audiencia de custodia em 24h
+    - Ausencia de entrega de nota de culpa
+    - Falta de testemunhas no APF
+    - Auto de prisao com vicios insanaveis
+
+  prova_ilicita:
+    - Busca domiciliar sem mandado e sem consentimento valido
+    - Interceptacao telefonica sem autorizacao judicial
+    - Confissao mediante tortura ou coacao
+    - Violacao de sigilo sem ordem judicial
+
+diferenca_relaxamento_revogacao:
+  relaxamento:
+    fundamento: Ilegalidade da prisao (vicio na origem)
+    efeito: Prisao nunca deveria ter existido
+    consequencia: Nao cabe fixacao de medidas cautelares
+    exemplo: Flagrante forjado, ausencia de situacao flagrancial
+
+  revogacao:
+    fundamento: Cessacao dos motivos que autorizaram a prisao
+    efeito: Prisao foi legal mas nao e mais necessaria
+    consequencia: Pode haver medidas cautelares substitutivas
+    exemplo: Instrucao encerrada, colaboracao do acusado
+
+modelo_pedido: |
+  Ante o exposto, requer a Vossa Excelencia:
+
+  a) O RELAXAMENTO DA PRISAO do requerente, com fundamento no
+     art. 5o, LXV, da Constituicao Federal, tendo em vista a
+     flagrante ILEGALIDADE da custodia cautelar, consistente em
+     [descrever a ilegalidade];
+
+  b) A expedicao IMEDIATA de ALVARA DE SOLTURA CLAUSULADO em
+     favor do requerente, independentemente de outras formalidades;
+
+  c) O reconhecimento da nulidade [especificar, se for o caso];
+
+  d) O desentranhamento das provas ilicitas [se aplicavel].
+
+  Por se tratar de LIBERDADE DE LOCOMOCAO, direito fundamental
+  de primeira grandeza, requer seja o presente pedido apreciado
+  com a maxima URGENCIA.
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Ilegalidade da prisao claramente identificada
+  - Fundamentacao juridica precisa
+  - Diferenciacao de relaxamento/revogacao demonstrada
+  - Hipotese de flagrante analisada (ou ausencia dela)
+  - Vicios formais identificados (se houver)
+  - Provas ilicitas apontadas (se houver)
+  - Jurisprudencia pertinente citada
+  - Pedido de urgencia fundamentado
+  - Documentos comprobatorios indicados
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/defesa/
+  arquivo: relaxamento-prisao-[nome-cliente]-[data].md

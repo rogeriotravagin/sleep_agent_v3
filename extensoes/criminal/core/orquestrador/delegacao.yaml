@@ -1,0 +1,340 @@
+# Regras de Delegacao - Extensao Criminal
+# Define qual agente atende cada tipo de pedido
+
+extensao: criminal
+versao: "1.0"
+
+# =====================================================
+# CONFIGURACAO DE OUTPUT
+# =====================================================
+
+output:
+  extensao: criminal
+  tipos:
+    - pareceres
+    - defesa
+    - recursos
+    - execucao
+    - estrategias
+    - audiencias
+  auto_criar: true
+  base_path: workspace/[estrutura]/criminal/
+
+# =====================================================
+# MAPEAMENTO DE COMANDOS PARA AGENTES
+# =====================================================
+
+delegacao:
+  # Agente Criminalista - Defesa Geral
+  criminalista:
+    comandos:
+      - /defesa
+      - /resposta-acusacao
+      - /alegacoes-finais
+      - /parecer-criminal
+      - /tese-defesa
+    tarefas:
+      - resposta-acusacao
+      - alegacoes-finais
+      - parecer-criminal
+      - tese-defesa
+    especialidade: Defesa criminal em geral
+
+  # Agente Juri
+  juri:
+    comandos:
+      - /juri
+      - /quesitos-juri
+    tarefas:
+      - quesitos-juri
+    especialidade: Crimes dolosos contra a vida
+
+  # Agente Execucao
+  execucao:
+    comandos:
+      - /execucao
+      - /pedido-progressao
+      - /agravo-execucao
+    tarefas:
+      - pedido-progressao
+      - agravo-execucao
+    especialidade: Execucao penal e beneficios
+
+  # Agente Recursos
+  recursos:
+    comandos:
+      - /recursos
+      - /habeas-corpus
+      - /apelacao
+      - /pedido-liberdade
+      - /relaxamento
+      - /revogacao-preventiva
+    tarefas:
+      - habeas-corpus
+      - apelacao
+      - pedido-liberdade
+      - relaxamento
+      - revogacao-preventiva
+    especialidade: Recursos e habeas corpus
+
+# =====================================================
+# AGENTES COM GATILHOS
+# =====================================================
+
+criminalista:
+  agente: agentes/CRIMINALISTA.md
+  gatilhos:
+    - defesa
+    - acusacao
+    - denuncia
+    - crime
+    - reu
+    - acusado
+    - alegacoes finais
+    - memoriais
+    - tese
+    - absolvicao
+    - condenacao
+    - dosimetria
+    - atenuante
+    - agravante
+  tarefas:
+    - resposta-acusacao
+    - alegacoes-finais
+    - parecer-criminal
+    - tese-defesa
+  outputs:
+    - defesa/
+    - pareceres/
+    - estrategias/
+
+juri:
+  agente: agentes/JURI.md
+  gatilhos:
+    - juri
+    - tribunal do juri
+    - plenario
+    - quesitos
+    - homicidio doloso
+    - tentativa de homicidio
+    - infanticidio
+    - aborto
+    - pronuncia
+    - impronuncia
+    - desclassificacao
+  tarefas:
+    - quesitos-juri
+  outputs:
+    - defesa/juri/
+
+execucao:
+  agente: agentes/EXECUCAO.md
+  gatilhos:
+    - execucao penal
+    - progressao
+    - regime
+    - livramento condicional
+    - remicao
+    - saida temporaria
+    - indulto
+    - comutacao
+    - preso
+    - penitenciaria
+    - cadeia
+  tarefas:
+    - pedido-progressao
+    - agravo-execucao
+  outputs:
+    - execucao/
+
+recursos:
+  agente: agentes/RECURSOS.md
+  gatilhos:
+    - recurso
+    - habeas corpus
+    - hc
+    - apelacao
+    - liberdade
+    - soltura
+    - relaxamento
+    - prisao ilegal
+    - revogacao
+    - preventiva
+    - constrangimento ilegal
+    - excesso de prazo
+  tarefas:
+    - habeas-corpus
+    - apelacao
+    - pedido-liberdade
+    - relaxamento
+    - revogacao-preventiva
+  outputs:
+    - recursos/
+
+# =====================================================
+# FLUXO DE TRABALHO PADRAO
+# =====================================================
+
+fluxo_padrao:
+  - etapa: 1
+    acao: Identificar tipo de demanda
+    decisao: Direcionar para agente correto
+  - etapa: 2
+    acao: Coletar informacoes necessarias
+    perguntas: Conforme tarefa selecionada
+  - etapa: 3
+    acao: Consultar base de conhecimento
+    arquivos: conhecimento/*.md
+  - etapa: 4
+    acao: Elaborar peca/documento
+    template: Conforme tarefa
+  - etapa: 5
+    acao: Incluir disclaimer
+    obrigatorio: true
+  - etapa: 6
+    acao: Salvar output
+    pasta: workspace/[estrutura]/criminal/[tipo]/
+
+# =====================================================
+# REGRAS DE PRIORIDADE
+# =====================================================
+
+prioridade:
+  ordem:
+    - recursos     # Urgencia: liberdade do cliente
+    - juri         # Especificidade: tribunal do juri
+    - execucao     # Beneficios da execucao
+    - criminalista # Defesa em geral
+  razao: |
+    1. Recursos: Liberdade do cliente tem prioridade maxima
+    2. Juri: Crimes dolosos contra vida sao especificos
+    3. Execucao: Beneficios para quem ja esta preso
+    4. Criminalista: Defesa geral em outras situacoes
+
+# =====================================================
+# REGRAS ESPECIAIS
+# =====================================================
+
+regras:
+  urgencia:
+    - Se cliente preso com urgencia -> Priorizar HC
+    - Se pedido de liberdade negado -> Sugerir HC
+    - Se excesso de prazo -> Priorizar relaxamento
+
+  redirecionamento:
+    - Se indeferimento em execucao -> Sugerir agravo
+    - Se sentenca condenatoria -> Avaliar apelacao
+    - Se crime doloso contra vida -> Direcionar para juri
+
+  obrigatorio:
+    - Sempre incluir disclaimer juridico
+    - Citar artigos de lei especificos
+    - Buscar jurisprudencia relevante
+    - Verificar prazos processuais
+
+# =====================================================
+# CASOS ESPECIAIS
+# =====================================================
+
+casos_especiais:
+  # Workflows multi-agente
+  multi_agente:
+    - gatilho: "defesa completa"
+      workflow: workflows/defesa-completa.yaml
+      agentes: [criminalista, recursos]
+
+    - gatilho: "liberdade"
+      workflow: workflows/liberdade.yaml
+      agentes: [recursos]
+
+    - gatilho: "progressao"
+      workflow: workflows/progressao.yaml
+      agentes: [execucao]
+
+  # Redirecionamentos automaticos
+  redirecionamentos:
+    - de: "meu cliente esta preso"
+      para: recursos
+      tarefa: habeas-corpus
+
+    - de: "progressao de regime"
+      para: execucao
+      tarefa: pedido-progressao
+
+    - de: "tribunal do juri"
+      para: juri
+      tarefa: quesitos-juri
+
+    - de: "prisao ilegal"
+      para: recursos
+      tarefa: relaxamento
+
+    - de: "excesso de prazo"
+      para: recursos
+      tarefa: habeas-corpus
+
+# =====================================================
+# QUALIDADE E VALIDACAO
+# =====================================================
+
+qualidade:
+  disclaimer_obrigatorio: true
+  disclaimer: |
+    ---
+    **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de inteligencia
+    artificial para fins de orientacao juridica. E OBRIGATORIA a revisao por
+    advogado inscrito na OAB antes de utilizacao em processos reais.
+
+    A responsabilidade pela utilizacao do conteudo e exclusivamente do
+    profissional que o apresentar em juizo.
+    ---
+
+  gates_globais:
+    - Peca tem estrutura processual correta?
+    - Fundamentacao juridica esta adequada?
+    - Artigos de lei estao corretos?
+    - Jurisprudencia e pertinente?
+    - Disclaimer foi incluido?
+    - Pedidos estao claros e especificos?
+
+# =====================================================
+# CONTEXTO E CONHECIMENTO
+# =====================================================
+
+conhecimento_base:
+  todos_agentes:
+    - conhecimento/codigo-penal.md
+    - conhecimento/codigo-processo-penal.md
+    - conhecimento/sumulas-stf.md
+
+  por_agente:
+    criminalista:
+      - conhecimento/codigo-penal.md
+      - conhecimento/codigo-processo-penal.md
+      - conhecimento/leis-especiais.md
+
+    juri:
+      - conhecimento/codigo-penal.md
+      - conhecimento/codigo-processo-penal.md
+
+    execucao:
+      - conhecimento/execucao-penal.md
+      - conhecimento/sumulas-stf.md
+
+    recursos:
+      - conhecimento/codigo-processo-penal.md
+      - conhecimento/sumulas-stf.md
+      - conhecimento/leis-especiais.md
+
+# =====================================================
+# PRAZOS PROCESSUAIS (REFERENCIA)
+# =====================================================
+
+prazos:
+  resposta_acusacao: 10  # dias - Art. 396 CPP
+  alegacoes_finais: 5    # dias - Art. 403 CPP
+  apelacao: 5            # dias - Art. 593 CPP
+  rese: 5                # dias - Art. 586 CPP
+  embargos_declaracao: 2 # dias - Art. 382 CPP
+  agravo_execucao: 5     # dias - Art. 197 LEP
+  habeas_corpus: 0       # sem prazo

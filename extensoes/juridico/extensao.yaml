@@ -1,0 +1,227 @@
+# Extensao: Juridico
+# Versao: 1.0 - Framework Juridico Empresarial
+
+nome: Juridico
+slug: juridico
+descricao: Framework completo para suporte juridico empresarial - contratos, compliance e assessoria
+versao: "1.0"
+status: ativo
+
+comando: /juridico
+
+mensagem_ativacao: |
+  **Sleep Agent - Extensao Juridico v1.0**
+
+  Framework completo de suporte juridico para empresas e profissionais:
+  - Contratos empresariais e comerciais
+  - Compliance e LGPD
+  - Direito societario e empresarial
+  - Propriedade intelectual
+
+  **Agentes Disponiveis:**
+  - `/contratos` - Especialista em Contratos (elaboracao, revisao, analise)
+  - `/empresarial` - Advogado Empresarial (societario, M&A, governanca)
+  - `/compliance` - Especialista em Compliance (LGPD, politicas, auditorias)
+
+  **Workflows Completos:**
+  - `/due-diligence` - Analise completa para aquisicoes
+  - `/abertura-empresa` - Estruturacao societaria completa
+  - `/programa-compliance` - Implementar programa de compliance
+
+  **Tarefas Rapidas:**
+  - `/criar-contrato` - Elaborar contrato personalizado
+  - `/revisar-contrato` - Analisar e sugerir alteracoes
+  - `/criar-parecer` - Elaborar parecer juridico
+  - `/analise-risco` - Mapear riscos juridicos
+  - `/politica-privacidade` - Criar politica LGPD
+  - `/termos-uso` - Criar termos de uso
+  - `/nda` - Acordo de confidencialidade
+  - `/contrato-trabalho` - Contratos trabalhistas
+
+  O que voce gostaria de fazer?
+
+# =====================================================
+# AGENTES
+# =====================================================
+
+agentes:
+  - id: contratos
+    arquivo: agentes/CONTRATOS.md
+    comando: /contratos
+    especialidades:
+      - Contratos comerciais
+      - Contratos de prestacao de servicos
+      - Contratos de parceria
+      - Termos e politicas
+      - NDAs e confidencialidade
+
+  - id: empresarial
+    arquivo: agentes/EMPRESARIAL.md
+    comando: /empresarial
+    especialidades:
+      - Direito societario
+      - Fusoes e aquisicoes
+      - Governanca corporativa
+      - Estruturacao empresarial
+      - Reorganizacao societaria
+
+  - id: compliance
+    arquivo: agentes/COMPLIANCE.md
+    comando: /compliance
+    especialidades:
+      - LGPD e protecao de dados
+      - Compliance corporativo
+      - Politicas internas
+      - Auditorias
+      - Gestao de riscos
+
+# =====================================================
+# TAREFAS
+# =====================================================
+
+tarefas:
+  # Contratos
+  - id: criar-contrato
+    arquivo: tarefas/criar-contrato.yaml
+    comando: /criar-contrato
+    fase: contratos
+
+  - id: revisar-contrato
+    arquivo: tarefas/revisar-contrato.yaml
+    comando: /revisar-contrato
+    fase: contratos
+
+  - id: criar-nda
+    arquivo: tarefas/criar-nda.yaml
+    comando: /nda
+    fase: contratos
+
+  - id: termos-uso
+    arquivo: tarefas/termos-uso.yaml
+    comando: /termos-uso
+    fase: contratos
+
+  # Pareceres e Analises
+  - id: criar-parecer
+    arquivo: tarefas/criar-parecer.yaml
+    comando: /criar-parecer
+    fase: analise
+
+  - id: analise-risco
+    arquivo: tarefas/analise-risco.yaml
+    comando: /analise-risco
+    fase: analise
+
+  # Compliance
+  - id: politica-privacidade
+    arquivo: tarefas/politica-privacidade.yaml
+    comando: /politica-privacidade
+    fase: compliance
+
+  - id: contrato-trabalho
+    arquivo: tarefas/contrato-trabalho.yaml
+    comando: /contrato-trabalho
+    fase: trabalhista
+
+# =====================================================
+# WORKFLOWS
+# =====================================================
+
+workflows:
+  - id: due-diligence
+    arquivo: workflows/due-diligence.yaml
+    comando: /due-diligence
+    descricao: Processo completo de due diligence
+
+  - id: abertura-empresa
+    arquivo: workflows/abertura-empresa.yaml
+    comando: /abertura-empresa
+    descricao: Estruturacao societaria completa
+
+  - id: programa-compliance
+    arquivo: workflows/programa-compliance.yaml
+    comando: /programa-compliance
+    descricao: Implementar programa de compliance
+
+# =====================================================
+# BASE DE CONHECIMENTO
+# =====================================================
+
+conhecimento:
+  # Frameworks e Tecnicas
+  - contratos.md
+  - direito-empresarial.md
+  - compliance.md
+  - lgpd.md
+  - propriedade-intelectual.md
+  - trabalhista.md
+
+exemplos:
+  - contrato-servicos-exemplo.md
+  - nda-exemplo.md
+
+# =====================================================
+# FRAMEWORK DE EXECUCAO
+# =====================================================
+
+framework_execucao:
+  fases:
+    - numero: 1
+      nome: DESCOBERTA
+      tarefas: [analise-necessidade]
+      agente: empresarial
+
+    - numero: 2
+      nome: ANALISE
+      tarefas: [analise-risco, criar-parecer]
+      agente: empresarial
+
+    - numero: 3
+      nome: ESTRUTURACAO
+      tarefas: [estrutura-juridica]
+      agente: empresarial
+
+    - numero: 4
+      nome: DOCUMENTACAO
+      tarefas: [criar-contrato, criar-nda, termos-uso]
+      agente: contratos
+
+    - numero: 5
+      nome: COMPLIANCE
+      tarefas: [politica-privacidade, programa-compliance]
+      agente: compliance
+
+    - numero: 6
+      nome: REVISAO
+      tarefas: [revisar-contrato, validacao-final]
+      agente: contratos
+
+# =====================================================
+# REFERENCIAS INCLUIDAS
+# =====================================================
+
+referencias:
+  contratos:
+    frameworks:
+      - Clausulas Essenciais (objeto, preco, prazo)
+      - Clausulas de Protecao (rescisao, multa, foro)
+      - Clausulas Especiais (confidencialidade, exclusividade)
+
+  compliance:
+    regulamentacoes:
+      - LGPD (Lei 13.709/2018)
+      - Marco Civil da Internet
+      - Codigo de Defesa do Consumidor
+      - Lei Anticorrupcao (12.846/2013)
+
+  empresarial:
+    legislacao:
+      - Codigo Civil (direito empresarial)
+      - Lei das S/A (6.404/76)
+      - Codigo de Processo Civil
+
+  trabalhista:
+    base:
+      - CLT
+      - Reforma Trabalhista
+      - eSocial

@@ -1,0 +1,231 @@
+# Tarefa: Elaboracao de Quesitos para Tribunal do Juri
+# Fundamento: Art. 483 do CPP
+
+id: quesitos-juri
+nome: Elaboracao de Quesitos para Tribunal do Juri
+comando: /quesitos-juri
+fase: juri
+agente: especialista_juri
+
+descricao: |
+  Elaborar quesitos para Tribunal do Juri conforme art. 483 do CPP.
+  Os quesitos devem seguir ordem obrigatoria estabelecida em lei e contemplar
+  todas as teses de defesa. O quesito de absolvicao generico (art. 483, par. 2o)
+  e fundamental para a estrategia defensiva.
+
+fundamento_legal:
+  - Art. 483 CPP - Ordem dos quesitos
+  - Art. 484 CPP - Quesitos sobre circunstancias
+  - Art. 5o, XXXVIII, CF - Soberania dos veredictos
+  - Art. 482 CPP - Leitura dos quesitos
+  - Art. 489 CPP - Sentenca do juiz presidente
+  - Art. 490 CPP - Desclassificacao pelo Juri
+
+prazo: Apresentar antes do julgamento (geralmente em plenario ou em audiencia preparatoria)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime doloso contra a vida imputado?"
+      campo: crime_imputado
+      opcoes:
+        - homicidio_simples
+        - homicidio_qualificado
+        - homicidio_privilegiado
+        - feminicidio
+        - infanticidio
+        - aborto
+        - instigacao_suicidio
+
+    - pergunta: "Quais as qualificadoras imputadas na pronuncia?"
+      campo: qualificadoras
+      exemplo: "Motivo torpe (art. 121, par. 2o, I) e recurso que dificultou defesa (art. 121, par. 2o, IV)"
+
+    - pergunta: "Qual a principal tese de defesa?"
+      campo: tese_principal
+      opcoes:
+        - negativa_autoria
+        - legitima_defesa
+        - legitima_defesa_putativa
+        - ausencia_dolo
+        - desclassificacao_culposo
+        - desclassificacao_lesao
+        - privilegio_violenta_emocao
+        - privilegio_relevante_valor
+        - inimputabilidade
+        - semi_imputabilidade
+        - absolvicao_clemencia
+
+    - pergunta: "Ha teses subsidiarias?"
+      campo: teses_subsidiarias
+      exemplo: "Subsidiariamente, legitima defesa; mais subsidiariamente, privilegio"
+
+  opcionais:
+    - pergunta: "Ha causas de aumento de pena?"
+      campo: causas_aumento
+      exemplo: "Crime contra menor de 14 anos, contra idoso"
+
+    - pergunta: "Ha causas de diminuicao de pena?"
+      campo: causas_diminuicao
+      exemplo: "Tentativa, participacao de menor importancia"
+
+    - pergunta: "O crime foi tentado ou consumado?"
+      campo: tentativa_consumacao
+      opcoes: [consumado, tentado]
+
+    - pergunta: "Ha concurso de agentes?"
+      campo: concurso_agentes
+      opcoes: [autor_unico, coautoria, participacao]
+
+    - pergunta: "Ha circunstancias atenuantes a destacar?"
+      campo: atenuantes
+      exemplo: "Confissao espontanea, menoridade relativa"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juiz presidente do Tribunal do Juri
+    - Numero do processo
+    - Qualificacao do reu
+    - Titulo "QUESITOS DA DEFESA"
+
+  corpo:
+    - I - DA ORDEM LEGAL DOS QUESITOS (ART. 483 CPP)
+      - Explicacao da ordem obrigatoria
+      - Consequencias do descumprimento
+    - II - DOS QUESITOS SOBRE A MATERIALIDADE
+      - Primeiro quesito obrigatorio
+      - Formulacao clara
+    - III - DOS QUESITOS SOBRE A AUTORIA/PARTICIPACAO
+      - Segundo quesito obrigatorio
+      - Desdobramentos se houver coautoria
+    - IV - DO QUESITO DE ABSOLVICAO GENERICO
+      - Art. 483, par. 2o, CPP
+      - Terceiro quesito obrigatorio
+      - Importancia para clemencia do Juri
+    - V - DOS QUESITOS SOBRE QUALIFICADORAS
+      - Quesitos especificos para cada qualificadora
+      - Ordem de votacao
+    - VI - DOS QUESITOS SOBRE CAUSAS DE DIMINUICAO
+      - Privilegio (art. 121, par. 1o)
+      - Tentativa
+      - Participacao de menor importancia
+    - VII - DOS QUESITOS SOBRE CAUSAS DE AUMENTO
+      - Se houver
+    - VIII - DA ESTRATEGIA DE QUESITACAO
+      - Ordem sugerida
+      - Fundamentos
+
+  pedidos_possiveis:
+    - Inclusao de quesito especifico
+    - Desmembramento de quesito
+    - Formulacao de quesito sobre tese defensiva
+    - Impugnacao de quesito mal formulado
+
+ordem_obrigatoria_quesitos:
+  primeiro: |
+    "O reu [nome] causou a morte da vitima [nome], mediante [descricao da conduta]?"
+    (materialidade + autoria simplificados)
+
+  segundo: |
+    "O jurado absolve o acusado?"
+    (quesito de absolvicao generico - art. 483, par. 2o)
+    NOTA: Se respondido SIM, encerra-se a votacao
+
+  terceiro_em_diante: |
+    Somente se NAO absolvido no quesito generico:
+    - Quesitos sobre qualificadoras
+    - Quesitos sobre causas de aumento
+    - Quesitos sobre causas de diminuicao (privilegio, tentativa)
+
+quesito_absolvicao_generico:
+  fundamento: Art. 483, par. 2o, CPP (alterado pela Lei 11.689/2008)
+  texto: "O jurado absolve o acusado?"
+  momento: Terceiro quesito (apos materialidade e autoria)
+  efeito_sim: Absolvicao do reu, encerra votacao
+  efeito_nao: Prossegue para qualificadoras e causas
+  importancia_defesa: |
+    Permite absolvicao por CLEMENCIA do Juri, mesmo quando nao configurada
+    tecnicamente nenhuma excludente. O Juri pode absolver por qualquer
+    motivo, exercendo sua soberania (art. 5o, XXXVIII, CF).
+
+estrategias_quesitacao_defesa:
+  tese_negativa_autoria:
+    quesito_sugerido: "O reu [nome] foi o autor dos disparos que causaram a morte da vitima?"
+    estrategia: Explorar duvidas sobre autoria, ausencia de provas diretas
+
+  tese_legitima_defesa:
+    quesitos_sugeridos:
+      - "O reu agiu em defesa propria ou de terceiro?"
+      - "A agressao contra o reu era injusta e atual?"
+      - "Os meios empregados foram moderados e necessarios?"
+    estrategia: Primeiro tenta absolvicao no generico; se nao, teses especificas
+
+  tese_privilegio:
+    quesitos_sugeridos:
+      - "O reu agiu sob dominio de violenta emocao, logo apos injusta provocacao da vitima?"
+      - "O reu agiu impelido por motivo de relevante valor social ou moral?"
+    estrategia: Mesmo condenando, reduz pena de 1/6 a 1/3
+
+  tese_desclassificacao:
+    quesitos_sugeridos:
+      - "O reu agiu com dolo de matar ou apenas de lesionar?"
+      - "O reu previu o resultado morte?"
+    estrategia: Se desclassificar, competencia passa ao juiz presidente
+
+erros_comuns_quesitacao:
+  - Quesito complexo (mais de uma pergunta)
+  - Ordem incorreta dos quesitos
+  - Omissao do quesito generico de absolvicao
+  - Qualificadora quesitada antes da autoria
+  - Quesito que induz resposta
+
+modelo_pedido: |
+  Ante o exposto, a Defesa requer a Vossa Excelencia:
+
+  a) A FORMULACAO DOS QUESITOS na seguinte ordem, conforme
+     art. 483 do CPP:
+
+     1o Quesito (materialidade e autoria):
+     "O reu [NOME] causou a morte da vitima [NOME], no dia [DATA],
+     mediante [descricao da conduta conforme pronuncia]?"
+
+     2o Quesito (absolvicao generica - art. 483, par. 2o):
+     "O jurado absolve o acusado?"
+
+     [Se nao absolvido, prosseguir:]
+
+     3o Quesito (qualificadora 1, se imputada):
+     "[Texto da qualificadora]?"
+
+     4o Quesito (qualificadora 2, se imputada):
+     "[Texto da qualificadora]?"
+
+     [Quesitos sobre tese defensiva, se nao acolhida no generico:]
+
+     Xo Quesito (legitima defesa/privilegio/etc):
+     "[Texto conforme tese]?"
+
+  b) O DESMEMBRAMENTO de quesitos complexos, se houver;
+
+  c) A IMPUGNACAO de quesitos que induzam resposta ou violem
+     a ordem legal;
+
+  d) A consignacao em ata das impugnacoes da Defesa.
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Crime doloso contra a vida identificado
+  - Qualificadoras da pronuncia listadas
+  - Tese principal de defesa definida
+  - Teses subsidiarias contempladas
+  - Ordem legal dos quesitos respeitada
+  - Quesito de absolvicao generico incluido
+  - Quesitos claros e nao complexos
+  - Estrategia de quesitacao fundamentada
+  - Impugnacoes previstas
+  - Jurisprudencia sobre quesitacao citada
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/juri/
+  arquivo: quesitos-juri-[nome-cliente]-[data].md

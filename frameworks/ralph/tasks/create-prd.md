@@ -2,7 +2,7 @@
 name: ralph-create-prd
 description: Create a structured PRD for development (manual or autonomous)
 version: 2.0
-author: AIOS Framework
+author: Sleep Agent Framework
 mode: elicit
 elicit: true
 tags: [ralph, prd, planning, development]
@@ -41,7 +41,7 @@ related_checklists:
   - quality-gates.md
   - pre-implementation.md
 
-aios_integration:
+saf_integration:
   story_driven: true
   quality_gates: included
   dev_agent_record: template provided

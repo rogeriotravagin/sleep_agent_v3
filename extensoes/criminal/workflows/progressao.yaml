@@ -1,0 +1,450 @@
+# Workflow: Progressao de Regime
+# Do calculo de requisitos ao agravo em caso de indeferimento
+
+id: progressao
+nome: Progressao de Regime Prisional
+descricao: |
+  Workflow completo para obter progressao de regime prisional.
+  Inclui calculo de requisitos, coleta de documentos e recursos.
+comando: /progressao
+
+versao: "1.0"
+
+# Visao geral
+sobre: |
+  Este workflow guia o advogado no processo de progressao de regime,
+  desde o calculo dos requisitos ate eventual agravo.
+
+  Ao final, voce tera:
+  - Calculo preciso do requisito temporal
+  - Checklist de documentos necessarios
+  - Pedido de progressao fundamentado
+  - Agravo em execucao (se indeferido)
+
+  **BASE LEGAL**: Art. 112 da Lei de Execucao Penal (Lei 7.210/84)
+  com alteracoes do Pacote Anticrime (Lei 13.964/2019)
+
+# Requisitos para Progressao (Art. 112 LEP)
+requisitos_legais:
+  descricao: Fracao de pena para progressao conforme tipo de crime
+
+  tabela_fracoes:
+    # Crimes Comuns
+    - tipo: Crime comum (primario)
+      fracao: 16%
+      fundamento: Art. 112, I, LEP
+      observacao: Nao reincidente em crime doloso
+
+    - tipo: Crime comum (reincidente em crime doloso)
+      fracao: 20%
+      fundamento: Art. 112, II, LEP
+      observacao: Reincidencia generica
+
+    # Crimes Hediondos e Equiparados
+    - tipo: Crime hediondo/equiparado (primario, sem morte)
+      fracao: 40%
+      fundamento: Art. 112, V, LEP
+      observacao: Sem resultado morte
+
+    - tipo: Crime hediondo/equiparado (primario, com morte)
+      fracao: 50%
+      fundamento: Art. 112, VI, a, LEP
+      observacao: Com resultado morte
+
+    - tipo: Crime hediondo/equiparado (reincidente, sem morte)
+      fracao: 60%
+      fundamento: Art. 112, VII, LEP
+      observacao: Reincidente especifico
+
+    - tipo: Crime hediondo/equiparado (reincidente, com morte)
+      fracao: 70%
+      fundamento: Art. 112, VIII, LEP
+      observacao: Reincidente especifico com morte
+
+    # Comando de Organizacao Criminosa
+    - tipo: Lider de organizacao criminosa ou milicia
+      fracao: 50%
+      fundamento: Art. 112, VI, b, LEP
+      observacao: Chefia, lideranca ou organizacao
+
+    # Crimes contra Administracao
+    - tipo: Crime contra administracao publica
+      fracao_base: Conforme tabela acima
+      requisito_adicional: Reparacao do dano ou devolucao do produto do crime
+      fundamento: Art. 33, par. 4, CP
+
+  requisito_objetivo:
+    nome: Requisito temporal
+    descricao: Cumprimento da fracao de pena aplicavel
+    calculo: (pena_total * fracao) - remicao
+
+  requisito_subjetivo:
+    nome: Bom comportamento carcerario
+    descricao: Atestado pelo diretor do estabelecimento
+    documento: Atestado de conduta carceraria
+    observacao: STJ admite analise ampla do requisito subjetivo
+
+# Fases do Workflow
+fases:
+  - numero: 1
+    nome: CALCULO
+    descricao: Calcular requisito temporal e verificar elegibilidade
+    agente: execucao
+    tarefas:
+      - id: coletar-dados
+        descricao: Reunir informacoes do cumprimento de pena
+        obrigatoria: true
+        dados_necessarios:
+          - Data de inicio do cumprimento (ou prisao cautelar a ser detrahida)
+          - Pena total aplicada
+          - Regime inicial fixado
+          - Crime(s) pelo(s) qual(is) foi condenado
+          - Se e primario ou reincidente
+          - Se houve resultado morte
+          - Dias remidos por trabalho/estudo
+
+      - id: calcular-fracao
+        descricao: Determinar fracao aplicavel ao caso
+        obrigatoria: true
+        verificar:
+          - Tipo de crime (comum ou hediondo/equiparado)
+          - Condicao do reu (primario ou reincidente)
+          - Resultado do crime (com ou sem morte)
+          - Se exerceu comando de organizacao criminosa
+
+      - id: calcular-data
+        descricao: Calcular data de implemento do requisito temporal
+        obrigatoria: true
+        formula: |
+          Requisito temporal = Pena total x Fracao aplicavel
+          Data implemento = Data inicio + Requisito temporal - Remicao
+        entregavel: Planilha de calculo de progressao
+
+      - id: verificar-elegibilidade
+        descricao: Confirmar se todos os requisitos estao preenchidos
+        obrigatoria: true
+        requisitos:
+          objetivo: Data de implemento ja passou?
+          subjetivo: Ha atestado de bom comportamento?
+          especifico: Reparou dano (se crime contra administracao)?
+
+    checkpoint:
+      pergunta: O apenado preenche os requisitos para progressao?
+      opcoes:
+        - sim: Prosseguir para coleta de documentos
+        - nao_objetivo: Calcular data futura de implemento
+        - nao_subjetivo: Orientar sobre comportamento
+
+  - numero: 2
+    nome: DOCUMENTACAO
+    descricao: Coletar todos os documentos necessarios
+    agente: execucao
+    tarefas:
+      - id: checklist-documentos
+        descricao: Verificar documentos disponiveis e faltantes
+        obrigatoria: true
+        documentos:
+          obrigatorios:
+            - Guia de execucao
+            - Certidao de execucao atualizada
+            - Atestado de conduta carceraria
+            - Calculo de pena atualizado
+          recomendados:
+            - Certidao de remicao (trabalho/estudo)
+            - Comprovante de atividades educacionais
+            - Comprovante de trabalho interno
+            - Declaracao de proposta de trabalho externo
+            - Laudo psicossocial (se exigido)
+            - Exame criminologico (se exigido judicialmente)
+          especificos:
+            crime_administracao:
+              - Comprovante de reparacao do dano
+              - Certidao de quitacao
+            crime_sexual:
+              - Laudo de cessacao de periculosidade (STJ diverge)
+
+      - id: solicitar-faltantes
+        descricao: Requerer documentos faltantes aos orgaos competentes
+        obrigatoria: false
+        peticoes:
+          - Oficio a direcao do presidio (atestado de conduta)
+          - Oficio ao setor de trabalho (certidao de remicao)
+          - Peticao ao juiz (laudo, exame criminologico)
+
+      - id: organizar-documentos
+        descricao: Organizar documentos para anexar ao pedido
+        obrigatoria: true
+        entregavel: Pasta com documentos organizados
+
+    checkpoint:
+      pergunta: Todos os documentos estao reunidos?
+      opcoes:
+        - sim: Prosseguir para elaboracao do pedido
+        - parcial: Protocolar pedido e juntar depois
+        - nao: Aguardar documentos essenciais
+
+  - numero: 3
+    nome: PEDIDO
+    descricao: Elaborar e protocolar pedido de progressao
+    agente: execucao
+    tarefas:
+      - id: pedido-progressao
+        comando: /pedido-progressao
+        descricao: Elaborar pedido de progressao de regime
+        obrigatoria: true
+        entregavel: Pedido de progressao de regime
+        estrutura:
+          - Qualificacao do apenado
+          - Informacoes do processo de execucao
+          - Demonstracao do requisito objetivo (calculo)
+          - Demonstracao do requisito subjetivo (conduta)
+          - Fundamentacao juridica
+          - Jurisprudencia favoravel
+          - Pedido de progressao
+
+      - id: manifestacao-mp
+        descricao: Aguardar manifestacao do Ministerio Publico
+        obrigatoria: true
+        prazo: Variavel conforme vara
+        respostas_possiveis:
+          - Favoravel: Aguardar decisao
+          - Contrario: Preparar replica
+          - Diligencias: Cumprir ou impugnar
+
+      - id: acompanhar-decisao
+        descricao: Acompanhar tramitacao e decisao
+        obrigatoria: true
+
+    checkpoint:
+      pergunta: Qual foi a decisao do juiz?
+      opcoes:
+        - deferido: Progressao concedida - monitorar implementacao
+        - indeferido: Prosseguir para agravo
+        - diligencias: Cumprir determinacoes e retornar
+
+  - numero: 4
+    nome: AGRAVO
+    descricao: Interpor agravo em execucao contra indeferimento
+    agente: execucao
+    condicao: pedido_indeferido == true
+    tarefas:
+      - id: analisar-fundamentacao
+        descricao: Analisar motivos do indeferimento
+        obrigatoria: true
+        motivos_comuns:
+          - Requisito temporal nao atingido
+          - Atestado de conduta desfavoravel
+          - Falta disciplinar nao reabilitada
+          - Exame criminologico desfavoravel
+          - Ausencia de reparacao do dano
+
+      - id: agravo-execucao
+        comando: /agravo-execucao
+        descricao: Elaborar agravo em execucao penal
+        obrigatoria: true
+        entregavel: Agravo em execucao
+        prazo: 5 dias da intimacao
+        fundamento: Art. 197 da LEP
+        estrutura:
+          - Tempestividade
+          - Cabimento
+          - Razoes do inconformismo
+          - Fundamentacao juridica
+          - Jurisprudencia
+          - Pedido de reforma
+
+      - id: razoes
+        descricao: Elaborar razoes do agravo
+        obrigatoria: true
+        argumentos_frequentes:
+          requisito_objetivo:
+            - Erro no calculo
+            - Remicao nao computada
+            - Detracao nao aplicada
+          requisito_subjetivo:
+            - Falta ja reabilitada
+            - Bom comportamento posterior
+            - Excesso de exigencias
+          exame_criminologico:
+            - Nao obrigatório apos Lei 10.792/2003
+            - Sumula Vinculante 26 STF
+            - Necessidade de fundamentacao concreta
+
+      - id: contrarrazoes-mp
+        descricao: Aguardar contrarrazoes do MP
+        obrigatoria: true
+
+      - id: sustentacao-oral
+        descricao: Requerer e preparar sustentacao oral
+        obrigatoria: false
+        entregavel: Roteiro de sustentacao
+
+    jurisprudencia_relevante:
+      sumula_vinculante_26:
+        texto: |
+          Para efeito de progressao de regime no cumprimento de pena
+          por crime hediondo ou equiparado, o juiz da execucao observara
+          a inconstitucionalidade do art. 2o da Lei 8.072/1990, sem
+          prejuizo de avaliar se o condenado preenche, ou nao, os
+          requisitos objetivos e subjetivos do beneficio, podendo
+          determinar, para tal fim, de modo fundamentado, a realizacao
+          de exame criminologico.
+        aplicacao: Exame criminologico nao e obrigatorio
+
+      sumula_534_stj:
+        texto: |
+          A pratica de falta grave nao interrompe a contagem do prazo
+          para a progressao de regime de cumprimento de pena.
+
+      sumula_441_stj:
+        texto: |
+          A falta grave nao interrompe o prazo para obtencao de
+          livramento condicional.
+
+    checkpoint:
+      pergunta: Qual foi a decisao do agravo?
+      opcoes:
+        - provido: Progressao concedida pelo Tribunal
+        - desprovido: Avaliar HC ou aguardar novo requisito
+        - parcial: Analisar extensao da reforma
+
+  - numero: 5
+    nome: IMPLEMENTACAO
+    descricao: Acompanhar a implementacao da progressao
+    agente: execucao
+    condicao: progressao_deferida == true
+    tarefas:
+      - id: verificar-regime
+        descricao: Verificar regime de destino e condicoes
+        obrigatoria: true
+        regimes:
+          semiaberto:
+            - Colonia agricola ou industrial
+            - Estabelecimento similar
+            - Autorizacao para trabalho externo
+            - Saidas temporarias
+          aberto:
+            - Casa do albergado
+            - Prisao domiciliar (se nao houver vaga)
+            - Trabalho obrigatorio
+
+      - id: monitorar-transferencia
+        descricao: Acompanhar transferencia para estabelecimento adequado
+        obrigatoria: true
+        problemas_comuns:
+          - Ausencia de vaga no semiaberto
+          - Demora na transferencia
+          - Permanencia ilegal no fechado
+        solucoes:
+          - HC por permanencia ilegal no regime mais gravoso
+          - Prisao domiciliar por ausencia de vaga
+
+      - id: proximos-beneficios
+        descricao: Calcular datas de proximos beneficios
+        obrigatoria: true
+        beneficios:
+          - Nova progressao de regime
+          - Saida temporaria
+          - Trabalho externo
+          - Livramento condicional
+        entregavel: Cronograma de beneficios
+
+    checkpoint:
+      pergunta: A progressao foi efetivamente implementada?
+      opcoes:
+        - sim: Monitorar proximos beneficios
+        - nao: Impetrar HC por permanencia ilegal
+        - parcial: Resolver pendencias
+
+# Perguntas iniciais do workflow
+perguntas_iniciais:
+  - Qual o nome do apenado?
+  - Qual o numero do processo de execucao?
+  - Qual a pena total e o regime inicial?
+  - Qual a data de inicio do cumprimento?
+  - Qual(is) o(s) crime(s) da condenacao?
+  - O apenado e primario ou reincidente?
+  - Ha remicao por trabalho ou estudo? Quantos dias?
+  - Ja houve algum pedido de progressao anterior?
+  - O apenado cometeu falta disciplinar? Ja foi reabilitada?
+  - Tem atestado de bom comportamento carcerario?
+
+# Progresso
+progresso_template: |
+  ## Progressao de Regime: [nome do apenado]
+  **Processo:** [numero]
+  **Crime:** [crime]
+  **Pena total:** [pena]
+  **Regime atual:** [regime]
+
+  **Calculo:**
+  - Fracao aplicavel: [fracao]%
+  - Requisito temporal: [dias] dias
+  - Remicao: [dias_remicao] dias
+  - Data de implemento: [data]
+
+  [x] Fase 1: CALCULO - Concluido
+      - Requisito temporal calculado
+      - Elegibilidade verificada
+
+  [ ] Fase 2: DOCUMENTACAO - Em andamento
+      - Documentos coletados: [x/y]
+
+  [ ] Fase 3: PEDIDO - Pendente
+  [ ] Fase 4: AGRAVO - Se necessario
+  [ ] Fase 5: IMPLEMENTACAO - Apos deferimento
+
+  **Proximo passo:** [descricao]
+
+# Entrega final
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[apenado]/criminal/progressao/
+    +-- calculo-progressao.md
+    +-- checklist-documentos.md
+    +-- pedido-progressao.md
+    +-- manifestacao-mp.md (se houver)
+    +-- decisao.md
+    +-- agravo/ (se necessario)
+    |   +-- agravo-execucao.md
+    |   +-- razoes.md
+    |   +-- acordao.md
+    +-- cronograma-beneficios.md
+    +-- timeline.md
+
+output:
+  pasta: workspace/[estrutura]/criminal/estrategias/
+  arquivo: progressao-[data].md
+
+# Tabela de Referencia Rapida
+referencia_rapida:
+  fracoes:
+    crime_comum_primario: 16%
+    crime_comum_reincidente: 20%
+    hediondo_primario_sem_morte: 40%
+    hediondo_primario_com_morte: 50%
+    hediondo_reincidente_sem_morte: 60%
+    hediondo_reincidente_com_morte: 70%
+    lider_orcrim_milicia: 50%
+
+  remicao:
+    trabalho: 1 dia a cada 3 trabalhados
+    estudo: 1 dia a cada 12 horas
+    leitura: 1 dia a cada obra (max 12/ano)
+
+  prazos:
+    agravo: 5 dias
+    manifestacao_mp: variavel
+    decisao: sem prazo legal
+
+# Disclaimer
+disclaimer: |
+  ---
+  **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de inteligencia
+  artificial para fins de orientacao juridica. E OBRIGATORIA a revisao por
+  advogado inscrito na OAB antes de utilizacao em processos reais.
+
+  A responsabilidade pela utilizacao do conteudo e exclusivamente do
+  profissional que o apresentar em juizo.
+  ---

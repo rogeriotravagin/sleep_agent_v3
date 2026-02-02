@@ -1,0 +1,152 @@
+id: analise-risco
+nome: Analise de Risco Juridico
+descricao: Mapeia e avalia riscos juridicos de uma operacao ou negocio
+agente: empresarial
+comando: /analise-risco
+
+entradas:
+  obrigatorias:
+    - nome: contexto
+      pergunta: "Descreva a operacao ou situacao a ser analisada"
+      tipo: texto_longo
+      exemplo: "Estamos considerando expandir para venda online de alimentos"
+
+    - nome: tipo_negocio
+      pergunta: "Qual o tipo de negocio?"
+      tipo: texto
+      exemplo: "Restaurante com delivery proprio"
+
+  opcionais:
+    - nome: areas_foco
+      pergunta: "Ha areas especificas de preocupacao?"
+      tipo: texto
+      padrao: "Analise geral"
+
+    - nome: documentos
+      pergunta: "Ha documentos para analise? (contratos, licencas)"
+      tipo: texto
+      padrao: "Nenhum documento"
+
+    - nome: urgencia
+      pergunta: "Qual a urgencia da analise?"
+      tipo: escolha
+      opcoes:
+        - Planejamento (sem pressa)
+        - Curto prazo (proximo mes)
+        - Urgente (proxima semana)
+
+passos:
+  - numero: 1
+    acao: "Entender a operacao"
+    detalhes: "Mapear atividades e partes envolvidas"
+
+  - numero: 2
+    acao: "Identificar areas de risco"
+    detalhes: "Listar todas as areas juridicas aplicaveis"
+
+  - numero: 3
+    acao: "Avaliar cada risco"
+    detalhes: "Classificar por probabilidade e impacto"
+
+  - numero: 4
+    acao: "Propor mitigacoes"
+    detalhes: "Sugerir acoes para reduzir riscos"
+
+  - numero: 5
+    acao: "Priorizar acoes"
+    detalhes: "Ordenar por urgencia e importancia"
+
+saida:
+  formato: markdown
+  template: |
+    ## ANALISE DE RISCO JURIDICO
+
+    **Operacao:** [descricao]
+    **Data:** [data]
+    **Solicitante:** [quem]
+
+    ---
+
+    ### SUMARIO EXECUTIVO
+    [resumo dos principais riscos e recomendacoes - 5 linhas]
+
+    ---
+
+    ### MATRIZ DE RISCOS
+
+    | Risco | Probabilidade | Impacto | Nivel | Acao |
+    |-------|---------------|---------|-------|------|
+    | [risco] | Alta/Media/Baixa | Alto/Medio/Baixo | Critico/Alto/Medio/Baixo | [acao] |
+
+    ---
+
+    ### ANALISE DETALHADA
+
+    #### 1. RISCOS CRITICOS
+    **[Nome do Risco]**
+    - **Descricao:** [o que pode acontecer]
+    - **Probabilidade:** [Alta/Media/Baixa]
+    - **Impacto:** [consequencias]
+    - **Mitigacao:** [como reduzir]
+    - **Responsavel:** [quem deve agir]
+
+    #### 2. RISCOS ALTOS
+    [mesma estrutura]
+
+    #### 3. RISCOS MEDIOS
+    [mesma estrutura]
+
+    #### 4. RISCOS BAIXOS
+    [mesma estrutura]
+
+    ---
+
+    ### AREAS ANALISADAS
+
+    - [ ] Societario
+    - [ ] Contratual
+    - [ ] Trabalhista
+    - [ ] Tributario
+    - [ ] Regulatorio
+    - [ ] LGPD/Dados
+    - [ ] Propriedade Intelectual
+    - [ ] Consumidor
+    - [ ] Ambiental
+    - [ ] Concorrencial
+
+    ---
+
+    ### PLANO DE ACAO
+
+    | Prioridade | Acao | Prazo | Responsavel |
+    |------------|------|-------|-------------|
+    | 1 | [acao critica] | Imediato | [quem] |
+    | 2 | [acao alta] | 30 dias | [quem] |
+
+    ---
+
+    ### RECOMENDACOES FINAIS
+    [conclusao e proximos passos]
+
+    ---
+
+    **AVISO**: Esta analise tem carater orientativo.
+    Consulte especialistas para implementacao.
+
+conhecimento:
+  - conhecimento/direito-empresarial.md
+  - conhecimento/compliance.md
+  - conhecimento/lgpd.md
+  - conhecimento/trabalhista.md
+
+gates:
+  - Todas as areas relevantes foram analisadas?
+  - Riscos classificados por gravidade?
+  - Mitigacoes sao praticas?
+  - Plano de acao priorizado?
+
+proximos_passos:
+  - Validar com especialistas
+  - Implementar mitigacoes prioritarias
+  - Monitorar riscos periodicamente
+  - Atualizar analise anualmente

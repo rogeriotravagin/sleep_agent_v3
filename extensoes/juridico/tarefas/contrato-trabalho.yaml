@@ -1,0 +1,194 @@
+id: contrato-trabalho
+nome: Criar Contrato de Trabalho
+descricao: Elabora contrato de trabalho CLT ou modelo de prestador
+agente: contratos
+comando: /contrato-trabalho
+
+entradas:
+  obrigatorias:
+    - nome: tipo_contrato
+      pergunta: "Qual o tipo de contrato?"
+      tipo: escolha
+      opcoes:
+        - CLT Prazo Indeterminado
+        - CLT Prazo Determinado
+        - Contrato de Experiencia
+        - Trabalho Intermitente
+        - Teletrabalho (Home Office)
+        - Estagio
+
+    - nome: empregador
+      pergunta: "Dados do empregador (empresa)"
+      tipo: texto
+      exemplo: "Empresa XYZ Ltda, CNPJ 00.000.000/0001-00"
+
+    - nome: empregado
+      pergunta: "Nome completo do empregado"
+      tipo: texto
+      exemplo: "Joao da Silva"
+
+    - nome: funcao
+      pergunta: "Qual a funcao/cargo?"
+      tipo: texto
+      exemplo: "Analista de Marketing"
+
+    - nome: salario
+      pergunta: "Qual o salario mensal?"
+      tipo: texto
+      exemplo: "R$ 5.000,00"
+
+    - nome: jornada
+      pergunta: "Qual a jornada de trabalho?"
+      tipo: texto
+      exemplo: "Segunda a sexta, 9h as 18h (44h semanais)"
+
+  opcionais:
+    - nome: beneficios
+      pergunta: "Quais beneficios serao oferecidos?"
+      tipo: texto
+      padrao: "Vale transporte, vale refeicao"
+
+    - nome: data_inicio
+      pergunta: "Data de inicio do trabalho"
+      tipo: texto
+      padrao: "[data a definir]"
+
+    - nome: prazo
+      pergunta: "Prazo do contrato (se determinado)"
+      tipo: texto
+      padrao: "Indeterminado"
+
+    - nome: local_trabalho
+      pergunta: "Local de trabalho"
+      tipo: texto
+      padrao: "Sede da empresa"
+
+    - nome: clausulas_especiais
+      pergunta: "Clausulas especiais necessarias?"
+      tipo: texto
+      padrao: "Nenhuma"
+
+passos:
+  - numero: 1
+    acao: "Coletar dados das partes"
+    detalhes: "Empregador e empregado completos"
+
+  - numero: 2
+    acao: "Definir tipo de contrato"
+    detalhes: "Prazo, modalidade, regime"
+
+  - numero: 3
+    acao: "Especificar funcao e atividades"
+    detalhes: "Cargo e descricao de tarefas"
+
+  - numero: 4
+    acao: "Definir remuneracao"
+    detalhes: "Salario, beneficios, adicionais"
+
+  - numero: 5
+    acao: "Estabelecer jornada"
+    detalhes: "Horario, dias, banco de horas se aplicavel"
+
+  - numero: 6
+    acao: "Incluir clausulas especiais"
+    detalhes: "Confidencialidade, PI, non-compete se necessario"
+
+saida:
+  formato: markdown
+  template: |
+    ## CONTRATO DE TRABALHO
+
+    **Tipo:** [tipo de contrato]
+    **Data:** [data]
+
+    ---
+
+    ### PARTES
+
+    **EMPREGADOR:**
+    [Razao social], pessoa juridica de direito privado,
+    inscrita no CNPJ sob n. [numero], com sede em [endereco],
+    doravante denominada EMPREGADOR.
+
+    **EMPREGADO:**
+    [Nome completo], [nacionalidade], [estado civil],
+    portador do RG n. [numero] e inscrito no CPF sob n. [numero],
+    residente em [endereco], doravante denominado EMPREGADO.
+
+    ---
+
+    ### CLAUSULA PRIMEIRA - DO OBJETO
+    O EMPREGADOR contrata o EMPREGADO para exercer a funcao
+    de [FUNCAO], realizando as seguintes atividades:
+    [descricao das atividades]
+
+    ### CLAUSULA SEGUNDA - DO PRAZO
+    [Prazo do contrato - determinado/indeterminado]
+
+    ### CLAUSULA TERCEIRA - DA REMUNERACAO
+    O EMPREGADO recebera salario mensal de [VALOR], pago
+    ate o 5o dia util do mes subsequente.
+
+    ### CLAUSULA QUARTA - DOS BENEFICIOS
+    [Lista de beneficios]
+
+    ### CLAUSULA QUINTA - DA JORNADA
+    O EMPREGADO cumprira jornada de [HORAS] semanais,
+    de [DIAS], das [HORARIO INICIO] as [HORARIO FIM],
+    com intervalo de [INTERVALO] para refeicao.
+
+    ### CLAUSULA SEXTA - DO LOCAL DE TRABALHO
+    [Local de trabalho - presencial/hibrido/remoto]
+
+    ### CLAUSULA SETIMA - DAS OBRIGACOES DO EMPREGADO
+    O EMPREGADO se compromete a:
+    a) Cumprir as normas internas da empresa;
+    b) Manter sigilo sobre informacoes confidenciais;
+    c) Zelar pelos equipamentos e materiais;
+    d) [outras obrigacoes]
+
+    ### CLAUSULA OITAVA - DA RESCISAO
+    [Condicoes de rescisao]
+
+    ### CLAUSULA NONA - DO FORO
+    Fica eleito o foro da Comarca de [LOCAL] para
+    dirimir quaisquer controversias.
+
+    ---
+
+    E por estarem de acordo, as partes assinam o presente
+    contrato em 2 (duas) vias.
+
+    [Local], [data]
+
+    _____________________________
+    EMPREGADOR
+
+    _____________________________
+    EMPREGADO
+
+    **Testemunhas:**
+
+    1. _____________________________
+       Nome:
+       CPF:
+
+    2. _____________________________
+       Nome:
+       CPF:
+
+conhecimento:
+  - conhecimento/trabalhista.md
+  - conhecimento/contratos.md
+
+gates:
+  - Tipo de contrato adequado a situacao?
+  - Funcao e atividades bem descritas?
+  - Remuneracao e jornada claras?
+  - Clausulas legais presentes?
+
+proximos_passos:
+  - Registrar na CTPS
+  - Cadastrar no eSocial
+  - Providenciar exame admissional
+  - Integrar funcionario

@@ -1,0 +1,433 @@
+# Workflow: Obter Liberdade do Cliente
+# Estrategia progressiva para liberar cliente preso
+
+id: liberdade
+nome: Obter Liberdade do Cliente
+descricao: |
+  Workflow especializado em obter a liberdade do cliente preso.
+  Utiliza estrategia progressiva: relaxamento -> revogacao -> HC.
+  Inclui medidas cautelares alternativas (art. 319 CPP).
+comando: /liberdade
+
+versao: "1.0"
+
+# Visao geral
+sobre: |
+  Este workflow guia o advogado na busca pela liberdade do cliente preso,
+  utilizando a estrategia mais adequada para cada situacao.
+
+  Ao final, voce tera:
+  - Diagnostico da situacao prisional
+  - Peca adequada ao caso (relaxamento, revogacao ou HC)
+  - Proposta de medidas cautelares alternativas
+  - Estrategia de recursos em caso de indeferimento
+
+  **PRINCIPIO**: A liberdade e a regra; a prisao, a excecao.
+  (Art. 5o, LXVI, CF - ninguem sera levado a prisao quando a lei admitir
+  liberdade provisoria, com ou sem fianca)
+
+# Fluxo de Decisao Principal
+fluxo_decisao:
+  descricao: Arvore de decisao para escolher a medida correta
+
+  diagnostico_inicial:
+    pergunta: Qual o tipo de prisao do cliente?
+    opcoes:
+      flagrante: ir_para -> analise_flagrante
+      preventiva: ir_para -> analise_preventiva
+      temporaria: ir_para -> analise_temporaria
+      sentenca: ir_para -> analise_execucao
+
+  analise_flagrante:
+    pergunta: A prisao em flagrante e legal?
+    criterios:
+      - Houve situacao de flagrancia (art. 302 CPP)?
+      - O APF foi lavrado em 24h?
+      - Houve comunicacao ao juiz em 24h?
+      - Foi realizada audiencia de custodia?
+      - Os direitos do preso foram respeitados?
+    opcoes:
+      ilegal: medida -> RELAXAMENTO
+      legal: ir_para -> analise_conversao
+
+  analise_conversao:
+    pergunta: A conversao em preventiva foi correta?
+    criterios:
+      - Ha prova da materialidade?
+      - Ha indicios de autoria?
+      - Esta presente algum requisito do art. 312 CPP?
+      - As medidas cautelares sao insuficientes?
+    opcoes:
+      incorreta: medida -> REVOGACAO_PREVENTIVA
+      correta: medida -> LIBERDADE_COM_MEDIDAS
+
+  analise_preventiva:
+    pergunta: A preventiva atende aos requisitos legais?
+    requisitos_art_312:
+      - Garantia da ordem publica
+      - Garantia da ordem economica
+      - Conveniencia da instrucao criminal
+      - Assegurar aplicacao da lei penal
+    verificar:
+      - Ha fundamentacao concreta (nao generica)?
+      - O crime admite preventiva (pena > 4 anos ou violencia domestica)?
+      - Medidas cautelares sao realmente insuficientes?
+    opcoes:
+      sem_requisitos: medida -> REVOGACAO_PREVENTIVA
+      excesso_prazo: medida -> HC_EXCESSO_PRAZO
+      fundamentacao_generica: medida -> HC_FUNDAMENTACAO
+
+  analise_temporaria:
+    pergunta: A temporaria ainda e necessaria?
+    verificar:
+      - Prazo de 5 dias (crime comum) ou 30 dias (hediondo) expirou?
+      - Foi prorrogada legalmente?
+      - A investigacao justifica manutencao?
+    opcoes:
+      prazo_expirado: medida -> RELAXAMENTO
+      desnecessaria: medida -> REVOGACAO_TEMPORARIA
+      legal: medida -> AGUARDAR_PRAZO
+
+  analise_execucao:
+    pergunta: Ha ilegalidade na prisao por sentenca?
+    verificar:
+      - Transito em julgado ocorreu?
+      - Regime inicial esta correto?
+      - Ha direito a recorrer em liberdade?
+    opcoes:
+      sem_transito: medida -> HC_EXECUCAO_PROVISORIA
+      regime_incorreto: medida -> HC_REGIME
+      com_transito: ir_para -> workflow_progressao
+
+# Fases do Workflow
+fases:
+  - numero: 1
+    nome: DIAGNOSTICO
+    descricao: Analisar a situacao prisional e identificar a medida cabivel
+    agente: criminalista
+    tarefas:
+      - id: coletar-informacoes
+        descricao: Reunir todas as informacoes sobre a prisao
+        obrigatoria: true
+        perguntas:
+          - Qual o tipo de prisao? (flagrante, preventiva, temporaria)
+          - Data e hora da prisao
+          - Houve audiencia de custodia?
+          - Qual o crime imputado?
+          - Qual a fundamentacao da prisao?
+          - Cliente tem residencia fixa?
+          - Cliente tem ocupacao licita?
+          - Cliente tem antecedentes?
+
+      - id: analise-legalidade
+        descricao: Verificar legalidade formal da prisao
+        obrigatoria: true
+        verificar:
+          flagrante:
+            - Situacao de flagrancia configurada
+            - APF lavrado em 24h
+            - Comunicacao ao juiz em 24h
+            - Nota de culpa entregue
+            - Audiencia de custodia realizada
+          preventiva:
+            - Fundamentacao concreta (nao generica)
+            - Presenca de requisitos do art. 312
+            - Crime admite preventiva
+            - Subsidiariedade das cautelares
+          temporaria:
+            - Prazo dentro do limite legal
+            - Necessidade para investigacao
+
+      - id: definir-estrategia
+        descricao: Escolher a medida mais adequada
+        obrigatoria: true
+        entregavel: Parecer sobre medida cabivel
+
+    checkpoint:
+      pergunta: O diagnostico esta completo?
+      opcoes:
+        - continuar: Elaborar a peca adequada
+        - pausar: Coletar mais informacoes
+        - voltar: Revisar analise
+
+  - numero: 2
+    nome: RELAXAMENTO
+    descricao: Pedido de relaxamento de prisao ilegal
+    agente: criminalista
+    condicao: prisao_ilegal == true
+    tarefas:
+      - id: relaxamento
+        comando: /relaxamento
+        descricao: Elaborar pedido de relaxamento
+        obrigatoria: true
+        entregavel: Pedido de relaxamento de prisao
+
+    fundamentos_comuns:
+      - Ausencia de situacao de flagrancia (art. 302 CPP)
+      - APF nao lavrado em 24h
+      - Ausencia de comunicacao ao juiz
+      - Nao realizacao de audiencia de custodia
+      - Ausencia de nota de culpa
+      - Prisao por crime que nao admite flagrante
+
+    modelo_pedido:
+      enderecamento: Juiz da audiencia de custodia ou da vara criminal
+      fundamento_legal: Art. 5o, LXV, CF - relaxamento de prisao ilegal
+      pedido: Relaxamento imediato da prisao
+
+    checkpoint:
+      pergunta: O relaxamento foi deferido?
+      opcoes:
+        - sucesso: Cliente liberado - encerrar workflow
+        - indeferido: Seguir para HC
+        - convertido: Prisao convertida - ir para REVOGACAO
+
+  - numero: 3
+    nome: REVOGACAO
+    descricao: Pedido de revogacao de prisao preventiva/temporaria
+    agente: criminalista
+    condicao: prisao_legal_sem_requisitos == true
+    tarefas:
+      - id: revogacao-preventiva
+        comando: /revogacao-preventiva
+        descricao: Elaborar pedido de revogacao
+        obrigatoria: true
+        entregavel: Pedido de revogacao de preventiva
+
+    fundamentos_comuns:
+      ausencia_requisitos:
+        - Nao ha risco a ordem publica (reu primario, bons antecedentes)
+        - Nao ha risco a instrucao (provas ja produzidas)
+        - Nao ha risco de fuga (residencia fixa, trabalho licito)
+      desproporcionalidade:
+        - Crime sem violencia/grave ameaca
+        - Pena prevista e baixa
+        - Possibilidade de regime aberto/semiaberto
+      fundamentacao_deficiente:
+        - Decisao com fundamentacao generica
+        - Ausencia de fatos concretos
+        - Mera repeticao da lei
+      fato_novo:
+        - Circunstancias modificadas
+        - Instrucao concluida
+        - Tempo de prisao ja cumprido
+
+    medidas_cautelares_alternativas:
+      descricao: Propor medidas do art. 319 CPP
+      opcoes:
+        - I: Comparecimento periodico em juizo
+        - II: Proibicao de acesso a lugares
+        - III: Proibicao de contato com pessoas
+        - IV: Proibicao de ausentar-se da comarca
+        - V: Recolhimento domiciliar noturno
+        - VI: Suspensao de funcao publica
+        - VII: Internacao provisoria
+        - VIII: Fianca
+        - IX: Monitoramento eletronico
+
+    checkpoint:
+      pergunta: A revogacao foi deferida?
+      opcoes:
+        - sucesso: Cliente liberado - encerrar workflow
+        - indeferido: Seguir para HC
+        - parcial: Medidas cautelares impostas - monitorar
+
+  - numero: 4
+    nome: HABEAS_CORPUS
+    descricao: Impetrar HC contra constrangimento ilegal
+    agente: recursos
+    condicao: medidas_anteriores_indeferidas == true
+    tarefas:
+      - id: habeas-corpus
+        comando: /habeas-corpus
+        descricao: Elaborar habeas corpus
+        obrigatoria: true
+        entregavel: HC com pedido de liminar
+
+    competencia:
+      descricao: Definir autoridade competente
+      regras:
+        - Ato de delegado: Juiz de 1o grau
+        - Ato de juiz de 1o grau: Tribunal de Justica ou TRF
+        - Ato de desembargador/turma: STJ
+        - Ato de ministro STJ: STF
+        - Ato originario de tribunal: Tribunal superior
+
+    fundamentos_hc:
+      constrangimento_ilegal:
+        - Prisao ilegal nao relaxada
+        - Preventiva sem requisitos
+        - Excesso de prazo na instrucao
+        - Fundamentacao inidônea
+        - Ausencia de justa causa
+      liminar:
+        - Fumus boni iuris: aparente ilegalidade
+        - Periculum in mora: risco de dano irreparavel
+
+    estrategia_liminar:
+      urgente: true
+      argumentos:
+        - Demonstrar ilegalidade flagrante
+        - Demonstrar perigo na demora
+        - Citar precedentes favoraveis
+        - Propor medidas cautelares alternativas
+
+    checkpoint:
+      pergunta: O HC foi deferido?
+      opcoes:
+        - sucesso_liminar: Liminar deferida - cliente liberado
+        - sucesso_merito: HC concedido no merito
+        - indeferido: Avaliar recurso ou HC para instancia superior
+        - parcial: Medidas cautelares substituidas
+
+  - numero: 5
+    nome: RECURSOS_HC
+    descricao: Recursos contra indeferimento de HC
+    agente: recursos
+    condicao: hc_indeferido == true
+    tarefas:
+      - id: agravo-regimental
+        descricao: Agravo contra decisao monocratica
+        obrigatoria: false
+        condicao: decisao_monocratica == true
+        entregavel: Agravo regimental
+
+      - id: hc-instancia-superior
+        descricao: Novo HC para tribunal superior
+        obrigatoria: false
+        entregavel: HC para STJ ou STF
+
+      - id: recurso-ordinario
+        descricao: ROC em HC para STJ/STF
+        obrigatoria: false
+        condicao: cabivel_roc == true
+        entregavel: Recurso ordinario constitucional
+
+    estrategia_progressiva:
+      descricao: Escalar para instancias superiores
+      1: HC no Tribunal local
+      2: HC no STJ (se decisao do TJ/TRF)
+      3: HC no STF (questao constitucional)
+      paralelo: RHC quando HC originario denegado
+
+    checkpoint:
+      pergunta: A liberdade foi obtida?
+      opcoes:
+        - sucesso: Cliente liberado
+        - pendente: Aguardar julgamento
+        - esgotado: Vias recursais esgotadas
+
+# Medidas Cautelares Alternativas (Art. 319 CPP)
+medidas_cautelares:
+  descricao: |
+    Propor medidas cautelares como alternativa a prisao.
+    Principio da proporcionalidade e adequacao.
+
+  catalogo:
+    - inciso: I
+      medida: Comparecimento periodico em juizo
+      descricao: Para informar e justificar atividades
+      adequada_para: Risco moderado de fuga
+
+    - inciso: II
+      medida: Proibicao de acesso ou frequencia a lugares
+      descricao: Quando necessario para evitar risco
+      adequada_para: Crimes em contexto especifico
+
+    - inciso: III
+      medida: Proibicao de manter contato com pessoa determinada
+      descricao: Quando necessario para proteger vitima/testemunha
+      adequada_para: Violencia domestica, ameaca
+
+    - inciso: IV
+      medida: Proibicao de ausentar-se da comarca
+      descricao: Sem autorizacao judicial
+      adequada_para: Risco moderado de fuga
+
+    - inciso: V
+      medida: Recolhimento domiciliar noturno e dias de folga
+      descricao: Quando tem residencia e trabalho fixos
+      adequada_para: Reu com vinculos comprovados
+
+    - inciso: VI
+      medida: Suspensao do exercicio de funcao publica ou atividade
+      descricao: Quando relacionada ao crime
+      adequada_para: Crimes funcionais
+
+    - inciso: VII
+      medida: Internacao provisoria
+      descricao: Para inimputaveis ou semi-imputaveis
+      adequada_para: Questao de saude mental
+
+    - inciso: VIII
+      medida: Fianca
+      descricao: Quando o crime for afiancavel
+      adequada_para: Crimes menos graves
+
+    - inciso: IX
+      medida: Monitoracao eletronica
+      descricao: Tornozeleira eletronica
+      adequada_para: Risco de fuga com residencia fixa
+
+  combinacao:
+    descricao: Medidas podem ser aplicadas cumulativamente
+    exemplo: Comparecimento + proibicao de contato + monitoramento
+
+# Perguntas iniciais do workflow
+perguntas_iniciais:
+  - Qual o nome do cliente preso?
+  - Qual o tipo de prisao? (flagrante, preventiva, temporaria, sentenca)
+  - Qual a data da prisao?
+  - Qual o crime imputado?
+  - Houve audiencia de custodia? Qual foi a decisao?
+  - Qual a fundamentacao da prisao?
+  - O cliente tem residencia fixa? Onde?
+  - O cliente tem trabalho licito?
+  - O cliente tem antecedentes criminais?
+  - Ha alguma ilegalidade aparente na prisao?
+
+# Progresso
+progresso_template: |
+  ## Liberdade: [nome do cliente]
+  **Tipo de prisao:** [tipo]
+  **Crime:** [crime]
+  **Data da prisao:** [data]
+
+  **Diagnostico:** [medida escolhida]
+
+  [x] Fase 1: DIAGNOSTICO - Concluido
+      - Tipo de prisao identificado
+      - Medida cabivel definida
+
+  [ ] Fase 2: [MEDIDA] - Em andamento
+      - Status: [aguardando/protocolado/julgado]
+
+  **Proximo passo:** [descricao]
+
+# Entrega final
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[cliente]/criminal/liberdade/
+    +-- diagnostico-prisao.md
+    +-- [peca-principal].md (relaxamento/revogacao/hc)
+    +-- medidas-cautelares-propostas.md
+    +-- recursos/ (se necessario)
+    |   +-- agravo.md
+    |   +-- hc-superior.md
+    +-- timeline-liberdade.md
+
+output:
+  pasta: workspace/[estrutura]/criminal/estrategias/
+  arquivo: liberdade-[data].md
+
+# Disclaimer
+disclaimer: |
+  ---
+  **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de inteligencia
+  artificial para fins de orientacao juridica. E OBRIGATORIA a revisao por
+  advogado inscrito na OAB antes de utilizacao em processos reais.
+
+  A responsabilidade pela utilizacao do conteudo e exclusivamente do
+  profissional que o apresentar em juizo.
+  ---

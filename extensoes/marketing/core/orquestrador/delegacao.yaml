@@ -1,0 +1,128 @@
+# Regras de Delegacao - Extensao Marketing
+# Define qual agente atende cada tipo de pedido
+
+# =====================================================
+# CONFIGURACAO DE OUTPUT
+# =====================================================
+
+output:
+  # Caminho base (relativo ao workspace)
+  extensao: marketing
+
+  # Tipos de conteudo suportados
+  tipos:
+    - paginas-html
+    - emails
+    - headlines
+    - anuncios
+    - ofertas
+    - pesquisas
+    - estrategias
+    - copies
+    - sequencias
+
+  # Criar pasta automaticamente se nao existir
+  auto_criar: true
+
+# =====================================================
+# AGENTES
+# =====================================================
+
+# Agente Copywriter
+copywriter:
+  agente: agentes/COPYWRITER.md
+  gatilhos:
+    - headline
+    - titulo
+    - copy
+    - texto de venda
+    - persuasao
+    - bullet points
+    - beneficios
+    - promessa
+    - gancho
+    - lead
+    - big idea
+    - pagina de vendas
+    - vsl
+    - script
+  tarefas:
+    - criar-headline
+    - criar-email
+    - criar-sequencia-email
+
+# Agente Estrategista
+estrategista:
+  agente: agentes/ESTRATEGISTA.md
+  gatilhos:
+    - estrategia
+    - posicionamento
+    - publico-alvo
+    - persona
+    - icp
+    - proposta de valor
+    - diferencial
+    - concorrencia
+    - mercado
+    - oferta
+    - precificacao
+    - pesquisa
+  tarefas:
+    - pesquisa-mercado
+    - criar-icp
+    - criar-persona
+    - criar-oferta
+
+# Agente Trafego
+trafego:
+  agente: agentes/TRAFEGO.md
+  gatilhos:
+    - anuncio
+    - ads
+    - facebook ads
+    - meta ads
+    - google ads
+    - youtube ads
+    - trafego pago
+    - campanha
+    - segmentacao
+    - publico
+    - criativo
+    - cpc
+    - cpm
+    - roas
+  tarefas:
+    - criar-anuncio
+
+# =====================================================
+# REGRAS DE PRIORIDADE
+# =====================================================
+
+prioridade:
+  # Se mencionar multiplos gatilhos, qual agente prevalece
+  ordem:
+    - estrategista   # Primeiro: visao estrategica
+    - copywriter     # Segundo: criacao de textos
+    - trafego        # Terceiro: distribuicao
+
+# =====================================================
+# CASOS ESPECIAIS
+# =====================================================
+
+casos_especiais:
+  # Pedidos que precisam de multiplos agentes
+  multi_agente:
+    - gatilho: "lancamento"
+      workflow: workflows/lancamento.yaml
+    - gatilho: "campanha completa"
+      workflow: workflows/campanha.yaml
+    - gatilho: "oferta completa"
+      workflow: workflows/oferta-completa.yaml
+
+  # Pedidos que devem explorar antes de delegar
+  explorar_primeiro:
+    - "preciso vender"
+    - "quero faturar"
+    - "aumentar vendas"
+    - "ganhar dinheiro"
+    - "preciso de clientes"

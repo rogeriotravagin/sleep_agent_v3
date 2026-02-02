@@ -1,0 +1,148 @@
+id: abertura-empresa
+nome: Abertura e Estruturacao de Empresa
+descricao: Processo completo para constituicao e estruturacao societaria
+comando: /abertura-empresa
+
+perguntas_iniciais:
+  - "Quantos socios terao a empresa?"
+  - "Qual sera a atividade principal?"
+  - "Qual a expectativa de faturamento anual?"
+  - "Os socios vao trabalhar na empresa ou apenas investir?"
+  - "Ha patrimonio pessoal significativo a proteger?"
+
+etapas:
+  - numero: 1
+    nome: Analise de Perfil
+    agente: empresarial
+    descricao: "Entender necessidades e definir melhor estrutura"
+    entregavel: "Relatorio de analise com recomendacao de tipo societario"
+    duracao_estimada: "1 dia"
+    perguntas:
+      - Atividades que serao exercidas
+      - Expectativa de faturamento
+      - Numero e perfil de socios
+      - Planos de crescimento
+      - Necessidade de investidores
+
+  - numero: 2
+    nome: Escolha do Tipo Societario
+    agente: empresarial
+    descricao: "Definir tipo societario e regime tributario"
+    entregavel: "Comparativo de opcoes e decisao"
+    duracao_estimada: "1 dia"
+    depende_de: [1]
+    opcoes:
+      - MEI
+      - EI
+      - SLU (Sociedade Limitada Unipessoal)
+      - LTDA
+      - S/A
+
+  - numero: 3
+    nome: Elaboracao do Contrato Social
+    agente: contratos
+    descricao: "Redigir contrato social ou estatuto"
+    entregavel: "Contrato social completo"
+    duracao_estimada: "2 dias"
+    depende_de: [2]
+    clausulas:
+      - Qualificacao dos socios
+      - Objeto social
+      - Capital social e quotas
+      - Administracao
+      - Distribuicao de lucros
+      - Deliberacoes
+      - Retirada e exclusao
+
+  - numero: 4
+    nome: Acordo de Socios
+    agente: contratos
+    descricao: "Elaborar acordo de socios (se aplicavel)"
+    entregavel: "Acordo de socios"
+    duracao_estimada: "2 dias"
+    depende_de: [2]
+    condicional: "Se houver mais de 1 socio"
+    clausulas:
+      - Governanca
+      - Direito de preferencia
+      - Tag along / Drag along
+      - Non-compete
+      - Deadlock
+
+  - numero: 5
+    nome: Documentacao para Registro
+    agente: empresarial
+    descricao: "Preparar documentos para registro na Junta Comercial"
+    entregavel: "Kit de documentos para registro"
+    duracao_estimada: "1 dia"
+    depende_de: [3]
+    documentos:
+      - Contrato social assinado
+      - Procuracao (se necessario)
+      - Documentos dos socios
+      - Comprovante de endereco
+
+  - numero: 6
+    nome: Orientacoes de Compliance
+    agente: compliance
+    descricao: "Definir politicas iniciais necessarias"
+    entregavel: "Checklist de compliance inicial"
+    duracao_estimada: "1 dia"
+    depende_de: [2]
+    itens:
+      - Politica de privacidade (se tiver site)
+      - Termos de uso (se aplicavel)
+      - Adequacao LGPD basica
+
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[empresa]/juridico/constituicao/
+    ├── 01-analise-perfil.md
+    ├── 02-comparativo-tipos-societarios.md
+    ├── 03-contrato-social.md
+    ├── 04-acordo-socios.md (se aplicavel)
+    ├── 05-checklist-registro.md
+    ├── 06-compliance-inicial.md
+    └── proximos-passos.md
+
+template_contrato_social: |
+  ## CONTRATO SOCIAL
+
+  **[NOME EMPRESARIAL] LTDA**
+
+  ---
+
+  ### CAPITULO I - NOME, SEDE, OBJETO E PRAZO
+
+  **Clausula 1a** - A sociedade gira sob o nome empresarial
+  [NOME EMPRESARIAL] LTDA.
+
+  **Clausula 2a** - A sociedade tem sede em [ENDERECO COMPLETO].
+
+  **Clausula 3a** - A sociedade tem por objeto social:
+  [CNAE e descricao das atividades]
+
+  **Clausula 4a** - O prazo de duracao da sociedade e indeterminado.
+
+  ### CAPITULO II - CAPITAL SOCIAL
+
+  **Clausula 5a** - O capital social e de R$ [VALOR], dividido
+  em [NUMERO] quotas no valor de R$ [VALOR] cada uma,
+  integralizadas neste ato em moeda corrente, assim distribuidas:
+  [tabela de socios e quotas]
+
+  ### CAPITULO III - ADMINISTRACAO
+
+  **Clausula 6a** - A sociedade sera administrada por [socios/terceiros]...
+
+  [demais clausulas]
+
+proximos_passos_apos_registro:
+  - Obtencao do CNPJ (Receita Federal)
+  - Inscricao Estadual (se aplicavel)
+  - Inscricao Municipal
+  - Alvara de funcionamento
+  - Cadastro na Previdencia
+  - Abertura de conta bancaria
+  - Emissao de certificado digital

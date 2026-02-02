@@ -1,0 +1,135 @@
+# Tarefa: Resposta a Acusacao
+# Fundamento: Art. 396 e 396-A do CPP
+
+id: resposta-acusacao
+nome: Resposta a Acusacao
+comando: /resposta-acusacao
+fase: defesa
+agente: criminalista
+
+descricao: |
+  Elaborar resposta a acusacao (defesa preliminar) conforme art. 396 e 396-A do CPP.
+  E a primeira peca de defesa apos o recebimento da denuncia/queixa.
+
+fundamento_legal:
+  - Art. 396 CPP - Citacao e resposta
+  - Art. 396-A CPP - Conteudo da resposta
+  - Art. 397 CPP - Absolvicao sumaria
+
+prazo: 10 dias (da citacao pessoal ou por hora certa)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado na denuncia?"
+      campo: crime
+      exemplo: "Art. 155, caput, CP (furto simples)"
+
+    - pergunta: "Quais os fatos narrados pela acusacao?"
+      campo: fatos_acusacao
+      exemplo: "No dia X, o acusado teria subtraido..."
+
+    - pergunta: "O cliente esta preso ou em liberdade?"
+      campo: situacao_prisional
+      opcoes: [preso, solto]
+
+    - pergunta: "Qual a versao do cliente sobre os fatos?"
+      campo: versao_defesa
+      exemplo: "O cliente alega que nao estava no local..."
+
+  opcionais:
+    - pergunta: "Ha testemunhas de defesa?"
+      campo: testemunhas
+      maximo: 8
+
+    - pergunta: "O cliente tem antecedentes?"
+      campo: antecedentes
+      opcoes: [sim, nao]
+
+    - pergunta: "Ha alguma nulidade aparente?"
+      campo: nulidades
+      exemplo: "Ausencia de advogado no interrogatorio policial"
+
+    - pergunta: "Qual tese de defesa pretende usar?"
+      campo: tese_defesa
+      opcoes:
+        - absolvicao_atipicidade
+        - absolvicao_excludente
+        - absolvicao_insuficiencia_prova
+        - desclassificacao
+        - afastamento_qualificadoras
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo competente
+    - Numero do processo
+    - Qualificacao do acusado
+    - Titulo "RESPOSTA A ACUSACAO"
+
+  corpo:
+    - I - DA TEMPESTIVIDADE
+    - II - SINTESE DA ACUSACAO
+    - III - DOS FATOS (versao da defesa)
+    - IV - DAS PRELIMINARES (se houver)
+      - Nulidades
+      - Inepcia da denuncia
+      - Incompetencia
+    - V - DO MERITO
+      - Tese principal de defesa
+      - Fundamentacao juridica
+      - Jurisprudencia
+    - VI - DA ABSOLVICAO SUMARIA (se cabivel)
+      - Art. 397 CPP
+    - VII - DAS PROVAS
+      - Rol de testemunhas (ate 8)
+      - Documentos
+      - Outras provas
+    - VIII - DOS PEDIDOS
+
+  pedidos_possiveis:
+    - Absolvicao sumaria (art. 397 CPP)
+    - Rejeicao da denuncia
+    - Afastamento de qualificadoras
+    - Producao de provas
+    - Oitiva de testemunhas
+
+hipoteses_absolvicao_sumaria:
+  - I - Existencia manifesta de causa excludente de ilicitude
+  - II - Existencia manifesta de causa excludente de culpabilidade
+  - III - Atipicidade evidente
+  - IV - Extincao da punibilidade
+
+modelo_pedido: |
+  Ante o exposto, requer:
+
+  a) O recebimento da presente resposta a acusacao;
+
+  b) Preliminarmente, [se houver nulidades];
+
+  c) No merito, a ABSOLVICAO SUMARIA do acusado, nos termos do
+     art. 397, [inciso], do CPP, por [fundamento];
+
+  Subsidiariamente, caso nao seja esse o entendimento de Vossa
+  Excelencia:
+
+  d) A oitiva das testemunhas arroladas;
+
+  e) A producao de prova [especificar];
+
+  f) [Outros pedidos especificos]
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Tempestividade verificada
+  - Fatos da acusacao corretamente resumidos
+  - Versao da defesa clara e consistente
+  - Nulidades identificadas e arguidas
+  - Tese de defesa bem fundamentada
+  - Jurisprudencia citada e pertinente
+  - Testemunhas arroladas (se houver)
+  - Pedidos claros e objetivos
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/defesa/
+  arquivo: resposta-acusacao-[nome-cliente]-[data].md

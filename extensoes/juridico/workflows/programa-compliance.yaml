@@ -1,0 +1,172 @@
+id: programa-compliance
+nome: Implementar Programa de Compliance
+descricao: Processo completo para criar e implementar programa de compliance corporativo
+comando: /programa-compliance
+
+perguntas_iniciais:
+  - "Qual o porte da empresa? (pequena/media/grande)"
+  - "Qual o setor de atuacao?"
+  - "A empresa se relaciona com poder publico?"
+  - "Ja existe alguma estrutura de compliance?"
+  - "Qual o orcamento disponivel para o programa?"
+
+etapas:
+  - numero: 1
+    nome: Diagnostico Inicial
+    agente: compliance
+    descricao: "Avaliar maturidade atual e identificar gaps"
+    entregavel: "Relatorio de diagnostico"
+    duracao_estimada: "3-5 dias"
+    itens_avaliados:
+      - Estrutura atual
+      - Politicas existentes
+      - Riscos do negocio
+      - Cultura organizacional
+      - Relacionamento com terceiros
+
+  - numero: 2
+    nome: Avaliacao de Riscos
+    agente: compliance
+    descricao: "Mapear e classificar riscos de compliance"
+    entregavel: "Matriz de riscos"
+    duracao_estimada: "3-5 dias"
+    depende_de: [1]
+    areas:
+      - Corrupcao e suborno
+      - Conflito de interesses
+      - Fraude
+      - Lavagem de dinheiro
+      - Concorrencia desleal
+      - Trabalhista
+      - Ambiental
+      - LGPD
+
+  - numero: 3
+    nome: Codigo de Conduta
+    agente: compliance
+    descricao: "Elaborar codigo de conduta e etica"
+    entregavel: "Codigo de Conduta"
+    duracao_estimada: "5-7 dias"
+    depende_de: [1]
+    secoes:
+      - Mensagem da lideranca
+      - Valores e principios
+      - Relacoes com stakeholders
+      - Conflito de interesses
+      - Anticorrupcao
+      - Confidencialidade
+      - Uso de recursos
+      - Canais de denuncia
+
+  - numero: 4
+    nome: Politicas e Procedimentos
+    agente: compliance
+    descricao: "Desenvolver politicas complementares"
+    entregavel: "Conjunto de politicas"
+    duracao_estimada: "7-10 dias"
+    depende_de: [2, 3]
+    politicas:
+      - Politica anticorrupcao
+      - Politica de brindes e hospitalidades
+      - Politica de conflito de interesses
+      - Politica de privacidade (LGPD)
+      - Politica de relacionamento com terceiros
+
+  - numero: 5
+    nome: Canal de Denuncias
+    agente: compliance
+    descricao: "Estruturar canal de denuncias"
+    entregavel: "Procedimento do canal + materiais de divulgacao"
+    duracao_estimada: "3-5 dias"
+    depende_de: [3]
+    componentes:
+      - Canais de acesso (telefone, web, email)
+      - Fluxo de tratamento
+      - Garantia de anonimato
+      - Protecao ao denunciante
+      - Procedimento de investigacao
+
+  - numero: 6
+    nome: Due Diligence de Terceiros
+    agente: compliance
+    descricao: "Criar processo de verificacao de parceiros"
+    entregavel: "Procedimento de due diligence"
+    duracao_estimada: "3-5 dias"
+    depende_de: [2]
+    niveis:
+      - Verificacao simplificada
+      - Verificacao padrao
+      - Verificacao aprofundada
+
+  - numero: 7
+    nome: Plano de Treinamento
+    agente: compliance
+    descricao: "Desenvolver programa de capacitacao"
+    entregavel: "Plano de treinamento + materiais"
+    duracao_estimada: "5-7 dias"
+    depende_de: [3, 4]
+    publicos:
+      - Alta direcao
+      - Gestores
+      - Colaboradores
+      - Areas criticas
+
+  - numero: 8
+    nome: Governanca e Monitoramento
+    agente: compliance
+    descricao: "Definir estrutura de governanca e indicadores"
+    entregavel: "Manual de governanca + KPIs"
+    duracao_estimada: "3-5 dias"
+    depende_de: [1, 2]
+    componentes:
+      - Comite de compliance
+      - Reporte a direcao
+      - Indicadores (KPIs)
+      - Plano de auditorias
+
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[empresa]/juridico/compliance/
+    ├── 01-diagnostico/
+    │   └── relatorio-diagnostico.md
+    ├── 02-riscos/
+    │   └── matriz-riscos.md
+    ├── 03-codigo-conduta/
+    │   └── codigo-conduta.md
+    ├── 04-politicas/
+    │   ├── anticorrupcao.md
+    │   ├── brindes-hospitalidades.md
+    │   ├── conflito-interesses.md
+    │   ├── privacidade-lgpd.md
+    │   └── terceiros.md
+    ├── 05-canal-denuncias/
+    │   ├── procedimento.md
+    │   └── materiais-divulgacao.md
+    ├── 06-due-diligence/
+    │   └── procedimento-dd.md
+    ├── 07-treinamento/
+    │   ├── plano-treinamento.md
+    │   └── materiais/
+    ├── 08-governanca/
+    │   ├── manual-governanca.md
+    │   └── kpis.md
+    └── plano-implementacao.md
+
+cronograma_sugerido:
+  mes_1:
+    - Diagnostico inicial
+    - Avaliacao de riscos
+  mes_2:
+    - Codigo de conduta
+    - Canal de denuncias
+  mes_3:
+    - Politicas principais
+    - Due diligence de terceiros
+  mes_4:
+    - Plano de treinamento
+    - Governanca
+  mes_5_6:
+    - Implementacao
+    - Treinamentos
+    - Lancamento

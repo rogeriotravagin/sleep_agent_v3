@@ -5,7 +5,7 @@
     "usage": "Script Python substitui {{placeholders}} com dados reais do banco de dados",
     "source_tables": ["mapping_systems", "system_components"],
     "created": "2026-01-16",
-    "author": "AIOS Ralph PRD Generator"
+    "author": "Sleep Agent Ralph PRD Generator"
   },
 
   "_database_mapping": {
@@ -89,7 +89,7 @@
 
     "metadata": {
       "created": "{{created_date}}",
-      "author": "AIOS Ralph PRD Generator",
+      "author": "Sleep Agent Ralph PRD Generator",
       "version": "1.0",
       "generatedFrom": "mapping_systems.{{slug}}",
       "componentCount": "{{component_count}}",
@@ -395,7 +395,7 @@
     ],
     "metadata": {
       "created": "2026-01-16",
-      "author": "AIOS Ralph PRD Generator",
+      "author": "Sleep Agent Ralph PRD Generator",
       "version": "1.0",
       "generatedFrom": "mapping_systems.disc",
       "componentCount": 4,

@@ -1,0 +1,279 @@
+# Extensao: Criminal
+# Versao: 1.0 - Framework Especializado em Direito Penal
+# DISCLAIMER: Esta extensao e para fins de orientacao. Sempre consulte advogado.
+
+nome: Criminal
+slug: criminal
+descricao: Framework completo para processos criminais - da defesa a execucao penal
+versao: "1.0"
+status: ativo
+
+comando: /criminal
+
+mensagem_ativacao: |
+  **Sleep Agent - Extensao Criminal v1.0**
+
+  Framework especializado em Direito Penal brasileiro.
+
+  **IMPORTANTE**: Esta ferramenta fornece orientacao juridica.
+  Toda peca deve ser revisada por advogado inscrito na OAB.
+
+  **Agentes Disponiveis:**
+  - `/defesa` - Criminalista (defesa em crimes diversos)
+  - `/juri` - Especialista em Tribunal do Juri
+  - `/execucao` - Especialista em Execucao Penal
+  - `/recursos` - Especialista em Recursos e HC
+
+  **Workflows Completos:**
+  - `/defesa-completa` - Estrategia de defesa do inicio ao fim
+  - `/liberdade` - Obter liberdade do cliente (HC, relaxamento, revogacao)
+  - `/progressao` - Pedido de progressao de regime
+
+  **Tarefas Rapidas:**
+  - `/resposta-acusacao` - Elaborar resposta a acusacao
+  - `/alegacoes-finais` - Alegacoes finais por memoriais
+  - `/habeas-corpus` - Elaborar HC
+  - `/apelacao` - Recurso de apelacao criminal
+  - `/agravo-execucao` - Agravo em execucao penal
+  - `/pedido-progressao` - Pedido de progressao de regime
+  - `/pedido-liberdade` - Pedido de liberdade provisoria
+  - `/relaxamento` - Relaxamento de prisao ilegal
+  - `/revogacao-preventiva` - Revogacao de prisao preventiva
+  - `/parecer-criminal` - Parecer sobre viabilidade de defesa
+  - `/quesitos-juri` - Elaborar quesitos para o juri
+  - `/tese-defesa` - Desenvolver tese de defesa
+
+  O que voce precisa?
+
+# =====================================================
+# AGENTES
+# =====================================================
+
+agentes:
+  - id: criminalista
+    arquivo: agentes/CRIMINALISTA.md
+    comando: /defesa
+    especialidades:
+      - Defesa em crimes comuns
+      - Estrategia de defesa
+      - Teses absolutórias e desclassificatorias
+      - Dosimetria da pena
+      - Atenuantes e causas de diminuicao
+
+  - id: juri
+    arquivo: agentes/JURI.md
+    comando: /juri
+    especialidades:
+      - Crimes dolosos contra a vida
+      - Pronuncia e impronuncia
+      - Desclassificacao
+      - Plenario do juri
+      - Quesitacao
+
+  - id: execucao
+    arquivo: agentes/EXECUCAO.md
+    comando: /execucao
+    especialidades:
+      - Progressao de regime
+      - Livramento condicional
+      - Remicao de pena
+      - Saida temporaria
+      - Indulto e comutacao
+
+  - id: recursos
+    arquivo: agentes/RECURSOS.md
+    comando: /recursos
+    especialidades:
+      - Habeas corpus
+      - Apelacao criminal
+      - Recurso especial e extraordinario
+      - Revisao criminal
+      - Embargos
+
+# =====================================================
+# TAREFAS
+# =====================================================
+
+tarefas:
+  # Fase 1: Analise Inicial
+  - id: parecer-criminal
+    arquivo: tarefas/parecer-criminal.yaml
+    comando: /parecer-criminal
+    fase: analise
+
+  - id: tese-defesa
+    arquivo: tarefas/tese-defesa.yaml
+    comando: /tese-defesa
+    fase: analise
+
+  # Fase 2: Defesa Preliminar
+  - id: resposta-acusacao
+    arquivo: tarefas/resposta-acusacao.yaml
+    comando: /resposta-acusacao
+    fase: defesa
+
+  - id: pedido-liberdade
+    arquivo: tarefas/pedido-liberdade.yaml
+    comando: /pedido-liberdade
+    fase: defesa
+
+  - id: relaxamento
+    arquivo: tarefas/relaxamento.yaml
+    comando: /relaxamento
+    fase: defesa
+
+  - id: revogacao-preventiva
+    arquivo: tarefas/revogacao-preventiva.yaml
+    comando: /revogacao-preventiva
+    fase: defesa
+
+  # Fase 3: Instrucao
+  - id: quesitos-juri
+    arquivo: tarefas/quesitos-juri.yaml
+    comando: /quesitos-juri
+    fase: instrucao
+
+  - id: alegacoes-finais
+    arquivo: tarefas/alegacoes-finais.yaml
+    comando: /alegacoes-finais
+    fase: instrucao
+
+  # Fase 4: Recursos
+  - id: habeas-corpus
+    arquivo: tarefas/habeas-corpus.yaml
+    comando: /habeas-corpus
+    fase: recursos
+
+  - id: apelacao
+    arquivo: tarefas/apelacao.yaml
+    comando: /apelacao
+    fase: recursos
+
+  - id: agravo-execucao
+    arquivo: tarefas/agravo-execucao.yaml
+    comando: /agravo-execucao
+    fase: recursos
+
+  # Fase 5: Execucao
+  - id: pedido-progressao
+    arquivo: tarefas/pedido-progressao.yaml
+    comando: /pedido-progressao
+    fase: execucao
+
+# =====================================================
+# WORKFLOWS
+# =====================================================
+
+workflows:
+  - id: defesa-completa
+    arquivo: workflows/defesa-completa.yaml
+    comando: /defesa-completa
+    descricao: Estrategia de defesa do inicio ao fim
+
+  - id: liberdade
+    arquivo: workflows/liberdade.yaml
+    comando: /liberdade
+    descricao: Obter liberdade do cliente
+
+  - id: progressao
+    arquivo: workflows/progressao.yaml
+    comando: /progressao
+    descricao: Progressao de regime prisional
+
+# =====================================================
+# BASE DE CONHECIMENTO
+# =====================================================
+
+conhecimento:
+  # Legislacao Base
+  - codigo-penal.md
+  - codigo-processo-penal.md
+  - execucao-penal.md
+  - leis-especiais.md
+
+  # Tecnicas
+  - teses-defesa.md
+  - dosimetria.md
+  - nulidades.md
+
+  # Jurisprudencia
+  - sumulas-stf.md
+  - sumulas-stj.md
+  - jurisprudencia-teses.md
+
+# =====================================================
+# FRAMEWORK DE EXECUCAO
+# =====================================================
+
+framework_execucao:
+  fases:
+    - numero: 1
+      nome: ANALISE
+      tarefas: [parecer-criminal, tese-defesa]
+      agente: criminalista
+      descricao: Analisar autos, identificar nulidades, definir tese
+
+    - numero: 2
+      nome: DEFESA_PRELIMINAR
+      tarefas: [resposta-acusacao, pedido-liberdade, relaxamento, revogacao-preventiva]
+      agente: criminalista
+      descricao: Defesa inicial, combater prisao cautelar
+
+    - numero: 3
+      nome: INSTRUCAO
+      tarefas: [quesitos-juri, alegacoes-finais]
+      agente: criminalista
+      descricao: Producao de provas, alegacoes finais
+
+    - numero: 4
+      nome: RECURSOS
+      tarefas: [habeas-corpus, apelacao, agravo-execucao]
+      agente: recursos
+      descricao: Impugnar decisoes desfavoraveis
+
+    - numero: 5
+      nome: EXECUCAO
+      tarefas: [pedido-progressao]
+      agente: execucao
+      descricao: Beneficios da execucao penal
+
+# =====================================================
+# REFERENCIAS LEGISLATIVAS
+# =====================================================
+
+referencias:
+  legislacao_principal:
+    - Codigo Penal (Decreto-Lei 2.848/1940)
+    - Codigo de Processo Penal (Decreto-Lei 3.689/1941)
+    - Lei de Execucao Penal (Lei 7.210/1984)
+    - Constituicao Federal (art. 5o - garantias)
+
+  leis_especiais:
+    - Lei de Drogas (Lei 11.343/2006)
+    - Crimes Hediondos (Lei 8.072/1990)
+    - Lei Maria da Penha (Lei 11.340/2006)
+    - CTB - Crimes de Transito (Lei 9.503/1997)
+    - Crimes Tributarios (Lei 8.137/1990)
+    - Lavagem de Dinheiro (Lei 9.613/1998)
+    - Estatuto do Desarmamento (Lei 10.826/2003)
+    - Organizacoes Criminosas (Lei 12.850/2013)
+
+  jurisprudencia:
+    - Sumulas Vinculantes STF
+    - Sumulas STF (materia penal)
+    - Sumulas STJ (5a e 6a Turmas)
+    - Jurisprudencia em Teses STJ
+
+# =====================================================
+# DISCLAIMER OBRIGATORIO
+# =====================================================
+
+disclaimer: |
+  ---
+  **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de inteligencia
+  artificial para fins de orientacao juridica. E OBRIGATORIA a revisao por
+  advogado inscrito na OAB antes de utilizacao em processos reais.
+
+  A responsabilidade pela utilizacao do conteudo e exclusivamente do
+  profissional que o apresentar em juizo.
+  ---

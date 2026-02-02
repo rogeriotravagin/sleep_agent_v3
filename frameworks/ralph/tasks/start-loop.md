@@ -2,7 +2,7 @@
 name: ralph-start
 description: Start Ralph autonomous development loop
 version: 2.0
-author: AIOS Framework
+author: Sleep Agent Framework
 mode: execute
 elicit: false
 tags: [ralph, autonomous, loop, execution]
@@ -36,7 +36,7 @@ related_checklists:
   - quality-gates.md
   - pre-implementation.md
 
-aios_integration:
+saf_integration:
   strict_sections: enforced
   quality_gates: required
   dev_agent_record: maintained

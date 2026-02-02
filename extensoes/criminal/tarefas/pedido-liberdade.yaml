@@ -1,0 +1,178 @@
+# Tarefa: Pedido de Liberdade Provisoria
+# Fundamento: Arts. 310, 321 do CPP
+
+id: pedido-liberdade
+nome: Pedido de Liberdade Provisoria
+comando: /pedido-liberdade
+fase: defesa
+agente: criminalista
+
+descricao: |
+  Elaborar pedido de liberdade provisoria com ou sem fianca, conforme arts. 310 e 321 do CPP.
+  Visa obter a liberdade do cliente quando a prisao em flagrante e legal mas desnecessaria,
+  ou quando nao estao presentes os requisitos da prisao preventiva.
+
+fundamento_legal:
+  - Art. 310 CPP - Audiencia de custodia e conversao em preventiva
+  - Art. 312 CPP - Requisitos da prisao preventiva (para refutar)
+  - Art. 313 CPP - Hipoteses de cabimento da preventiva
+  - Art. 319 CPP - Medidas cautelares diversas da prisao
+  - Art. 321 CPP - Liberdade provisoria mediante fianca
+  - Art. 322 CPP - Fianca pela autoridade policial
+  - Art. 323 CPP - Crimes inafianciaveis
+  - Art. 324 CPP - Impedimentos para fianca
+  - Art. 5o, LXVI, CF - Direito a liberdade provisoria
+
+prazo: Sem prazo (pode ser requerido a qualquer momento)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 155, par. 4o, CP (furto qualificado)"
+
+    - pergunta: "Quando ocorreu a prisao em flagrante?"
+      campo: data_prisao
+      exemplo: "15/01/2024"
+
+    - pergunta: "A prisao ja foi convertida em preventiva?"
+      campo: convertida_preventiva
+      opcoes: [sim, nao]
+
+    - pergunta: "Qual o fundamento da manutencao da prisao?"
+      campo: fundamento_prisao
+      exemplo: "Garantia da ordem publica, risco de reiteracao"
+
+    - pergunta: "O cliente tem residencia fixa?"
+      campo: residencia_fixa
+      opcoes: [sim, nao]
+
+    - pergunta: "O cliente tem ocupacao licita?"
+      campo: ocupacao_licita
+      opcoes: [sim, nao]
+
+  opcionais:
+    - pergunta: "O cliente tem antecedentes criminais?"
+      campo: antecedentes
+      opcoes: [sim, nao, primario]
+
+    - pergunta: "Ha circunstancias pessoais favoraveis?"
+      campo: circunstancias_favoraveis
+      exemplo: "Pai de familia, arrimo de familia, estudante, etc."
+
+    - pergunta: "O cliente pode pagar fianca?"
+      campo: pode_pagar_fianca
+      opcoes: [sim, nao, parcialmente]
+
+    - pergunta: "Ha condicao de saude que justifique liberdade?"
+      campo: condicao_saude
+      exemplo: "Doenca cronica, necessidade de tratamento"
+
+    - pergunta: "Aceita medidas cautelares alternativas?"
+      campo: aceita_cautelares
+      opcoes: [sim, nao]
+      padrao: sim
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo competente
+    - Numero do processo/inquerito
+    - Qualificacao completa do requerente
+    - Titulo "PEDIDO DE LIBERDADE PROVISORIA"
+
+  corpo:
+    - I - DOS FATOS
+      - Breve relato da prisao
+      - Imputacao feita ao requerente
+    - II - DA DESNECESSIDADE DA PRISAO CAUTELAR
+      - Ausencia dos requisitos do art. 312 CPP
+      - Garantia da ordem publica nao ameacada
+      - Ausencia de risco a instrucao criminal
+      - Aplicacao da lei penal assegurada
+    - III - DA PROPORCIONALIDADE
+      - Crime sem violencia ou grave ameaca
+      - Pena prevista permite regime diverso do fechado
+      - Desproporcao entre prisao cautelar e pena esperada
+    - IV - DAS CONDICOES PESSOAIS FAVORAVEIS
+      - Primariedade (se for o caso)
+      - Bons antecedentes
+      - Residencia fixa
+      - Ocupacao licita
+      - Vinculos familiares
+    - V - DAS MEDIDAS CAUTELARES ALTERNATIVAS
+      - Suficiencia das medidas do art. 319 CPP
+      - Proposta de medidas especificas
+    - VI - DA FIANCA (se aplicavel)
+      - Crime afianciavel
+      - Capacidade de pagamento
+      - Valor proporcional
+    - VII - DA JURISPRUDENCIA
+      - Citacoes pertinentes
+    - VIII - DOS PEDIDOS
+
+  pedidos_possiveis:
+    - Concessao de liberdade provisoria sem fianca
+    - Concessao de liberdade provisoria com fianca
+    - Fixacao de fianca em valor proporcional
+    - Substituicao da prisao por medidas cautelares (art. 319 CPP)
+    - Combinacao de medidas cautelares
+
+medidas_cautelares_art319:
+  - I - Comparecimento periodico em juizo
+  - II - Proibicao de acesso ou frequencia a determinados lugares
+  - III - Proibicao de manter contato com pessoa determinada
+  - IV - Proibicao de ausentar-se da comarca
+  - V - Recolhimento domiciliar noturno e dias de folga
+  - VI - Suspensao do exercicio de funcao publica ou atividade
+  - VII - Internacao provisoria (inimputaveis/semi-imputaveis)
+  - VIII - Fianca
+  - IX - Monitoracao eletronica
+
+crimes_inafianciaveis:
+  - Racismo (art. 5o, XLII, CF)
+  - Tortura (art. 5o, XLIII, CF)
+  - Trafico de drogas (art. 5o, XLIII, CF)
+  - Terrorismo (art. 5o, XLIII, CF)
+  - Crimes hediondos (art. 5o, XLIII, CF)
+  - Acao de grupos armados contra ordem constitucional (art. 5o, XLIV, CF)
+
+modelo_pedido: |
+  Ante o exposto, requer a Vossa Excelencia:
+
+  a) A CONCESSAO DE LIBERDADE PROVISORIA ao requerente, sem fianca,
+     tendo em vista a ausencia dos requisitos do art. 312 do CPP e
+     a suficiencia das medidas cautelares diversas;
+
+  Subsidiariamente:
+
+  b) A CONCESSAO DE LIBERDADE PROVISORIA mediante fianca, a ser
+     arbitrada em valor compativel com a condicao economica do
+     requerente;
+
+  Em qualquer hipotese:
+
+  c) A fixacao das seguintes medidas cautelares alternativas
+     (art. 319 do CPP):
+     - Comparecimento periodico em juizo;
+     - Proibicao de ausentar-se da comarca sem autorizacao;
+     - [outras medidas pertinentes ao caso]
+
+  d) A expedicao de ALVARA DE SOLTURA em favor do requerente.
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Qualificacao completa do requerente
+  - Crime e fundamento da prisao identificados
+  - Ausencia de requisitos do art. 312 demonstrada
+  - Proporcionalidade argumentada
+  - Condicoes pessoais favoraveis destacadas
+  - Medidas cautelares alternativas propostas
+  - Jurisprudencia pertinente citada
+  - Pedidos claros e objetivos
+  - Documentos comprobatorios indicados
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/defesa/
+  arquivo: pedido-liberdade-[nome-cliente]-[data].md

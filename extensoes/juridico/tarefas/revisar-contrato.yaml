@@ -1,0 +1,122 @@
+id: revisar-contrato
+nome: Revisar e Analisar Contrato
+descricao: Analisa contrato existente identificando riscos e sugerindo melhorias
+agente: contratos
+comando: /revisar-contrato
+
+entradas:
+  obrigatorias:
+    - nome: contrato
+      pergunta: "Cole ou anexe o contrato a ser revisado"
+      tipo: texto_longo
+      exemplo: "[texto do contrato]"
+
+    - nome: perspectiva
+      pergunta: "Qual parte voce representa?"
+      tipo: escolha
+      opcoes:
+        - Contratante
+        - Contratado
+        - Ambas (revisao neutra)
+
+  opcionais:
+    - nome: foco
+      pergunta: "Ha algum ponto especifico de preocupacao?"
+      tipo: texto
+      padrao: "Revisao geral"
+
+    - nome: contexto
+      pergunta: "Algum contexto adicional sobre o negocio?"
+      tipo: texto
+
+passos:
+  - numero: 1
+    acao: "Leitura completa do contrato"
+    detalhes: "Entender estrutura e conteudo"
+
+  - numero: 2
+    acao: "Identificar as partes e objeto"
+    detalhes: "Verificar qualificacao e definicao do escopo"
+
+  - numero: 3
+    acao: "Analisar clausulas essenciais"
+    detalhes: "Avaliar valores, prazos, obrigacoes"
+
+  - numero: 4
+    acao: "Avaliar clausulas de protecao"
+    detalhes: "Verificar rescisao, multas, confidencialidade"
+
+  - numero: 5
+    acao: "Identificar riscos"
+    detalhes: "Mapear pontos que podem prejudicar o cliente"
+
+  - numero: 6
+    acao: "Sugerir alteracoes"
+    detalhes: "Propor redacoes alternativas"
+
+  - numero: 7
+    acao: "Identificar clausulas ausentes"
+    detalhes: "Verificar o que deveria constar"
+
+saida:
+  formato: markdown
+  template: |
+    ## ANALISE DE CONTRATO
+
+    **Documento:** [identificacao]
+    **Data da analise:** [data]
+    **Perspectiva:** [parte representada]
+
+    ---
+
+    ### RESUMO EXECUTIVO
+    [visao geral do contrato - 3 a 5 linhas]
+
+    ---
+
+    ### PONTOS POSITIVOS
+    - [ponto 1]
+    - [ponto 2]
+
+    ---
+
+    ### PONTOS DE ATENCAO
+
+    #### 1. [Clausula/Aspecto]
+    **Trecho:** "[citacao do contrato]"
+    **Risco:** [Alto/Medio/Baixo]
+    **Problema:** [explicacao]
+    **Sugestao:** [nova redacao ou recomendacao]
+
+    [repetir para cada ponto]
+
+    ---
+
+    ### CLAUSULAS AUSENTES
+    - [ ] [clausula que deveria existir]
+    - [ ] [outra clausula]
+
+    ---
+
+    ### PARECER FINAL
+    [recomendacao: assinar como esta / negociar alteracoes / nao assinar]
+
+    ---
+
+    **AVISO**: Esta analise tem carater orientativo.
+    Consulte advogado para decisoes juridicas.
+
+conhecimento:
+  - conhecimento/contratos.md
+  - conhecimento/direito-empresarial.md
+
+gates:
+  - Todas as clausulas foram analisadas?
+  - Riscos foram classificados por gravidade?
+  - Sugestoes sao praticas e implementaveis?
+  - Parecer final e claro?
+
+proximos_passos:
+  - Discutir pontos com a outra parte
+  - Solicitar aditivo se necessario
+  - Consultar advogado para itens criticos

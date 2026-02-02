@@ -1,0 +1,93 @@
+# Tarefa: Desenvolver Tese de Defesa
+# Estrategia de defesa criminal
+
+id: tese-defesa
+nome: Desenvolver Tese de Defesa
+comando: /tese-defesa
+fase: analise
+agente: criminalista
+
+descricao: |
+  Analisar o caso e desenvolver a tese de defesa mais adequada.
+  Identificar estrategias absolutórias, desclassificatorias ou
+  para diminuicao de pena conforme as provas e circunstancias.
+
+fundamento_legal:
+  - Art. 386 CPP - Hipoteses de absolvicao
+  - Art. 23-25 CP - Excludentes de ilicitude
+  - Art. 26-28 CP - Excludentes de culpabilidade
+  - Art. 65-66 CP - Atenuantes
+  - Art. 14, II CP - Tentativa
+
+tipos_teses:
+  absolutorias:
+    - atipicidade: Fato nao se enquadra no tipo penal
+    - legitima_defesa: Art. 25 CP
+    - estado_necessidade: Art. 24 CP
+    - estrito_cumprimento_dever: Art. 23, III CP
+    - exercicio_regular_direito: Art. 23, III CP
+    - erro_tipo: Art. 20 CP
+    - erro_proibicao: Art. 21 CP
+    - inimputabilidade: Art. 26 CP
+    - coacao_irresistivel: Art. 22 CP
+    - insuficiencia_probatoria: In dubio pro reo
+
+  desclassificatorias:
+    - crime_menos_grave: Desclassificar para tipo mais brando
+    - doloso_para_culposo: Ausencia de dolo
+    - afastar_qualificadoras: Impugnar qualificadoras imputadas
+
+  diminuicao_pena:
+    - atenuantes: Art. 65 CP (confissao, menoridade, etc)
+    - causas_diminuicao: Tentativa, arrependimento posterior
+    - privilegio: Quando previsto no tipo
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 155, caput, CP (furto simples)"
+
+    - pergunta: "Quais os fatos narrados pela acusacao?"
+      campo: fatos_acusacao
+
+    - pergunta: "Qual a versao do cliente?"
+      campo: versao_cliente
+
+    - pergunta: "Quais as provas existentes contra o cliente?"
+      campo: provas_acusacao
+
+  opcionais:
+    - pergunta: "Existem testemunhas de defesa?"
+      campo: testemunhas_defesa
+
+    - pergunta: "Ha alguma excludente aparente?"
+      campo: excludente_aparente
+
+    - pergunta: "O cliente confessou?"
+      campo: confissao
+
+estrutura_analise:
+  - I - RESUMO DO CASO
+  - II - PROVAS DA ACUSACAO
+  - III - ELEMENTOS FAVORAVEIS A DEFESA
+  - IV - TESES POSSIVEIS
+    - Tese principal (mais forte)
+    - Teses subsidiarias
+  - V - FUNDAMENTACAO JURIDICA
+  - VI - JURISPRUDENCIA FAVORAVEL
+  - VII - ESTRATEGIA RECOMENDADA
+  - VIII - RISCOS E PROBABILIDADES
+
+checklist_qualidade:
+  - Crime corretamente identificado
+  - Provas analisadas
+  - Tese principal fundamentada
+  - Teses subsidiarias identificadas
+  - Jurisprudencia pertinente
+  - Estrategia clara
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/estrategias/
+  arquivo: tese-defesa-[nome-cliente]-[data].md

@@ -5,7 +5,7 @@
     "usage": "Usado pelo task generate-book-prd.md para criar PRDs de lotes de livros",
     "integration": "Ralph + BookSummary Expansion Packs",
     "created": "2026-01-17",
-    "author": "AIOS Ralph-BookSummary Integration"
+    "author": "Sleep Agent Ralph-BookSummary Integration"
   },
 
   "_booksummary_pipeline": {

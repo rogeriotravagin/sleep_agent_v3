@@ -12,7 +12,7 @@ metadata:
 
 ## MANDATORY: Complete ALL checks before coding
 
-> **AIOS Principle:** Story-Driven Development requires complete context.
+> **SAF Principle:** Story-Driven Development requires complete context.
 > Do NOT start coding until all pre-conditions are met.
 
 ---
@@ -199,7 +199,7 @@ Only proceed when you can answer YES to all:
 
 ---
 
-## AIOS Compliance Note
+## SAF Compliance Note
 
 This checklist ensures **Story-Driven Development** principle:
 

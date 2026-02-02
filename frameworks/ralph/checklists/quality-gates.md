@@ -3,7 +3,7 @@
 ```yaml
 metadata:
   name: quality-gates
-  description: AIOS Quality Gates - Story not complete until ALL pass
+  description: SAF Quality Gates - Story not complete until ALL pass
   version: 2.0
   usage: Run before marking any story as passes=true
 ```
@@ -12,7 +12,7 @@ metadata:
 
 ## MANDATORY: Run ALL checks before marking [x]
 
-> **AIOS Principle:** A story is NOT complete until ALL gates pass.
+> **SAF Principle:** A story is NOT complete until ALL gates pass.
 > Do NOT mark `passes: true` if ANY check fails.
 
 ---
@@ -204,9 +204,9 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
-## AIOS Compliance Note
+## SAF Compliance Note
 
-This checklist enforces **Quality Gates** principle from AIOS Framework.
+This checklist enforces **Quality Gates** principle from Sleep Agent Framework (SAF).
 
 > "Story is only complete when ALL gates pass."
 

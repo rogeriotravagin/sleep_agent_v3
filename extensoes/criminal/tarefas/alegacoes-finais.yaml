@@ -1,0 +1,252 @@
+# Tarefa: Alegacoes Finais
+# Fundamento: Art. 403 do CPP
+
+id: alegacoes-finais
+nome: Alegacoes Finais (Memoriais)
+comando: /alegacoes-finais
+fase: defesa
+agente: criminalista
+
+descricao: |
+  Elaborar alegacoes finais por memoriais conforme art. 403 do CPP.
+  E a peca processual apresentada apos a instrucao criminal, onde a defesa
+  analisa as provas produzidas e sustenta suas teses para absolvicao,
+  desclassificacao ou atenuacao da pena.
+
+fundamento_legal:
+  - Art. 403 CPP - Alegacoes finais escritas (memoriais)
+  - Art. 404 CPP - Prazo para sentenca
+  - Art. 386 CPP - Hipoteses de absolvicao
+  - Art. 387 CPP - Requisitos da sentenca condenatoria
+  - Art. 5o, LVII, CF - Presuncao de inocencia
+
+prazo: 5 dias (apos a defesa receber os autos em carga - art. 403, par. 3o, CPP)
+
+tipos_procedimento:
+  comum_ordinario:
+    prazo_memoriais: 5 dias
+    fundamento: Art. 403 CPP
+  comum_sumario:
+    prazo_memoriais: 5 dias
+    fundamento: Art. 534 CPP
+  jecrim:
+    formato: Oral em audiencia
+    fundamento: Art. 81 Lei 9.099/95
+  juri:
+    formato: Debates orais em plenario
+    fundamento: Art. 476 CPP
+
+hipoteses_absolvicao_art386:
+  - I - Estar provada a inexistencia do fato
+  - II - Nao haver prova da existencia do fato
+  - III - Nao constituir o fato infracao penal
+  - IV - Estar provado que o reu nao concorreu para a infracao penal
+  - V - Nao existir prova de ter o reu concorrido para a infracao penal
+  - VI - Existirem circunstancias que excluam o crime ou isentem o reu de pena
+  - VII - Nao existir prova suficiente para a condenacao
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado na denuncia?"
+      campo: crime
+      exemplo: "Art. 155, par. 4o, IV, CP (furto qualificado)"
+
+    - pergunta: "Qual a tese principal de defesa?"
+      campo: tese_principal
+      opcoes:
+        - absolvicao_inexistencia_fato
+        - absolvicao_ausencia_prova_fato
+        - absolvicao_atipicidade
+        - absolvicao_ausencia_autoria
+        - absolvicao_insuficiencia_provas
+        - absolvicao_excludente_ilicitude
+        - absolvicao_excludente_culpabilidade
+        - desclassificacao
+        - afastamento_qualificadoras
+
+    - pergunta: "Quais provas foram produzidas na instrucao?"
+      campo: provas_instrucao
+      exemplo: "Interrogatorio do reu, oitiva de 3 testemunhas de acusacao, 2 de defesa, laudo pericial"
+
+    - pergunta: "Quais os principais pontos favoraveis a defesa?"
+      campo: pontos_favoraveis
+      exemplo: "Testemunha de defesa confirmou alibi, reconhecimento pessoal irregular"
+
+    - pergunta: "O cliente esta preso ou em liberdade?"
+      campo: situacao_prisional
+      opcoes: [preso, solto]
+
+  opcionais:
+    - pergunta: "Ha contradicoes nos depoimentos das testemunhas de acusacao?"
+      campo: contradicoes_acusacao
+      exemplo: "Testemunha 1 disse X, testemunha 2 disse Y"
+
+    - pergunta: "O reconhecimento pessoal foi realizado conforme art. 226 CPP?"
+      campo: reconhecimento_irregular
+      exemplo: "Reconhecimento fotografico sem as formalidades legais"
+
+    - pergunta: "Existem nulidades a serem arguidas?"
+      campo: nulidades
+      exemplo: "Prova obtida por meio ilicito"
+
+    - pergunta: "Ha tese subsidiaria?"
+      campo: tese_subsidiaria
+      exemplo: "Desclassificacao para furto simples"
+
+    - pergunta: "O cliente tem antecedentes?"
+      campo: antecedentes
+      opcoes: [primario, reincidente]
+
+    - pergunta: "Ha circunstancias atenuantes?"
+      campo: atenuantes
+      exemplo: "Confissao espontanea, menoridade relativa"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo competente
+    - Numero do processo
+    - Qualificacao do acusado
+    - Titulo "ALEGACOES FINAIS" ou "MEMORIAIS DE DEFESA"
+
+  corpo:
+    - I - SINTESE PROCESSUAL
+      - Resumo da acusacao
+      - Andamento processual
+      - Provas produzidas
+    - II - DAS PRELIMINARES (se houver)
+      - Nulidades
+      - Questoes processuais prejudiciais
+    - III - DOS FATOS E DAS PROVAS
+      - Analise detalhada da instrucao
+      - Testemunhos favoraveis
+      - Contradicoes da acusacao
+      - Provas documentais
+    - IV - DO DIREITO
+      - Fundamentacao juridica da tese
+      - Enquadramento legal
+      - Doutrina
+    - V - DA JURISPRUDENCIA
+      - Precedentes aplicaveis
+      - Sumulas pertinentes
+    - VI - DA DOSIMETRIA (se condenacao inevitavel)
+      - Circunstancias judiciais favoraveis
+      - Atenuantes
+      - Causas de diminuicao
+      - Regime inicial
+    - VII - DOS PEDIDOS
+
+  pedidos_possiveis:
+    principal:
+      - Absolvicao por inexistencia do fato
+      - Absolvicao por nao haver prova do fato
+      - Absolvicao por atipicidade
+      - Absolvicao por nao haver prova de autoria
+      - Absolvicao por insuficiencia de provas
+      - Absolvicao por excludente de ilicitude
+      - Absolvicao por excludente de culpabilidade
+    subsidiario:
+      - Desclassificacao para crime menos grave
+      - Afastamento de qualificadoras
+      - Reconhecimento de atenuantes
+      - Aplicacao da pena minima
+      - Substituicao por pena restritiva de direitos
+      - Regime inicial aberto ou semiaberto
+
+teses_absolvicao:
+  atipicidade:
+    descricao: Conduta nao se enquadra no tipo penal
+    exemplos:
+      - Principio da insignificancia
+      - Ausencia de elementar do tipo
+      - Crime impossivel
+  excludentes_ilicitude:
+    descricao: Causas que excluem a antijuridicidade
+    exemplos:
+      - Legitima defesa
+      - Estado de necessidade
+      - Estrito cumprimento do dever legal
+      - Exercicio regular de direito
+  excludentes_culpabilidade:
+    descricao: Causas que excluem a reprovabilidade
+    exemplos:
+      - Erro de proibicao inevitavel
+      - Coacao moral irresistivel
+      - Obediencia hierarquica
+      - Inimputabilidade
+  insuficiencia_probatoria:
+    descricao: In dubio pro reo
+    exemplos:
+      - Palavra da vitima isolada
+      - Reconhecimento irregular
+      - Ausencia de prova da autoria
+
+teses_desclassificacao:
+  - De homicidio doloso para culposo
+  - De roubo para furto (ausencia de grave ameaca)
+  - De trafico para uso (art. 28 Lei de Drogas)
+  - De crime consumado para tentado
+  - De forma qualificada para simples
+
+modelo_pedido: |
+  Ante o exposto, requer:
+
+  PRELIMINARMENTE:
+  a) [Se houver nulidades] O reconhecimento da nulidade de [especificar],
+     com a consequente [efeito da nulidade];
+
+  NO MERITO:
+  b) A ABSOLVICAO do acusado, com fundamento no art. 386, [inciso], do CPP,
+     por [fundamento - ex: nao haver prova suficiente para a condenacao];
+
+  SUBSIDIARIAMENTE, caso nao seja esse o entendimento de Vossa Excelencia:
+
+  c) A DESCLASSIFICACAO da conduta para [crime menos grave], com fundamento
+     em [artigo e lei];
+
+  d) O afastamento da(s) qualificadora(s) [especificar];
+
+  e) O reconhecimento da(s) atenuante(s) [especificar - art. 65 CP];
+
+  f) A fixacao da pena no minimo legal;
+
+  g) A substituicao da pena privativa de liberdade por restritiva de direitos,
+     nos termos do art. 44 do CP;
+
+  h) A fixacao do regime inicial [aberto/semiaberto], nos termos do art. 33,
+     par. 2o, [alinea], do CP;
+
+  i) [Se preso] O direito de recorrer em liberdade, nos termos do art. 387,
+     par. 1o, do CPP;
+
+  Termos em que pede deferimento.
+
+analise_prova_oral:
+  testemunhos_acusacao:
+    - Verificar contradicoes entre testemunhas
+    - Verificar contradicoes com outras provas
+    - Analisar relacao com a vitima (imparcialidade)
+    - Verificar detalhes inverossimeis
+  testemunhos_defesa:
+    - Destacar pontos favoraveis
+    - Confirmar alibi ou versao defensiva
+    - Demonstrar coerencia
+  interrogatorio:
+    - Versao do acusado (se nao permaneceu em silencio)
+    - Direito constitucional ao silencio (nao pode prejudicar)
+
+checklist_qualidade:
+  - Sintese processual clara e completa
+  - Preliminares arguidas corretamente (se houver)
+  - Provas da instrucao analisadas detalhadamente
+  - Tese principal bem fundamentada
+  - Tese subsidiaria apresentada (se aplicavel)
+  - Contradicoes da acusacao destacadas
+  - Principio do in dubio pro reo invocado
+  - Jurisprudencia citada e pertinente
+  - Dosimetria analisada (se condenacao possivel)
+  - Pedidos claros e hierarquizados
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/defesa/
+  arquivo: alegacoes-finais-[nome-cliente]-[data].md

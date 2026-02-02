@@ -1,0 +1,161 @@
+id: termos-uso
+nome: Criar Termos de Uso
+descricao: Elabora termos de uso para site, aplicativo ou plataforma
+agente: compliance
+comando: /termos-uso
+
+entradas:
+  obrigatorias:
+    - nome: empresa
+      pergunta: "Qual o nome da empresa?"
+      tipo: texto
+      exemplo: "Empresa XYZ Ltda"
+
+    - nome: plataforma
+      pergunta: "Qual o tipo de plataforma?"
+      tipo: escolha
+      opcoes:
+        - Site institucional
+        - E-commerce
+        - Aplicativo
+        - SaaS/Plataforma
+        - Marketplace
+        - Outro
+
+    - nome: descricao_servico
+      pergunta: "Descreva o servico oferecido"
+      tipo: texto_longo
+      exemplo: "Plataforma de cursos online com videos e materiais"
+
+  opcionais:
+    - nome: cadastro_obrigatorio
+      pergunta: "E necessario cadastro para usar?"
+      tipo: escolha
+      opcoes:
+        - Sim
+        - Nao
+      padrao: "Sim"
+
+    - nome: conteudo_usuario
+      pergunta: "Usuarios podem publicar conteudo?"
+      tipo: escolha
+      opcoes:
+        - Sim
+        - Nao
+      padrao: "Nao"
+
+    - nome: pagamento
+      pergunta: "Ha cobranca de valores?"
+      tipo: escolha
+      opcoes:
+        - Sim, assinatura
+        - Sim, compra unica
+        - Freemium
+        - Gratuito
+      padrao: "Sim, assinatura"
+
+    - nome: foro
+      pergunta: "Qual o foro para disputas?"
+      tipo: texto
+      padrao: "Comarca de Sao Paulo/SP"
+
+passos:
+  - numero: 1
+    acao: "Entender o servico"
+    detalhes: "Conhecer funcionamento da plataforma"
+
+  - numero: 2
+    acao: "Definir regras de uso"
+    detalhes: "O que usuarios podem e nao podem fazer"
+
+  - numero: 3
+    acao: "Estabelecer responsabilidades"
+    detalhes: "Limites de responsabilidade da empresa"
+
+  - numero: 4
+    acao: "Detalhar pagamentos"
+    detalhes: "Se aplicavel, regras de cobranca e cancelamento"
+
+  - numero: 5
+    acao: "Incluir propriedade intelectual"
+    detalhes: "Direitos sobre conteudo"
+
+  - numero: 6
+    acao: "Definir rescisao"
+    detalhes: "Como encerrar a relacao"
+
+saida:
+  formato: markdown
+  template: |
+    ## TERMOS DE USO
+
+    **Ultima atualizacao:** [data]
+
+    ---
+
+    ### 1. ACEITACAO DOS TERMOS
+    Ao acessar e utilizar [PLATAFORMA], voce concorda
+    com estes Termos de Uso. Se nao concordar, nao
+    utilize nossos servicos.
+
+    ### 2. DESCRICAO DO SERVICO
+    [descricao do que a plataforma oferece]
+
+    ### 3. CADASTRO
+    [regras para criacao de conta, se aplicavel]
+
+    ### 4. USO PERMITIDO
+    O usuario se compromete a:
+    - [uso permitido 1]
+    - [uso permitido 2]
+
+    ### 5. CONDUTAS PROIBIDAS
+    E expressamente proibido:
+    - [proibicao 1]
+    - [proibicao 2]
+
+    ### 6. CONTEUDO DO USUARIO
+    [regras sobre conteudo publicado, se aplicavel]
+
+    ### 7. PROPRIEDADE INTELECTUAL
+    [direitos sobre conteudo da plataforma]
+
+    ### 8. PAGAMENTO E CANCELAMENTO
+    [regras de cobranca, reembolso, cancelamento]
+
+    ### 9. LIMITACAO DE RESPONSABILIDADE
+    [limites da responsabilidade da empresa]
+
+    ### 10. MODIFICACOES
+    [como os termos podem ser alterados]
+
+    ### 11. RESCISAO
+    [como encerrar a conta/relacao]
+
+    ### 12. LEI APLICAVEL E FORO
+    Estes Termos sao regidos pela legislacao brasileira.
+    Fica eleito o foro de [FORO] para dirimir controversias.
+
+    ### 13. CONTATO
+    [canais de comunicacao]
+
+    ---
+
+    **[EMPRESA]**
+    CNPJ: [numero]
+
+conhecimento:
+  - conhecimento/contratos.md
+  - conhecimento/lgpd.md
+  - conhecimento/propriedade-intelectual.md
+
+gates:
+  - Servico bem descrito?
+  - Obrigacoes do usuario claras?
+  - Limitacao de responsabilidade presente?
+  - Foro definido?
+
+proximos_passos:
+  - Publicar no site
+  - Exigir aceite no cadastro
+  - Manter versoes anteriores arquivadas

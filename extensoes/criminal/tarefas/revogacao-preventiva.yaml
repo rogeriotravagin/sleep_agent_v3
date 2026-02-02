@@ -1,0 +1,196 @@
+# Tarefa: Pedido de Revogacao de Prisao Preventiva
+# Fundamento: Art. 316 do CPP
+
+id: revogacao-preventiva
+nome: Pedido de Revogacao de Prisao Preventiva
+comando: /revogacao-preventiva
+fase: defesa
+agente: criminalista
+
+descricao: |
+  Elaborar pedido de revogacao de prisao preventiva, conforme art. 316 do CPP.
+  A revogacao e cabivel quando cessam os motivos que autorizaram a prisao (art. 312 CPP),
+  diferente do relaxamento (que trata de ilegalidade) e da liberdade provisoria (flagrante).
+
+fundamento_legal:
+  - Art. 316 CPP - Revogacao e substituicao da preventiva
+  - Art. 312 CPP - Requisitos da prisao preventiva (para demonstrar cessacao)
+  - Art. 313 CPP - Hipoteses de cabimento da preventiva
+  - Art. 319 CPP - Medidas cautelares diversas da prisao
+  - Art. 282 CPP - Principios das medidas cautelares
+  - Art. 315 CPP - Fundamentacao da decisao
+  - Art. 5o, LXVI, CF - Direito a liberdade provisoria
+
+prazo: Sem prazo (pode ser requerido a qualquer momento quando cessarem os motivos)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 157, par. 2o, II, CP (roubo majorado)"
+
+    - pergunta: "Qual foi o fundamento da decretacao da preventiva?"
+      campo: fundamento_preventiva
+      opcoes:
+        - garantia_ordem_publica
+        - garantia_ordem_economica
+        - conveniencia_instrucao
+        - assegurar_aplicacao_lei_penal
+        - descumprimento_medidas_cautelares
+
+    - pergunta: "Por que os motivos da prisao cessaram?"
+      campo: cessacao_motivos
+      exemplo: "Instrucao encerrada, testemunhas ja ouvidas, endereco fixo comprovado"
+
+    - pergunta: "Quanto tempo o cliente esta preso preventivamente?"
+      campo: tempo_prisao
+      exemplo: "6 meses"
+
+    - pergunta: "O cliente aceita medidas cautelares alternativas?"
+      campo: aceita_cautelares
+      opcoes: [sim, nao]
+      padrao: sim
+
+  opcionais:
+    - pergunta: "A instrucao criminal ja foi encerrada?"
+      campo: instrucao_encerrada
+      opcoes: [sim, nao, em_andamento]
+
+    - pergunta: "Ha novos elementos favoraveis ao cliente?"
+      campo: elementos_favoraveis
+      exemplo: "Emprego formal, matricula em curso, nascimento de filho"
+
+    - pergunta: "O cliente tem antecedentes?"
+      campo: antecedentes
+      opcoes: [primario, reincidente, maus_antecedentes]
+
+    - pergunta: "Ha correu que foi solto em situacao similar?"
+      campo: correu_solto
+      opcoes: [sim, nao]
+
+    - pergunta: "Houve revisao periodica da preventiva (art. 316, par. unico)?"
+      campo: revisao_periodica
+      opcoes: [sim, nao, prazo_expirado]
+
+    - pergunta: "O cliente possui condicao de saude especial?"
+      campo: condicao_saude
+      exemplo: "Comorbidades, idade avancada, grupo de risco"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo competente
+    - Numero do processo
+    - Qualificacao do requerente (preso)
+    - Titulo "PEDIDO DE REVOGACAO DE PRISAO PREVENTIVA"
+
+  corpo:
+    - I - DOS FATOS
+      - Breve historico do processo
+      - Data e fundamento da prisao preventiva
+    - II - DA CESSACAO DOS MOTIVOS DO ART. 312 CPP
+      - Analise de cada requisito invocado na decretacao
+      - Demonstracao de que nao mais subsistem
+      - Garantia da ordem publica - nao ha risco atual
+      - Conveniencia da instrucao - ja encerrada ou desnecessaria
+      - Aplicacao da lei penal - endereco fixo, vinculos
+    - III - DA AUSENCIA DOS PRESSUPOSTOS DO ART. 313 CPP
+      - Se o crime comporta preventiva
+      - Se ha fumus commissi delicti suficiente
+      - Fragilidade probatoria (se aplicavel)
+    - IV - DA REVISAO PERIODICA (ART. 316, PAR. UNICO)
+      - Necessidade de reavaliacao a cada 90 dias
+      - Omissao judicial (se for o caso)
+    - V - DA PROPORCIONALIDADE E RAZOABILIDADE
+      - Tempo de prisao vs pena esperada
+      - Excesso de prazo (se aplicavel)
+      - Desproporcao da medida
+    - VI - DAS CONDICOES PESSOAIS FAVORAVEIS
+      - Primariedade, bons antecedentes
+      - Residencia fixa, trabalho licito
+      - Vinculos familiares e sociais
+    - VII - DAS MEDIDAS CAUTELARES ALTERNATIVAS
+      - Suficiencia do art. 319 CPP
+      - Medidas especificas propostas
+    - VIII - DA JURISPRUDENCIA
+      - Precedentes favoraveis
+    - IX - DOS PEDIDOS
+
+  pedidos_possiveis:
+    - Revogacao da prisao preventiva
+    - Substituicao por medidas cautelares do art. 319
+    - Expedicao de alvara de soltura
+    - Revisao da fundamentacao da preventiva
+
+requisitos_art312_para_refutar:
+  garantia_ordem_publica:
+    argumentos_contrarios:
+      - Ausencia de risco concreto de reiteracao
+      - Condicoes pessoais favoraveis
+      - Nao se pode presumir periculosidade
+      - Gravidade abstrata do crime nao justifica
+      - Clamor publico nao e fundamento idoneo
+
+  conveniencia_instrucao:
+    argumentos_contrarios:
+      - Instrucao ja encerrada
+      - Testemunhas ja ouvidas
+      - Provas ja produzidas
+      - Nao ha risco de intimidacao
+
+  assegurar_aplicacao_lei_penal:
+    argumentos_contrarios:
+      - Residencia fixa comprovada
+      - Ocupacao licita
+      - Vinculos familiares na comarca
+      - Ausencia de indicios de fuga
+      - Comparecimento a todos os atos
+
+revisao_periodica:
+  fundamento: Art. 316, paragrafo unico, CPP
+  prazo: 90 dias
+  obrigacao: Juiz deve revisar de oficio
+  consequencia_omissao: Constrangimento ilegal sanavel por HC
+
+modelo_pedido: |
+  Ante o exposto, requer a Vossa Excelencia:
+
+  a) A REVOGACAO DA PRISAO PREVENTIVA do requerente, nos termos
+     do art. 316 do CPP, tendo em vista a CESSACAO DOS MOTIVOS
+     que autorizaram sua decretacao;
+
+  Em carater subsidiario:
+
+  b) A SUBSTITUICAO da prisao preventiva por MEDIDAS CAUTELARES
+     diversas (art. 319 do CPP), especialmente:
+     - Comparecimento periodico em juizo (inciso I);
+     - Proibicao de ausentar-se da comarca (inciso IV);
+     - Monitoracao eletronica (inciso IX);
+     - [outras medidas pertinentes]
+
+  Em qualquer hipotese:
+
+  c) A expedicao de ALVARA DE SOLTURA em favor do requerente,
+     condicionado ou nao ao cumprimento das medidas cautelares
+     fixadas.
+
+  Por se tratar de LIBERDADE, requer seja o presente pedido
+  apreciado com URGENCIA.
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Fundamento original da preventiva identificado
+  - Cessacao de cada motivo do art. 312 demonstrada
+  - Tempo de prisao destacado
+  - Proporcionalidade argumentada
+  - Revisao periodica cobrada (se aplicavel)
+  - Condicoes pessoais favoraveis expostas
+  - Medidas cautelares alternativas propostas
+  - Jurisprudencia pertinente citada
+  - Pedidos claros e hierarquizados
+  - Documentos comprobatorios indicados
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/defesa/
+  arquivo: revogacao-preventiva-[nome-cliente]-[data].md

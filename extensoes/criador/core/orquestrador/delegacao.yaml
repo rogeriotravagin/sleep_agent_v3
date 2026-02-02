@@ -1,0 +1,93 @@
+# Regras de Delegacao - Extensao Criador
+# Define qual agente atende cada tipo de pedido
+
+# =====================================================
+# CONFIGURACAO DE OUTPUT
+# =====================================================
+
+output:
+  extensao: criador
+  destino: extensoes/  # Cria novas extensoes na pasta extensoes
+  auto_criar: true
+
+# =====================================================
+# AGENTES
+# =====================================================
+
+# Agente Arquiteto de Extensoes
+arquiteto_extensoes:
+  agente: agentes/ARQUITETO-EXTENSOES.md
+  gatilhos:
+    - criar extensao
+    - nova extensao
+    - nova area
+    - novo setor
+    - estrutura de extensao
+    - arquitetura de extensao
+    - extensao.yaml
+    - registrar extensao
+  tarefas:
+    - planejar-extensao
+    - criar-extensao
+    - criar-conhecimento
+    - finalizar-extensao
+
+# Agente Designer de Agentes
+designer_agentes:
+  agente: agentes/DESIGNER-AGENTES.md
+  gatilhos:
+    - criar agente
+    - novo agente
+    - persona de agente
+    - identidade de agente
+    - especialista
+    - especialidades
+    - regras do agente
+  tarefas:
+    - criar-agente
+
+# Agente Criador de Workflows
+criador_workflows:
+  agente: agentes/CRIADOR-WORKFLOWS.md
+  gatilhos:
+    - criar workflow
+    - novo workflow
+    - criar tarefa
+    - nova tarefa
+    - fluxo de trabalho
+    - processo
+    - fases
+    - etapas
+  tarefas:
+    - criar-tarefa
+    - criar-workflow-extensao
+    - integrar-ralph
+
+# =====================================================
+# REGRAS DE PRIORIDADE
+# =====================================================
+
+prioridade:
+  ordem:
+    - arquiteto_extensoes  # Primeiro: visao arquitetural
+    - designer_agentes     # Segundo: criacao de agentes
+    - criador_workflows    # Terceiro: workflows e tarefas
+
+# =====================================================
+# CASOS ESPECIAIS
+# =====================================================
+
+casos_especiais:
+  multi_agente:
+    - gatilho: "criar extensao completa"
+      workflow: workflows/extensao-completa.yaml
+    - gatilho: "extensao do zero"
+      workflow: workflows/extensao-completa.yaml
+    - gatilho: "nova area completa"
+      workflow: workflows/extensao-completa.yaml
+
+  explorar_primeiro:
+    - "quero criar uma extensao"
+    - "adicionar nova area"
+    - "expandir o sistema"
+    - "criar novo setor"

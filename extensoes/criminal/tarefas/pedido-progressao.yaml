@@ -1,0 +1,237 @@
+# Tarefa: Pedido de Progressao de Regime
+# Fundamento: Art. 112 LEP (Lei 7.210/1984) com alteracoes da Lei 13.964/2019
+
+id: pedido-progressao
+nome: Pedido de Progressao de Regime
+comando: /pedido-progressao
+fase: execucao
+agente: especialista-execucao
+
+descricao: |
+  Elaborar pedido de progressao de regime prisional conforme art. 112 da LEP.
+  A progressao e direito do apenado que cumpre os requisitos objetivo (fracao
+  da pena) e subjetivo (bom comportamento carcerario).
+
+fundamento_legal:
+  - Art. 112 LEP - Progressao de regime
+  - Lei 13.964/2019 (Pacote Anticrime) - Novas fracoes
+  - Art. 33 CP - Regimes de cumprimento
+  - Sumula 471 STJ - Exame criminologico facultativo
+  - Sumula Vinculante 26 STF - Progressao em crimes hediondos
+
+prazo: Nao ha prazo (requerimento a qualquer tempo apos preenchimento dos requisitos)
+
+requisitos_progressao:
+  objetivo:
+    descricao: Cumprimento da fracao minima da pena
+    observacao: Fracao varia conforme tipo de crime e reincidencia
+  subjetivo:
+    descricao: Bom comportamento carcerario
+    comprovacao: Atestado de conduta carceraria
+    observacao: Exame criminologico e facultativo (Sumula 471 STJ)
+
+fracoes_progressao_lei_13964_2019:
+  crime_comum:
+    primario: 16%
+    reincidente: 20%
+    fundamento: Art. 112, I e II, LEP
+
+  crime_hediondo_sem_morte:
+    primario: 40%
+    reincidente: 60%
+    fundamento: Art. 112, V e VI, LEP
+
+  crime_hediondo_com_morte:
+    primario_reincidente_especifico: 50%
+    fundamento: Art. 112, VI-A, LEP
+
+  comando_organizacao_criminosa_milicia:
+    primario: 50%
+    fundamento: Art. 112, VII, LEP
+
+  crime_hediondo_com_morte_reincidente_especifico:
+    fracao: 60%
+    fundamento: Art. 112, VIII, LEP
+
+regimes_prisionais:
+  fechado:
+    caracteristicas: Estabelecimento de seguranca maxima ou media
+    trabalho: Interno
+    progressao_para: Semiaberto
+  semiaberto:
+    caracteristicas: Colonia agricola, industrial ou estabelecimento similar
+    trabalho: Externo
+    progressao_para: Aberto
+  aberto:
+    caracteristicas: Casa de albergado ou estabelecimento adequado
+    trabalho: Externo
+    condicoes: Art. 114 LEP
+
+remicao:
+  trabalho:
+    proporcao: 3 dias trabalhados = 1 dia remido
+    fundamento: Art. 126 LEP
+  estudo:
+    proporcao: 12 horas de estudo = 1 dia remido
+    fundamento: Art. 126, par. 1o, I, LEP
+  leitura:
+    proporcao: 1 obra lida = 4 dias remidos (maximo 12 obras/ano)
+    fundamento: Art. 126, par. 1o, II, LEP
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o nome completo do apenado?"
+      campo: apenado
+      exemplo: "Joao da Silva Santos"
+
+    - pergunta: "Qual o regime atual de cumprimento?"
+      campo: regime_atual
+      opcoes: [fechado, semiaberto]
+
+    - pergunta: "Qual a data de inicio do cumprimento da pena?"
+      campo: data_inicio
+      exemplo: "01/03/2022"
+
+    - pergunta: "Qual a pena total aplicada?"
+      campo: pena_total
+      exemplo: "8 anos de reclusao"
+
+    - pergunta: "Qual o crime pelo qual foi condenado?"
+      campo: crime
+      exemplo: "Art. 157, par. 2o, II, CP (roubo majorado)"
+
+    - pergunta: "O apenado e primario ou reincidente?"
+      campo: reincidencia
+      opcoes: [primario, reincidente, reincidente_especifico]
+
+    - pergunta: "O crime e comum ou hediondo/equiparado?"
+      campo: tipo_crime
+      opcoes: [comum, hediondo_sem_morte, hediondo_com_morte]
+
+  opcionais:
+    - pergunta: "Ha dias remidos por trabalho? Quantos?"
+      campo: remicao_trabalho
+      exemplo: "180 dias remidos"
+
+    - pergunta: "Ha dias remidos por estudo? Quantos?"
+      campo: remicao_estudo
+      exemplo: "60 dias remidos"
+
+    - pergunta: "Ha faltas disciplinares? Quais?"
+      campo: faltas
+      exemplo: "Nenhuma falta" ou "Falta leve em 10/05/2023"
+
+    - pergunta: "Possui atestado de bom comportamento carcerario?"
+      campo: atestado_comportamento
+      opcoes: [sim, nao]
+
+    - pergunta: "Foi realizado exame criminologico?"
+      campo: exame_criminologico
+      opcoes: [sim_favoravel, sim_desfavoravel, nao_realizado]
+
+    - pergunta: "Qual o numero do processo de execucao?"
+      campo: processo_execucao
+      exemplo: "0001234-56.2022.8.26.0050"
+
+exemplo_calculo:
+  dados:
+    pena_total: "8 anos (2.920 dias)"
+    regime_atual: "fechado"
+    tipo_crime: "comum"
+    reincidencia: "primario"
+    fracao: "16%"
+    data_inicio: "01/03/2022"
+    remicao_trabalho: "180 dias"
+    remicao_estudo: "60 dias"
+
+  calculo:
+    - passo_1: "Pena total: 2.920 dias"
+    - passo_2: "Remicao: 180 + 60 = 240 dias"
+    - passo_3: "Pena a cumprir: 2.920 - 240 = 2.680 dias"
+    - passo_4: "Fracao para progressao: 16% de 2.680 = 428,8 dias = 429 dias"
+    - passo_5: "Data provavel: 01/03/2022 + 429 dias = 04/05/2023"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao Juizo da Vara de Execucoes Penais
+    - Numero do processo de execucao
+    - Qualificacao do apenado
+    - Titulo "PEDIDO DE PROGRESSAO DE REGIME"
+
+  corpo:
+    - I - DOS FATOS
+      - Condenacao e regime imposto
+      - Data de inicio do cumprimento
+      - Regime atual
+    - II - DO REQUISITO OBJETIVO
+      - Pena total
+      - Tempo cumprido
+      - Remicao (se houver)
+      - Fracao exigida
+      - Calculo demonstrativo
+      - Data em que preencheu/preenchera o requisito
+    - III - DO REQUISITO SUBJETIVO
+      - Bom comportamento carcerario
+      - Atestado de conduta
+      - Ausencia de faltas (ou reabilitacao)
+      - Exame criminologico (se realizado)
+    - IV - DA JURISPRUDENCIA
+      - Sumula 471 STJ (exame criminologico facultativo)
+      - Sumula Vinculante 26 STF (se crime hediondo)
+      - Precedentes favoraveis
+    - V - DOS PEDIDOS
+
+  documentos_instruir:
+    - Atestado de conduta carceraria
+    - Certidao de tempo cumprido
+    - Certidao de remicao (se houver)
+    - Carta de emprego (se progressao para aberto)
+    - Comprovante de residencia (se progressao para aberto)
+
+modelo_pedido: |
+  Ante o exposto, requer:
+
+  a) O reconhecimento do preenchimento dos requisitos objetivo e subjetivo
+     para a progressao de regime;
+
+  b) A PROGRESSAO DO REGIME [FECHADO para SEMIABERTO / SEMIABERTO para
+     ABERTO], nos termos do art. 112, [inciso], da Lei de Execucao Penal;
+
+  c) A expedicao de guia de transferencia para estabelecimento adequado
+     ao novo regime;
+
+  [Se progressao para regime aberto, adicionar:]
+
+  d) A fixacao das condicoes do regime aberto, nos termos do art. 115 da LEP;
+
+  e) Subsidiariamente, caso Vossa Excelencia entenda necessario, requer seja
+     determinada a realizacao de exame criminologico, ressaltando-se que a
+     Sumula 471 do STJ estabelece que tal exame e facultativo;
+
+  Termos em que pede deferimento.
+
+condicoes_regime_aberto:
+  obrigatorias:
+    - Permanecer no local que for designado durante o repouso e dias de folga
+    - Sair para o trabalho e retornar nos horarios fixados
+    - Nao se ausentar da cidade sem autorizacao judicial
+  facultativas:
+    - Frequentar curso ou frequencia a escola
+    - Nao frequentar determinados lugares
+    - Comparecer a juizo periodicamente
+
+checklist_qualidade:
+  - Tipo de crime corretamente classificado (comum/hediondo)
+  - Fracao de progressao correta aplicada
+  - Calculo demonstrativo correto
+  - Remicao computada (se houver)
+  - Requisito subjetivo comprovado
+  - Data de preenchimento dos requisitos indicada
+  - Jurisprudencia pertinente citada
+  - Documentos necessarios indicados
+  - Pedidos claros e objetivos
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/execucao/
+  arquivo: pedido-progressao-[nome-apenado]-[data].md

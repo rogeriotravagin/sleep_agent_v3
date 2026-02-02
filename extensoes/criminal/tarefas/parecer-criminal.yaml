@@ -1,0 +1,270 @@
+# Tarefa: Parecer Criminal
+# Analise de viabilidade da defesa e estrategia
+
+id: parecer-criminal
+nome: Parecer Criminal
+comando: /parecer-criminal
+fase: analise
+agente: criminalista
+
+descricao: |
+  Elaborar parecer juridico criminal analisando a viabilidade da defesa,
+  identificando teses possiveis, avaliando riscos e probabilidades, e
+  recomendando estrategia de atuacao. E o primeiro passo antes de qualquer
+  peca processual.
+
+fundamento_legal:
+  - Art. 5o, LV, CF - Ampla defesa e contraditorio
+  - Art. 261 CPP - Necessidade de defesa tecnica
+  - Codigo de Etica OAB - Dever de orientacao ao cliente
+
+prazo: Nao ha prazo legal (documento interno de orientacao)
+
+objetivo:
+  - Analisar fatos e provas disponiveis
+  - Identificar teses de defesa aplicaveis
+  - Avaliar probabilidades de exito
+  - Mapear riscos do caso
+  - Recomendar estrategia de atuacao
+  - Orientar o cliente sobre cenarios possiveis
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 155, par. 4o, II, CP (furto qualificado mediante fraude)"
+
+    - pergunta: "Quais os fatos narrados na denuncia/inquerito?"
+      campo: fatos_acusacao
+      exemplo: "No dia X, o indiciado teria subtraido valores mediante..."
+
+    - pergunta: "Qual a fase processual atual?"
+      campo: fase_processual
+      opcoes:
+        - inquerito_policial
+        - oferecimento_denuncia
+        - pos_recebimento_denuncia
+        - instrucao
+        - pos_sentenca
+        - execucao
+
+    - pergunta: "O cliente esta preso ou em liberdade?"
+      campo: situacao_prisional
+      opcoes: [preso_flagrante, preso_preventiva, preso_temporaria, solto]
+
+    - pergunta: "Qual a versao do cliente sobre os fatos?"
+      campo: versao_cliente
+      exemplo: "O cliente alega que estava em outro local no momento dos fatos"
+
+    - pergunta: "Quais provas existem contra o cliente?"
+      campo: provas_acusacao
+      exemplo: "Reconhecimento fotografico, testemunho da vitima, imagens de camera"
+
+  opcionais:
+    - pergunta: "Existem provas favoraveis a defesa?"
+      campo: provas_defesa
+      exemplo: "Comprovantes de que estava em outro local, testemunhas de alibi"
+
+    - pergunta: "O cliente tem antecedentes criminais?"
+      campo: antecedentes
+      opcoes: [primario, reincidente]
+      detalhes: "Se reincidente, quais crimes anteriores?"
+
+    - pergunta: "Ha coautores ou participantes?"
+      campo: coautoria
+      exemplo: "Dois coreus presos no mesmo inquerito"
+
+    - pergunta: "O cliente confessou em algum momento?"
+      campo: confissao
+      opcoes: [nao_confessou, confessou_policia, confessou_juiz, confessou_parcialmente]
+
+    - pergunta: "Existem nulidades aparentes no processo?"
+      campo: nulidades
+      exemplo: "Ausencia de advogado no interrogatorio policial, busca sem mandado"
+
+    - pergunta: "Qual o valor do prejuizo (se crime patrimonial)?"
+      campo: valor_prejuizo
+      exemplo: "R$ 500,00"
+
+estrutura_parecer:
+  cabecalho:
+    - Titulo "PARECER JURIDICO CRIMINAL"
+    - Identificacao do cliente
+    - Numero do processo/inquerito
+    - Data de elaboracao
+
+  corpo:
+    - I - OBJETO DO PARECER
+      - Descricao do que sera analisado
+    - II - DOS FATOS
+      - Narrativa da acusacao
+      - Versao do cliente
+      - Historico processual
+    - III - DAS PROVAS
+      - Provas da acusacao (com analise critica)
+      - Provas da defesa
+      - Provas a serem produzidas
+    - IV - DO ENQUADRAMENTO JURIDICO
+      - Crime imputado
+      - Elementos do tipo
+      - Analise de adequacao tipica
+    - V - DAS TESES DE DEFESA APLICAVEIS
+      - Tese 1 (principal) - com fundamentacao
+      - Tese 2 (subsidiaria) - com fundamentacao
+      - Tese 3 (alternativa) - com fundamentacao
+    - VI - DAS NULIDADES (se houver)
+      - Identificacao
+      - Consequencias juridicas
+    - VII - DA ANALISE DE RISCOS
+      - Probabilidade de condenacao
+      - Pena provavel em caso de condenacao
+      - Possibilidade de acordo (ANPP, transacao)
+    - VIII - DA RECOMENDACAO ESTRATEGICA
+      - Estrategia recomendada
+      - Passos imediatos
+      - Orientacoes ao cliente
+    - IX - DA CONCLUSAO
+
+analise_teses:
+  teses_absolutoria:
+    atipicidade:
+      aplicavel_quando:
+        - Conduta nao se enquadra em nenhum tipo penal
+        - Ausencia de elementar do tipo
+        - Principio da insignificancia
+        - Crime impossivel
+      probabilidade: avaliar_caso_concreto
+
+    excludente_ilicitude:
+      tipos:
+        - Legitima defesa (art. 25 CP)
+        - Estado de necessidade (art. 24 CP)
+        - Estrito cumprimento do dever legal (art. 23, III, CP)
+        - Exercicio regular de direito (art. 23, III, CP)
+      requisitos: verificar_cada_excludente
+
+    excludente_culpabilidade:
+      tipos:
+        - Inimputabilidade (art. 26 CP)
+        - Erro de proibicao inevitavel (art. 21 CP)
+        - Coacao moral irresistivel (art. 22 CP)
+        - Obediencia hierarquica (art. 22 CP)
+      requisitos: verificar_cada_excludente
+
+    insuficiencia_probatoria:
+      aplicavel_quando:
+        - Prova unicamente testemunhal fragil
+        - Reconhecimento pessoal irregular
+        - Ausencia de outras provas
+        - Contradicoes nas provas da acusacao
+      principio: in_dubio_pro_reo
+
+    negativa_autoria:
+      aplicavel_quando:
+        - Alibi comprovado
+        - Erro de identificacao
+        - Prova de que outro praticou o crime
+      provas_necessarias: verificar_disponibilidade
+
+  teses_desclassificacao:
+    exemplos:
+      - Roubo para furto (ausencia de violencia/ameaca)
+      - Homicidio doloso para culposo
+      - Trafico para uso
+      - Estupro para importunacao sexual
+      - Qualificado para simples
+    analise: verificar_adequacao_tipica
+
+  teses_atenuacao:
+    circunstancias_judiciais_favoraveis:
+      - Primariedade
+      - Bons antecedentes
+      - Personalidade do agente
+      - Motivos do crime
+      - Circunstancias do crime
+    atenuantes:
+      - Confissao espontanea
+      - Menoridade relativa
+      - Idade avancada
+      - Desconhecimento da lei
+    causas_diminuicao:
+      - Arrependimento posterior
+      - Crime tentado
+      - Participacao de menor importancia
+
+matriz_riscos:
+  probabilidade_condenacao:
+    alta: "Provas robustas, confissao, flagrante"
+    media: "Provas circunstanciais, contradicoes"
+    baixa: "Provas frageis, nulidades, alibi"
+
+  consequencias:
+    pena_estimada: "Calcular com base no crime e circunstancias"
+    regime_provavel: "Definir conforme pena e antecedentes"
+    medidas_cautelares: "Avaliar risco de prisao preventiva"
+
+acordos_possiveis:
+  anpp:
+    cabimento: "Pena minima inferior a 4 anos, crime sem violencia"
+    fundamento: Art. 28-A CPP
+    vantagem: Nao gera reincidencia
+
+  transacao_penal:
+    cabimento: "Infrações de menor potencial ofensivo (JECRIM)"
+    fundamento: Art. 76 Lei 9.099/95
+    vantagem: Nao gera reincidencia
+
+  suspensao_condicional_processo:
+    cabimento: "Pena minima igual ou inferior a 1 ano"
+    fundamento: Art. 89 Lei 9.099/95
+    vantagem: Extincao da punibilidade apos periodo de prova
+
+  colaboracao_premiada:
+    cabimento: "Organizacao criminosa"
+    fundamento: Lei 12.850/2013
+    requisitos: verificar_caso
+
+modelo_conclusao: |
+  CONCLUSAO
+
+  Com base na analise dos fatos, provas e direito aplicavel, conclui-se que:
+
+  1. VIABILIDADE DA DEFESA: [Alta/Media/Baixa]
+     [Fundamentar a avaliacao]
+
+  2. TESE PRINCIPAL RECOMENDADA: [Especificar]
+     Probabilidade de exito: [Alta/Media/Baixa]
+     Fundamento: [Artigos e jurisprudencia]
+
+  3. TESE SUBSIDIARIA: [Especificar]
+     Probabilidade de exito: [Alta/Media/Baixa]
+     Fundamento: [Artigos e jurisprudencia]
+
+  4. ESTRATEGIA RECOMENDADA:
+     [Descrever os passos recomendados]
+
+  5. ACOES IMEDIATAS:
+     - [Acao 1]
+     - [Acao 2]
+     - [Acao 3]
+
+  6. OBSERVACOES AO CLIENTE:
+     [Orientacoes importantes]
+
+checklist_qualidade:
+  - Fatos da acusacao corretamente resumidos
+  - Versao do cliente registrada
+  - Provas da acusacao analisadas criticamente
+  - Provas de defesa identificadas
+  - Nulidades verificadas
+  - Teses de defesa fundamentadas
+  - Probabilidades de exito avaliadas
+  - Riscos mapeados
+  - Estrategia claramente recomendada
+  - Acoes imediatas definidas
+  - Linguagem acessivel ao cliente
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/pareceres/
+  arquivo: parecer-criminal-[nome-cliente]-[data].md

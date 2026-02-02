@@ -2,7 +2,7 @@
 name: generate-book-prd
 description: Generate PRD for parallel book summary processing using Ralph + BookSummary integration
 version: 1.0
-author: AIOS Ralph-BookSummary Integration
+author: Sleep Agent Ralph-BookSummary Integration
 mode: content
 tags: [ralph, booksummary, prd, parallel, content]
 

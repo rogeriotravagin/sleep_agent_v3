@@ -1,6 +1,6 @@
 # Ralph Agent Instructions
 
-> **AIOS Integration:** You follow Story-Driven Development principles.
+> **SAF Integration:** You follow Story-Driven Development principles.
 > Complete context is in the PRD. Quality Gates must pass before marking [x].
 
 ## Project Context (Injected by ralph.sh)
@@ -17,7 +17,7 @@ Read handoff.md FIRST (if exists), then prd.json to understand the current state
 
 ## Your Authorized Sections
 
-> **AIOS Principle:** You can ONLY edit these sections:
+> **SAF Principle:** You can ONLY edit these sections:
 
 ### In prd.json:
 - `passes` field (false → true)
@@ -72,7 +72,7 @@ IF handoff.md does NOT exist:
 
 ### 3. Check Dev Notes
 ```
-AIOS Principle: PRD contains ALL context needed.
+SAF Principle: PRD contains ALL context needed.
 - Read section 8 "Dev Notes" completely
 - Follow patterns listed there
 - Use dependencies specified
@@ -248,7 +248,7 @@ When ALL stories have `passes: true`:
 
 ---
 
-## Summary: AIOS Principles
+## Summary: SAF Principles
 
 1. **Handoff First:** Read handoff.md BEFORE starting any story
 2. **Story-Driven:** PRD has ALL context needed

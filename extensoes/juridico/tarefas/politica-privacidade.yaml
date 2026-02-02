@@ -1,0 +1,157 @@
+id: politica-privacidade
+nome: Criar Politica de Privacidade LGPD
+descricao: Elabora politica de privacidade em conformidade com a LGPD
+agente: compliance
+comando: /politica-privacidade
+
+entradas:
+  obrigatorias:
+    - nome: empresa
+      pergunta: "Qual o nome da empresa?"
+      tipo: texto
+      exemplo: "Empresa XYZ Ltda"
+
+    - nome: site
+      pergunta: "Qual o site/aplicativo?"
+      tipo: texto
+      exemplo: "www.empresa.com.br"
+
+    - nome: dados_coletados
+      pergunta: "Quais dados pessoais sao coletados?"
+      tipo: texto_longo
+      exemplo: "Nome, email, telefone, CPF, endereco"
+
+    - nome: finalidades
+      pergunta: "Para que os dados sao usados?"
+      tipo: texto_longo
+      exemplo: "Envio de newsletter, processamento de pedidos, contato comercial"
+
+  opcionais:
+    - nome: compartilhamento
+      pergunta: "Os dados sao compartilhados com terceiros? Quais?"
+      tipo: texto
+      padrao: "Plataformas de pagamento e envio de email"
+
+    - nome: cookies
+      pergunta: "O site utiliza cookies?"
+      tipo: escolha
+      opcoes:
+        - Sim
+        - Nao
+      padrao: "Sim"
+
+    - nome: dpo
+      pergunta: "Ha um encarregado (DPO) definido? Qual o contato?"
+      tipo: texto
+      padrao: "privacidade@empresa.com.br"
+
+    - nome: armazenamento
+      pergunta: "Onde os dados sao armazenados?"
+      tipo: texto
+      padrao: "Servidores no Brasil"
+
+passos:
+  - numero: 1
+    acao: "Coletar informacoes do negocio"
+    detalhes: "Entender operacao e fluxo de dados"
+
+  - numero: 2
+    acao: "Mapear dados coletados"
+    detalhes: "Listar todos os dados pessoais"
+
+  - numero: 3
+    acao: "Identificar bases legais"
+    detalhes: "Definir fundamento LGPD para cada tratamento"
+
+  - numero: 4
+    acao: "Descrever direitos do titular"
+    detalhes: "Incluir todos os direitos da LGPD"
+
+  - numero: 5
+    acao: "Detalhar compartilhamentos"
+    detalhes: "Listar terceiros que recebem dados"
+
+  - numero: 6
+    acao: "Elaborar secao de cookies"
+    detalhes: "Se aplicavel, detalhar uso de cookies"
+
+  - numero: 7
+    acao: "Incluir informacoes de contato"
+    detalhes: "Canal para exercicio de direitos"
+
+saida:
+  formato: markdown
+  template: |
+    ## POLITICA DE PRIVACIDADE
+
+    **Ultima atualizacao:** [data]
+
+    ---
+
+    ### 1. INTRODUCAO
+    A [EMPRESA] ("nos") valoriza a privacidade dos usuarios
+    de [SITE/APP]. Esta Politica descreve como coletamos,
+    usamos e protegemos seus dados pessoais.
+
+    ### 2. CONTROLADOR DOS DADOS
+    [Dados da empresa - razao social, CNPJ, endereco]
+
+    ### 3. DADOS COLETADOS
+    #### 3.1 Dados Fornecidos pelo Usuario
+    [lista de dados]
+
+    #### 3.2 Dados Coletados Automaticamente
+    [logs, cookies, etc.]
+
+    ### 4. FINALIDADES DO TRATAMENTO
+    | Dado | Finalidade | Base Legal |
+    |------|------------|------------|
+    | [dado] | [finalidade] | [base LGPD] |
+
+    ### 5. COMPARTILHAMENTO DE DADOS
+    [com quem e por que]
+
+    ### 6. ARMAZENAMENTO E SEGURANCA
+    [onde, por quanto tempo, medidas de protecao]
+
+    ### 7. SEUS DIREITOS
+    Conforme a LGPD, voce tem direito a:
+    - Confirmacao e acesso aos dados
+    - Correcao de dados incompletos
+    - Anonimizacao ou eliminacao
+    - Portabilidade
+    - Revogacao do consentimento
+    - Informacao sobre compartilhamento
+
+    ### 8. COOKIES
+    [tipos de cookies e como gerenciar]
+
+    ### 9. CONTATO
+    Para exercer seus direitos ou esclarecer duvidas:
+    **Encarregado (DPO):** [contato]
+    **Email:** [email]
+
+    ### 10. ALTERACOES
+    Esta politica pode ser atualizada. Mudancas
+    significativas serao comunicadas por [meio].
+
+    ---
+
+    **[EMPRESA]**
+    CNPJ: [numero]
+
+conhecimento:
+  - conhecimento/lgpd.md
+  - conhecimento/compliance.md
+
+gates:
+  - Todos os dados coletados estao listados?
+  - Bases legais definidas para cada finalidade?
+  - Direitos do titular incluidos?
+  - Canal de contato disponivel?
+
+proximos_passos:
+  - Publicar no site
+  - Implementar banner de cookies
+  - Criar formulario de exercicio de direitos
+  - Treinar equipe sobre LGPD

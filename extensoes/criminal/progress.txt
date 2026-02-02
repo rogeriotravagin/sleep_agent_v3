@@ -1,0 +1,61 @@
+# Progress Log - Extensao Criminal
+# Iniciado: 2026-02-01
+
+## Codebase Patterns
+
+### Estrutura de Tarefas (YAML)
+- id, nome, comando, fase, agente
+- descricao, fundamento_legal, prazo
+- perguntas (obrigatorias e opcionais)
+- estrutura_peca, modelo_pedido
+- checklist_qualidade, output
+
+### Estrutura de Conhecimento (MD)
+- Titulo e descricao
+- Secoes organizadas por tema
+- Artigos de lei citados
+- Jurisprudencia relevante
+
+### Disclaimer Obrigatorio
+Incluir ao final de todo documento gerado
+
+## Key Files Reference
+
+| Arquivo | Proposito |
+|---------|-----------|
+| extensao.yaml | Manifesto da extensao |
+| .claude/CLAUDE.md | Instrucoes especificas |
+| agentes/*.md | Definicao dos 4 agentes |
+| tarefas/resposta-acusacao.yaml | Modelo de tarefa |
+
+## File List (Cumulative)
+
+- [x] extensao.yaml
+- [x] .claude/CLAUDE.md
+- [x] agentes/CRIMINALISTA.md
+- [x] agentes/JURI.md
+- [x] agentes/EXECUCAO.md
+- [x] agentes/RECURSOS.md
+- [x] tarefas/resposta-acusacao.yaml
+- [ ] tarefas/habeas-corpus.yaml
+- [ ] tarefas/pedido-progressao.yaml
+- [ ] (demais arquivos do prd.json)
+
+## Session Log
+
+### Session 1 - 2026-02-01
+- Criada estrutura base da extensao
+- Criados 4 agentes especializados
+- Criada primeira tarefa (resposta-acusacao)
+- Preparado PRD para Ralph continuar
+
+## Quality Gates Status
+
+- [x] Estrutura de pastas criada
+- [x] Manifesto extensao.yaml valido
+- [x] CLAUDE.md com instrucoes completas
+- [x] Agentes com especialidades definidas
+- [ ] Todas as tarefas criadas
+- [ ] Workflows criados
+- [ ] Base de conhecimento completa
+- [ ] README.md criado

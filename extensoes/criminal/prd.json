@@ -1,0 +1,353 @@
+{
+  "project": "Extensao Criminal - Completar Estrutura",
+  "mode": "content",
+  "branchName": "",
+  "outputDir": "extensoes/criminal",
+  "description": "Completar a extensao criminal do Sleep Agent com todas as tarefas, workflows, base de conhecimento e templates de pecas processuais",
+  "parallelization": {
+    "enabled": true,
+    "maxConcurrent": 8
+  },
+  "context": {
+    "estrutura_existente": [
+      "extensao.yaml - Manifesto da extensao",
+      ".claude/CLAUDE.md - Instrucoes especificas",
+      "agentes/CRIMINALISTA.md - Defesa criminal geral",
+      "agentes/JURI.md - Tribunal do Juri",
+      "agentes/EXECUCAO.md - Execucao penal",
+      "agentes/RECURSOS.md - Recursos e HC",
+      "tarefas/resposta-acusacao.yaml - Tarefa de resposta a acusacao"
+    ],
+    "referencias": [
+      "extensoes/marketing/ - Usar como modelo de estrutura",
+      "Codigo Penal - Decreto-Lei 2.848/1940",
+      "Codigo de Processo Penal - Decreto-Lei 3.689/1941",
+      "Lei de Execucao Penal - Lei 7.210/1984",
+      "Lei de Drogas - Lei 11.343/2006",
+      "Lei de Crimes Hediondos - Lei 8.072/1990"
+    ]
+  },
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Criar tarefa habeas-corpus.yaml",
+      "outputFile": "extensoes/criminal/tarefas/habeas-corpus.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Estrutura YAML seguindo padrao de resposta-acusacao.yaml",
+        "Perguntas obrigatorias e opcionais definidas",
+        "Hipoteses de cabimento do art. 648 CPP",
+        "Competencia por autoridade coatora",
+        "Modelos de pedido e liminar",
+        "Checklist de qualidade"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-002",
+      "title": "Criar tarefa pedido-progressao.yaml",
+      "outputFile": "extensoes/criminal/tarefas/pedido-progressao.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Fracoes de progressao atualizadas (Pacote Anticrime)",
+        "Requisitos objetivo e subjetivo",
+        "Calculo de exemplo",
+        "Remicao por trabalho e estudo",
+        "Jurisprudencia relevante (sumulas)"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-003",
+      "title": "Criar tarefa alegacoes-finais.yaml",
+      "outputFile": "extensoes/criminal/tarefas/alegacoes-finais.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Art. 403 CPP - fundamentacao",
+        "Estrutura de alegacoes por memoriais",
+        "Teses de absolvicao e desclassificacao",
+        "Modelo de pedidos"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-004",
+      "title": "Criar tarefa apelacao.yaml",
+      "outputFile": "extensoes/criminal/tarefas/apelacao.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Art. 593 CPP - hipoteses",
+        "Prazo de 5 dias + 8 dias razoes",
+        "Estrutura de razoes de apelacao",
+        "Efeitos do recurso"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-005",
+      "title": "Criar tarefa parecer-criminal.yaml",
+      "outputFile": "extensoes/criminal/tarefas/parecer-criminal.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Analise de viabilidade da defesa",
+        "Identificacao de teses possiveis",
+        "Riscos e probabilidades",
+        "Estrategia recomendada"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-006",
+      "title": "Criar tarefa tese-defesa.yaml",
+      "outputFile": "extensoes/criminal/tarefas/tese-defesa.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Teses absolutórias (atipicidade, excludentes)",
+        "Teses desclassificatorias",
+        "Teses para diminuicao de pena",
+        "Fundamentacao juridica de cada tese"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-007",
+      "title": "Criar tarefa pedido-liberdade.yaml",
+      "outputFile": "extensoes/criminal/tarefas/pedido-liberdade.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Liberdade provisoria com/sem fianca",
+        "Art. 310 e 321 CPP",
+        "Medidas cautelares alternativas art. 319"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-008",
+      "title": "Criar tarefa relaxamento.yaml",
+      "outputFile": "extensoes/criminal/tarefas/relaxamento.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Prisao ilegal - hipoteses",
+        "Art. 310 CPP",
+        "Diferenca de relaxamento e revogacao"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-009",
+      "title": "Criar tarefa revogacao-preventiva.yaml",
+      "outputFile": "extensoes/criminal/tarefas/revogacao-preventiva.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Art. 316 CPP - revogacao",
+        "Cessacao dos motivos",
+        "Medidas cautelares alternativas"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-010",
+      "title": "Criar tarefa agravo-execucao.yaml",
+      "outputFile": "extensoes/criminal/tarefas/agravo-execucao.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Art. 197 LEP",
+        "Hipoteses de cabimento",
+        "Prazo de 5 dias"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-011",
+      "title": "Criar tarefa quesitos-juri.yaml",
+      "outputFile": "extensoes/criminal/tarefas/quesitos-juri.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Art. 483 CPP - ordem dos quesitos",
+        "Quesito de absolvicao generico",
+        "Estrategia de quesitacao"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-012",
+      "title": "Criar workflow defesa-completa.yaml",
+      "outputFile": "extensoes/criminal/workflows/defesa-completa.yaml",
+      "dependencies": ["US-001", "US-002", "US-003", "US-004", "US-005", "US-006"],
+      "acceptanceCriteria": [
+        "5 fases: Analise, Defesa Preliminar, Instrucao, Recursos, Execucao",
+        "Sequencia logica de tarefas",
+        "Checkpoints entre fases"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-013",
+      "title": "Criar workflow liberdade.yaml",
+      "outputFile": "extensoes/criminal/workflows/liberdade.yaml",
+      "dependencies": ["US-001", "US-007", "US-008", "US-009"],
+      "acceptanceCriteria": [
+        "Fluxo para obter liberdade do cliente",
+        "Ordem de tentativas (relaxamento, revogacao, HC)",
+        "Medidas cautelares alternativas"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-014",
+      "title": "Criar workflow progressao.yaml",
+      "outputFile": "extensoes/criminal/workflows/progressao.yaml",
+      "dependencies": ["US-002", "US-010"],
+      "acceptanceCriteria": [
+        "Calculo de progressao",
+        "Coleta de documentos",
+        "Agravo em caso de indeferimento"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-015",
+      "title": "Criar conhecimento/codigo-penal.md",
+      "outputFile": "extensoes/criminal/conhecimento/codigo-penal.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Estrutura do CP (Parte Geral e Especial)",
+        "Teoria do crime",
+        "Principais crimes com artigos e penas",
+        "Excludentes de ilicitude e culpabilidade",
+        "Sistema de penas e dosimetria"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-016",
+      "title": "Criar conhecimento/codigo-processo-penal.md",
+      "outputFile": "extensoes/criminal/conhecimento/codigo-processo-penal.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Fases do processo penal",
+        "Procedimentos (comum, juri, JECRIM)",
+        "Provas no processo penal",
+        "Prisoes e medidas cautelares",
+        "Nulidades processuais"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-017",
+      "title": "Criar conhecimento/execucao-penal.md",
+      "outputFile": "extensoes/criminal/conhecimento/execucao-penal.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Regimes prisionais",
+        "Progressao e regressao",
+        "Remicao por trabalho e estudo",
+        "Livramento condicional",
+        "Saida temporaria"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-018",
+      "title": "Criar conhecimento/leis-especiais.md",
+      "outputFile": "extensoes/criminal/conhecimento/leis-especiais.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Lei de Drogas (11.343/2006)",
+        "Crimes Hediondos (8.072/1990)",
+        "Lei Maria da Penha (11.340/2006)",
+        "CTB - Crimes de Transito",
+        "Organizacoes Criminosas (12.850/2013)"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-019",
+      "title": "Criar conhecimento/teses-defesa.md",
+      "outputFile": "extensoes/criminal/conhecimento/teses-defesa.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Teses absolutórias",
+        "Teses desclassificatorias",
+        "Teses para diminuicao de pena",
+        "Fundamentacao de cada tese"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-020",
+      "title": "Criar conhecimento/sumulas-stf.md",
+      "outputFile": "extensoes/criminal/conhecimento/sumulas-stf.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Sumulas vinculantes em materia penal",
+        "Sumulas ordinarias relevantes",
+        "Aplicacao pratica de cada sumula"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-021",
+      "title": "Criar conhecimento/sumulas-stj.md",
+      "outputFile": "extensoes/criminal/conhecimento/sumulas-stj.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Sumulas da 5a e 6a Turmas",
+        "Sumulas sobre execucao penal",
+        "Sumulas sobre dosimetria"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-022",
+      "title": "Criar conhecimento/nulidades.md",
+      "outputFile": "extensoes/criminal/conhecimento/nulidades.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Nulidades absolutas e relativas",
+        "Teoria dos frutos da arvore envenenada",
+        "Provas ilicitas (art. 157 CPP)",
+        "Jurisprudencia sobre nulidades"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-023",
+      "title": "Criar conhecimento/dosimetria.md",
+      "outputFile": "extensoes/criminal/conhecimento/dosimetria.md",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Sistema trifasico (art. 68 CP)",
+        "Circunstancias judiciais (art. 59)",
+        "Atenuantes e agravantes",
+        "Causas de aumento e diminuicao"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-024",
+      "title": "Criar core/orquestrador/delegacao.yaml",
+      "outputFile": "extensoes/criminal/core/orquestrador/delegacao.yaml",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Regras de delegacao por tipo de tarefa",
+        "Mapeamento de comandos para agentes",
+        "Fluxo de trabalho da extensao"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-025",
+      "title": "Criar README.md da extensao",
+      "outputFile": "extensoes/criminal/README.md",
+      "dependencies": ["US-024"],
+      "acceptanceCriteria": [
+        "Visao geral da extensao",
+        "Lista de agentes e comandos",
+        "Instrucoes de uso",
+        "Disclaimer juridico"
+      ],
+      "passes": false
+    }
+  ]
+}

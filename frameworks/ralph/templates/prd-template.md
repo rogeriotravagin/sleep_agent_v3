@@ -1,6 +1,6 @@
 # PRD: [Feature Name]
 
-> **AIOS Integration:** This PRD follows Story-Driven Development principles.
+> **SAF Integration:** This PRD follows Story-Driven Development principles.
 > The Dev Agent should find ALL context needed here - no external docs required.
 
 **Epic:** [Epic Name/Number]
@@ -96,7 +96,7 @@
 
 ## 8. Dev Notes (CRITICAL - Complete Context Here)
 
-> **AIOS Principle:** The developer should NEVER need to read external documentation.
+> **SAF Principle:** The developer should NEVER need to read external documentation.
 > Put EVERYTHING needed to implement here.
 
 ### Relevant Architecture
@@ -147,7 +147,7 @@ VAR_NAME=description
 
 ## 11. Quality Gates (Definition of Done)
 
-> **AIOS Principle:** Story is only complete when ALL gates pass.
+> **SAF Principle:** Story is only complete when ALL gates pass.
 
 ### Pre-Implementation
 - [ ] PRD approved by stakeholder
@@ -176,7 +176,7 @@ VAR_NAME=description
 
 ## Dev Agent Record (Dev ONLY Section)
 
-> **AIOS Principle:** This section is the audit trail. Only Dev updates this.
+> **SAF Principle:** This section is the audit trail. Only Dev updates this.
 
 ### File List
 

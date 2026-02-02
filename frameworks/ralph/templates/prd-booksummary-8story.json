@@ -5,7 +5,7 @@
     "usage": "Used by generate-ralph-prd.md to create PRDs with optimal granularity",
     "integration": "Ralph + BookSummary Expansion Packs",
     "created": "2026-01-18",
-    "author": "AIOS Ralph-BookSummary Integration",
+    "author": "Sleep Agent Ralph-BookSummary Integration",
     "story_structure": "8-story optimized (from 20 proposed, improved from 3 legacy)"
   },
 

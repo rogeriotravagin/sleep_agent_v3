@@ -15,11 +15,11 @@ Ralph é um sistema de **desenvolvimento autônomo** que combina:
 |-------|--------------|
 | **[Ralph Original](https://ghuntley.com/ralph/)** | Loop autônomo, prd.json, progress.txt |
 | **[ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks)** | PRD 9 seções, tasks granulares, perguntas A/B/C/D |
-| **AIOS Framework** | Story-driven, Quality Gates, Dev Agent Record, Strict Sections |
+| **Sleep Agent Framework (SAF)** | Story-driven, Quality Gates, Dev Agent Record, Strict Sections |
 
 ---
 
-## Arquitetura (AIOS-Compliant)
+## Arquitetura (SAF-Compliant)
 
 ```
 expansion-packs/ralph/
@@ -27,22 +27,22 @@ expansion-packs/ralph/
 ├── agents/
 │   └── ralph.md                # Agent definition (ativa com @ralph)
 ├── workflows/
-│   └── autonomous-loop.md      # Workflow AIOS completo
+│   └── autonomous-loop.md      # Workflow SAF completo
 ├── checklists/
 │   ├── quality-gates.md        # Quality Gates obrigatórios
 │   └── pre-implementation.md   # Validação pré-implementação
 ├── scripts/
 │   └── ralph.sh                # Script bash alternativo
 ├── tasks/
-│   ├── create-prd.md           # Task AIOS (mode: elicit)
-│   ├── start-loop.md           # Task AIOS (mode: execute)
-│   └── update-handoff.md       # Task AIOS (obrigatória pós-story)
+│   ├── create-prd.md           # Task SAF (mode: elicit)
+│   ├── start-loop.md           # Task SAF (mode: execute)
+│   └── update-handoff.md       # Task SAF (obrigatória pós-story)
 └── templates/
     ├── prd.json                # Template JSON para Ralph autônomo
-    ├── prd-template.md         # PRD completo (11 seções + AIOS)
+    ├── prd-template.md         # PRD completo (11 seções + SAF)
     ├── tasks-template.md       # Tasks com checkboxes
-    ├── progress.txt            # Progress log (AIOS-enhanced)
-    ├── prompt.md               # Prompt com princípios AIOS
+    ├── progress.txt            # Progress log (SAF-enhanced)
+    ├── prompt.md               # Prompt com princípios SAF
     └── handoff-template.md     # Template de handoff entre stories
 ```
 
@@ -196,18 +196,18 @@ ralph.sh → Claude sessão 1 (story 1) → termina
 - ✅ Pause after Phase 1 + "Go"
 - ✅ Target: junior developer
 
-### Do AIOS Framework
+### Do Sleep Agent Framework (SAF)
 - ✅ **Story-Driven:** PRD tem todo contexto (Dev Notes)
 - ✅ **Strict Sections:** Ralph só edita seções autorizadas
 - ✅ **Quality Gates:** Checklist obrigatório antes de [x]
 - ✅ **Dev Agent Record:** File List + Session Log
 - ✅ **Patterns Compound:** Codebase Patterns no topo
 - ✅ **No Scope Creep:** Proibido editar requirements
-- ✅ **Agent Delegation:** Ralph orquestra agents AIOS especializados
+- ✅ **Agent Delegation:** Ralph orquestra agents SAF especializados
 
 ---
 
-## Agent Delegation via Skill Tool (AIOS Integration)
+## Agent Delegation via Skill Tool (SAF Integration)
 
 Ralph é o **maestro** que invoca agents especializados usando o **Skill tool**. Cada agent é definido como uma Skill em `.claude/skills/`.
 
@@ -280,7 +280,7 @@ Skills devem estar em `.claude/skills/`:
 
 ## Ativação
 
-### Como Agent AIOS (Recomendado)
+### Como Agent SAF (Recomendado)
 
 ```
 @ralph
@@ -396,13 +396,13 @@ Começar manual, converter para Ralph quando confiante:
 5. Non-Goals
 6. Design Considerations
 7. Technical Considerations
-8. **Dev Notes (AIOS)** - Contexto completo
+8. **Dev Notes (SAF)** - Contexto completo
 9. Success Metrics
 10. Open Questions
-11. **Quality Gates (AIOS)** - Definition of Done
-12. **Dev Agent Record (AIOS)** - Audit trail
+11. **Quality Gates (SAF)** - Definition of Done
+12. **Dev Agent Record (SAF)** - Audit trail
 
-### progress.txt (AIOS-Enhanced)
+### progress.txt (SAF-Enhanced)
 
 - **Codebase Patterns** - No topo, lido primeiro
 - **Key Files Reference** - Arquivos importantes
@@ -411,11 +411,11 @@ Começar manual, converter para Ralph quando confiante:
 - **Session Log** - Histórico de iterações
 - **Completion Summary** - Estatísticas finais
 
-### prompt.md (AIOS Principles)
+### prompt.md (SAF Principles)
 
 - **Authorized Sections** - O que Ralph pode editar
 - **Quality Gate Checklist** - Validações obrigatórias
-- **AIOS Summary** - Princípios a seguir
+- **SAF Summary** - Princípios a seguir
 
 ---
 
@@ -527,7 +527,7 @@ Isso acontece automaticamente quando `branchName` no prd.json muda.
 - [Ralph Original - Geoffrey Huntley](https://ghuntley.com/ralph/)
 - [ai-dev-tasks - snarktank](https://github.com/snarktank/ai-dev-tasks)
 - [Plugin ralph-loop](https://github.com/anthropics/claude-plugins-official)
-- [AIOS Framework](./.aios-core/)
+- [Sleep Agent Framework (SAF)](docs/SAF-FRAMEWORK.md)
 
 ---
 
@@ -563,7 +563,7 @@ Isso acontece automaticamente quando `branchName` no prd.json muda.
 - **Workflow Updated** - `autonomous_loop_with_skill_delegation`
 
 ### v2.3 (2026-01-14)
-- **Agent Delegation** - Ralph agora orquestra agents AIOS especializados
+- **Agent Delegation** - Ralph agora orquestra agents SAF especializados
 - **Delegation Map** - Mapeamento de keywords para @architect, @dev, @qa, @ux-expert, @po
 - **Delegation Protocol** - Fluxo de handoff estruturado
 - **data/agent-delegation.md** - Documentação completa de delegação
@@ -575,7 +575,7 @@ Isso acontece automaticamente quando `branchName` no prd.json muda.
 - **Story sizing guidelines** - Documentação sobre tamanho de stories
 
 ### v2.1 (2026-01-14)
-- **100% AIOS Compliant**
+- **100% SAF Compliant**
 - Agent definition file (`agents/ralph.md`)
 - Workflows directory (`workflows/autonomous-loop.md`)
 - Checklists (`quality-gates.md`, `pre-implementation.md`)
@@ -584,7 +584,7 @@ Isso acontece automaticamente quando `branchName` no prd.json muda.
 - Ativação via `@ralph`
 
 ### v2.0 (2026-01-14)
-- Integração completa com AIOS Framework
+- Integração completa com Sleep Agent Framework (SAF)
 - Dev Notes section no PRD
 - Quality Gates obrigatórios
 - Dev Agent Record (File List + Session Log)

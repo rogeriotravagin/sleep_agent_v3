@@ -2,7 +2,7 @@
 name: batch-reprocess
 description: Reprocess books from batch-to-reprocess.yaml - generates 1 PRD per book
 version: 1.0
-author: AIOS Ralph
+author: Sleep Agent Ralph
 mode: content
 tags: [ralph, booksummary, batch, reprocess, automated]
 

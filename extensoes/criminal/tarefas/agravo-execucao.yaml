@@ -1,0 +1,205 @@
+# Tarefa: Agravo em Execucao Penal
+# Fundamento: Art. 197 da LEP
+
+id: agravo-execucao
+nome: Agravo em Execucao Penal
+comando: /agravo-execucao
+fase: recursos
+agente: criminalista
+
+descricao: |
+  Elaborar agravo em execucao penal, conforme art. 197 da Lei 7.210/84 (LEP).
+  E o recurso cabivel contra decisoes do juizo da execucao penal, com prazo de 5 dias.
+  Regra geral: nao possui efeito suspensivo (excecoes jurisprudenciais).
+
+fundamento_legal:
+  - Art. 197 LEP - Agravo em execucao (sem efeito suspensivo)
+  - Art. 66 LEP - Competencia do juiz da execucao
+  - Art. 112 LEP - Progressao de regime
+  - Art. 122 LEP - Saida temporaria
+  - Art. 126 LEP - Remicao de pena
+  - Art. 127 LEP - Perda dos dias remidos por falta grave
+  - Art. 118 LEP - Regressao de regime
+  - Art. 50 LEP - Faltas graves
+
+prazo: 5 dias (da intimacao da decisao)
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual a decisao agravada?"
+      campo: decisao_agravada
+      opcoes:
+        - indeferimento_progressao
+        - indeferimento_livramento
+        - indeferimento_saida_temporaria
+        - indeferimento_remicao
+        - regressao_regime
+        - perda_dias_remidos
+        - indeferimento_comutacao
+        - indeferimento_indulto
+        - unificacao_penas
+        - soma_penas
+        - outro
+
+    - pergunta: "Qual o fundamento da decisao do juiz?"
+      campo: fundamento_decisao
+      exemplo: "Falta grave nos ultimos 12 meses"
+
+    - pergunta: "Por que a decisao esta errada?"
+      campo: motivo_reforma
+      exemplo: "A falta grave ja foi reabilitada, requisito objetivo cumprido"
+
+    - pergunta: "Qual o regime atual do apenado?"
+      campo: regime_atual
+      opcoes: [fechado, semiaberto, aberto]
+
+    - pergunta: "Quanto de pena ja foi cumprido?"
+      campo: pena_cumprida
+      exemplo: "2 anos e 3 meses de 6 anos"
+
+  opcionais:
+    - pergunta: "Ha atestado de bom comportamento carcerario?"
+      campo: bom_comportamento
+      opcoes: [sim, nao]
+
+    - pergunta: "O apenado trabalha ou estuda na unidade?"
+      campo: trabalho_estudo
+      opcoes: [trabalha, estuda, ambos, nenhum]
+
+    - pergunta: "Ha faltas disciplinares no historico?"
+      campo: faltas_disciplinares
+      opcoes: [nenhuma, leve, media, grave, multiplas_graves]
+
+    - pergunta: "Quando foi a ultima falta grave?"
+      campo: data_ultima_falta
+      exemplo: "Ha mais de 12 meses"
+
+    - pergunta: "Precisa de efeito suspensivo?"
+      campo: efeito_suspensivo
+      opcoes: [sim, nao]
+      motivo: "Risco de dano irreparavel ou de dificil reparacao"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao juizo da execucao (para protocolo)
+    - Numero da execucao penal
+    - Qualificacao do agravante (apenado)
+    - Titulo "AGRAVO EM EXECUCAO PENAL"
+
+  corpo:
+    - I - DA TEMPESTIVIDADE
+      - Data da intimacao
+      - Prazo de 5 dias
+      - Protocolo dentro do prazo
+    - II - DA DECISAO AGRAVADA
+      - Transcricao ou resumo da decisao
+      - Identificacao do fundamento do juiz
+    - III - DO CABIMENTO DO RECURSO
+      - Art. 197 LEP
+      - Decisao do juizo da execucao
+    - IV - DAS RAZOES DO INCONFORMISMO
+      - Erro na decisao
+      - Fundamentacao juridica
+      - Interpretacao correta da lei
+    - V - DO PREENCHIMENTO DOS REQUISITOS LEGAIS
+      - Requisito objetivo (se for progressao/livramento)
+      - Requisito subjetivo (comportamento)
+      - Ausencia de impedimentos
+    - VI - DO EFEITO SUSPENSIVO (se necessario)
+      - Risco de dano irreparavel
+      - Fumus boni juris
+      - Periculum in mora
+    - VII - DA JURISPRUDENCIA
+      - Sumulas e precedentes favoraveis
+    - VIII - DOS PEDIDOS
+
+  pedidos_possiveis:
+    - Conhecimento e provimento do agravo
+    - Reforma da decisao agravada
+    - Concessao de progressao de regime
+    - Concessao de livramento condicional
+    - Concessao de saida temporaria
+    - Reconhecimento de remicao
+    - Cassacao da regressao de regime
+    - Restituicao dos dias remidos
+    - Efeito suspensivo ao recurso
+
+hipoteses_cabimento:
+  mais_comuns:
+    - Indeferimento de progressao de regime
+    - Indeferimento de livramento condicional
+    - Indeferimento de saida temporaria
+    - Indeferimento de remicao de pena
+    - Determinacao de regressao de regime
+    - Perda de dias remidos por falta grave
+    - Indeferimento de indulto ou comutacao
+    - Unificacao de penas desfavoravel
+
+  outras:
+    - Transferencia de estabelecimento
+    - Conversao de pena restritiva de direitos
+    - Incidentes de execucao em geral
+    - Soma ou unificacao de penas
+    - Detracoes
+
+efeito_suspensivo:
+  regra_geral: Nao possui efeito suspensivo (art. 197 LEP)
+  excecoes_jurisprudenciais:
+    - Risco de dano irreparavel ou de dificil reparacao
+    - Concessao de progressao pelo juiz (MP agrava)
+    - Fumus boni juris evidente
+  forma_obter:
+    - No proprio agravo (pedido ao relator)
+    - Mandado de seguranca
+    - Habeas corpus (se envolver liberdade)
+
+sumulas_relevantes:
+  stf:
+    - "Sumula Vinculante 26 - Exame criminologico facultativo"
+  stj:
+    - "Sumula 439 - Exame criminologico e facultativo"
+    - "Sumula 441 - Falta grave nao interrompe prazo para progressao"
+    - "Sumula 491 - Falta grave nao interrompe prazo para comutacao"
+    - "Sumula 534 - Pratica de falta grave interrompe contagem para livramento"
+    - "Sumula 535 - Pratica de falta grave nao interrompe prazo para indulto"
+    - "Sumula 562 - Possivel regressao ao fechado sem transito"
+
+modelo_pedido: |
+  Ante o exposto, requer a Vossa Excelencia:
+
+  a) O recebimento e regular processamento do presente AGRAVO
+     EM EXECUCAO, com fundamento no art. 197 da Lei 7.210/84;
+
+  b) A intimacao do Ministerio Publico para contrarrazoes;
+
+  c) A remessa dos autos ao Egrgio Tribunal de Justica para
+     julgamento;
+
+  d) O PROVIMENTO do recurso para REFORMAR a decisao agravada,
+     concedendo ao agravante [especificar: progressao de regime
+     ao semiaberto/livramento condicional/saida temporaria/
+     reconhecimento de remicao/cassacao da regressao/etc.];
+
+  [Se necessario efeito suspensivo:]
+  e) A concessao de EFEITO SUSPENSIVO ao presente agravo,
+     tendo em vista o risco de dano irreparavel e a presenca
+     dos requisitos legais;
+
+  Termos em que pede deferimento.
+
+checklist_qualidade:
+  - Tempestividade verificada (5 dias)
+  - Decisao agravada transcrita ou resumida
+  - Fundamento do juiz identificado
+  - Motivo do inconformismo claro
+  - Requisitos legais demonstrados
+  - Sumulas pertinentes citadas
+  - Jurisprudencia relevante
+  - Efeito suspensivo fundamentado (se pedido)
+  - Pedidos claros e especificos
+  - Documentos comprobatorios indicados
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/recursos/
+  arquivo: agravo-execucao-[nome-cliente]-[data].md

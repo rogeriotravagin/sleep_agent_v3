@@ -5,7 +5,7 @@ metadata:
   name: autonomous-loop
   description: Execute autonomous development loop until all stories complete
   version: 2.0
-  author: AIOS Framework
+  author: Sleep Agent Framework (SAF)
   tags: [ralph, autonomous, loop, development]
   estimated_duration: varies
 
@@ -86,7 +86,7 @@ skip_if: NOT expansion-packs/ OR NOT creating agent/task
 ```yaml
 action: read_context
 description: Load all context from PRD Dev Notes
-principle: AIOS Story-Driven - PRD contains ALL context
+principle: SAF Story-Driven - PRD contains ALL context
 tasks:
   - Read section 8 "Dev Notes" completely
   - Follow patterns listed there
@@ -274,7 +274,7 @@ steps:
 
 ---
 
-## AIOS Principles Applied
+## SAF Principles Applied
 
 1. **Story-Driven:** All context in Dev Notes section
 2. **Strict Sections:** Only edit authorized sections

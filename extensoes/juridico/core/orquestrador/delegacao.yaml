@@ -1,0 +1,190 @@
+# Regras de Delegacao - Extensao Juridico
+# Define como as tarefas sao direcionadas aos agentes
+
+output:
+  extensao: juridico
+  tipos:
+    - contratos
+    - pareceres
+    - compliance
+    - analises
+    - trabalhista
+  auto_criar: true
+  base_path: workspace/[estrutura]/juridico/
+
+# =====================================================
+# AGENTE: CONTRATOS
+# =====================================================
+
+contratos:
+  agente: agentes/CONTRATOS.md
+  gatilhos:
+    - contrato
+    - nda
+    - acordo
+    - termo de uso
+    - termos de servico
+    - clausula
+    - minuta
+    - distrato
+    - aditivo
+    - confidencialidade
+  tarefas:
+    - criar-contrato
+    - revisar-contrato
+    - criar-nda
+    - termos-uso
+    - contrato-trabalho
+  outputs:
+    - contratos/
+    - trabalhista/
+
+# =====================================================
+# AGENTE: EMPRESARIAL
+# =====================================================
+
+empresarial:
+  agente: agentes/EMPRESARIAL.md
+  gatilhos:
+    - empresa
+    - societario
+    - abertura
+    - constituicao
+    - fusao
+    - aquisicao
+    - m&a
+    - due diligence
+    - holding
+    - socios
+    - parecer
+    - analise juridica
+    - risco juridico
+    - governanca
+  tarefas:
+    - criar-parecer
+    - analise-risco
+  workflows:
+    - due-diligence
+    - abertura-empresa
+  outputs:
+    - pareceres/
+    - analises/
+    - societario/
+
+# =====================================================
+# AGENTE: COMPLIANCE
+# =====================================================
+
+compliance:
+  agente: agentes/COMPLIANCE.md
+  gatilhos:
+    - lgpd
+    - protecao de dados
+    - privacidade
+    - compliance
+    - conformidade
+    - politica
+    - cookies
+    - consentimento
+    - tratamento de dados
+    - encarregado
+    - dpo
+    - codigo de conduta
+    - canal de denuncia
+    - anticorrupcao
+  tarefas:
+    - politica-privacidade
+    - termos-uso
+  workflows:
+    - programa-compliance
+  outputs:
+    - compliance/
+    - politicas/
+
+# =====================================================
+# PRIORIDADE DE DELEGACAO
+# =====================================================
+
+prioridade:
+  ordem:
+    - compliance  # LGPD e conformidade primeiro
+    - contratos   # Documentos contratuais
+    - empresarial # Estrategico e pareceres
+  razao: |
+    1. Compliance: Temas regulatorios tem prioridade por risco legal
+    2. Contratos: Documentos especificos para especialista
+    3. Empresarial: Questoes estrategicas e pareceres
+
+# =====================================================
+# CASOS ESPECIAIS
+# =====================================================
+
+casos_especiais:
+  # Workflows multi-agente
+  multi_agente:
+    - gatilho: "due diligence"
+      workflow: workflows/due-diligence.yaml
+      agentes: [empresarial, contratos, compliance]
+
+    - gatilho: "abrir empresa"
+      workflow: workflows/abertura-empresa.yaml
+      agentes: [empresarial, contratos, compliance]
+
+    - gatilho: "programa de compliance"
+      workflow: workflows/programa-compliance.yaml
+      agentes: [compliance, empresarial]
+
+  # Redirecionamentos automaticos
+  redirecionamentos:
+    - de: "politica de privacidade"
+      para: compliance
+      tarefa: politica-privacidade
+
+    - de: "contrato de trabalho"
+      para: contratos
+      tarefa: contrato-trabalho
+
+    - de: "analise de risco"
+      para: empresarial
+      tarefa: analise-risco
+
+# =====================================================
+# QUALIDADE E VALIDACAO
+# =====================================================
+
+qualidade:
+  disclaimer_obrigatorio: true
+  disclaimer: |
+    **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de
+    inteligencia artificial para fins de orientacao. Recomenda-se
+    revisao por advogado qualificado antes de utilizacao em
+    situacoes juridicas reais.
+
+  gates_globais:
+    - Documento tem estrutura clara?
+    - Linguagem esta acessivel?
+    - Disclaimer foi incluido?
+    - Legislacao citada esta correta?
+
+# =====================================================
+# CONTEXTO E CONHECIMENTO
+# =====================================================
+
+conhecimento_base:
+  todos_agentes:
+    - conhecimento/contratos.md
+    - conhecimento/direito-empresarial.md
+
+  por_agente:
+    contratos:
+      - conhecimento/contratos.md
+      - conhecimento/trabalhista.md
+      - conhecimento/propriedade-intelectual.md
+
+    empresarial:
+      - conhecimento/direito-empresarial.md
+      - conhecimento/compliance.md
+
+    compliance:
+      - conhecimento/lgpd.md
+      - conhecimento/compliance.md

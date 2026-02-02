@@ -1,0 +1,122 @@
+id: criar-contrato
+nome: Criar Contrato Personalizado
+descricao: Elabora contrato comercial ou empresarial personalizado
+agente: contratos
+comando: /criar-contrato
+
+entradas:
+  obrigatorias:
+    - nome: tipo_contrato
+      pergunta: "Qual tipo de contrato voce precisa?"
+      tipo: escolha
+      opcoes:
+        - Prestacao de Servicos
+        - Fornecimento
+        - Parceria
+        - Licenciamento
+        - Consultoria
+        - Distribuicao
+        - Outro
+
+    - nome: contratante
+      pergunta: "Quem e o contratante? (nome/razao social)"
+      tipo: texto
+      exemplo: "Empresa ABC Ltda"
+
+    - nome: contratado
+      pergunta: "Quem e o contratado? (nome/razao social)"
+      tipo: texto
+      exemplo: "Joao da Silva"
+
+    - nome: objeto
+      pergunta: "Qual o objeto do contrato? (o que sera contratado)"
+      tipo: texto_longo
+      exemplo: "Desenvolvimento de website institucional"
+
+    - nome: valor
+      pergunta: "Qual o valor e forma de pagamento?"
+      tipo: texto
+      exemplo: "R$ 5.000 mensais via boleto"
+
+    - nome: prazo
+      pergunta: "Qual o prazo de vigencia?"
+      tipo: texto
+      exemplo: "12 meses"
+
+  opcionais:
+    - nome: clausulas_especiais
+      pergunta: "Precisa de clausulas especiais? (confidencialidade, exclusividade, etc.)"
+      tipo: texto
+      padrao: "Confidencialidade"
+
+    - nome: foro
+      pergunta: "Qual o foro para disputas?"
+      tipo: texto
+      padrao: "Comarca da sede do contratante"
+
+passos:
+  - numero: 1
+    acao: "Coletar informacoes das partes"
+    detalhes: "Obter dados completos para qualificacao"
+
+  - numero: 2
+    acao: "Definir estrutura do contrato"
+    detalhes: "Selecionar clausulas aplicaveis ao tipo"
+
+  - numero: 3
+    acao: "Carregar modelo base"
+    detalhes: "Usar conhecimento/contratos.md como referencia"
+
+  - numero: 4
+    acao: "Redigir clausulas"
+    detalhes: "Elaborar cada clausula de forma clara"
+
+  - numero: 5
+    acao: "Revisar riscos"
+    detalhes: "Verificar protecao adequada das partes"
+
+  - numero: 6
+    acao: "Formatar documento"
+    detalhes: "Aplicar formatacao profissional"
+
+saida:
+  formato: markdown
+  template: |
+    ## CONTRATO DE [TIPO]
+
+    **Data:** [data]
+
+    ---
+
+    ### PARTES
+
+    **CONTRATANTE:** [dados completos]
+
+    **CONTRATADO:** [dados completos]
+
+    ---
+
+    ### CLAUSULAS
+
+    [clausulas numeradas]
+
+    ---
+
+    **AVISO**: Este documento foi gerado com auxilio de IA.
+    Recomenda-se revisao por advogado antes de uso.
+
+conhecimento:
+  - conhecimento/contratos.md
+  - conhecimento/direito-empresarial.md
+
+gates:
+  - Partes corretamente qualificadas?
+  - Objeto claro e especifico?
+  - Valores e prazos definidos?
+  - Clausulas de protecao presentes?
+  - Foro especificado?
+
+proximos_passos:
+  - Revisar com advogado
+  - Coletar assinaturas
+  - Arquivar via original

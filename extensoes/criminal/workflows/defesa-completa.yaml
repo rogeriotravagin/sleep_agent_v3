@@ -1,0 +1,363 @@
+# Workflow: Defesa Criminal Completa
+# Do recebimento do caso ate a execucao penal
+
+id: defesa-completa
+nome: Defesa Criminal Completa
+descricao: |
+  Estrategia completa de defesa criminal do inicio ao fim.
+  Conduz o advogado por todas as fases do processo penal,
+  desde a analise inicial ate recursos e execucao.
+comando: /defesa-completa
+
+versao: "1.0"
+
+# Visao geral
+sobre: |
+  Este workflow guia o advogado criminalista por todo o processo
+  de defesa criminal, desde o primeiro contato ate a execucao penal.
+
+  Ao final, voce tera:
+  - Parecer de viabilidade da defesa
+  - Tese de defesa definida e fundamentada
+  - Todas as pecas processuais necessarias
+  - Estrategia para cada fase do processo
+  - Recursos preparados para decisoes adversas
+
+  **IMPORTANTE**: Toda peca deve ser revisada por advogado OAB.
+
+# Fases do Workflow
+fases:
+  - numero: 1
+    nome: ANALISE
+    descricao: Estudo dos autos, identificacao de nulidades e definicao da tese de defesa
+    agente: criminalista
+    tarefas:
+      - id: parecer-criminal
+        comando: /parecer-criminal
+        descricao: Analise completa do caso e viabilidade de defesa
+        obrigatoria: true
+        entregavel: Parecer criminal completo
+
+      - id: tese-defesa
+        comando: /tese-defesa
+        descricao: Definir e fundamentar a tese de defesa
+        obrigatoria: true
+        entregavel: Documento de tese com fundamentacao
+        depende_de: parecer-criminal
+
+    perguntas:
+      - Qual o crime imputado? (artigo e lei)
+      - Quais os fatos narrados na denuncia/queixa?
+      - O cliente esta preso ou em liberdade?
+      - Existem nulidades aparentes nos autos?
+      - Ha provas documentais importantes?
+      - Existem testemunhas de defesa?
+      - O cliente tem antecedentes?
+
+    checkpoint:
+      pergunta: A tese de defesa esta definida e fundamentada?
+      opcoes:
+        - continuar: Seguir para defesa preliminar
+        - pausar: Aguardar mais informacoes do caso
+        - voltar: Revisar analise com novos elementos
+
+  - numero: 2
+    nome: DEFESA_PRELIMINAR
+    descricao: Defesa inicial e combate a prisao cautelar (se aplicavel)
+    agente: criminalista
+    tarefas:
+      - id: resposta-acusacao
+        comando: /resposta-acusacao
+        descricao: Resposta a acusacao (art. 396 CPP)
+        obrigatoria: true
+        entregavel: Peca de resposta a acusacao
+        prazo: 10 dias do recebimento
+
+      - id: pedido-liberdade
+        comando: /pedido-liberdade
+        descricao: Pedido de liberdade provisoria
+        obrigatoria: false
+        condicao: cliente_preso == true
+        entregavel: Pedido de liberdade provisoria
+
+      - id: relaxamento
+        comando: /relaxamento
+        descricao: Relaxamento de prisao ilegal
+        obrigatoria: false
+        condicao: prisao_ilegal == true
+        entregavel: Pedido de relaxamento
+
+      - id: revogacao-preventiva
+        comando: /revogacao-preventiva
+        descricao: Revogacao de prisao preventiva
+        obrigatoria: false
+        condicao: preventiva_sem_fundamento == true
+        entregavel: Pedido de revogacao
+
+    decisao_liberdade:
+      descricao: Fluxo para obter liberdade do cliente preso
+      ordem:
+        1: Verificar se prisao e ilegal (relaxamento)
+        2: Se legal, verificar ausencia de requisitos (revogacao)
+        3: Se nao couber, pedir liberdade provisoria com medidas
+        4: Se indeferido, impetrar HC
+
+    checkpoint:
+      pergunta: A defesa preliminar foi apresentada dentro do prazo?
+      opcoes:
+        - continuar: Seguir para fase de instrucao
+        - pausar: Aguardar audiencia/decisao
+        - recurso: Precisa interpor recurso de decisao
+
+  - numero: 3
+    nome: INSTRUCAO
+    descricao: Producao de provas, contraditorio e alegacoes finais
+    agente: criminalista
+    tarefas:
+      - id: preparacao-audiencia
+        descricao: Preparar roteiro para audiencia de instrucao
+        obrigatoria: true
+        entregavel: Roteiro de perguntas e estrategia
+
+      - id: requerimentos-probatorios
+        descricao: Requerer producao de provas (testemunhas, pericias, documentos)
+        obrigatoria: false
+        entregavel: Peticao de requerimentos
+
+      - id: alegacoes-finais
+        comando: /alegacoes-finais
+        descricao: Alegacoes finais por memoriais
+        obrigatoria: true
+        entregavel: Alegacoes finais completas
+        prazo: 5 dias apos instrucao
+
+      - id: quesitos-juri
+        comando: /quesitos-juri
+        descricao: Elaborar quesitos para Tribunal do Juri
+        obrigatoria: false
+        condicao: procedimento == juri
+        entregavel: Quesitos da defesa
+
+    especial_juri:
+      descricao: Se crime doloso contra a vida, usar agente Juri
+      agente_alternativo: juri
+      fases_especificas:
+        - Preparacao para pronuncia
+        - Sustentacao em plenario
+        - Quesitacao
+
+    checkpoint:
+      pergunta: As alegacoes finais foram apresentadas?
+      opcoes:
+        - continuar: Aguardar sentenca
+        - pausar: Produzir mais provas
+        - voltar: Revisar estrategia de defesa
+
+  - numero: 4
+    nome: RECURSOS
+    descricao: Impugnar decisoes desfavoraveis
+    agente: recursos
+    tarefas:
+      - id: analise-sentenca
+        descricao: Analisar sentenca e identificar fundamentos recursais
+        obrigatoria: true
+        entregavel: Parecer sobre cabimento de recursos
+
+      - id: apelacao
+        comando: /apelacao
+        descricao: Recurso de apelacao criminal
+        obrigatoria: false
+        condicao: sentenca_condenatoria == true
+        entregavel: Apelacao criminal
+        prazo: 5 dias da intimacao
+
+      - id: habeas-corpus
+        comando: /habeas-corpus
+        descricao: Habeas corpus contra decisao ilegal
+        obrigatoria: false
+        condicao: constrangimento_ilegal == true
+        entregavel: HC com liminar
+
+      - id: embargos-declaracao
+        descricao: Embargos de declaracao (omissao, contradicao, obscuridade)
+        obrigatoria: false
+        entregavel: Embargos de declaracao
+        prazo: 2 dias
+
+      - id: recurso-especial
+        descricao: Recurso especial ao STJ
+        obrigatoria: false
+        condicao: violacao_lei_federal == true
+        entregavel: REsp
+
+      - id: recurso-extraordinario
+        descricao: Recurso extraordinario ao STF
+        obrigatoria: false
+        condicao: violacao_constituicao == true
+        entregavel: RE
+
+    hierarquia_recursos:
+      descricao: Ordem de interposicao
+      1: Embargos de declaracao (prequestionamento)
+      2: Apelacao ao Tribunal
+      3: Embargos infringentes (se cabivel)
+      4: REsp ao STJ
+      5: RE ao STF
+      paralelo: HC pode ser impetrado a qualquer momento
+
+    checkpoint:
+      pergunta: Os recursos foram interpostos dentro dos prazos?
+      opcoes:
+        - continuar: Seguir para execucao (se condenacao mantida)
+        - pausar: Aguardar julgamento dos recursos
+        - sucesso: Absolvicao obtida - encerrar workflow
+
+  - numero: 5
+    nome: EXECUCAO
+    descricao: Acompanhamento da execucao penal e busca por beneficios
+    agente: execucao
+    tarefas:
+      - id: calculo-pena
+        descricao: Calcular tempo de pena e marcos para beneficios
+        obrigatoria: true
+        entregavel: Planilha de calculo de pena
+
+      - id: pedido-progressao
+        comando: /pedido-progressao
+        descricao: Progressao de regime prisional
+        obrigatoria: false
+        condicao: requisito_temporal_atingido == true
+        entregavel: Pedido de progressao
+
+      - id: livramento-condicional
+        descricao: Pedido de livramento condicional
+        obrigatoria: false
+        condicao: requisitos_livramento == true
+        entregavel: Pedido de livramento
+
+      - id: remicao
+        descricao: Pedido de remicao por trabalho/estudo
+        obrigatoria: false
+        entregavel: Pedido de remicao
+
+      - id: saida-temporaria
+        descricao: Pedido de saida temporaria
+        obrigatoria: false
+        condicao: regime_semiaberto == true
+        entregavel: Pedido de saida
+
+      - id: indulto-comutacao
+        descricao: Verificar enquadramento em decreto de indulto
+        obrigatoria: false
+        entregavel: Pedido de indulto/comutacao
+
+      - id: agravo-execucao
+        comando: /agravo-execucao
+        descricao: Agravo contra decisao do juizo da execucao
+        obrigatoria: false
+        condicao: decisao_desfavoravel == true
+        entregavel: Agravo em execucao
+        prazo: 5 dias
+
+    beneficios_progressivos:
+      descricao: Ordem de beneficios a pleitear
+      1: Remicao (trabalho/estudo)
+      2: Progressao de regime
+      3: Saida temporaria (semiaberto)
+      4: Trabalho externo
+      5: Livramento condicional
+      6: Extincao da pena
+
+    checkpoint:
+      pergunta: O cliente obteve os beneficios possiveis?
+      opcoes:
+        - continuar: Buscar proximo beneficio
+        - encerrar: Pena extinta - workflow concluido
+        - recurso: Agravar decisao desfavoravel
+
+# Fluxo de Decisao Global
+fluxo_decisao:
+  inicio: ANALISE
+  transicoes:
+    ANALISE:
+      sucesso: DEFESA_PRELIMINAR
+      falha: encerrar (caso inviavel)
+    DEFESA_PRELIMINAR:
+      sucesso: INSTRUCAO
+      absolvicao_sumaria: encerrar (sucesso)
+    INSTRUCAO:
+      condenacao: RECURSOS
+      absolvicao: encerrar (sucesso)
+    RECURSOS:
+      reforma: encerrar (sucesso)
+      manutencao: EXECUCAO
+    EXECUCAO:
+      pena_extinta: encerrar (sucesso)
+
+# Perguntas iniciais do workflow
+perguntas_iniciais:
+  - Qual o nome completo do cliente?
+  - Qual o crime imputado? (artigo e lei)
+  - Quais os fatos principais da acusacao?
+  - O cliente esta preso ou em liberdade?
+  - Qual a fase atual do processo?
+  - Existe denuncia recebida? Qual a data?
+  - O cliente tem antecedentes criminais?
+
+# Progresso
+progresso_template: |
+  ## Defesa Criminal: [nome do cliente]
+  **Crime:** [tipo penal]
+  **Fase atual:** [fase]
+
+  [x] Fase 1: ANALISE - Concluida
+      - Parecer criminal elaborado
+      - Tese de defesa definida
+
+  [ ] Fase 2: DEFESA PRELIMINAR - Em andamento
+      - Resposta a acusacao: [status]
+      - Situacao prisional: [status]
+
+  [ ] Fase 3: INSTRUCAO - Pendente
+  [ ] Fase 4: RECURSOS - Pendente
+  [ ] Fase 5: EXECUCAO - Pendente
+
+  **Proximo passo:** [descricao]
+
+# Entrega final
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[cliente]/criminal/caso-[numero]/
+    +-- 00-resumo-caso.md
+    +-- 01-analise/
+    |   +-- parecer-criminal.md
+    |   +-- tese-defesa.md
+    +-- 02-defesa-preliminar/
+    |   +-- resposta-acusacao.md
+    |   +-- pedido-liberdade.md (se aplicavel)
+    +-- 03-instrucao/
+    |   +-- roteiro-audiencia.md
+    |   +-- alegacoes-finais.md
+    +-- 04-recursos/
+    |   +-- apelacao.md
+    |   +-- habeas-corpus.md (se aplicavel)
+    +-- 05-execucao/
+    |   +-- calculo-pena.md
+    |   +-- pedido-progressao.md
+    +-- timeline.md
+
+output:
+  pasta: workspace/[estrutura]/criminal/estrategias/
+  arquivo: defesa-completa-[data].md
+
+# Disclaimer
+disclaimer: |
+  ---
+  **AVISO IMPORTANTE**: Este documento foi gerado com auxilio de inteligencia
+  artificial para fins de orientacao juridica. E OBRIGATORIA a revisao por
+  advogado inscrito na OAB antes de utilizacao em processos reais.
+
+  A responsabilidade pela utilizacao do conteudo e exclusivamente do
+  profissional que o apresentar em juizo.
+  ---

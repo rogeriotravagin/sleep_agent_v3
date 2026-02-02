@@ -1,0 +1,159 @@
+id: due-diligence
+nome: Due Diligence Completa
+descricao: Processo completo de verificacao juridica para aquisicoes, investimentos ou parcerias
+comando: /due-diligence
+
+perguntas_iniciais:
+  - "Qual o tipo de operacao? (aquisicao, investimento, parceria)"
+  - "Qual a empresa ou ativo sendo avaliado?"
+  - "Qual o prazo para conclusao?"
+  - "Ha areas especificas de preocupacao?"
+
+etapas:
+  - numero: 1
+    nome: Definicao de Escopo
+    agente: empresarial
+    descricao: "Definir areas a serem analisadas e documentos necessarios"
+    entregavel: "Checklist de documentos e cronograma"
+    duracao_estimada: "1 dia"
+
+  - numero: 2
+    nome: Analise Societaria
+    agente: empresarial
+    descricao: "Verificar constituicao, alteracoes, socios, participacoes"
+    entregavel: "Relatorio societario"
+    duracao_estimada: "2-3 dias"
+    documentos:
+      - Contrato social e alteracoes
+      - Atas de reuniao
+      - Livros societarios
+      - Acordo de socios
+
+  - numero: 3
+    nome: Analise Contratual
+    agente: contratos
+    descricao: "Revisar contratos principais e contingencias"
+    entregavel: "Mapa de contratos e riscos"
+    duracao_estimada: "3-5 dias"
+    documentos:
+      - Contratos com clientes
+      - Contratos com fornecedores
+      - Contratos de aluguel
+      - Financiamentos
+
+  - numero: 4
+    nome: Analise Trabalhista
+    agente: empresarial
+    descricao: "Verificar passivo trabalhista e conformidade"
+    entregavel: "Relatorio trabalhista"
+    duracao_estimada: "2-3 dias"
+    documentos:
+      - Contratos de trabalho
+      - Folhas de pagamento
+      - Processos trabalhistas
+      - Convencoes coletivas
+
+  - numero: 5
+    nome: Analise Tributaria
+    agente: empresarial
+    descricao: "Verificar regularidade fiscal e contingencias"
+    entregavel: "Relatorio tributario"
+    duracao_estimada: "2-3 dias"
+    documentos:
+      - Certidoes negativas
+      - Livros fiscais
+      - Processos administrativos
+      - Parcelamentos
+
+  - numero: 6
+    nome: Analise de Propriedade Intelectual
+    agente: contratos
+    descricao: "Verificar marcas, patentes, softwares"
+    entregavel: "Relatorio de PI"
+    duracao_estimada: "1-2 dias"
+    documentos:
+      - Registros INPI
+      - Contratos de licenca
+      - Titularidade de software
+
+  - numero: 7
+    nome: Analise de Compliance/LGPD
+    agente: compliance
+    descricao: "Verificar conformidade regulatoria e protecao de dados"
+    entregavel: "Relatorio de compliance"
+    duracao_estimada: "2 dias"
+    documentos:
+      - Politicas internas
+      - Licencas e autorizacoes
+      - Adequacao LGPD
+
+  - numero: 8
+    nome: Consolidacao e Recomendacoes
+    agente: empresarial
+    descricao: "Consolidar achados e emitir parecer final"
+    entregavel: "Relatorio final de due diligence"
+    duracao_estimada: "2 dias"
+    depende_de: [1, 2, 3, 4, 5, 6, 7]
+
+entrega_final:
+  formato: pasta
+  estrutura: |
+    workspace/[empresa]/juridico/due-diligence-[alvo]/
+    ├── 01-escopo-cronograma.md
+    ├── 02-relatorio-societario.md
+    ├── 03-mapa-contratos.md
+    ├── 04-relatorio-trabalhista.md
+    ├── 05-relatorio-tributario.md
+    ├── 06-relatorio-pi.md
+    ├── 07-relatorio-compliance.md
+    ├── 08-relatorio-final.md
+    └── anexos/
+
+template_relatorio_final: |
+  ## RELATORIO DE DUE DILIGENCE
+
+  **Empresa Alvo:** [nome]
+  **Tipo de Operacao:** [tipo]
+  **Data:** [data]
+  **Prazo de Validade:** [validade dos dados]
+
+  ---
+
+  ### SUMARIO EXECUTIVO
+  [principais achados e recomendacao geral]
+
+  ### RISCOS IDENTIFICADOS
+
+  #### Riscos Criticos (Deal Breakers)
+  [riscos que podem inviabilizar a operacao]
+
+  #### Riscos Altos
+  [riscos significativos que requerem mitigacao]
+
+  #### Riscos Medios
+  [riscos gerenciaveis]
+
+  #### Riscos Baixos
+  [pontos de atencao]
+
+  ### CONTINGENCIAS ESTIMADAS
+  | Area | Valor Estimado | Probabilidade |
+  |------|----------------|---------------|
+  | Trabalhista | R$ X | Alta/Media/Baixa |
+  | Tributario | R$ Y | Alta/Media/Baixa |
+
+  ### RECOMENDACOES
+  1. [recomendacao 1]
+  2. [recomendacao 2]
+
+  ### CONDICOES PRECEDENTES SUGERIDAS
+  [clausulas a incluir no contrato]
+
+  ### CONCLUSAO
+  [parecer final - prosseguir / nao prosseguir / prosseguir com ressalvas]
+
+  ---
+
+  **AVISO**: Este relatorio foi elaborado com base nas informacoes
+  disponibilizadas. Recomenda-se validacao por profissionais
+  especializados antes de decisao final.

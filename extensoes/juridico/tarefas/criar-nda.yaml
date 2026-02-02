@@ -1,0 +1,140 @@
+id: criar-nda
+nome: Criar Acordo de Confidencialidade (NDA)
+descricao: Elabora acordo de confidencialidade para proteger informacoes sensiveis
+agente: contratos
+comando: /nda
+
+entradas:
+  obrigatorias:
+    - nome: tipo_nda
+      pergunta: "Qual o tipo de NDA?"
+      tipo: escolha
+      opcoes:
+        - Unilateral (uma parte divulga)
+        - Bilateral (ambas partes divulgam)
+
+    - nome: parte_divulgadora
+      pergunta: "Quem e a parte divulgadora?"
+      tipo: texto
+      exemplo: "Empresa XYZ Ltda"
+
+    - nome: parte_receptora
+      pergunta: "Quem e a parte receptora?"
+      tipo: texto
+      exemplo: "Investidor ABC"
+
+    - nome: proposito
+      pergunta: "Qual o proposito da divulgacao?"
+      tipo: texto
+      exemplo: "Avaliacao de potencial investimento na empresa"
+
+  opcionais:
+    - nome: prazo_confidencialidade
+      pergunta: "Por quanto tempo as informacoes devem ser mantidas em sigilo?"
+      tipo: texto
+      padrao: "5 anos apos o termino das negociacoes"
+
+    - nome: informacoes_especificas
+      pergunta: "Ha tipos especificos de informacao a proteger?"
+      tipo: texto
+      padrao: "Informacoes tecnicas, financeiras, comerciais e estrategicas"
+
+    - nome: penalidade
+      pergunta: "Qual a penalidade por violacao?"
+      tipo: texto
+      padrao: "Multa de R$ 100.000,00 sem prejuizo de perdas e danos"
+
+passos:
+  - numero: 1
+    acao: "Definir tipo e partes"
+    detalhes: "Unilateral ou bilateral, quem divulga e quem recebe"
+
+  - numero: 2
+    acao: "Delimitar informacoes confidenciais"
+    detalhes: "Especificar o que esta coberto"
+
+  - numero: 3
+    acao: "Estabelecer excecoes"
+    detalhes: "Informacoes publicas, obtidas legalmente, etc."
+
+  - numero: 4
+    acao: "Definir obrigacoes"
+    detalhes: "O que a parte receptora deve/nao deve fazer"
+
+  - numero: 5
+    acao: "Estabelecer prazo"
+    detalhes: "Duracao da obrigacao de sigilo"
+
+  - numero: 6
+    acao: "Definir penalidades"
+    detalhes: "Consequencias de violacao"
+
+saida:
+  formato: markdown
+  template: |
+    ## ACORDO DE CONFIDENCIALIDADE (NDA)
+
+    **Data:** [data]
+
+    ---
+
+    ### PARTES
+
+    **PARTE DIVULGADORA:** [dados]
+
+    **PARTE RECEPTORA:** [dados]
+
+    ---
+
+    ### CLAUSULA PRIMEIRA - DO OBJETO
+    O presente acordo tem por objeto estabelecer as condicoes
+    de confidencialidade aplicaveis as informacoes divulgadas
+    no ambito de [proposito].
+
+    ### CLAUSULA SEGUNDA - INFORMACOES CONFIDENCIAIS
+    [definicao do que e confidencial]
+
+    ### CLAUSULA TERCEIRA - EXCLUSOES
+    [o que nao e considerado confidencial]
+
+    ### CLAUSULA QUARTA - OBRIGACOES
+    [deveres da parte receptora]
+
+    ### CLAUSULA QUINTA - PRAZO
+    [duracao do sigilo]
+
+    ### CLAUSULA SEXTA - PENALIDADES
+    [consequencias de violacao]
+
+    ### CLAUSULA SETIMA - FORO
+    [foro eleito]
+
+    ---
+
+    [Local], [data]
+
+    _____________________________
+    PARTE DIVULGADORA
+
+    _____________________________
+    PARTE RECEPTORA
+
+    ---
+
+    **AVISO**: Documento gerado com auxilio de IA.
+    Recomenda-se revisao profissional.
+
+conhecimento:
+  - conhecimento/contratos.md
+  - conhecimento/propriedade-intelectual.md
+
+gates:
+  - Informacoes confidenciais bem definidas?
+  - Excecoes claras?
+  - Prazo especificado?
+  - Penalidade definida?
+
+proximos_passos:
+  - Revisar com advogado
+  - Obter assinaturas antes de divulgar informacoes
+  - Arquivar copia assinada

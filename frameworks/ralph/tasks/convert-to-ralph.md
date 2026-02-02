@@ -2,7 +2,7 @@
 name: ralph-convert
 description: Convert existing PRD markdown to prd.json format for autonomous execution
 version: 2.0
-author: AIOS Framework
+author: Sleep Agent Framework
 mode: elicit
 elicit: true
 tags: [ralph, prd, conversion, autonomous]

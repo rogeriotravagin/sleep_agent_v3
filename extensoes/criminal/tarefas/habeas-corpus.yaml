@@ -1,0 +1,223 @@
+# Tarefa: Habeas Corpus
+# Fundamento: Art. 5o, LXVIII CF e Arts. 647-667 CPP
+
+id: habeas-corpus
+nome: Habeas Corpus
+comando: /habeas-corpus
+fase: recursos
+agente: especialista-recursos
+
+descricao: |
+  Elaborar peticao de habeas corpus para tutela da liberdade de locomocao.
+  Remedio constitucional cabivel sempre que alguem sofrer ou se achar ameacado
+  de sofrer violencia ou coacao em sua liberdade de locomocao, por ilegalidade
+  ou abuso de poder (art. 5o, LXVIII, CF).
+
+fundamento_legal:
+  - Art. 5o, LXVIII, CF - Garantia constitucional do habeas corpus
+  - Arts. 647-667 CPP - Procedimento do habeas corpus
+  - Art. 648 CPP - Hipoteses de coacao ilegal
+  - Art. 654, par. 2o CPP - Concessao de oficio
+  - Art. 660 CPP - Efeitos da concessao
+
+prazo: Nao ha prazo (pode ser impetrado a qualquer tempo enquanto persistir a coacao)
+
+tipos_habeas_corpus:
+  liberatorio:
+    descricao: Quando a coacao ja se consumou (paciente preso)
+    objetivo: Fazer cessar a coacao e libertar o paciente
+  preventivo:
+    descricao: Quando ha ameaca de coacao (paciente solto)
+    objetivo: Impedir a efetivacao da prisao (salvo-conduto)
+
+hipoteses_coacao_ilegal_art648:
+  - I - Quando nao houver justa causa para a coacao
+  - II - Quando alguem estiver preso por mais tempo do que determina a lei
+  - III - Quando quem ordenar a coacao nao tiver competencia para faze-lo
+  - IV - Quando houver cessado o motivo que autorizou a coacao
+  - V - Quando nao for alguem admitido a prestar fianca, nos casos em que a lei a autoriza
+  - VI - Quando o processo for manifestamente nulo
+  - VII - Quando extinta a punibilidade
+
+competencia_por_autoridade_coatora:
+  stf:
+    autoridade: Presidente da Republica, Mesas das Casas Legislativas, TCU, PGR, STJ
+    fundamento: Art. 102, I, 'd' e 'i', CF
+  stj:
+    autoridade: Tribunais sujeitos a sua jurisdicao, Ministros de Estado, Comandantes Militares
+    fundamento: Art. 105, I, 'c', CF
+  trf:
+    autoridade: Juizes federais da respectiva regiao
+    fundamento: Art. 108, I, 'd', CF
+  tj:
+    autoridade: Juizes estaduais da respectiva jurisdicao
+    fundamento: Art. 96, III, CF (Constituicao Estadual)
+  juiz_primeira_instancia:
+    autoridade: Delegado de policia, autoridades administrativas
+    fundamento: Art. 647 CPP
+
+perguntas:
+  obrigatorias:
+    - pergunta: "Qual o nome completo do paciente?"
+      campo: paciente
+      exemplo: "Joao da Silva Santos"
+
+    - pergunta: "O paciente esta preso ou ameacado de prisao?"
+      campo: tipo_hc
+      opcoes: [preso_liberatorio, ameacado_preventivo]
+
+    - pergunta: "Quem e a autoridade coatora?"
+      campo: autoridade_coatora
+      exemplo: "Juiz de Direito da 1a Vara Criminal de Sao Paulo"
+
+    - pergunta: "Qual o fundamento da coacao (prisao ou ameaca)?"
+      campo: fundamento_coacao
+      exemplo: "Prisao preventiva decretada por garantia da ordem publica"
+
+    - pergunta: "Por que a prisao e ilegal ou abusiva?"
+      campo: ilegalidade
+      opcoes:
+        - ausencia_justa_causa
+        - excesso_prazo
+        - incompetencia_autoridade
+        - cessacao_motivo
+        - negativa_fianca_cabivel
+        - nulidade_processo
+        - extincao_punibilidade
+        - ausencia_requisitos_preventiva
+        - desproporcionalidade
+
+  opcionais:
+    - pergunta: "Qual o numero do processo originario?"
+      campo: processo_origem
+      exemplo: "0001234-56.2024.8.26.0100"
+
+    - pergunta: "Ha quanto tempo o paciente esta preso?"
+      campo: tempo_prisao
+      exemplo: "120 dias"
+
+    - pergunta: "Qual o crime imputado?"
+      campo: crime
+      exemplo: "Art. 157, par. 2o, II, CP (roubo majorado)"
+
+    - pergunta: "Existem medidas cautelares alternativas viaveis?"
+      campo: medidas_alternativas
+      exemplo: "Monitoracao eletronica, apresentacao periodica"
+
+    - pergunta: "O paciente tem residencia fixa e ocupacao licita?"
+      campo: condicoes_pessoais
+      exemplo: "Residencia fixa, emprego formal, familia constituida"
+
+    - pergunta: "Ha decisoes anteriores sobre liberdade no caso?"
+      campo: decisoes_anteriores
+      exemplo: "Liberdade provisoria indeferida em 10/01/2024"
+
+estrutura_peca:
+  cabecalho:
+    - Enderecamento ao Tribunal competente
+    - Identificacao como HABEAS CORPUS (liberatorio ou preventivo)
+    - Com pedido de LIMINAR (se urgente)
+    - Qualificacao do impetrante (advogado)
+    - Qualificacao do paciente
+    - Identificacao da autoridade coatora
+
+  corpo:
+    - I - DOS FATOS
+      - Narrativa da situacao
+      - Historico processual
+      - Ato coator
+    - II - DO CABIMENTO DO HABEAS CORPUS
+      - Art. 5o, LXVIII, CF
+      - Arts. 647-648 CPP
+      - Enquadramento na hipotese legal
+    - III - DA COMPETENCIA
+      - Autoridade coatora
+      - Tribunal competente
+    - IV - DA ILEGALIDADE DA COACAO
+      - Fundamentacao da ilegalidade
+      - Ausencia de requisitos legais
+      - Desproporcionalidade (se aplicavel)
+    - V - DO FUMUS BONI IURIS
+      - Aparencia do bom direito
+      - Ilegalidade manifesta
+    - VI - DO PERICULUM IN MORA (para liminar)
+      - Urgencia na concessao
+      - Risco de dano irreparavel
+    - VII - DA JURISPRUDENCIA
+      - Precedentes favoraveis
+      - Sumulas aplicaveis
+    - VIII - DOS PEDIDOS
+
+  documentos_instruir:
+    - Procuracao (se advogado constituido)
+    - Copia da decisao coatora
+    - Copias do processo originario
+    - Documentos comprobatorios das alegacoes
+    - Certidao de antecedentes (se favoravel)
+
+modelo_liminar: |
+  DA MEDIDA LIMINAR
+
+  E cabivel a concessao de medida liminar em habeas corpus quando presentes
+  os requisitos do fumus boni iuris e do periculum in mora.
+
+  No caso em tela, o fumus boni iuris se evidencia pela [fundamentar a
+  ilegalidade manifesta], enquanto o periculum in mora reside no fato de
+  que [fundamentar a urgencia - restricao da liberdade, condicoes do
+  carcere, etc].
+
+  Nesse sentido, a jurisprudencia:
+  [citar precedente]
+
+  Assim, requer seja CONCEDIDA LIMINAR para [especificar: expedir
+  alvara de soltura / expedir salvo-conduto], ate o julgamento definitivo
+  do presente writ.
+
+modelo_pedido: |
+  Ante o exposto, requer:
+
+  a) A CONCESSAO DE MEDIDA LIMINAR, inaudita altera parte, para
+     [expedir alvara de soltura em favor do paciente / expedir
+     salvo-conduto para que o paciente nao seja preso], ate o
+     julgamento final do presente writ;
+
+  b) A intimacao da autoridade coatora para prestar informacoes no
+     prazo legal;
+
+  c) A oitiva do Ministerio Publico;
+
+  d) No merito, a CONCESSAO DEFINITIVA DA ORDEM para [confirmar a
+     liminar / determinar a soltura do paciente / expedir
+     salvo-conduto], declarando a ilegalidade da coacao, nos termos
+     do art. 648, [inciso], do CPP;
+
+  e) Subsidiariamente, caso nao seja esse o entendimento, requer a
+     substituicao da prisao por medidas cautelares diversas, nos
+     termos do art. 319 do CPP.
+
+  Termos em que pede deferimento.
+
+sumulas_aplicaveis:
+  stf:
+    - "Sumula 691 - Nao compete ao STF conhecer de HC impetrado contra decisao do relator que indeferiu liminar em HC em curso no STJ (mitigada)"
+    - "Sumula 693 - Nao cabe HC contra decisao condenatoria a pena de multa"
+    - "Sumula 695 - Nao cabe HC quando ja extinta a pena privativa de liberdade"
+  stj:
+    - "Sumula 21 - Pronunciado o reu, fica superada a alegacao de constrangimento ilegal por excesso de prazo na instrucao"
+    - "Sumula 52 - Encerrada a instrucao criminal, fica superada a alegacao de constrangimento por excesso de prazo"
+
+checklist_qualidade:
+  - Tipo de HC corretamente identificado (liberatorio/preventivo)
+  - Autoridade coatora corretamente indicada
+  - Competencia do Tribunal verificada
+  - Hipotese do art. 648 CPP fundamentada
+  - Ilegalidade da coacao demonstrada
+  - Requisitos da liminar presentes (se requerida)
+  - Documentos necessarios indicados
+  - Jurisprudencia pertinente citada
+  - Pedidos claros e objetivos
+  - Disclaimer incluso
+
+output:
+  pasta: workspace/[estrutura]/criminal/recursos/
+  arquivo: habeas-corpus-[nome-paciente]-[data].md

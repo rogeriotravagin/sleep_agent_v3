@@ -2,7 +2,7 @@
 name: swarm
 description: Launch parallel Ralph workers using tmux panes
 version: 2.0
-author: AIOS Ralph
+author: Sleep Agent Ralph
 tags: [ralph, parallel, swarm, tmux]
 
 trigger: "*swarm"

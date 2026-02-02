@@ -1,6 +1,6 @@
 # Ralph Progress Log
 
-> **AIOS Integration:** This log follows Dev Agent Record principles.
+> **SAF Integration:** This log follows Dev Agent Record principles.
 > Patterns compound across iterations. File List tracks all changes.
 
 **Project:** PROJECT_NAME
@@ -12,7 +12,7 @@
 
 ## Codebase Patterns (KEEP AT TOP)
 
-> **AIOS Principle:** Patterns discovered are shared across all iterations.
+> **SAF Principle:** Patterns discovered are shared across all iterations.
 > Ralph reads this section FIRST before implementing.
 
 ### Architecture Patterns
@@ -41,7 +41,7 @@
 
 ## File List (Cumulative)
 
-> **AIOS Principle:** Track ALL files created/modified/deleted.
+> **SAF Principle:** Track ALL files created/modified/deleted.
 
 | File | Action | Story | Description |
 |------|--------|-------|-------------|
@@ -73,7 +73,7 @@
 
 ## Session Log
 
-> **AIOS Principle:** Each story completion is logged with full context.
+> **SAF Principle:** Each story completion is logged with full context.
 > Ralph APPENDS to this section after each story.
 
 ---

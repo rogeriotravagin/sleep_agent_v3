@@ -1,0 +1,129 @@
+id: criar-parecer
+nome: Elaborar Parecer Juridico
+descricao: Cria parecer juridico analisando questao especifica
+agente: empresarial
+comando: /criar-parecer
+
+entradas:
+  obrigatorias:
+    - nome: questao
+      pergunta: "Qual a questao juridica a ser analisada?"
+      tipo: texto_longo
+      exemplo: "E possivel rescindir o contrato sem pagar multa devido ao descumprimento da outra parte?"
+
+    - nome: fatos
+      pergunta: "Quais sao os fatos relevantes?"
+      tipo: texto_longo
+      exemplo: "A empresa contratada nao entregou o projeto no prazo acordado..."
+
+    - nome: solicitante
+      pergunta: "Quem esta solicitando o parecer?"
+      tipo: texto
+      exemplo: "Diretoria da Empresa XYZ"
+
+  opcionais:
+    - nome: documentos
+      pergunta: "Ha documentos de referencia? (contratos, emails, etc.)"
+      tipo: texto
+      padrao: "Nenhum documento anexado"
+
+    - nome: urgencia
+      pergunta: "Qual o nivel de urgencia?"
+      tipo: escolha
+      opcoes:
+        - Normal
+        - Urgente
+        - Muito urgente
+
+passos:
+  - numero: 1
+    acao: "Entender a questao"
+    detalhes: "Definir claramente o que precisa ser respondido"
+
+  - numero: 2
+    acao: "Analisar fatos"
+    detalhes: "Identificar fatos juridicamente relevantes"
+
+  - numero: 3
+    acao: "Pesquisar fundamentos"
+    detalhes: "Identificar legislacao e jurisprudencia aplicavel"
+
+  - numero: 4
+    acao: "Desenvolver argumentacao"
+    detalhes: "Construir raciocinio juridico"
+
+  - numero: 5
+    acao: "Formular conclusao"
+    detalhes: "Responder objetivamente a questao"
+
+  - numero: 6
+    acao: "Recomendar acoes"
+    detalhes: "Sugerir proximos passos praticos"
+
+saida:
+  formato: markdown
+  template: |
+    ## PARECER JURIDICO
+
+    **Assunto:** [tema]
+    **Solicitante:** [quem pediu]
+    **Data:** [data]
+    **Referencia:** [numero se houver]
+
+    ---
+
+    ### 1. CONSULTA
+    [descricao da questao formulada]
+
+    ### 2. FATOS
+    [narrativa objetiva dos fatos relevantes]
+
+    ### 3. QUESTAO JURIDICA
+    [reformulacao tecnica da pergunta]
+
+    ### 4. FUNDAMENTACAO
+
+    #### 4.1 Legislacao Aplicavel
+    [leis e artigos pertinentes]
+
+    #### 4.2 Doutrina
+    [entendimentos doutrinarios]
+
+    #### 4.3 Jurisprudencia
+    [decisoes judiciais relevantes]
+
+    #### 4.4 Analise do Caso
+    [aplicacao dos fundamentos aos fatos]
+
+    ### 5. CONCLUSAO
+    [resposta objetiva a questao]
+
+    ### 6. RECOMENDACOES
+    [acoes sugeridas]
+
+    ---
+
+    Este parecer representa opiniao juridica sobre a materia
+    consultada, com base nas informacoes fornecidas.
+
+    [Local], [data]
+
+    ---
+
+    **AVISO**: Parecer elaborado com auxilio de IA.
+    Recomenda-se validacao por advogado habilitado.
+
+conhecimento:
+  - conhecimento/direito-empresarial.md
+  - conhecimento/contratos.md
+
+gates:
+  - Questao juridica bem definida?
+  - Fundamentacao legal presente?
+  - Conclusao responde a pergunta?
+  - Recomendacoes sao praticas?
+
+proximos_passos:
+  - Validar com advogado
+  - Implementar recomendacoes
+  - Documentar decisao tomada
