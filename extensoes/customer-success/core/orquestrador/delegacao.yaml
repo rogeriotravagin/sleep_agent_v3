@@ -15,6 +15,7 @@ output:
     - onboarding
     - retencao
     - segmentacoes
+    - casos-criticos
   auto_criar: true
 
 # =====================================================
@@ -77,15 +78,51 @@ retention_expert:
     - criar-qbr
     - criar-plano-risco
 
+# Agente Especialista em Casos Criticos
+critical_cases_specialist:
+  agente: agentes/CRITICAL-CASES.md
+  gatilhos:
+    - caso critico
+    - cliente ameaca
+    - ameaca de processo
+    - processo judicial
+    - PROCON
+    - codigo de defesa do consumidor
+    - CDC
+    - risco juridico
+    - cliente muito insatisfeito
+    - cliente furioso
+    - reclamacao publica
+    - exposicao nas redes
+    - review negativo viral
+    - cobranca indevida
+    - cancelamento dificil
+    - publicidade enganosa
+    - produto com defeito grave
+    - de-escalation
+    - crise com cliente
+    - compensacao
+    - acordo
+    - cliente quer reembolso
+    - cliente pediu advogado
+    - notificacao extrajudicial
+    - direito do consumidor
+  tarefas:
+    - analisar-caso-critico
+    - avaliar-risco-juridico
+    - criar-plano-resolucao
+    - documentar-caso-critico
+
 # =====================================================
 # REGRAS DE PRIORIDADE
 # =====================================================
 
 prioridade:
   ordem:
-    - csm_estrategista      # Primeiro: visao estrategica
-    - onboarding_specialist # Segundo: ativacao de clientes
-    - retention_expert      # Terceiro: retencao e growth
+    - critical_cases_specialist  # PRIORIDADE MÁXIMA: casos criticos urgentes
+    - csm_estrategista          # Segundo: visao estrategica
+    - onboarding_specialist     # Terceiro: ativacao de clientes
+    - retention_expert          # Quarto: retencao e growth
 
 # =====================================================
 # CASOS ESPECIAIS

@@ -7,14 +7,14 @@
 
 nome: Customer Success
 slug: customer-success
-descricao: Framework completo de Customer Success - onboarding, retencao, health score e expansion
-versao: "1.0"
+descricao: Framework completo de Customer Success - onboarding, retencao, health score, expansion e casos criticos com expertise juridica (CDC)
+versao: "2.0"
 status: ativo
 
 comando: /customer-success
 
 mensagem_ativacao: |
-  **Sleep Agent - Extensao Customer Success v1.0**
+  **Sleep Agent - Extensao Customer Success v2.0**
 
   Framework completo baseado nas maiores referencias mundiais:
   - Lincoln Murphy (Sixteen Ventures)
@@ -26,6 +26,7 @@ mensagem_ativacao: |
   - `/csm-estrategia` - Estrategista CS (metricas, health score, segmentacao)
   - `/onboarding` - Especialista Onboarding (ativacao, TTFV, playbooks)
   - `/retencao` - Especialista Retencao (anti-churn, expansion, NPS)
+  - `/casos-criticos` - Especialista Casos Criticos (CDC, riscos juridicos, de-escalation)
 
   **Workflows Completos:**
   - `/cs-completo` - Programa CS do zero (6 fases)
@@ -41,6 +42,12 @@ mensagem_ativacao: |
   - `/plano-retencao` - Estrategia anti-churn
   - `/criar-qbr` - Business Review estruturado
   - `/plano-risco` - Acao para clientes em risco
+
+  **Casos Criticos (NEW!):**
+  - `/caso-critico` - Analise completa 360° (CS + Juridico + Negocio)
+  - `/risco-juridico` - Avaliacao legal profunda (CDC + riscos)
+  - `/plano-resolucao` - Estrategia de de-escalation + compensacoes
+  - `/documentar-caso` - Registro formal para protecao legal
 
   O que voce gostaria de fazer?
 
@@ -78,6 +85,20 @@ agentes:
       - Expansion revenue
       - NPS e pesquisas
       - Reativacao de clientes
+
+  - id: critical-cases-specialist
+    arquivo: agentes/CRITICAL-CASES.md
+    comando: /casos-criticos
+    especialidades:
+      - Analise de casos criticos
+      - Codigo de Defesa do Consumidor (CDC)
+      - Analise de risco juridico
+      - Tecnicas de de-escalation
+      - Comunicacao em crise
+      - FBI Hostage Negotiation
+      - Compensacoes e acordos
+      - Prevencao de processos
+      - Documentacao legal
 
 # =====================================================
 # TAREFAS
@@ -141,6 +162,31 @@ tarefas:
     fase: retencao
     agente: retention-expert
 
+  # Fase 4: Casos Criticos
+  - id: analisar-caso-critico
+    arquivo: tarefas/analisar-caso-critico.yaml
+    comando: /caso-critico
+    fase: casos-criticos
+    agente: critical-cases-specialist
+
+  - id: avaliar-risco-juridico
+    arquivo: tarefas/avaliar-risco-juridico.yaml
+    comando: /risco-juridico
+    fase: casos-criticos
+    agente: critical-cases-specialist
+
+  - id: criar-plano-resolucao
+    arquivo: tarefas/criar-plano-resolucao.yaml
+    comando: /plano-resolucao
+    fase: casos-criticos
+    agente: critical-cases-specialist
+
+  - id: documentar-caso-critico
+    arquivo: tarefas/documentar-caso.yaml
+    comando: /documentar-caso
+    fase: casos-criticos
+    agente: critical-cases-specialist
+
 # =====================================================
 # WORKFLOWS
 # =====================================================
@@ -171,6 +217,12 @@ conhecimento:
   - onboarding-framework.md
   - retencao-estrategias.md
   - qbr-playbook.md
+
+  # Casos Criticos (NEW!)
+  - casos-criticos-framework.md
+  - cdc-completo.md
+  - analise-risco-juridico.md
+  - estrategias-deescalation.md
 
 # =====================================================
 # FRAMEWORK DE EXECUCAO (Ralph)
@@ -222,6 +274,18 @@ referencias:
     - Jason Lemkin (SaaStr, especialista SaaS CS)
     - Wes Bush (Product-Led Growth)
 
+  casos_criticos_negociacao:
+    - Chris Voss (Ex-FBI, autor Never Split the Difference)
+    - Marshall Rosenberg (Nonviolent Communication)
+    - Harvard Negotiation Project
+    - FBI Hostage Negotiation Techniques
+
+  legal:
+    - Lei 8.078/1990 - Codigo de Defesa do Consumidor (CDC)
+    - STJ - Superior Tribunal de Justica (jurisprudencia)
+    - SENACON - Secretaria Nacional do Consumidor
+    - PROCON - Orientacoes praticas
+
   frameworks:
     - DEAR Framework (Gainsight) - Deployment, Engagement, Adoption, ROI
     - LAER Model - Land, Adopt, Expand, Renew
@@ -229,6 +293,9 @@ referencias:
     - Customer Health Score
     - Net Promoter Score (NPS)
     - Customer Effort Score (CES)
+    - Tactical Empathy (Chris Voss)
+    - Calibrated Questions (Chris Voss)
+    - Nonviolent Communication (NVC)
 
   plataformas:
     - Gainsight
@@ -247,5 +314,10 @@ output:
   jornadas: output/customer-success/jornadas/
   qbrs: output/customer-success/qbrs/
   planos: output/customer-success/planos/
+  casos-criticos: output/customer-success/casos-criticos/
+    analises: output/customer-success/casos-criticos/analises/
+    planos-acao: output/customer-success/casos-criticos/planos-acao/
+    documentacao: output/customer-success/casos-criticos/documentacao/
+    acordos: output/customer-success/casos-criticos/acordos/
 
 projetos: projetos/cs-[nome-empresa]/
