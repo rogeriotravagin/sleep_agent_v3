@@ -1,0 +1,128 @@
+id: capturar-demanda
+nome: Capturar Demanda Estruturada
+descricao: Capturar e estruturar uma nova demanda com todas as informações necessárias para priorização e execução
+agente: organizador
+comando: /capturar-demanda
+versao: "1.0"
+categoria: criacao
+
+entradas:
+  obrigatorias:
+    - nome: descricao_inicial
+      pergunta: "O que precisa ser feito?"
+      tipo: texto
+      exemplo: "Preparar proposta comercial para o cliente XYZ"
+
+  opcionais:
+    - nome: contexto
+      pergunta: "Qual o contexto ou projeto relacionado?"
+      tipo: texto
+      exemplo: "Projeto de expansão Q1 2026"
+
+    - nome: motivacao
+      pergunta: "Por que isso é necessário?"
+      tipo: texto
+      exemplo: "Cliente solicitou e está avaliando fornecedores"
+
+    - nome: prazo
+      pergunta: "Existe algum prazo?"
+      tipo: texto
+      exemplo: "Cliente decide na sexta-feira"
+
+passos:
+  - numero: 1
+    acao: "Coletar informação básica"
+    detalhes:
+      - "Obter descrição inicial da demanda"
+      - "Anotar contexto fornecido"
+
+  - numero: 2
+    acao: "Fazer perguntas clarificadoras"
+    detalhes:
+      - "O quê exatamente precisa ser feito? (ação específica)"
+      - "Por quê isso é necessário? (objetivo/motivação)"
+      - "Quando isso precisa estar pronto? (prazo real ou estimado)"
+      - "Quem está envolvido? (responsável, stakeholders)"
+      - "Como saber que está pronto? (critérios de conclusão)"
+      - "Existem dependências ou bloqueios?"
+
+  - numero: 3
+    acao: "Classificar tipo de demanda"
+    detalhes:
+      - "É tarefa única ou projeto (múltiplas etapas)?"
+      - "Qual o contexto de execução? (@trabalho, @computador, @telefone)"
+      - "A que área ou projeto pertence?"
+
+  - numero: 4
+    acao: "Estruturar em formato padronizado"
+    detalhes:
+      - "Preencher template com todas as informações coletadas"
+      - "Garantir que está completo e claro"
+
+  - numero: 5
+    acao: "Validar com o usuário"
+    detalhes:
+      - "Apresentar demanda estruturada"
+      - "Confirmar se está correto e completo"
+      - "Ajustar se necessário"
+
+saida:
+  formato: markdown
+  template: |
+    # [TÍTULO DA DEMANDA]
+
+    ## Tipo
+    [Tarefa | Projeto | Ideia | Compromisso]
+
+    ## Descrição
+    [O que precisa ser feito - ação específica e clara]
+
+    ## Motivação (Por quê?)
+    [Objetivo ou necessidade que justifica esta demanda]
+
+    ## Contexto
+    - **Área/Projeto:** [A que pertence]
+    - **Local/Contexto:** [@onde será feito]
+    - **Responsável:** [Quem faz]
+    - **Stakeholders:** [Quem está envolvido ou será afetado]
+
+    ## Prazo
+    - **Data:** [Se houver prazo específico]
+    - **Tipo:** [Hard deadline | Soft deadline | Sem prazo]
+    - **Consequência:** [O que acontece se atrasar]
+
+    ## Critérios de Conclusão
+    [Como saberei que está pronto? Lista de critérios objetivos]
+
+    ## Dependências
+    - **Bloqueios:** [O que impede o início desta demanda]
+    - **Dependentes:** [O que depende desta demanda estar completa]
+
+    ## Recursos Necessários
+    [Ferramentas, informações, pessoas ou materiais necessários]
+
+    ## Próxima Ação Física
+    [Qual a primeira ação concreta e visível para começar]
+
+    ## Notas Adicionais
+    [Qualquer outra informação relevante]
+
+    ---
+
+    **Capturado em:** [Data e hora]
+    **Status:** Aguardando priorização
+
+conhecimento:
+  - conhecimento/gtd.md
+  - conhecimento/inbox-zero.md
+
+gates:
+  - "A descrição está clara e específica?"
+  - "O 'por quê' (motivação) está explícito?"
+  - "Os critérios de conclusão são objetivos e mensuráveis?"
+  - "Está completo o suficiente para outra pessoa entender?"
+  - "A próxima ação é física e visível?"
+
+proximos_passos:
+  - "/priorizar-tarefas - Priorizar esta demanda junto com outras"
+  - "/categorizar-info - Organizar múltiplas demandas por contexto"

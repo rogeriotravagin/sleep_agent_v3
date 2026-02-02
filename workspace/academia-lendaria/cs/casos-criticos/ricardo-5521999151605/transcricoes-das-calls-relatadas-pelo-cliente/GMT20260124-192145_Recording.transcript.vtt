@@ -1,0 +1,3558 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:15.159
+ericasouza: Passo para o Cloud Coach, então eu sei que às vezes a gente fica ansioso para colocar para rodar, mas vamos primeiro no primeiro passo, que é criar e criando a gente. A primeira coisa que a gente tem que fazer é pegar a dor e colocar isso tudo no papel e definir qual. Que é o produto
+
+2
+00:00:15.230 --> 00:00:31.160
+ericasouza: central para vocês sanarem essa dor de vocês hoje, que depois vai ser a dor de outra pessoa. E vocês podem vender esse produto ali para outra pessoa, tanto com app ou uma ferramenta para alguma empresa. Enfim, vocês vão decidir depois.
+
+3
+00:00:32.240 --> 00:00:50.129
+Alan Nicolas: E o que que Érica? Só pra assim eu quero aproveitar, porque tu é o perfil. Eu e o José não somos o perfil que tá aqui. No sentido de quê? De como criar isso? Porque a gente já abstrai demais. Tu é muito prática. Tipo assim. Tu pega tu tá com uma dor. Tu vai lá e conversa com a Iá e resolve
+
+4
+00:00:50.870 --> 00:00:59.159
+Alan Nicolas: pra galera. Assim no teu processo. Eu sei que pra telas que a gente fez anteriores e tal. Tu fez lá tudo de novo. Também tu fez todo aquele Prd. Um monte de coisa
+
+5
+00:00:59.490 --> 00:01:08.579
+Alan Nicolas: para criar essas telas. Como tem sido? Qual o teu nível de planejamento para criar, por exemplo, um criador desse de slide, por exemplo, só para a galera entender e a galera. Talvez pegar.
+
+6
+00:01:08.580 --> 00:01:13.409
+ericasouza: E desse tipo, do carrossel.
+
+7
+00:01:13.410 --> 00:01:14.490
+Alan Nicolas: Carrossel. Mesmo carrossel.
+
+8
+00:01:14.490 --> 00:01:31.619
+ericasouza: Do carrossel. Na verdade. O que foi? Tá, foi uma dor nossa. Então, como a gente tem por isso que eu falo gente. Repertório é a mina de ouro de vocês. Se vocês têm repertório, você sabe o que é o Gap e o que pode ser feito. Por exemplo, eu sei que pra ter um
+
+9
+00:01:31.620 --> 00:01:44.159
+ericasouza: de Twitter, por exemplo, eu preciso ter. A primeira coisa é a imagem da pessoa. Eu estou falando simples, porque todo mundo já tem essa visão. Mas quando é um processo interno e é mais.
+
+10
+00:01:44.170 --> 00:01:57.199
+ericasouza: É robusto ou isolado. Às vezes as pessoas não entendem. Mas eu vou colocar uma analogia mais fácil. O que é um post de Twitter é a foto do especialista, o nome dele e a roupa dele.
+
+11
+00:01:57.470 --> 00:01:58.919
+ericasouza: E é o texto.
+
+12
+00:01:59.110 --> 00:02:11.460
+ericasouza: Então, o que tu vai dar? Insumos ali no teu Prd ou no teu Prompt. O que você achar melhor para analisar isso, por exemplo, tá, eu preciso
+
+13
+00:02:11.460 --> 00:02:23.499
+ericasouza: que tem a foto do especialista. Eu preciso que tenha o nome do especialista, o arroba do especialista, a cópia destinada para tal tal coisa. Por exemplo, isso aqui. Tudo. Falei para ele. Preciso de gancho. Preciso de especialista.
+
+14
+00:02:23.500 --> 00:02:23.890
+Alan Nicolas: De comunicar.
+
+15
+00:02:23.890 --> 00:02:31.820
+ericasouza: Eu quero abordagem. Então eu quero tantos slides. Eu quero também ter Cta. Sabe, eu quero ter contexto.
+
+16
+00:02:31.970 --> 00:02:41.140
+ericasouza: Eu quero ter o tema específico. Então tu tendo esse repertório, tu sabe o que tu vai pedir, pregar porque ela não funciona se tu não dá input, né? Que é informação para ela.
+
+17
+00:02:41.500 --> 00:02:47.060
+ericasouza: Então tu começa assim. Tu dá tudo o que tu precisa. Todas as tuas dores que tu tem e ela cria
+
+18
+00:02:47.250 --> 00:02:49.519
+ericasouza: vai ter ajustes. Mas ela cria.
+
+19
+00:02:50.190 --> 00:02:56.470
+Alan Nicolas: Pessoal. A Erick está rodando cem. Isso aqui que estão vendo, pessoal no próprio Air Studio é tudo mais.
+
+20
+00:02:57.000 --> 00:02:57.730
+ericasouza: Está dentro do.
+
+21
+00:02:57.730 --> 00:03:17.019
+Alan Nicolas: Agora ela baixou. Agora ela tá rodando com o Claudio Code com outras coisas, com um banco de dados, etc. Mas no começo aqui ela fez tudo e funcionando. E a gente usando, tá a gente usando ela pega os meus conteúdos lá das Lives que eu faço. Pega os conteúdos lá do meu e mail. Pega os conteúdos do meu blog. Joga aqui, pede pra criar o.
+
+22
+00:03:17.100 --> 00:03:18.190
+ericasouza: Carrossel.
+
+23
+00:03:18.480 --> 00:03:21.709
+Alan Nicolas: Cria o carrossel. Ela clica, baixa
+
+24
+00:03:21.870 --> 00:03:39.380
+Alan Nicolas: posta, entendeu? Pega o conteúdo aqui de uma Live e bota lá. Então é uma coisa funcional. É uma coisa que a gente já tá usando. Melhorou um monte. A nossa velocidade de processo para essa etapa aqui. E é uma coisa que outras pessoas? Eu já vi várias pessoas dizendo assim: nossa, eu queria fazer exatamente isso. Eu queria fazer isso, ou seja,
+
+25
+00:03:39.520 --> 00:03:40.460
+Alan Nicolas: se
+
+26
+00:03:40.660 --> 00:03:55.899
+Alan Nicolas: é uma coisa que a gente sabe que tem necessidade no mercado depois, sabe? E eu acho mais essa minha visão, né? Não estou dizendo que ela está certa, porque você pode estudar o mercado, criar para o mercado. Eu acho que quando a gente resolve um problema nosso que a gente entende.
+
+27
+00:03:56.120 --> 00:04:08.600
+Alan Nicolas: Fica mais fácil também da gente validar, porque a gente tem a dor e depois começar a fazer a coisa mais difícil. A parte mais difícil não é criar pessoal. Desculpa, eu sei que tem muita gente aqui com dificuldade para criar.
+
+28
+00:04:08.960 --> 00:04:12.389
+Alan Nicolas: Mas a parte bem mais difícil é vender depois
+
+29
+00:04:12.680 --> 00:04:16.240
+Alan Nicolas: criação. Tudo. Só que a gente está fazendo é cinco do resultado.
+
+30
+00:04:17.700 --> 00:04:26.200
+Alan Nicolas: O resultado de verdade financeira de crescimento, blá, blá, é vender depois, que é a maior parte do trabalho. É a parte mais difícil.
+
+31
+00:04:26.490 --> 00:04:37.540
+Alan Nicolas: Então se você. E eu faço questão, gente, não é porque. E aqui eu tô falando de coração, tá? Não tô falando brabo. Nada assim tá de coração para vocês.
+
+32
+00:04:37.880 --> 00:04:42.730
+Alan Nicolas: Se está muito difícil para você agora. Muito difícil. Nossa, está muito difícil. Está muito difícil. Muito difícil.
+
+33
+00:04:43.040 --> 00:04:55.039
+Alan Nicolas: Eu diria para você. Assim pede reembolso sem mágoa nenhuma. Tipo assim a gente reembolsa. Você aprendeu um monte de coisa aqui. A gente reembolsa e você não precisa vir amanhã, porque senão você vai se frustrar.
+
+34
+00:04:55.540 --> 00:05:04.019
+Alan Nicolas: Quem está aqui do lado com o meu lado, por exemplo, não consegue avançar muito, trazer muitas coisas, porque eu tenho que ficar toda hora voltando ao básico.
+
+35
+00:05:04.220 --> 00:05:06.510
+Alan Nicolas: Mas se você estiver disposto a
+
+36
+00:05:07.200 --> 00:05:19.749
+Alan Nicolas: a suportar, digamos, esse estágio inicial de confusão. Esse estágio inicial de ficar um pouco mais perdido. Pode ter certeza que tu vai conseguir evoluir, mas entenda, eu estou sendo aqui
+
+37
+00:05:20.030 --> 00:05:27.030
+Alan Nicolas: cem sincero com vocês. Primeiro se acostume com a confusão, porque ninguém sabe o que está fazendo.
+
+38
+00:05:27.290 --> 00:05:28.499
+Alan Nicolas: Como assim, Alan.
+
+39
+00:05:29.090 --> 00:05:39.539
+Alan Nicolas: A iate mudando tudo o tempo todo. Ninguém mais sabe nada do futuro. Ninguém sabe mais nada. A gente precisa se adaptar a um mundo caótico onde as coisas mudam o tempo todo.
+
+40
+00:05:39.980 --> 00:05:45.160
+Alan Nicolas: A gente não vai conseguir. Se você quer tudo certinho. Allan, me dá um procedimento, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, pá. Pá. Pá,
+
+41
+00:05:45.510 --> 00:05:52.359
+Alan Nicolas: eu posso te dar ele agora. E amanhã vai mudar, literalmente. Amanhã pode mudar, literalmente. Amanhã pode mudar, literalmente.
+
+42
+00:05:52.440 --> 00:06:07.539
+Alan Nicolas: Não estou dizendo assim não é figura de linguagem, gente, literalmente. Amanhã pode mudar. Então, se você é uma pessoa que precisa de tudo certinho o tempo todo que você não aguenta um caos de uma explicação, por exemplo, de um negócio que, ah, aqui eu acho que você não vai suportar
+
+43
+00:06:07.540 --> 00:06:20.190
+Alan Nicolas: estar nesse meio porque ele é caótico. As coisas mudam o tempo todo. Toda hora é uma ferramenta nova. Eles lançam o modelo mudam o tempo todo. Por exemplo, o Cloud nos últimos dias. Está bem, ruinzinho aberto do que ele já foi.
+
+44
+00:06:20.680 --> 00:06:24.740
+Alan Nicolas: Então é possível que eles vão lançar um novo. Estou falando do Sonet cinco.
+
+45
+00:06:24.990 --> 00:06:27.320
+Alan Nicolas: Só que já mudou tudo de novo.
+
+46
+00:06:27.670 --> 00:06:29.630
+Alan Nicolas: Então
+
+47
+00:06:30.440 --> 00:06:43.219
+Alan Nicolas: vai ser disso para pior. Em que sentido? No sentido de que as coisas só vão ficar mais difíceis, principalmente se você não botar em prática, mas exigindo mais conhecimento.
+
+48
+00:06:43.390 --> 00:06:47.099
+Alan Nicolas: A parte mais difícil não é a parte mais difícil, não é criar.
+
+49
+00:06:47.220 --> 00:06:50.200
+Alan Nicolas: Não é essa parte mais fácil.
+
+50
+00:06:50.730 --> 00:06:54.150
+Alan Nicolas: Isso que vocês estão vendo aqui é a parte mais fácil.
+
+51
+00:06:54.310 --> 00:07:01.320
+Alan Nicolas: A parte mais difícil é você começar a ganhar dinheiro com isso. A parte mais difícil é você fazer com que as pessoas comecem a usar o seu sistema.
+
+52
+00:07:01.530 --> 00:07:04.950
+Alan Nicolas: A parte mais difícil é depois que você aprendeu a fazer isso aqui.
+
+53
+00:07:05.610 --> 00:07:16.999
+Alan Nicolas: Por que eu estou falando tudo isso? Porque eu estou sendo honesto com vocês. Eu quero que vocês entendam o que acontece. Eu quero que vocês consigam ser bem sucedidos fazendo isso.
+
+54
+00:07:17.470 --> 00:07:24.940
+Alan Nicolas: Se eu não falar isso para vocês e vocês acharem que é simplesmente sentar aqui. Vou escrever meia dúzia de palavras. E daí? Eu vou ganhar milhões. Não, não vai acontecer.
+
+55
+00:07:25.460 --> 00:07:33.520
+Alan Nicolas: O Steve me falou logo depois aqui da coisa. Eu tive uma reunião com o Steven aqui que estava com a gente. O Steven Spiel. Para quem não sabe, ele é um cineasta.
+
+56
+00:07:33.860 --> 00:07:35.870
+Alan Nicolas: E ele falou uma coisa que eu até botei num tweet.
+
+57
+00:07:36.480 --> 00:07:40.010
+Alan Nicolas: Ele falou assim depois da guitarra elétrica
+
+58
+00:07:41.850 --> 00:07:44.759
+Alan Nicolas: que se popularizou. Eu tenho uma guitarra aqui
+
+59
+00:07:50.570 --> 00:07:52.419
+Alan Nicolas: depois da guitarra elétrica,
+
+60
+00:07:53.790 --> 00:08:07.870
+Alan Nicolas: não foi porque existiu a guitarra elétrica que a gente tem aqui. Ó Steve, deixa eu desligar. Olha, Steve, eu vou liberar, mas assim eu já sou lucurbativo. É lucrobrato. Sei lá. Agora tu é muita mais, e a Fran deve estar com a mão levantada porque a gente tá super atrasado. Pro marcondes entrar e o marcondes é, bem, como é que é?
+
+61
+00:08:07.870 --> 00:08:20.449
+Alan Nicolas: Ele é. Bem, faca na caveira de ser bem direto nas coisas, sabe? Levanta nova mão, Chip. Eu vou deixar tu falar. Só estou já avisando isso porque a gente vai ter que ser bem direto. Assim vai poder ficar muito tempo.
+
+62
+00:08:21.270 --> 00:08:27.210
+Alan Nicolas: Olha aqui, ó, eu tenho uma guitarra. Isso não me faz ser um Beatles. Não, a gente não tem um Beatles em cada esquina.
+
+63
+00:08:27.480 --> 00:08:32.620
+Alan Nicolas: Não adianta. E a potencializa todo mundo. Não vai ser todo mundo que vai ficar milionário porque consegue criar um appzinho.
+
+64
+00:08:33.340 --> 00:08:40.250
+Alan Nicolas: Então, se você não consegue suportar um dia, meio dia
+
+65
+00:08:40.700 --> 00:08:46.189
+Alan Nicolas: de desconforto por informações que você ainda não dominou meu amigo. Minha amiga.
+
+66
+00:08:47.930 --> 00:08:49.230
+Alan Nicolas: Não, continue.
+
+67
+00:08:50.340 --> 00:08:59.420
+Alan Nicolas: Vai para outra coisa. Vai aprender a sentar tijolo. Vai demorar mais para o robô chegar. Mas desista de qualquer trabalho cognitivo no computador.
+
+68
+00:09:00.300 --> 00:09:01.220
+Alan Nicolas: Por quê?
+
+69
+00:09:01.320 --> 00:09:06.650
+Alan Nicolas: Porque esse trabalho vai ser feito por poucas pessoas que dominam Cloud Code, por exemplo.
+
+70
+00:09:07.270 --> 00:09:16.480
+Steven Phil: Alan, eu só queria falar uma coisa para a galera. Há um ano atrás, eu não entendi absolutamente nada disso.
+
+71
+00:09:16.690 --> 00:09:20.129
+Steven Phil: E hoje, você sabe, eu estou comandando o Devs e empresa de ponto.
+
+72
+00:09:20.130 --> 00:09:23.789
+Alan Nicolas: Steve tá criando um monte de sistemas que eu quero sentar pra aprender com ele. Pessoal.
+
+73
+00:09:23.790 --> 00:09:24.400
+Steven Phil: E aí?
+
+74
+00:09:24.400 --> 00:09:27.219
+Alan Nicolas: O streaming não sabia nada, nada. O Steel não sabia nada.
+
+75
+00:09:27.220 --> 00:09:27.839
+Steven Phil: Para a.
+
+76
+00:09:28.080 --> 00:09:41.319
+Steven Phil: Mas eu acho que o ponto de inflexão foi o foco. Eu acho pessoal, que para mergulhar nisso, você precisa de foco. Você precisa entender que
+
+77
+00:09:41.450 --> 00:09:54.619
+Steven Phil: por dois meses, três meses não pode existir mais nada na tua vida a não ser você querer aprender de fato, isso mergulhar nisso e começar. Eu comecei com base em quarenta e quatro. Comecei com.
+
+78
+00:09:54.830 --> 00:10:10.790
+Steven Phil: Depois veio o Ai Studio, comecei, obviamente com as llms. Depois eu fui para essas ferramentas. Usei o Loveball. Gostei mais do base quarenta e quatro e depois, eu fui sentindo a necessidade de instalar o Cloud Code no cursor.
+
+79
+00:10:10.790 --> 00:10:22.260
+Steven Phil: E aí a coisa vai indo. Você vai procurando, pesquisando, entrando e você não deixa de usar. Você vê que a gente ainda usa o germinar? Ainda usa o Gpt.
+
+80
+00:10:22.260 --> 00:10:34.919
+Steven Phil: Depois você vai ainda usar o ai. Studio vai usar o base. Vai usar o lóvulo? Cada um deles é bom numa coisa. Com o tempo, você vai percebendo o que você gosta mais de um mais no outro. E aí
+
+81
+00:10:34.920 --> 00:10:47.610
+Steven Phil: você está. Depois no Cloud Code. E aí, quando você vê, você já está criando agentes. E as pessoas já estão pedindo seus agentes. E a coisa foi só um depoimento do foco. Eu acho que o que me salvou
+
+82
+00:10:47.820 --> 00:10:55.339
+Steven Phil: foi justamente passar os seis meses mergulhado nisso todos os dias.
+
+83
+00:10:56.050 --> 00:11:01.550
+Alan Nicolas: Top pô. Vou deixar com a frango agora. Café tá nervosa lá que eu já estraguei tudo.
+
+84
+00:11:01.550 --> 00:11:04.680
+Fran Martins | Lendár[IA]: E aí não estragou. Não tenho certeza.
+
+85
+00:11:04.680 --> 00:11:06.859
+Alan Nicolas: Não se preocupa. Não participo das imersões.
+
+86
+00:11:07.160 --> 00:11:09.510
+Fran Martins | Lendár[IA]: A dúvida.
+
+87
+00:11:09.510 --> 00:11:11.290
+Alan Nicolas: Mais papel que eu adoro. Imersão. Adoro.
+
+88
+00:11:11.290 --> 00:11:17.199
+Fran Martins | Lendár[IA]: Agora não. A galera vai brigar comigo. Tira o som daqui.
+
+89
+00:11:18.020 --> 00:11:21.570
+Fran Martins | Lendár[IA]: Você não consigo pensar e me ouvir. Obrigada.
+
+90
+00:11:22.620 --> 00:11:30.679
+Fran Martins | Lendár[IA]: Amanhã eu mostro o meu Crm aqui que eu criei. Mas para não atrasar mais do que já atrasamos
+
+91
+00:11:30.880 --> 00:11:37.369
+Fran Martins | Lendár[IA]: galera. Não se preocupem também o que a Érica mostrou aqui realmente foi algo
+
+92
+00:11:38.750 --> 00:11:51.809
+Fran Martins | Lendár[IA]: que ela criou muito rápido. Várias ideias, várias coisas. Porque ela tinha aquelas dores muito grandes. Então a dor para ela era muito clara. Então a clareza na dor vai te fazer criar coisas incríveis.
+
+93
+00:11:52.550 --> 00:11:58.150
+Fran Martins | Lendár[IA]: Eu tinha uma dor, porque eu naveguei em algumas áreas. E aí eu criei um negócio.
+
+94
+00:11:58.810 --> 00:12:08.089
+Fran Martins | Lendár[IA]: E eu achei tão bom ser capaz de criar alguma coisa que o objetivo principal dessa imersão
+
+95
+00:12:08.290 --> 00:12:15.310
+Fran Martins | Lendár[IA]: foi algo que essa alegria de poder criar, de resolver algo, de criar algo do zero.
+
+96
+00:12:15.860 --> 00:12:21.610
+Fran Martins | Lendár[IA]: Precisamos compartilhar e não se frustrem. Se na primeira tentativa não der bom,
+
+97
+00:12:22.130 --> 00:12:29.549
+Fran Martins | Lendár[IA]: é assim que vai definir se você realmente quer isso ou não o marcondes, ele tem
+
+98
+00:12:29.660 --> 00:12:33.750
+Fran Martins | Lendár[IA]: para passar ali a Triple P. Ele tem uma.
+
+99
+00:12:34.300 --> 00:12:52.539
+Fran Martins | Lendár[IA]: Um direcionamento, algo muito bem estruturado que ele preparou. Algo muito legal para vocês à noite. A Érica também vai estar em uma das salas do Ps. Então, caso vocês tenham tido dificuldades, vocês vão levantar a mão, vai ter mais de uma pessoa ali. A Érica. Pode mostrar mais qualquer coisa. Amanhã a gente chama ela ali de novo para mostrar mais o que ela criou.
+
+100
+00:12:53.130 --> 00:13:04.209
+Fran Martins | Lendár[IA]: Eu fui mais direta ali. Eu criei uma solução que colocava tudo as coisas. Mas ela tem uma visão de várias coisas na cabeça dela. Ela foi criando.
+
+101
+00:13:04.660 --> 00:13:07.300
+Fran Martins | Lendár[IA]: Então, amanhã a gente mostra mais.
+
+102
+00:13:07.440 --> 00:13:09.260
+Fran Martins | Lendár[IA]: Participe amanhã também.
+
+103
+00:13:09.470 --> 00:13:15.029
+Fran Martins | Lendár[IA]: Allan, tem mais algum ponto que você queira trazer aí a gente. Já puxa ali para o marcondes.
+
+104
+00:13:15.030 --> 00:13:19.060
+Alan Nicolas: Eu me passei demais. Já.
+
+105
+00:13:20.390 --> 00:13:25.510
+Fran Martins | Lendár[IA]: E se você não vier na próxima, a galera vai brigar comigo. Então, por favor, participe.
+
+106
+00:13:26.440 --> 00:13:29.220
+Fran Martins | Lendár[IA]: Marcondo, levanta a mão aí que eu não tô te vendo. Deixa eu ver.
+
+107
+00:13:31.380 --> 00:13:34.510
+Fran Martins | Lendár[IA]: Olha lá, ele tá ali.
+
+108
+00:13:36.430 --> 00:13:42.019
+Fran Martins | Lendár[IA]: Muito bem, gente, o que vocês estão achando aí? Galera compartilhe bastante.
+
+109
+00:13:42.450 --> 00:13:45.969
+Fran Martins | Lendár[IA]: Estamos aqui no mesmo projeto. Não atrasamos.
+
+110
+00:13:46.650 --> 00:13:54.300
+Fran Martins | Lendár[IA]: Que bom, gente aqui pra vocês. Sinceramente, vocês boa parte aqui é todo mundo aluno é todo mundo de casa. Então fiquem
+
+111
+00:13:54.570 --> 00:14:07.350
+Fran Martins | Lendár[IA]: tranquilos que a gente vai ter muita profundidade. O que a gente está passando aqui é o começo é o pontapé só de vocês comprarem ali e, cara, vou ficar imerso. É um passo à frente.
+
+112
+00:14:12.940 --> 00:14:16.909
+Fran Martins | Lendár[IA]: Dez segundos pro cafezinho. Isso. A gente vai no banheiro rapidinho aí
+
+113
+00:14:20.800 --> 00:14:25.069
+Fran Martins | Lendár[IA]: só pra explicar também para vocês como que vai funcionar a noite, tá?
+
+114
+00:14:25.700 --> 00:14:34.109
+Fran Martins | Lendár[IA]: São quatro salas separadas. Como está ali no guia que foi compartilhado para vocês.
+
+115
+00:14:35.370 --> 00:14:42.530
+Fran Martins | Lendár[IA]: A gente vai ter uma sala chamada Sala D, que é a sala de organização
+
+116
+00:14:42.690 --> 00:14:45.950
+Fran Martins | Lendár[IA]: é a sala Ux, que é a interface
+
+117
+00:14:47.910 --> 00:14:57.249
+Fran Martins | Lendár[IA]: organização do design, experiência do cliente. Então essa é a sala Ux,
+
+118
+00:14:57.580 --> 00:15:02.200
+Fran Martins | Lendár[IA]: inclusive quem vai estar lá. É o charão e a Érica. Nessa sala.
+
+119
+00:15:02.400 --> 00:15:06.429
+Fran Martins | Lendár[IA]: A sala A é a conexão entre sistemas,
+
+120
+00:15:06.530 --> 00:15:10.680
+Fran Martins | Lendár[IA]: problemas. Aí de conexão entre sistemas entre
+
+121
+00:15:11.060 --> 00:15:14.620
+Fran Martins | Lendár[IA]: comunicar entre uma tela e outra vai ser na sala A.
+
+122
+00:15:14.740 --> 00:15:24.140
+Fran Martins | Lendár[IA]: A sala P é de comunicação com a Ia, ou seja, engenharia de Prompt. Cara, estou pedindo a Ia tá devolvendo tudo zoado. É nessa sala que você entra na sala P.
+
+123
+00:15:24.620 --> 00:15:32.619
+Fran Martins | Lendár[IA]: Então, se preparem os links vão ser quatro salas compartilhadas ali dentro do Grupo Marcondes. Está por aí.
+
+124
+00:15:34.800 --> 00:15:35.810
+Gabriel Marcondes: Estou sim?
+
+125
+00:15:35.810 --> 00:15:36.350
+Fran Martins | Lendár[IA]: Boa.
+
+126
+00:15:36.350 --> 00:15:36.780
+Gabriel Marcondes: Sagrada.
+
+127
+00:15:37.680 --> 00:15:40.290
+Fran Martins | Lendár[IA]: Perfeitamente. Pode tocar.
+
+128
+00:15:40.630 --> 00:15:45.390
+Fran Martins | Lendár[IA]: E aí, na hora de encerrar ali. Eu vou me despedir. Depois de vocês.
+
+129
+00:15:45.530 --> 00:15:49.069
+Fran Martins | Lendár[IA]: Para liberar a gente vai ter uma horinha ali,
+
+130
+00:15:49.310 --> 00:15:55.109
+Fran Martins | Lendár[IA]: mais ou menos meia horinha para abrir a sala, mas às 19h em ponto, a gente começa. Os nossos. Ps:
+
+131
+00:15:57.340 --> 00:15:58.670
+Fran Martins | Lendár[IA]: Vai lá. Marcou antes.
+
+132
+00:15:59.880 --> 00:16:01.170
+Gabriel Marcondes: Excelente.
+
+133
+00:16:01.600 --> 00:16:03.350
+Gabriel Marcondes: Muito boa tarde, pessoal.
+
+134
+00:16:03.810 --> 00:16:06.330
+Gabriel Marcondes: Como vocês estão? Estão com a cabeça fritando
+
+135
+00:16:06.920 --> 00:16:11.110
+Gabriel Marcondes: e do conhecimento com José, com Alan Pedro.
+
+136
+00:16:11.450 --> 00:16:16.380
+Gabriel Marcondes: Maravilha, pessoal, para quem não me conhece.
+
+137
+00:16:16.400 --> 00:16:30.530
+Gabriel Marcondes: Eu me chamo Marcondes. Sou sócio do Alan. Sou Ceo da agência lendária que é a nossa frente de prestação de serviços, então a construção de soluções de inteligência artificial, de sistemas para empresários high ticket,
+
+138
+00:16:30.530 --> 00:16:37.369
+Gabriel Marcondes: e também dos superagens, que é o nosso Sas de criação de agentes. Hoje eu venho aqui com o objetivo
+
+139
+00:16:37.490 --> 00:16:55.129
+Gabriel Marcondes: bem claro, de trazer para vocês uma visão macro. Quando a gente diz de projeto, até mesmo para a gente não ter uma redundância. Todo mundo aqui, trabalhando com os multiagens, com o Cloud Code dentro dessa construção. Mas trabalhando a sua zona de Generade, sua especialidade
+
+140
+00:16:55.180 --> 00:17:15.049
+Gabriel Marcondes: dentro. Aqui, quando a gente fala referente aos experts, eu estou mais conectado com os empresários. Então, nessa linha de frente, de ver qual é a dor do mercado, e realmente fazer essas entregas diretas enquanto o Alan está ali na caverna. É o cara que vamos dizer com mais conhecimento e vem trazendo essas soluções inovadoras. O José,
+
+141
+00:17:15.250 --> 00:17:29.689
+Gabriel Marcondes: com toda a didática dele, a abstração de todos esses problemas, construindo essas soluções facilitadas. Para que a gente já consiga ter esse tato. Eu venho com esse foco mais B2b: Esse foco empresarial. E eu quero externalizar isso para vocês,
+
+142
+00:17:29.690 --> 00:17:44.279
+Gabriel Marcondes: de forma que vocês possam ser assertivos nessa construção. Depois de ver todas essas metodologias, vocês estarem com todas essas armas na mão, a nível de construção de agora que eu posso fazer isso. Desse novo horizonte para onde eu vou?
+
+143
+00:17:44.460 --> 00:17:50.529
+Gabriel Marcondes: Qual é a forma mais assertiva onde eu posso selecionar essas ideias, pensando
+
+144
+00:17:50.710 --> 00:18:00.610
+Gabriel Marcondes: em economizar o seu tempo em trazer mais resultado para você. Para que seja uma grande experiência nesse mundo da inteligência artificial perfeito.
+
+145
+00:18:01.320 --> 00:18:07.490
+Gabriel Marcondes: Então, pessoal, aqui, eu vou trazer para vocês um dos meus Frameworks, que é o Framework do Triple P.
+
+146
+00:18:07.490 --> 00:18:21.470
+Gabriel Marcondes: Ah, que ele vende Pen Pocket Priority. Então a gente vai identificar a dor, identificar o investimento sobre isso, e também a prioridade. Com o objetivo de validar uma ideia de projeto
+
+147
+00:18:21.590 --> 00:18:41.850
+Gabriel Marcondes: validar se. Aquilo que eu quero construir realmente é uma dor acessanada que tem um investimento para isso. Que realmente trará um retorno tanto para mim quanto para o meu cliente e a prioridade disso, pois mesmo atendendo todos esses requisitos, talvez não seja o momento daquela empresa ou daquele nicho.
+
+148
+00:18:43.100 --> 00:18:47.460
+Gabriel Marcondes: Então eu vou compartilhar aqui com vocês.
+
+149
+00:18:48.060 --> 00:18:52.350
+Gabriel Marcondes: E vou trazendo para vocês também um pouco
+
+150
+00:18:53.510 --> 00:18:56.530
+Gabriel Marcondes: das minhas soluções, e a gente vem conversando.
+
+151
+00:18:57.970 --> 00:19:03.419
+Gabriel Marcondes: Então este é um framework que eu tenho validado com múltiplos clientes.
+
+152
+00:19:03.420 --> 00:19:18.570
+Gabriel Marcondes: Então hoje eu atuo de frente com a comercialização desses sistemas de forma personalizada. Também atuo com consultorias High Ticket, e com isso, uma das bases, um dos pilares é eu conseguir identificar,
+
+153
+00:19:18.630 --> 00:19:27.259
+Gabriel Marcondes: justamente qual é a maior dor desse meu cliente, para que eu possa alinhar entre curva de desenvolvimento e curva de impacto,
+
+154
+00:19:27.790 --> 00:19:32.779
+Gabriel Marcondes: qual é a ação que ela vai necessitar? Menos do meu time.
+
+155
+00:19:33.050 --> 00:19:38.559
+Gabriel Marcondes: Ou seja, eu preciso de menos pessoas. Eu vou desenvolver mais rápido e vai gerar mais resultado para esse meu cliente.
+
+156
+00:19:39.570 --> 00:19:43.709
+Gabriel Marcondes: Então, o primeiro momento é a gente entender
+
+157
+00:19:43.890 --> 00:19:48.079
+Gabriel Marcondes: o Pain, entender a dor como eu consigo fazer essa validação
+
+158
+00:19:49.500 --> 00:19:59.510
+Gabriel Marcondes: aqui. Eu vou trazer para vocês a nível do Framework. Depois a gente entra ali dentro da plataforma e vamos fazer um modelo que está ali dentro
+
+159
+00:19:59.850 --> 00:20:05.819
+Gabriel Marcondes: como um preenchimento, mesmo de formulário para a gente validar esse cliente. Então, quando a gente pensa na dor.
+
+160
+00:20:07.070 --> 00:20:13.330
+Gabriel Marcondes: Nós vamos ter alguns exemplos, algumas coisas que precisa ser considerada.
+
+161
+00:20:14.310 --> 00:20:32.390
+Gabriel Marcondes: O primeiro passo para identificar algo. A gente está falando do meio de inteligência artificial. Então eu vou trabalhar com automações. Eu vou trabalhar com agentes que irão executar tarefas. Um dos primeiros pontos que mostram claro para nós, é o que eu chamo de indústria de gambiarras. É a tentativa de resolver aquele problema.
+
+162
+00:20:32.650 --> 00:20:46.710
+Gabriel Marcondes: Ele já mostra uma necessidade, uma proficiência das pessoas em buscar essa solução, mas não necessariamente alcançar ela da forma ideal. Então isso abre uma oportunidade muito grande quando se diz
+
+163
+00:20:46.990 --> 00:21:09.960
+Gabriel Marcondes: de aplicar uma solução diretamente, então os exemplos são essas empresas terem, por exemplo, grupos demais, elas executarem tarefas manuais, elas precisarem de muitas pessoas para uma única tarefa, criando uma redundância referente a esses cargos referentes a essas habilidades dentro das pessoas,
+
+164
+00:21:09.960 --> 00:21:16.499
+Gabriel Marcondes: você ter processos que passam de múltiplos sistemas. Então isso necessita de uma automação.
+
+165
+00:21:16.500 --> 00:21:33.189
+Gabriel Marcondes: Então, identificar isso de uma maneira inicial faz com que você já consiga ter uma assertividade referente a essa dor. Uma analogia que eu gosto bastante de trazer. É a gente entender dois modelos que eu chamo do need to Have you Nice to have.
+
+166
+00:21:33.890 --> 00:21:50.870
+Gabriel Marcondes: O que é aquilo? Que é totalmente uma dor genuína, algo necessário, que é igual uma sede no deserto. Então essa pessoa vai fazer qualquer coisa para resolver esse problema na empresa. Então é algo que está afetando o seu caixa diretamente é algo que está te impedindo de crescer.
+
+167
+00:21:50.870 --> 00:22:09.219
+Gabriel Marcondes: É algo que está colocando uma data limite, um teto seja referente horizontalmente ou verticalmente o crescimento dessa empresa, ou para que ela consiga ter essa expansão. Ela está perdendo para os seus concorrentes. Então, dessa forma, faz com que essa solução se torne cada vez mais necessária,
+
+168
+00:22:09.220 --> 00:22:20.890
+Gabriel Marcondes: enquanto existem algumas que são cosméticas, que são aquelas dores que são superficiais, então é um modelo que a gente fala. Coloquei aqui. Quero uma Coca Cola. Eu quero
+
+169
+00:22:21.050 --> 00:22:45.689
+Gabriel Marcondes: uma solução que ela meramente vai me colocar em um palco ou que eu quero falar, que eu tenho. E está tudo certo. Existe mercado para as duas. É sempre muito importante entender o tipo do cliente que a gente vai trabalhar. Então, quando a gente vai trabalhar com um cliente que ele tem? Um quê? Ele é um expert. Ele é um palestrante. Ele tem um que mais de vaidade. Ele vai muitas das vezes adquirir essa solução para que ele tenha para que ele fale, que o produto
+
+170
+00:22:45.690 --> 00:22:50.080
+Gabriel Marcondes: dele tenha, para que a empresa dele tenha, sem necessariamente aquilo ser uma dor genuína,
+
+171
+00:22:50.110 --> 00:23:00.730
+Gabriel Marcondes: porque é importante. Mas a grande maioria vai abrir a mão. Vai abrir este bolso para que consiga fazer essa aquisição. Se você realmente resolver esse problema.
+
+172
+00:23:00.790 --> 00:23:07.880
+Gabriel Marcondes: Então a gente entende esse ponto. A gente entende a nível de. Olha, eles gastam hoje já
+
+173
+00:23:08.370 --> 00:23:10.930
+Gabriel Marcondes: um valor para tentar solucionar esse problema,
+
+174
+00:23:11.160 --> 00:23:16.849
+Gabriel Marcondes: então seja ele com pessoas, seja ele com ferramentas, seja ele com terceirização.
+
+175
+00:23:17.120 --> 00:23:23.659
+Gabriel Marcondes: Então é muito importante a gente ter essa validação, porque a gente já começa a olhar referente ao Pocket,
+
+176
+00:23:23.870 --> 00:23:35.070
+Gabriel Marcondes: pois não adianta de nada eu ver um problema que acontece com frequência em diversos negócios. Porém, ele não tem uma dor genuína. Financeiramente falando,
+
+177
+00:23:35.470 --> 00:23:41.320
+Gabriel Marcondes: não tem a necessidade de investimento para isso. Então a gente precisa ter esse ponto.
+
+178
+00:23:41.710 --> 00:23:54.509
+Gabriel Marcondes: A consequência financeira, ou seja, a gente está falando. Ou de Saven, ou a gente está falando de aumentos de faturamento. Então eu irei poupar
+
+179
+00:23:54.560 --> 00:24:18.120
+Gabriel Marcondes: uma parte financeira dessa empresa a partir da minha solução. Principalmente quando a gente fala de negócios que nós chamamos de commodity. Então negócios clássicos. Então vamos falar de um ramo imobiliário de uma fábrica. Então a gente está falando de uma metalúrgica. Seja uma fábrica de alimentos, negócios mais clássicos e locais. Eles costumam ter um faturamento muito parecido. Dentre os meses
+
+180
+00:24:18.440 --> 00:24:34.140
+Gabriel Marcondes: a partir disso, você tem muito mais espaço em gerar resultado a partir de Saving, ou seja, eu gerar economia sobre aquele processo, do que necessariamente um aumento de faturamento já que é um mercado que, naturalmente, é mais saturado por ele ser comum,
+
+181
+00:24:34.310 --> 00:24:54.150
+Gabriel Marcondes: enquanto em mercados mais acelerados, quando a gente fala de marketing digital. A gente fala de tecnologia se torna muito mais plausível. Que eu aumente o seu faturamento, que eu faça estratégias de aquisição que eu faça estratégias para que eu melhore seu produto e, consequentemente, faça com que o ticket dele aumente. Então,
+
+182
+00:24:54.350 --> 00:25:12.099
+Gabriel Marcondes: visando esse formato. Nós temos muito claro como que eu posso impactar a nível dessas consequências financeiras que podem estar diretamente daquele negócio. Então, quando a gente pensa, por exemplo, numa clínica que é um dos casos mais básicos a serem atendidos, referente à inteligência artificial. Atualmente,
+
+183
+00:25:12.100 --> 00:25:16.139
+Gabriel Marcondes: a gente pode ver, entre o custo direto que existe sobre a
+
+184
+00:25:16.140 --> 00:25:25.499
+Gabriel Marcondes: aquela tarefa no atual momento. Então, se a gente está falando de atendimento hoje, é empregado um valor sobre aquilo que é, as pessoas que irão atender.
+
+185
+00:25:25.680 --> 00:25:37.369
+Gabriel Marcondes: Então eu posso tanto reduzir este valor são duas narrativas diferentes, e é sempre importante você entender sobre as duas, porque diz muito sobre a sua abordagem e o seu tipo de fechamento.
+
+186
+00:25:37.550 --> 00:25:46.970
+Gabriel Marcondes: Então eu posso tanto abordar este meu cliente e tratar essa dor a nível de. Irei substituir esta mesma função por um valor mais baixo,
+
+187
+00:25:47.110 --> 00:25:55.230
+Gabriel Marcondes: e eu ganho em economia, ou a minha solução irá trazer ganhos, a qual você não consegue hoje, com a operação atual.
+
+188
+00:25:55.320 --> 00:25:59.989
+Gabriel Marcondes: Então hoje você tem atendentes que trabalham somente oito horas por dia,
+
+189
+00:25:59.990 --> 00:26:24.960
+Gabriel Marcondes: e a minha solução irá trabalhar vinte e quatro horas por dia, seguindo a sua metodologia de classificação desses leads, utilizando de vários conteúdos referentes a livros e bases que você pode aprimorar sobre a persuasão dessa solução, trazendo como um exemplo de atendimento que vai gerar mais resultado do que o modelo atual. Então ambas são soluções para essa clínica médica. Falando de atendimento. Porém, com narrativas diferentes e formas diferentes
+
+190
+00:26:24.960 --> 00:26:37.130
+Gabriel Marcondes: que você pode impactar esse seu cliente. Mas o mais importante é: ambas estão na consequência financeira. Estou ou trazendo este saving ou gerando caixa diretamente.
+
+191
+00:26:37.640 --> 00:26:42.680
+Gabriel Marcondes: E nós temos também um próximo sinal, que é se esse problema impede o crescimento.
+
+192
+00:26:42.780 --> 00:26:58.470
+Gabriel Marcondes: Então ele está com uma empresa atualmente estagnada. A partir do momento que ele não consegue tanto melhorar o seu produto quanto escalar como time. Então, tudo que o José e o Alan trouxe hoje foi mostrar como construir um time a partir dessa solução.
+
+193
+00:26:58.480 --> 00:27:17.410
+Gabriel Marcondes: E muitas das vezes, quando a gente fala também de negócios locais, devido à especificidade daquele negócio, devido a querer tratar somente com as pessoas regionais, isso pode fazer com que esse time tenha um teto de escala. E com isso, a partir da sua solução, você vem trazendo uma possibilidade de que ele consiga aumentar
+
+194
+00:27:17.410 --> 00:27:33.580
+Gabriel Marcondes: quanto também executar análises sobre aquele produto, utilizando dos seus modelos de inteligência artificial, de forma com que você possa aumentar o valor agregado. Nós vivemos em um momento onde a inteligência artificial é muito atrativa,
+
+195
+00:27:34.050 --> 00:27:52.799
+Gabriel Marcondes: então você ter soluções de inteligência artificial, atreladas ao seu negócio, naturalmente, faz com que você consiga trazer um ticket elevado, contanto que elas sejam executadas com excelência e que realmente tragam uma experiência única para esse seu cliente. É muito importante, pois senão vai virar um atendimento. Um chatbot. É muito daquilo que eu
+
+196
+00:27:52.800 --> 00:28:01.829
+Gabriel Marcondes: que eu bato bastante dentro da minha narrativa, de executarmos tudo com excelência. Tomarmos cuidado para que não confunda
+
+197
+00:28:02.360 --> 00:28:05.810
+Gabriel Marcondes: o que é simplesmente inovação por ser novo,
+
+198
+00:28:06.040 --> 00:28:19.629
+Gabriel Marcondes: o que faz com que construímos soluções medíocres, camufladas de inovação, porque tem inteligência artificial no nome. E Sim, foquemos nos resultados. Foquemos nos impactos que vão ser gerados a partir dessas nossas soluções na operação dos clientes.
+
+199
+00:28:19.870 --> 00:28:23.779
+Gabriel Marcondes: Então é importante que a gente consiga visualizar
+
+200
+00:28:23.820 --> 00:28:33.980
+Gabriel Marcondes: toda essa parte do problema e ele pode se estender a diversas coisas. Pode se estender a problemas fiscais que existem dentro dessa empresa
+
+201
+00:28:33.980 --> 00:28:44.539
+Gabriel Marcondes: podem estender também a qualidade de tempo do time. Então, hoje, muito do que eu trabalho, principalmente na consultoria, onde eu atuo na zona de genialidade de cada uma das pessoas que estão dentro dessa operação.
+
+202
+00:28:44.540 --> 00:28:52.559
+Gabriel Marcondes: Eu tenho clientes que têm um bom faturamento. Porém, eles constantemente têm problemas de burnout no time de suporte.
+
+203
+00:28:53.020 --> 00:29:02.459
+Gabriel Marcondes: Então a gente não está falando que ele precisa de mais pessoas, ou que ele necessariamente precisa aumentar o faturamento. Não, ele quer saúde mental para o seu time.
+
+204
+00:29:02.810 --> 00:29:17.100
+Gabriel Marcondes: Ele precisa tratar o que hoje não consegue devido à volumetria de uma forma mais assertiva para que traga qualidade para essas pessoas e pode ser uma das suas abordagens quanto também a dor pode ser referente a tempo,
+
+205
+00:29:17.130 --> 00:29:33.630
+Gabriel Marcondes: e esse tempo pode ser tanto da operação quanto um tempo de um Ceo, um tempo de um tomador de decisão, de forma com que eu estou agregando, para ele uma possibilidade de ter uma análise maior. Uma observabilidade maior sobre a operação com o uso da inteligência artificial.
+
+206
+00:29:34.400 --> 00:29:38.479
+Gabriel Marcondes: Então ficamos entendidos, pessoal? Referente ao que é essa dor?
+
+207
+00:29:38.670 --> 00:29:53.079
+Gabriel Marcondes: Como eu posso identificar a dor? Eu gosto também bastante antes da gente avançar e falar, por exemplo, do Pocket. Deixa eu procurar aqui a dor. Eu gosto bastante de falar sobre essa temática, que é a proximidade com a dor.
+
+208
+00:29:53.480 --> 00:29:55.800
+Gabriel Marcondes: Então a proximidade com a dor
+
+209
+00:29:56.560 --> 00:30:05.789
+Gabriel Marcondes: se diz a nível de validação. Então, quando a gente está pensando em construções de soluções. Eu, naturalmente, vai se existir um processo de
+
+210
+00:30:06.290 --> 00:30:25.549
+Gabriel Marcondes: validações, de processos e validações de resultados, e uma das melhores formas que a gente pode encontrar nisso. Para ser o seu primeiro projeto. É que você esteja o mais próximo possível dessa dor a ser tratada. Então, quando a gente pensa: qual que é o melhor cenário? Quando a gente fala disso, você
+
+211
+00:30:26.110 --> 00:30:29.509
+Gabriel Marcondes: qual é uma dor que você tem no seu dia a dia.
+
+212
+00:30:29.950 --> 00:30:37.950
+Gabriel Marcondes: Porque você já sabe quanto tempo você gasta para executar isso? Você sabe o resultado que vai ser gerado.
+
+213
+00:30:37.950 --> 00:31:01.749
+Gabriel Marcondes: Naturalmente, você consegue validar todos esses processos, além de que, na construção, quando a gente fala de construções, de soluções para outras pessoas. Existe um movimento de comunicação que ele pode se tornar um telefone sem fio, ou ele pode ser totalmente sinérgico. Então, quando você está construindo para você mesmo, você constrói. Você testa se erra, conserta
+
+214
+00:31:01.940 --> 00:31:17.220
+Gabriel Marcondes: e valida em seguida. Então se torna muito mais rápido e assertivo, pois você consegue validar essa dor, construir. E, naturalmente, se você tem este problema, outras pessoas também terão. Então, a partir disso, você dá o próximo passo
+
+215
+00:31:17.810 --> 00:31:29.190
+Gabriel Marcondes: quando você não tem esse problema muito claro, e principalmente, a nível de pensarmos de escala, quando você olha, não necessariamente. Eu tenho um problema que eu posso solucionar
+
+216
+00:31:29.190 --> 00:31:44.159
+Gabriel Marcondes: e que vale este meu tempo. E eu já quero partir para algo do mercado, eu pensaria em um colega em um amigo próximo. Porque, pensando neste quê de validação? Pensando neste quê? De
+
+217
+00:31:44.240 --> 00:31:47.259
+Gabriel Marcondes: eu ter uma pessoa que vai me dar um feedback honesto
+
+218
+00:31:47.600 --> 00:31:52.480
+Gabriel Marcondes: que vai estar presente e entendendo este momento de construção,
+
+219
+00:31:52.650 --> 00:31:55.940
+Gabriel Marcondes: por que eu gosto de trazer todas essas etapas.
+
+220
+00:31:56.160 --> 00:32:11.080
+Gabriel Marcondes: Hoje, quando a gente fala dessa externalização de conteúdo, externalização de soluções, o argumento mais forte que você tem é track record. É histórico. O que quebra objeção é eu garantir que eu consigo
+
+221
+00:32:11.380 --> 00:32:26.049
+Gabriel Marcondes: colocar resultados dentro dessa operação. Então, uma vez que você resolve um problema de um cliente desse nicho específico que você quer trabalhar. Você vai olhar para os próximos como números e projeções. Olha, eu já fiz isso. Eu já sei o problema.
+
+222
+00:32:26.520 --> 00:32:33.740
+Gabriel Marcondes: Mesmo que sejam empresas com números diferentes, você já consegue projetar esse resultado. Já te traz muito mais credibilidade
+
+223
+00:32:33.740 --> 00:32:50.789
+Gabriel Marcondes: a nível de você saber o que vai ser feito a nível dos problemas que irão acontecer em meio a esse desenvolvimento, você já ter mapeado você já ter documentado, para que você não precise passar por esse processo de resolução novamente, e também mostrar uma projeção muito mais clara,
+
+224
+00:32:50.900 --> 00:33:08.389
+Gabriel Marcondes: porque você tem uma observabilidade muito maior sobre o momento seguinte após a entrega. Então você não vem de um sonho. Você já vem de algo validado. Então você criar esse track record, você criar este histórico vai ser o maior argumento para que você consiga ter escala em qualquer tipo de solução.
+
+225
+00:33:08.390 --> 00:33:19.089
+Gabriel Marcondes: Então, pensando nisso, por isso a gente passa por essas pessoas que são um pouco mais próximas e chegue num próximo degrau, que é o nicho. Então o nicho que você já conhece,
+
+226
+00:33:19.090 --> 00:33:29.560
+Gabriel Marcondes: que você já atua, e você está próximo. E a partir disso, você já consegue observar quais são os pontos que você pode impactar a partir de todas as tecnologias que vêm aprendendo recentemente.
+
+227
+00:33:29.590 --> 00:33:48.619
+Gabriel Marcondes: Então, com isso, você já pode se posicionar como um especialista daquele nicho, porque você, conversa a mesma língua quando você apresentar essa solução para outra pessoa. Você já entende do dia a dia dela. Então você já gera uma conexão a nível de. Olha, eu entendo o problema que você passa
+
+228
+00:33:48.620 --> 00:33:52.000
+Gabriel Marcondes: exatamente. Então, naturalmente, você
+
+229
+00:33:52.270 --> 00:34:07.380
+Gabriel Marcondes: já tem mais abertura com conversa com esse cliente. É sempre muito importante a nível de High ticket. É uma coisa que vai cada vez mais ocupando mais tempo esse rappor e você estar próximo ao seu cliente. Então é um pilar importante. Você gera credibilidade,
+
+230
+00:34:07.640 --> 00:34:26.349
+Gabriel Marcondes: pois você sabe sobre aquele assunto, e com isso, consegue uma validação. Consegue criar essa conexão com o seu cliente e aplicar a solução com muito mais facilidade e, por último, seriam outros nichos em escala. Mas, uma vez. O ponto é ter um track record validado.
+
+231
+00:34:26.739 --> 00:34:42.509
+Gabriel Marcondes: Então, para que eu pense em outros nichos, para que eu olhe, por exemplo, eu assisti. Eu perguntei para a Yara quais são os nichos que eu devo atuar? Eu vi um vídeo no Youtube dos melhores nichos para serem atuados. Eu não iria por este caminho enquanto eu não criasse um histórico para outros.
+
+232
+00:34:42.770 --> 00:34:50.040
+Gabriel Marcondes: Perfeito, mesmo que você tenha ele como objetivo. Então, por exemplo, eu quero atuar com inteligência artificial no meio imobiliário. Eu não sou deste meio.
+
+233
+00:34:50.380 --> 00:34:54.189
+Gabriel Marcondes: Então você pode criar esse seu histórico dentro do seu nicho
+
+234
+00:34:54.400 --> 00:35:01.559
+Gabriel Marcondes: para que você já entenda. Olha como que é um projeto de ponta a ponta. Como eu atendo esse cliente dentro de todos os processos,
+
+235
+00:35:01.560 --> 00:35:22.089
+Gabriel Marcondes: desde a abordagem fechamento, a construção, a continuidade disso, como é feita essa manutenção? Como eu trato esse meu cliente a nível de experiência dele no sucesso desse meu cliente, pois dessa forma se torna muito mais assertivo que você consiga olhar para esses outros nichos e expanda a sua operação.
+
+236
+00:35:22.690 --> 00:35:31.410
+Gabriel Marcondes: Ok, até aqui, pessoal. Alguma dúvida? Quando a gente diz sobre o pen,
+
+237
+00:35:35.560 --> 00:35:36.629
+Gabriel Marcondes: deixa eu ver.
+
+238
+00:35:43.110 --> 00:35:44.599
+Gabriel Marcondes: Então vamos lá.
+
+239
+00:35:55.060 --> 00:35:57.150
+Gabriel Marcondes: Excelente, pessoal.
+
+240
+00:35:57.490 --> 00:36:12.520
+Gabriel Marcondes: Então, quando a gente já entendeu essa dor, essa dor é validada. Ela realmente é um problema. Eu preciso resolver. Pessoas têm este problema com frequência. Eu vou para a minha próxima etapa, que é o Pocket.
+
+241
+00:36:12.520 --> 00:36:27.309
+Gabriel Marcondes: O Pocket se diz sobre o investimento, então é entender se aquela dor realmente é algo que estes empresários, que essas pessoas que estão envolvidas, querem investir um valor sobre isso.
+
+242
+00:36:27.310 --> 00:36:35.119
+Gabriel Marcondes: E principalmente, aqui é onde a gente vai entender a diferença sobre o esforço e impacto que eu havia conversado,
+
+243
+00:36:35.160 --> 00:36:48.940
+Gabriel Marcondes: pois não é só o nicho, mas é a possibilidade de dentro da narrativa. Da mesma forma que eu trouxe para vocês. De como trazer o Saving essa economia para o cliente e, ao mesmo tempo, aquisição falando da mesma solução,
+
+244
+00:36:48.940 --> 00:36:55.820
+Gabriel Marcondes: é a gente pensar o que é uma Ia de atendimento e um Sdr, que fazem teoricamente a mesma coisa.
+
+245
+00:36:55.820 --> 00:37:13.509
+Gabriel Marcondes: Então vamos colocar isso na essência base de uma solução como essa nutrição e qualificação desse Lead. Ou seja, eu vou conversar com esse meu cliente colhendo informações para ver se ele é um bom cliente. Realizo um agendamento. Eu posso vender uma solução como essa para uma clínica médica
+
+246
+00:37:13.830 --> 00:37:18.640
+Gabriel Marcondes: que vai me pagar, o que seria equivalente a um valor de uma atendente.
+
+247
+00:37:18.670 --> 00:37:34.649
+Gabriel Marcondes: Então eu tenho um teto do que é possível a nível de faturamento para aquilo. Porém, esta mesma solução, muito bem feita a nível de persuasão. Essa nutrição e qualificação de Lead podem ser vendida para um expert que trabalha com uma mentoria de seis dígitos
+
+248
+00:37:35.170 --> 00:37:57.629
+Gabriel Marcondes: e o valor agregado dessa solução para cada um deles é completamente diferente. O valor a qual de investimento que será feito por ele também é diferente. Eu consigo cobrar três, quatro vezes mais quando eu falo desse nicho. High Ticket para enquanto. Se eu fizer isso para um nicho que tem um poder aquisitivo menor. Eu não consigo trazer tanto valor.
+
+249
+00:37:57.680 --> 00:38:12.560
+Gabriel Marcondes: Então eu posso trabalhar, por exemplo, num nicho de imóveis que tem valores muito maiores para a mesma coisa: nutrição e qualificação e agendamento, para que essa pessoa visite esse imóvel. Mas, ao mesmo tempo, eu posso pegar essa mesma solução e atender uma barbearia
+
+250
+00:38:12.870 --> 00:38:24.140
+Gabriel Marcondes: que eu vou ouvir, nutrir, qualificar e agendar um horário. Porém, ambos não têm o mesmo ticket, não têm o mesmo valor para poder implementar dentro dessa solução.
+
+251
+00:38:24.310 --> 00:38:29.650
+Gabriel Marcondes: Então é importante a gente fazer essa validação. E claro que quando a gente fala do Pocket,
+
+252
+00:38:29.880 --> 00:38:42.290
+Gabriel Marcondes: também vamos olhar em escala. Existem muito mais barbearias do que existem imobiliárias dentre outros pontos, então é importante a gente fazer essa validação. Mas, de qualquer forma,
+
+253
+00:38:42.810 --> 00:38:55.110
+Gabriel Marcondes: para o meu modelo de trabalho, eu gosto sempre de tendenciar ao que trabalha mais um high ticket com os players, que irão ter mais valor a ser empregados nas minhas soluções.
+
+254
+00:38:55.250 --> 00:39:01.230
+Gabriel Marcondes: Então a gente tem aqui referente como que eu faço essa validação?
+
+255
+00:39:01.690 --> 00:39:09.920
+Gabriel Marcondes: Quais são as perguntas de qualificação? Capacidade instalada. Então essa capacidade, por quê isso vai variar muito
+
+256
+00:39:10.210 --> 00:39:22.929
+Gabriel Marcondes: sobre a presença que você já tem no mercado. O quanto o seu cliente vai trazer de informações para ti. Porque à medida que a gente vai
+
+257
+00:39:23.080 --> 00:39:38.610
+Gabriel Marcondes: crescendo. E tendo esse histórico, o cliente se torna mais aberto. Ele vai trazer números para vocês diretamente. Olha, eu faturo. Tanto minha margem líquida é essa. Estes são os valores empregados. Porém, enquanto você está construindo essa credibilidade, você tem que buscar formas de
+
+258
+00:39:38.610 --> 00:39:56.590
+Gabriel Marcondes: obter essas informações do seu cliente. Então, quando a gente fala sobre investimento, a gente vem na capacidade instalada, que é pensar quantas pessoas trabalham nessa empresa, porque, naturalmente, eu já consigo pensar em um valor de folha que, consequentemente, ele precisaria de um valor de faturamento para ter margem sobre aquilo.
+
+259
+00:39:56.790 --> 00:40:04.429
+Gabriel Marcondes: Então eu entendendo o tamanho da empresa dele naquele momento, faz com que eu já consiga ter essa projeção.
+
+260
+00:40:04.930 --> 00:40:22.059
+Gabriel Marcondes: Você entender também. Se já existe um investimento prévio sobre tecnologia, então aqui a gente não está falando da dor, exatamente, mas sobre tecnologia. Se é algo já cultural dentro da empresa, ou se você terá de quebrar alguns paradigmas sobre esse tipo de investimento.
+
+261
+00:40:22.060 --> 00:40:44.550
+Gabriel Marcondes: Foi a empresa trazer? Não, a gente só trabalha com contratações diretas. O máximo que a gente fez foi contratações, por exemplo, de consultorias para times de vendas de suporte dentre outros. Mas nós nunca trabalhamos com investimentos de tecnologia direta. Então você terá de trabalhar um pouco mais, nutrir um pouco mais esse Lead para que você chegue ao fechamento. Lembrando pessoal que tudo isso que eu trago,
+
+262
+00:40:44.610 --> 00:40:51.290
+Gabriel Marcondes: ele é a base do conceito nosso de Lead Scoring de qualificação desse cliente. Não é que você descarte
+
+263
+00:40:51.300 --> 00:41:10.659
+Gabriel Marcondes: todos eles se eles não cumprirem todos esses requisitos. Mas é o que vai facilitar com que vocês entendam quem são os grandes potenciais para que sejam mais rápidos de fechamento para que sejam mais assertivos na hora de implementar a solução e, consequentemente, gerar mais resultados. Então você saber sobre esse investimento prévio.
+
+264
+00:41:10.660 --> 00:41:14.859
+Gabriel Marcondes: Se ele não tiver, você vai ter que dedicar mais tempo seu
+
+265
+00:41:14.860 --> 00:41:28.029
+Gabriel Marcondes: para conscientizá lo sobre o valor agregado de ter uma solução como essa, de fazer essa aquisição, e não só da solução do problema. Então você tem de ir trabalhando outros pontos com o seu cliente
+
+266
+00:41:28.170 --> 00:41:47.500
+Gabriel Marcondes: e, em seguida, o budget alocado. Então isso já é sobre a solução em si. Sobre a dor em si. Então é uma dor que nós já temos que hoje nós já implementamos, já gastamos. Investimos determinado valor. Então, com isso você já começa também a entender qual. Que é a capacidade
+
+267
+00:41:47.500 --> 00:41:57.629
+Gabriel Marcondes: de investimento sobre ela hoje. Então, com isso você pode observar. Olha, eu conseguiria tomar por exemplo, todo esse investimento, caso você resolva o problema cem
+
+268
+00:41:57.680 --> 00:42:12.920
+Gabriel Marcondes: ou com uma margem menor, você pode trazer para ele de forma mais atrativa a nível de Saving, ou como eu trouxe, gerando mais faturamento, trazendo mais resultado. Você pode cobrar até mais do que hoje. Ele investe sobre essa solução.
+
+269
+00:42:15.890 --> 00:42:26.789
+Gabriel Marcondes: Aqui tem algumas Red Flags e essas red flags são justamente sobre precisar de aprovação, então eu gosto também de trazer esse ponto
+
+270
+00:42:27.280 --> 00:42:34.640
+Gabriel Marcondes: sempre na hora de buscar, comercializar essas soluções. É importante que vocês busquem o tomador de decisão.
+
+271
+00:42:34.650 --> 00:42:44.830
+Gabriel Marcondes: Depois o tomador de decisão. Mais uma vez, vai poupar etapas. Ele vai conseguir trazer a dor de forma mais clara quanto também irá facilitar este seu fechamento.
+
+272
+00:42:44.830 --> 00:43:03.299
+Gabriel Marcondes: Pois se você conversa com uma pessoa da parte operacional, e essa pessoa tem que levar para o líder que tem que levar para o diretor que tem que levar para uma próxima pessoa para fazer essa aprovação se torna um prosaço muito longo e, ao mesmo tempo, podem faltar informações referente à comunicação interna. Quando se diz sobre isso.
+
+273
+00:43:03.300 --> 00:43:19.630
+Gabriel Marcondes: Então você falando diretamente com o tomador de decisão, se torna muito mais tranquilo. E falando também de inteligência artificial, automação, uma coisa que acontece com uma relativa frequência quando se fala da parte operacional da empresa é o receio de serem substituídos.
+
+274
+00:43:20.040 --> 00:43:34.609
+Gabriel Marcondes: Então não é o tipo de solução que, muitas das vezes, as pessoas que estão ali nessa parte operacional vão falar com os seus tomadores de decisões para que façam essa aquisição, então é natural que você tenha que falar com eles diretamente
+
+275
+00:43:35.170 --> 00:43:49.880
+Gabriel Marcondes: referente eles, trazendo qualquer parte de estar com orçamentos apertados, de não ser um momento ideal da empresa. Isso pode sim, ser um problema. E trazer essa questão de. Olha, vamos começar, pequeno para testar. É sempre um problema,
+
+276
+00:43:50.290 --> 00:44:00.000
+Gabriel Marcondes: pois, pouquíssimas vezes. E principalmente, quando a gente fala de inteligência artificial, você consegue gerar esse resultado sem ser de uma forma total,
+
+277
+00:44:00.490 --> 00:44:03.220
+Gabriel Marcondes: pois, como a gente é muito rápido, vocês viram hoje,
+
+278
+00:44:03.370 --> 00:44:14.220
+Gabriel Marcondes: entendendo cem dos processos, tendo um sistema de multiagens. A maior parte do seu tempo é a abstração dessa demanda. É a abstração desse projeto.
+
+279
+00:44:14.370 --> 00:44:39.339
+Gabriel Marcondes: Na hora de executar. É muito rápido. Então, quando você vai começar, pequeno, você vai ter o mesmo trabalho de abstração do projeto. Para entender a empresa desse seu cliente como um todo. De qual é o que ela é, o que ela vende para quem ela vende. Por que as pessoas buscam onde são as plataformas necessárias para essa conexão. Todo o contexto geral para que a execução, que se torna cada vez mais com o avanço da ia
+
+280
+00:44:39.340 --> 00:44:45.510
+Gabriel Marcondes: a parte menor. Ele queira somente uma demonstração. Então não se torna tão interessante.
+
+281
+00:44:45.510 --> 00:44:48.370
+Gabriel Marcondes: Claro que, para clientes estratégicos
+
+282
+00:44:48.420 --> 00:45:02.239
+Gabriel Marcondes: pode ser, Sim, um ponto de fechamento. Olha, trago sim essa demonstração. Consigo flexibilizar para você referente a pagamento, mas precisam ter algumas validações que eu vou trazer para vocês em seguida. Então aqui
+
+283
+00:45:02.430 --> 00:45:06.119
+Gabriel Marcondes: nós temos todo todo esse ponto
+
+284
+00:45:07.400 --> 00:45:11.560
+Gabriel Marcondes: aqui é uma extensão referente a tudo que a gente
+
+285
+00:45:11.560 --> 00:45:32.450
+Gabriel Marcondes: conversou. Então a cadeira operacional. Não faz sentido eu vender. Faz sentido eu trabalhar com essa cadeira estratégica para que eu seja muito mais assertivo e até mesmo na hora da busca. Quando a gente pensa, por exemplo, vou utilizar de um Linkedin para fazer essa busca. É sempre importante você trabalhar com as tags que são de tomador de decisões.
+
+286
+00:45:32.450 --> 00:45:43.929
+Gabriel Marcondes: Então são os celeiros, um Ceo Cto, diretores ou sócios founders que estão ali na frente desse seu negócio. Localização sendo mais próxima de Tite,
+
+287
+00:45:43.930 --> 00:45:55.060
+Gabriel Marcondes: faz com que você tenha uma comunicação um pouco mais assertiva, até a possibilidade de encontro presencial que gera, principalmente quando a gente fala de negócios um pouco mais tradicionais, um pouco mais de credibilidade,
+
+288
+00:45:55.400 --> 00:46:03.259
+Gabriel Marcondes: pois eles estão acostumados que os demais fornecedores deles façam também esse tipo de abordagem. E escolhendo seu setor.
+
+289
+00:46:04.680 --> 00:46:08.469
+Gabriel Marcondes: Então, aqui dentro, dessa shecklist é a gente pensar o cargo.
+
+290
+00:46:08.670 --> 00:46:09.680
+Gabriel Marcondes: Então
+
+291
+00:46:09.690 --> 00:46:31.939
+Gabriel Marcondes: o melhor dos mundos é que ele seja esse modelo Celével um content. Você pode validar se ele é um gerente, um coordenador, pois existem algumas empresas, principalmente as maiores, onde os Heads e coordenadores têm um orçamento dedicado ao setor e conseguem fazer essa tomada de decisão direto, mas é importante a gente fazer essa validação
+
+292
+00:46:31.940 --> 00:46:37.759
+Gabriel Marcondes: e não trabalharmos ali diretamente com os operacionais, empresas com faturamento
+
+293
+00:46:37.760 --> 00:46:41.960
+Gabriel Marcondes: grande, de forma com que ele consiga suportar a sua solução.
+
+294
+00:46:42.380 --> 00:46:56.849
+Gabriel Marcondes: Não pensaria principalmente em startups freelancers solos nos primeiros projetos. Pois, existe uma volatilidade muito grande referente a essas operações e, muitas das vezes pode ocorrer problemas referente ao pagamento das soluções de vocês
+
+295
+00:46:57.050 --> 00:47:05.080
+Gabriel Marcondes: setores, então, entendendo ali setores que são um pouco mais tradicionais do que você trabalhar ali no Sas diretamente.
+
+296
+00:47:05.540 --> 00:47:10.669
+Gabriel Marcondes: E as atividades, você vê pessoas que
+
+297
+00:47:10.850 --> 00:47:29.240
+Gabriel Marcondes: empresas que estão em constante crescimento. Então, quando a gente fala, por exemplo, de um agente que ele vai substituir uma tarefa, uma das validações mais simples que pode ser feita é você utilizar de plataforma de contratação. Como é um Linkedin para que você veja se aquela área está em constante contratação.
+
+298
+00:47:29.470 --> 00:47:33.730
+Gabriel Marcondes: Ele está em expansão, então ele precisa escalar.
+
+299
+00:47:33.840 --> 00:47:40.170
+Gabriel Marcondes: Cabe muito bem uma solução como a sua, para que você consiga aplicar ali diretamente.
+
+300
+00:47:40.370 --> 00:47:57.890
+Gabriel Marcondes: Então que vocês consigam fazer isso. Indicações, obviamente, uma das melhores formas, a partir do momento que você cria stock record. E nós temos também eventos. Os eventos, que, principalmente quando a gente fala de soluções de a demanda de um pouco mais de tempo para que você consiga fazer uma explicação.
+
+301
+00:47:57.950 --> 00:48:05.330
+Gabriel Marcondes: Então, em eventos, a gente consegue ter essa proximidade com os clientes, para trazer todas essas informações.
+
+302
+00:48:06.790 --> 00:48:16.600
+Gabriel Marcondes: E uma vez que nós validamos todo o Pocket, nós vamos passar para o Priority. Então é entender qual é a prioridade desse meu cliente
+
+303
+00:48:16.630 --> 00:48:28.550
+Gabriel Marcondes: para a solução deste nosso problema. Qual a velocidade que ele precisa disso? A urgência que ele tem em solucionar esse nosso problema.
+
+304
+00:48:28.760 --> 00:48:32.300
+Gabriel Marcondes: Então nós precisamos entender
+
+305
+00:48:33.070 --> 00:48:49.310
+Gabriel Marcondes: sobre aquela questão do Need to have nice to have. Então, olha, se eu tenho um vazamento no teto. Eu preciso resolver isso agora. Não dá para eu deixar para depois Corr vai alagar toda a minha casa. Então é uma dor que eu preciso tratar ela naquele momento,
+
+306
+00:48:49.310 --> 00:49:01.559
+Gabriel Marcondes: enquanto algo que pode ser um backlog. Olha, é legal pintar a casa, pode ser para depois. Temos mercados para as duas. Porém, é interessante que a gente consiga trabalhar com os que têm um pouco mais de urgência
+
+307
+00:49:01.610 --> 00:49:10.319
+Gabriel Marcondes: e aí, a nível de escala de prioridade é a gente olhar dentro de um top três. Velocidade.
+
+308
+00:49:10.320 --> 00:49:26.240
+Gabriel Marcondes: Então conseguir fazer esse fechamento rápido o budget já ser alocado e ter uma pessoa, um tomador de decisão referente a essa busca. Enquanto, se nós tivermos fechamentos maiores de ainda, vamos fazer,
+
+309
+00:49:26.620 --> 00:49:48.710
+Gabriel Marcondes: ou um deadline que não está claro sobre essa solução. A gente deixaria para um segundo momento enquanto, por último backlog, seria legal ter a gente não ter uma urgência real. É sempre importante a gente separar. E ali, dentro do Framework que nós vamos trabalhar. Vai estar até um pouco mais explícito, mas é identificar essa velocidade. Aqui vem muito. Um ponto da própria pessoa do fechamento,
+
+310
+00:49:48.740 --> 00:49:52.349
+Gabriel Marcondes: do quanto você consegue trazer dessa urgência.
+
+311
+00:49:52.620 --> 00:50:07.519
+Gabriel Marcondes: O quanto você consegue amplificar esta urgência do cliente para mostrar o que ele está perdendo por não ter a sua solução é um dos pontos mais chaves para que você consiga, de fato, trazer uma conversão sobre ela.
+
+312
+00:50:07.520 --> 00:50:21.889
+Gabriel Marcondes: Que eu vou abordar com vocês em seguida, como que eu faço dentro da minha conversa, para poder trazer essa amplificação, para poder evidenciar para ele diretamente os problemas que estão sendo acarretados por ele não solucionar esse problema
+
+313
+00:50:22.110 --> 00:50:24.130
+Gabriel Marcondes: agora.
+
+314
+00:50:25.740 --> 00:50:29.960
+Gabriel Marcondes: Então aqui, quando a gente olha ele tendo um budget alocado,
+
+315
+00:50:30.410 --> 00:50:50.589
+Gabriel Marcondes: é um dos melhores modelos. Então, olha, a gente já separou esse valor, então eles precisam necessariamente fazer isso. Se eles já estão procurando com outras agências com outras pessoas, uma solução parecida. Então eles estão dedicando o tempo da equipe para uma busca. Dentre o mercado de quem soluciona esse problema.
+
+316
+00:50:50.590 --> 00:50:54.319
+Gabriel Marcondes: Então isso evidencia, mais uma vez que aquilo
+
+317
+00:50:54.470 --> 00:50:57.159
+Gabriel Marcondes: uma dor que ela tem, sim, uma prioridade:
+
+318
+00:50:57.640 --> 00:51:02.450
+Gabriel Marcondes: ter um deadline externo. Então, ter uma auditoria. Ter
+
+319
+00:51:02.580 --> 00:51:26.999
+Gabriel Marcondes: um posicionamento de. Olha, a gente precisa resolver isso dentro do primeiro semestre. Então isso traz para a gente essa velocidade e ter um tomador de decisão diretamente fazendo essas cobranças. Aqui tem algumas metodologias, caso eles estejam em cada uma dessas etapas, para que a gente consiga ter urgência e acelerar. Então, se ele estiver ali dentro do top três, é você fazer uma proposta o mais rápido possível,
+
+320
+00:51:27.000 --> 00:51:42.229
+Gabriel Marcondes: principalmente se ele já estiver fazendo cotações com outras empresas. Eu particularmente gosto, principalmente trazendo esse histórico, trazendo esse trabalho com excelência, fazer modelos em cima das outras propostas,
+
+321
+00:51:42.230 --> 00:51:47.359
+Gabriel Marcondes: então não digo referente a valor, mas referente de mostrar o diferencial
+
+322
+00:51:47.460 --> 00:51:50.429
+Gabriel Marcondes: do que você entrega, que é acima do mercado.
+
+323
+00:51:50.430 --> 00:52:08.909
+Gabriel Marcondes: Então isso vai mostrar para esse seu cliente a seriedade e a qualidade daquilo que está sendo feito. Então, por isso, eu gosto de cada vez mais, fazer com que essa mesma solução consiga agregar no negócio não só diretamente para aquela dor, mas de uma forma quase como uma consultoria diretamente.
+
+324
+00:52:09.050 --> 00:52:18.790
+Gabriel Marcondes: Então você trazer isso diretamente. Deixar um kick Off cada vez mais rápido para ele. Então trazer essa velocidade para que você consiga dedicar essa energia
+
+325
+00:52:20.100 --> 00:52:26.929
+Gabriel Marcondes: dentro da parte prioridade, você pode mandar uma proposta sem ter uma pressão e fazer um follow up
+
+326
+00:52:26.960 --> 00:52:37.989
+Gabriel Marcondes: pode ser mensal. Pode ser quinzenal para poder fazer essa validação. Para que você cobre. Olha, você já teve retorno referente ao time que irá fazer essa aprovação. Muitas das vezes isso acontece com grandes empresas,
+
+327
+00:52:37.990 --> 00:52:52.339
+Gabriel Marcondes: aonde a gente não fez essa comunicação direta com o tomador e no backlog. Vocês nem gastam tempo. É o momento de dizer não. Pois isso, principalmente no começo, é o ponto diferencial a nível de escala.
+
+328
+00:52:52.340 --> 00:53:02.259
+Gabriel Marcondes: Então é o que vai fazer vocês de repente economizarem meses que não podem ser calculadas. O que vocês poderiam ter feito os resultados que vocês teriam na operação se tivessem ido pelo caminho certo.
+
+329
+00:53:02.570 --> 00:53:06.270
+Gabriel Marcondes: Então dizer não para projetos que não são
+
+330
+00:53:06.430 --> 00:53:11.660
+Gabriel Marcondes: dentro do escopo que você quer construir, que irão trazer resultados claros.
+
+331
+00:53:11.980 --> 00:53:19.619
+Gabriel Marcondes: É o que vai poupar e vai fazer com que vocês sejam cada vez mais assertivos. Quando eu vou escolher um projeto como esse,
+
+332
+00:53:19.920 --> 00:53:24.879
+Gabriel Marcondes: eu levo em consideração alguns aspectos. Deixa eu encontrar
+
+333
+00:53:25.060 --> 00:53:30.539
+Gabriel Marcondes: aqui. Vocês já perceberam que eu gosto bastante de mapa mental. Então tem vários aqui.
+
+334
+00:53:30.840 --> 00:53:34.179
+Gabriel Marcondes: Deixa eu ver se eu acho.
+
+335
+00:53:34.840 --> 00:53:36.640
+Gabriel Marcondes: Não é esse.
+
+336
+00:53:37.530 --> 00:53:46.709
+Gabriel Marcondes: Não é esse Cadê também não é esse.
+
+337
+00:53:48.660 --> 00:53:51.699
+Gabriel Marcondes: Ou escrever para a gente poder entender.
+
+338
+00:53:54.600 --> 00:54:01.460
+Gabriel Marcondes: Eu vou pegar aqui no priority. Eu escrevo pra vocês e a gente vai fazendo juntos. Vamos lá
+
+339
+00:54:01.860 --> 00:54:07.290
+Gabriel Marcondes: então. Quais são os aspectos que eu gosto de avaliar quando a gente
+
+340
+00:54:07.780 --> 00:54:17.469
+Gabriel Marcondes: vai escolher um desses projetos. Então, inicialmente, como eu trouxe a proximidade, proximidade da dor.
+
+341
+00:54:17.770 --> 00:54:25.759
+Gabriel Marcondes: Então isso daqui é um dos pontos chaves. Eu tenho a questão de escala deste meu projeto.
+
+342
+00:54:25.920 --> 00:54:27.919
+Gabriel Marcondes: Então, quando eu digo em escala, é
+
+343
+00:54:29.250 --> 00:54:37.330
+Gabriel Marcondes: se de repente eu estou construindo uma solução que não necessariamente. Eu tenho o conhecimento referente ao nicho.
+
+344
+00:54:37.380 --> 00:54:45.229
+Gabriel Marcondes: Eu tenho conhecimento técnico. Eu tenho habilidade com a inteligência artificial e tecnologia para que eu possa viabilizar essa automação. Mas eu não conheço nisso.
+
+345
+00:54:45.230 --> 00:55:09.390
+Gabriel Marcondes: Eu não conheço um nicho sobre advocacia. Eu não conheço um nicho imobiliário. Eu preciso ouvir este meu cliente para que ele traga os problemas para que eu pense em como resolvê los e adaptá los. Então ali eu estou pegando um projeto que eu não necessariamente consegui fazer essas validações, mas que eu sei que este cliente vai trazer todas as informações que eu preciso para construí lo.
+
+346
+00:55:09.390 --> 00:55:22.169
+Gabriel Marcondes: E, a partir disso, eu ter um projeto extremamente escalável, pois tem replicabilidade. Então é um dos pontos a serem considerados. Quando a gente observa a nível do próprio escopo,
+
+347
+00:55:22.200 --> 00:55:30.750
+Gabriel Marcondes: como fazer essa validação. Um outro que também é bem importante, é referente à influência
+
+348
+00:55:30.910 --> 00:55:44.790
+Gabriel Marcondes: deste seu cliente com o nicho que você quer trabalhar. Então ele é um cliente que, a partir do fechamento dele, eu irei conseguir ter outros simplesmente por tê lo atendido. Ele vai trazer uma credibilidade
+
+349
+00:55:44.840 --> 00:55:58.479
+Gabriel Marcondes: para os meus próximos fechamentos. Então tudo isso daqui é para que a gente possa validar além do processo básico. A gente já fez o triple pay. Já olhei, mas existem algumas exceções. Então, dentro dessas exceções,
+
+350
+00:55:58.480 --> 00:56:08.470
+Gabriel Marcondes: quanto a essa pessoa. Falando agora da influência, o quanto essa pessoa vai trazer de credibilidade na minha carteira. Isso acontece muito. Eu atendo bastante experts do mercado.
+
+351
+00:56:08.470 --> 00:56:21.659
+Gabriel Marcondes: Então, à medida que eu fui atendendo vários experts, o movimento natural é, eu tenho uma reunião com um. Eu entro no Instagram dele e eu olho se ele segue algum dos meus clientes? Se ele segue algum dos meus clientes, eu tenho certeza que ele vai fechar comigo.
+
+352
+00:56:21.920 --> 00:56:25.400
+Gabriel Marcondes: Pois, eu sei que esse cliente que eu atendi está satisfeito?
+
+353
+00:56:25.730 --> 00:56:39.159
+Gabriel Marcondes: E a partir disso, eu tenho uma indicação direta. Eu tenho uma comprovação de serviço próximo dele. Então você criar esses clientes junto do Track Record irá fazer com que você tenha muito,
+
+354
+00:56:39.560 --> 00:56:48.750
+Gabriel Marcondes: muito mais credibilidade na hora de fazer esse fechamento. A Mari colocou o rappor além desse rapor. Então você já começa com essa conexão direta.
+
+355
+00:56:49.850 --> 00:56:56.939
+Gabriel Marcondes: Então nós temos essa influência. Nós temos também o relacionamento a nível
+
+356
+00:56:57.690 --> 00:57:00.870
+Gabriel Marcondes: de indicação. Então ele é o meu cliente
+
+357
+00:57:01.100 --> 00:57:04.779
+Gabriel Marcondes: que irá trazer muitas outras pessoas.
+
+358
+00:57:05.830 --> 00:57:13.420
+Gabriel Marcondes: Isso acontece também. Então eu tenho clientes, por exemplo, que o projeto a nível de se eu olhasse friamente o
+
+359
+00:57:13.460 --> 00:57:30.090
+Gabriel Marcondes: o que precisava ser feito com o Budget desse cliente, ele acaba não valendo tanta pena. Mas eu sei que a partir daquele cliente, ele vai me indicar para vários outros. Então aqui é o momento da gente conseguir também fazer essa análise um pouco mais dinâmica sobre este momento.
+
+360
+00:57:30.570 --> 00:57:33.760
+Gabriel Marcondes: Então, influência, relacionamento, escala.
+
+361
+00:57:36.330 --> 00:57:42.330
+Gabriel Marcondes: E nós temos, por último, um aprendizado.
+
+362
+00:57:42.500 --> 00:57:46.609
+Gabriel Marcondes: E o que é esse aprendizado? Quando a gente fala? De
+
+363
+00:57:47.560 --> 00:57:55.649
+Gabriel Marcondes: tecnologia, quando a gente fala de construção de soluções e, principalmente, envolvendo automação, envolvendo os agentes,
+
+364
+00:57:56.450 --> 00:58:03.370
+Gabriel Marcondes: por ser algo muito novo, o que define o quão bom essa pessoa é. É a quantidade de problemas que ela já resolveu.
+
+365
+00:58:03.560 --> 00:58:16.460
+Gabriel Marcondes: Resolveu bem e documentou muito bem. Pois uma vez que eu resolvo esse problema. Quando eu encontrar um próximo. De repente, vinte do que eu resolvi desse primeiro problema já serve para esse próximo. E eu consigo fazer mais rápido.
+
+366
+00:58:16.490 --> 00:58:28.679
+Gabriel Marcondes: Eu já tenho mais velocidade e clareza. Então, quanto mais projetos eu consigo abraçar e resolver novos problemas, eu vou me tornando um profissional, uma empresa muito mais robusta.
+
+367
+00:58:28.830 --> 00:58:39.730
+Gabriel Marcondes: Então acontece bastante de eu aceitar uns projetos estranhos, uns projetos meio megalomaníacos, justamente para que eu, juntamente do meu time, experiencie resolver aquele problema.
+
+368
+00:58:39.980 --> 00:58:58.049
+Gabriel Marcondes: Olha, ninguém resolveu isso aqui. Até agora, consigo me dar ao luxo de pegar este projeto, pois eu sei que irá agregar muito a nível de um médio prazo longo prazo, o time passar por isso e ter essas soluções em mãos, pois vai acelerar o processo de outros projetos que virão em seguida.
+
+369
+00:58:58.050 --> 00:59:01.099
+Gabriel Marcondes: Então é importante a gente conseguir validar isso.
+
+370
+00:59:01.280 --> 00:59:03.560
+Gabriel Marcondes: Deixa eu ver algumas perguntas. Aqui
+
+371
+00:59:07.040 --> 00:59:11.610
+Gabriel Marcondes: o Wdj está perguntando sobre precificação.
+
+372
+00:59:12.580 --> 00:59:20.950
+Gabriel Marcondes: Eu acredito que pelo tempo a gente consegue. Eu consigo trabalhar aqui com vocês em precificação também.
+
+373
+00:59:21.240 --> 00:59:30.949
+Gabriel Marcondes: E aí eu trago também uma visualização sobre isso. Aí a gente finaliza aqui o Triple P. E eu falo com vocês um pouco sobre precificação para poder auxiliar vocês referente a isso,
+
+374
+00:59:31.560 --> 00:59:35.630
+Gabriel Marcondes: é, vamos lá
+
+375
+00:59:36.430 --> 00:59:55.550
+Gabriel Marcondes: então. Referente a tudo isso que eu disse. A gente tem este Framework, que é justamente para que a gente possa validar se um projeto vale a nossa energia. Se ele irá trazer resultado. E com isso, a gente possa ser muito mais assertivo referente a essa construção.
+
+376
+00:59:56.900 --> 00:59:59.000
+Gabriel Marcondes: Agora, vamos lá para a nossa plataforma,
+
+377
+01:00:00.040 --> 01:00:13.550
+Gabriel Marcondes: onde, dentro do módulo três, vocês vão ter acesso ao método do Triple P. Já com um framework definido para que vocês consigam fazer esse cálculo direto.
+
+378
+01:00:13.980 --> 01:00:27.879
+Gabriel Marcondes: Então vamos fazer aqui, junto a gente pode colocar, por exemplo, uma empresa de teste escolher um setor do qual a gente vai trabalhar. Então eu vou trabalhar com o setor imobiliário. Todo mundo está conseguindo ver aqui. A aplicação
+
+379
+01:00:28.800 --> 01:00:30.580
+Gabriel Marcondes: está compartilhando.
+
+380
+01:00:30.770 --> 01:00:32.290
+Gabriel Marcondes: Perfeito.
+
+381
+01:00:32.880 --> 01:00:40.580
+Gabriel Marcondes: Vamos colocar o nome desse nosso cliente. Pode ser o João. Nós vamos escolher o cargo dele
+
+382
+01:00:40.940 --> 01:00:43.580
+Gabriel Marcondes: aqui. Eu vou colocar um carro como tomador de decisão.
+
+383
+01:00:43.890 --> 01:00:58.860
+Gabriel Marcondes: O tamanho dessa empresa. Vamos colocar uma empresa de vinte e um a cinquenta pessoas. Vamos pensar ali numa agência de marketing, que pode estar um pouco maior. Então vamos colocar aqui agência de marketing. Eu estou falando com o Ceo, e eu conheci ele pelo Linkedin
+
+384
+01:01:01.110 --> 01:01:04.759
+Gabriel Marcondes: e a gente vai iniciar a qualificação desse nosso cliente.
+
+385
+01:01:05.130 --> 01:01:18.010
+Gabriel Marcondes: Então, vai vir a pergunta: qual que é a primeira pergunta que a gente vai fazer diretamente para ele e que também estará aqui. Eu vou passar para o pessoal mandar para vocês. Eu tenho também um mapa mental sobre essas perguntas, que é a entrevista de descoberta.
+
+386
+01:01:18.550 --> 01:01:28.249
+Gabriel Marcondes: E aqui vai estar separado. Nós temos aqui as perguntas chaves que serão feitas para esse cliente. Eu até posso passar aqui e a gente vale para
+
+387
+01:01:28.470 --> 01:01:31.050
+Gabriel Marcondes: para o Framework para poder preencher diretamente
+
+388
+01:01:31.190 --> 01:01:50.770
+Gabriel Marcondes: quais são essas perguntas que eu sempre faço para todo cliente primeiro falando da dor, como vocês resolvem este problema hoje? Então já identifiquei essa dor, né? Eu quero entender como ela é solucionada hoje. Então a gente vai conseguir a partir disso, ver se existe essa indústria de gambiarra. Se ela é,
+
+389
+01:01:51.110 --> 01:02:06.309
+Gabriel Marcondes: existe essa tentativa de solução, mas de forma não tão eficiente. E qual é o custo da inação? Enquanto vocês não resolverem este problema, o quanto isso vai acarretar de maus resultados dentro da operação.
+
+390
+01:02:06.510 --> 01:02:14.569
+Gabriel Marcondes: Então, se ele trazer para você, aqui está uma resposta ideal, um processo manual e complexo, ou muitas pessoas estão sendo
+
+391
+01:02:14.590 --> 01:02:30.269
+Gabriel Marcondes: agregadas para executar essa função. É o melhor modelo de resposta, pois vai trazer. Você consegue impactar ele em diversos aspectos. Se ele já tem algumas automações, naturalmente a sua terá de ser muito melhor para que você consiga impactar.
+
+392
+01:02:30.310 --> 01:02:43.180
+Gabriel Marcondes: Então olha, a gente usa o Whatsapp, Google, Sheets e mail para executar determinada função então ele está usando múltiplas plataformas e fazendo isso totalmente manual. Então a gente consegue
+
+393
+01:02:44.180 --> 01:02:49.250
+Gabriel Marcondes: impactar muito mais. Deixa eu até mandar já aqui esse da entrevista para vocês.
+
+394
+01:02:49.360 --> 01:02:54.400
+Gabriel Marcondes: Cadê Cadê aqui? Ó, eu vou mandar no chat pra ficar mais fácil.
+
+395
+01:02:55.760 --> 01:03:06.320
+Gabriel Marcondes: Mas são as perguntas que estarão ali também dentro do Framework. Só passei para cá para a gente ser mais rápido, conversar um pouco mais nisso, para que ali a gente possa somente fazer o preenchimento.
+
+396
+01:03:06.930 --> 01:03:17.819
+Gabriel Marcondes: Depois a gente vem aqui na dor também, pensando num impacto mensurável. Então, quanto tempo e dinheiro isso consome hoje para que aí a gente tenha valores,
+
+397
+01:03:17.940 --> 01:03:32.729
+Gabriel Marcondes: porque não pode ser totalmente ambíguo e também não ser somente qualitativo, precisa ser quantitativo, e eu entenda minimamente ou em horas ou em valores. Qual é o impacto dessa solução para o meu cliente?
+
+398
+01:03:33.150 --> 01:03:44.310
+Gabriel Marcondes: Em consequência, o que acontece se não for resolvido este problema hoje, então a gente vai conseguir um pouco do priority, ou seja, a gravidade desse problema,
+
+399
+01:03:44.310 --> 01:03:52.520
+Gabriel Marcondes: e também criar esse argumento de amplificação de como eu consigo intensificar este problema hoje, dentro da operação.
+
+400
+01:03:52.520 --> 01:04:09.140
+Gabriel Marcondes: Então, se ele falar, a gente está perdendo clientes. A partir disso, a gente está recebendo multas. A gente não está conseguindo crescer. A empresa da maneira correta. É o melhor modelo que vocês podem ter ali de resposta. Onde terá mais impacto sobre esse cliente
+
+401
+01:04:09.380 --> 01:04:20.650
+Gabriel Marcondes: quando a gente entra no Pocket, a gente já fala de entender um pouco sobre o valor que está sendo alocado aqui. A gente já passou bastante. Então a gente já vai saber se ele tem o budget necessário.
+
+402
+01:04:20.890 --> 01:04:34.889
+Gabriel Marcondes: Quem decide que também está ali, dentro do Pocket. Então, focando dentro do nosso tomador de decisão, na hora desse fechamento, qual é a posição na fila dentre os projetos que estão na mesa, aonde se encaixa a urgência.
+
+403
+01:04:34.920 --> 01:04:46.759
+Gabriel Marcondes: Então a empresa, de repente está construindo várias coisas internamente. Ela está contratando outras consultorias, outros serviços. Qual é a prioridade dela referente ao que foi buscado nesse momento
+
+404
+01:04:46.910 --> 01:04:48.980
+Gabriel Marcondes: e quais são as alternativas,
+
+405
+01:04:49.140 --> 01:05:00.059
+Gabriel Marcondes: porque eu preciso entender se eles já buscaram essas soluções com outras pessoas, pois o argumento tem de ser direto sobre isso, pois você pode estar perdendo. Às vezes, em um quê
+
+406
+01:05:00.680 --> 01:05:02.539
+Gabriel Marcondes: de falta de clareza do seu produto.
+
+407
+01:05:02.970 --> 01:05:08.600
+Gabriel Marcondes: Seu produto pode resolver muito mais o problema dele do que o do concorrente. Mas o concorrente explicou melhor.
+
+408
+01:05:08.670 --> 01:05:26.989
+Gabriel Marcondes: Então, quando você faz isso, é um review. Então deixa eu entender o que ele te ofereceu. Ah, mas o meu também faz isso. Eu consigo fazer tão bem quanto senão melhor. Então aqui garante com que a sua comunicação esteja tão assertiva quanto a do concorrente de quem eles fizeram essa.
+
+409
+01:05:27.140 --> 01:05:28.290
+Gabriel Marcondes: Procure direto.
+
+410
+01:05:29.520 --> 01:05:32.330
+Gabriel Marcondes: Então vamos voltar aqui para a nossa plataforma.
+
+411
+01:05:32.630 --> 01:05:36.979
+Gabriel Marcondes: Estou começando ali. Como vocês resolvem esse problema hoje?
+
+412
+01:05:37.150 --> 01:05:38.990
+Gabriel Marcondes: É a nossa primeira pergunta.
+
+413
+01:05:39.130 --> 01:05:57.690
+Gabriel Marcondes: E aqui vocês vão preencher. Então esse cliente cria planilha. Ele usa grupos. Ele tem processos manuais repetitivos. Ele contratou uma pessoa só para isso. Ele usa ferramentas inadequadas e incompletas. Ele terceirizou parte do processo, ou ele simplesmente não faz.
+
+414
+01:05:57.810 --> 01:06:02.299
+Gabriel Marcondes: Então, aqui são as melhores vertentes principais sobre isso,
+
+415
+01:06:03.160 --> 01:06:17.750
+Gabriel Marcondes: até mesmo porque se não for nenhum desses pontos, ele resolve o problema. Então a gente vai. Eu vou colocar aqui. Por exemplo, ele contratou uma pessoa só para poder fazer isso. E que são processos manuais e repetitivos para essa execução.
+
+416
+01:06:18.250 --> 01:06:24.939
+Gabriel Marcondes: Eles já gastam dinheiro tentando resolver isso. Sim, quanto gasta por mês? Se a gente já tiver
+
+417
+01:06:25.280 --> 01:06:34.659
+Gabriel Marcondes: acesso a essas informações. Excelente. Então eu vou colocar que ele faz um investimento hoje de quatro.quinhentos sobre essa pessoa que executa
+
+418
+01:06:34.730 --> 01:06:52.609
+Gabriel Marcondes: tem consequências financeiras claras. Sim, ele tem essa consequência, porque essa pessoa, quando eu digo a consequência, qual é a diferença do dinheiro empregado para a solução. Quanto à consequência, imagina que eu coloco essa pessoa para executar as tarefas manuais. Porém, ela não consegue executar ela totalmente.
+
+419
+01:06:52.850 --> 01:06:58.479
+Gabriel Marcondes: Então existe ainda uma margem do que hoje não é suprido devido à posição dessa pessoa,
+
+420
+01:06:58.690 --> 01:07:10.859
+Gabriel Marcondes: então seja ela por horário, seja ela pelo o que é humanamente possível. Então ela executa essa tarefa manual. Vamos falar que ela faz uma análise, ela cria relatórios sobre planícies.
+
+421
+01:07:10.890 --> 01:07:30.180
+Gabriel Marcondes: Ela vai conseguir fazer dez por dia, porque é o que ela consegue fazer durante as oito horas. Então, se esse meu cliente precisaria de vinte. Eu tenho uma consequência clara de. Se ele quisesse executar todas essas tarefas, ele teria de contratar mais uma pessoa. Então a consequência dele seria mais uma contratação
+
+422
+01:07:30.560 --> 01:07:31.560
+Gabriel Marcondes: perfeito.
+
+423
+01:07:33.520 --> 01:07:38.780
+Gabriel Marcondes: Isso para com ele solucionar de uma forma
+
+424
+01:07:39.180 --> 01:08:03.660
+Gabriel Marcondes: diretamente com pessoas. Ainda existe o impacto da inação, que é ele não ter acesso a esses relatórios, tira a observabilidade do setor estratégico e, a partir disso, as campanhas dele não são assertivas. Consequentemente, vem menos leads. Os leads se tornam mais caros. Os leads não são tão bem convertidos. Diminui a aquisição do time de vendas que com isso tem um percentual de Comissão menor.
+
+425
+01:08:03.660 --> 01:08:09.650
+Gabriel Marcondes: O time de venda se torna mais insatisfeito. Não bate a meta no mês. E pode virar uma coisa gigantesca
+
+426
+01:08:09.760 --> 01:08:16.750
+Gabriel Marcondes: que vem muito dessa. Como eu consigo amplificar esse problema dentro dessa visualização.
+
+427
+01:08:17.399 --> 01:08:22.310
+Gabriel Marcondes: E aí o Pc perguntou: está dentro do
+
+428
+01:08:22.640 --> 01:08:26.479
+Gabriel Marcondes: do nosso fino lendário aqui, né? Tá ali, no módulo três.
+
+429
+01:08:28.680 --> 01:08:30.299
+Gabriel Marcondes: Então a gente preencheu.
+
+430
+01:08:30.520 --> 01:08:33.229
+Gabriel Marcondes: É aqui esse custo,
+
+431
+01:08:33.600 --> 01:08:46.679
+Gabriel Marcondes: esse impacto financeiro. Eu trouxe só referente à contratação, mas ele poderia ser muito maior. Como eu exemplifiquei, esse problema impede o crescimento. Vou colocar que não. Quantas horas são perdidas no dia? Então eu vou colocar ali que no dia são
+
+432
+01:08:47.060 --> 01:09:03.469
+Gabriel Marcondes: quatro horas para isso. E aqui é o custo. Hora, salário dessa pessoa. Aí. Agora, eu não vou fazer essa conta. Mas vamos colocar que é a hora dessa pessoa. Quatro.quinhentos a hora dessa pessoa? Sei lá, é quarenta,zero. Uma receita perdida do mês.
+
+433
+01:09:03.910 --> 01:09:08.460
+Gabriel Marcondes: A gente pode voltar ali para os nossos valores,
+
+434
+01:09:13.340 --> 01:09:16.639
+Gabriel Marcondes: e aí, aqui. A gente calcula o custo da inação
+
+435
+01:09:17.960 --> 01:09:19.769
+Gabriel Marcondes: e ele vai gerar para você
+
+436
+01:09:20.120 --> 01:09:31.840
+Gabriel Marcondes: o custo da inação completa, tanto das gambiarras quanto o que ele já gasta. Ele não impediu o crescimento. E qual seria esse valor? A nível anual?
+
+437
+01:09:31.970 --> 01:09:34.520
+Gabriel Marcondes: A gente passa para a próxima etapa,
+
+438
+01:09:34.890 --> 01:09:43.650
+Gabriel Marcondes: e aqui, dentro dessa nossa próxima etapa, a gente vem para o Pocket. No Pocket. A gente precisa informar referente
+
+439
+01:09:43.830 --> 01:09:57.049
+Gabriel Marcondes: o investimento. Prev então, se eles já investiram, vou colocar que eles não investiram em nenhuma solução de tecnologia e automação antes. Eles têm um budget
+
+440
+01:09:57.770 --> 01:10:00.189
+Gabriel Marcondes: que é um budget apertado.
+
+441
+01:10:00.470 --> 01:10:08.410
+Gabriel Marcondes: Então vou colocar aqui. Apesar que assim, dentro do cenário que a gente desenhou, não, boa gente, apertado, já que já tem uma pessoa locada. Então vou colocar dependente do projeto.
+
+442
+01:10:09.120 --> 01:10:13.489
+Gabriel Marcondes: A gente faz uma análise da cadeira. Então, essa análise da cadeira é o quê estou falando, né?
+
+443
+01:10:13.500 --> 01:10:30.380
+Gabriel Marcondes: Quem aprova a compra? Então eu posso estar falando com um diretor, mas não necessariamente ele ser quem aprova. Pois quem aprova é o Ceo ou um diretor de uma outra área. Então eu estou falando com um cto diretor de Tecnologia, mas eu preciso do Cfo, que é o diretor financeiro para fazer essa aprovação.
+
+444
+01:10:30.380 --> 01:10:37.099
+Gabriel Marcondes: Então precisa provar com o sócio diretor ou o próprio contato decide. Vou colocar que o próprio contato decide que seria algo muito bom.
+
+445
+01:10:37.870 --> 01:10:52.849
+Gabriel Marcondes: Identifiquei alguma Red Flag, então ele precisa provar com o sócio. O budget está apertado. Vamos começar, pequeno. Manda a proposta que eu analiso. Então tá nessa. Olha, sem compromisso. Deixa eu ver o que você entrega. Vou deixar que nenhuma dessas. E aí a gente pode.
+
+446
+01:10:53.310 --> 01:10:54.330
+Gabriel Marcondes: Aqui.
+
+447
+01:10:55.530 --> 01:10:56.340
+Gabriel Marcondes: Deixa eu ver.
+
+448
+01:11:01.610 --> 01:11:05.519
+Gabriel Marcondes: Tem que ter o rejeirar aqui. Deixa eu ver onde fica?
+
+449
+01:11:07.740 --> 01:11:18.299
+Gabriel Marcondes: Acho que na hora que eu gerar o final que ele veio. Opa, preenchi errado. Ah, não, já tá aqui. Certo, tá certo? Primeira vez investindo em Tech Budget depende do projeto.
+
+450
+01:11:18.510 --> 01:11:24.800
+Gabriel Marcondes: Então, a cadeira estratégica. É bom não ter Redflex é bom. Então a gente já começa a estimar o budget.
+
+451
+01:11:25.080 --> 01:11:42.509
+Gabriel Marcondes: E aqui, no final, a gente vai preencher referente à prioridade. Então, de um a um0 qual é a urgência deles de resolverem isso hoje. Então a gente vai colocar, por exemplo, a eles. Querem resolver dentro deste trimestre. Então vocês vão acompanhar aqui embaixo.
+
+452
+01:11:45.480 --> 01:11:56.489
+Gabriel Marcondes: Tem um descritivo para cada etapa. Então baixa prioridade algum dia está aqui. Backlog eterno. Então a gente vai deixar aqui do lado. Um dia a gente chama. Vocês.
+
+453
+01:11:56.700 --> 01:12:13.659
+Gabriel Marcondes: Baixa prioridade. Esse algum dia cinco está dentro. Ali dos próximos seis meses. Quando a gente chegar aqui no set. Está nesse trimestre de oito. Para frente. Tá no top três. Prioridade. Precisam resolver para ontem. Então aqui a gente consegue definir. Eu vou colocar que eles vão resolver isso nesse trimestre.
+
+454
+01:12:14.500 --> 01:12:26.400
+Gabriel Marcondes: Os sinais de urgência já tem o budget alocado. Já conversou com outras empresas tem deadline externo. Vocês podem colocar essa deadline. Então posso colocar que é esse trimestre
+
+455
+01:12:30.830 --> 01:12:37.650
+Gabriel Marcondes: ou daqui dois meses, por exemplo, daqui dois meses.
+
+456
+01:12:40.800 --> 01:12:42.349
+Gabriel Marcondes: O diretor está cobrando.
+
+457
+01:12:42.920 --> 01:12:50.990
+Gabriel Marcondes: E com isso nós calculamos o Score referente a esse nosso cliente. E aí aqui a gente vê
+
+458
+01:12:51.160 --> 01:12:53.410
+Gabriel Marcondes: que ele tem um Scott seis,seis,
+
+459
+01:12:53.850 --> 01:13:00.490
+Gabriel Marcondes: então, sete no pen, quatro no Pocket e oito.oito no Priority, trazendo para a gente
+
+460
+01:13:00.590 --> 01:13:13.039
+Gabriel Marcondes: um modelo. Qual que é o custo da inação dele. Direto argumento. Tem um script inicial de abordagem de como vocês podem fazer. E eu vou aprimorar ele com vocês aqui. Em seguida,
+
+461
+01:13:13.040 --> 01:13:35.490
+Gabriel Marcondes: trazendo para vocês a minha metodologia. E quais são as objeções previstas referentes a esse cliente? E dessa forma, vocês já conseguem ter um framework para ter essa assertividade referente ao projeto referente à empresa. Perfeito. Mas claro que importante é utilizar daquilo que eu trouxe para vocês. O extra ali, que deve ser considerado
+
+462
+01:13:35.490 --> 01:13:40.770
+Gabriel Marcondes: além do que se diz, essa parte mais quantitativa do projeto.
+
+463
+01:13:42.490 --> 01:13:44.140
+Gabriel Marcondes: Ficou bem. Entendido, pessoal.
+
+464
+01:13:53.130 --> 01:13:54.710
+Gabriel Marcondes: Excelente.
+
+465
+01:14:02.190 --> 01:14:06.079
+Gabriel Marcondes: Deixa eu ver se tem alguma dúvida aqui que ficou para cima.
+
+466
+01:14:24.380 --> 01:14:28.069
+Gabriel Marcondes: O Marcelo perguntou do mapa mental de follow up.
+
+467
+01:14:28.300 --> 01:14:35.279
+Gabriel Marcondes: Acredito que hoje Marcelo vai ficar um pouco apertado, mas eu posso vir de trazer isso para vocês amanhã,
+
+468
+01:14:35.430 --> 01:14:51.699
+Gabriel Marcondes: mas de forma geral, quando a gente fala de Fallup, fala do atendimento direto. Uma das estratégias que eu tenho utilizado bastante é trabalhar com gatilhos. Então são fallups inteligentes.
+
+469
+01:14:51.820 --> 01:14:55.810
+Gabriel Marcondes: Então vamos criar um novo aqui para não ficar bagunçando.
+
+470
+01:14:57.680 --> 01:15:09.529
+Gabriel Marcondes: Então vamos pensar aqui no a nível do follow up, fazer online Map começar daqui.
+
+471
+01:15:10.990 --> 01:15:27.920
+Gabriel Marcondes: Como hoje. Quando eu penso em qualquer solução de inteligência artificial com comunicação direta com o meu cliente. Então eu estou falando de atendimento. Eu estou falando de vendas. Eu estou falando de suporte. Sucesso do cliente independente. De qual seja essa solução. Geralmente, a gente vai utilizar de follow up
+
+472
+01:15:27.920 --> 01:15:31.310
+Gabriel Marcondes: de forma com que a gente mantenha esse contato com o meu cliente.
+
+473
+01:15:31.900 --> 01:15:39.319
+Gabriel Marcondes: Falando de vendas, hoje, o modelo mais assertivo. Eu gosto de trabalhar com alguns gatilhos mentais,
+
+474
+01:15:39.500 --> 01:15:46.240
+Gabriel Marcondes: para que seja muito mais assertivo do que a maioria das soluções. Elas vão simplesmente chamar a atenção.
+
+475
+01:15:46.880 --> 01:15:54.359
+Gabriel Marcondes: Então ela vai ficar mandando mensagens falando. Opa Bota aqui me responde.
+
+476
+01:15:54.840 --> 01:16:13.629
+Gabriel Marcondes: É algo. Que beleza pode vir a funcionar naquela primeira mensagem. Mas a grande maioria das pessoas não vão continuar te respondendo só para que aquele vendedor está sendo chato e continua te mandando mensagem. Então a atenção vale para os primeiros momentos. Então, quando a gente fala, pô quinze a trinta minutos
+
+477
+01:16:13.940 --> 01:16:31.050
+Gabriel Marcondes: de uma interação que foi parada. Ou seja, enviei mensagem para esse meu cliente e ele não me respondeu. Ou ele está no meio dessa interação. E eu preciso fazer este meu follow up. Então, de quinze a trinta minutos, se torna assertivo de. Olha, vamos continuar a conversa que estava sendo estabelecida.
+
+478
+01:16:31.050 --> 01:16:53.959
+Gabriel Marcondes: Após isso, a gente começa a trabalhar com os gatilhos mentais. Pois, para mim, o follow up é feito para quebra de objeções sem com que meu cliente traga essas objeções. Então, hoje, um processo que eu faço na construção de qualquer inteligência artificial voltada para vendas é entender, a partir de um histórico de conversa prévio, quais que são as principais objeções feitas
+
+479
+01:16:53.970 --> 01:17:08.049
+Gabriel Marcondes: pelos clientes? Ele pergunta de valor. Ele tem objeções referentes à segurança. Ele tem objeções referentes a prazo sobre algo específico do produto, o que ele costuma trazer ali dentro as suas inseguranças e dúvidas.
+
+480
+01:17:08.050 --> 01:17:24.529
+Gabriel Marcondes: Claro que quando você tem essa observabilidade, você ganha tanto a possibilidade de guiar o time desse seu cliente que eu sempre que eu trago. Olha, seja como um consultor, você pode trazer para ele porque toda dúvida que é frequente, ela é falta de clareza do produto.
+
+481
+01:17:25.200 --> 01:17:29.409
+Gabriel Marcondes: Então, durante a oferta, durante a minha,
+
+482
+01:17:29.550 --> 01:17:35.780
+Gabriel Marcondes: a minha apresentação da empresa, durante o meu criativo, o meu site, seja de onde for que este cliente tenha vindo,
+
+483
+01:17:35.900 --> 01:17:55.109
+Gabriel Marcondes: ele não conseguiu ter clareza sobre aquela dúvida. Então você pode aprimorar toda a comunicação dessa empresa a partir disso, pois você está perdendo. Se ele trouxe a dúvida, ele é um de talvez cem que foram embora por acreditar de não ter aquilo. Então ele foi o único que teve o ímpeto de trazer aquilo diretamente.
+
+484
+01:17:55.300 --> 01:18:07.940
+Gabriel Marcondes: Então, quando você observa essas principais objeções. O seu objetivo é que você consiga sanar elas, quebrar elas sem com que o cliente tenha que abrir a boca, ele tenha que falar.
+
+485
+01:18:08.450 --> 01:18:12.369
+Gabriel Marcondes: Então eu vou trazer para vocês o que é um caso, um caso que o
+
+486
+01:18:12.410 --> 01:18:26.240
+Gabriel Marcondes: que eu até apresentei nas últimas palestras, que foi de um cliente de telefonia que a gente fez o atendimento, onde nós conseguimos aumentar a conversão deles de dez,três para trinta e seis,sete, ou seja, quase quadruplicar essa conversão.
+
+487
+01:18:26.240 --> 01:18:35.009
+Gabriel Marcondes: A partir do momento que a gente colocou um follow up inteligente que trabalhava com os seguintes gatilhos onde, de quinze a trinta minutos a gente trabalhava com atenção.
+
+488
+01:18:35.010 --> 01:18:40.269
+Gabriel Marcondes: Depois a gente vem com uma oferta irresistível.
+
+489
+01:18:45.730 --> 01:18:54.470
+Gabriel Marcondes: Essa oferta irresistível. Ela tem o objetivo de que, de tirar a necessidade do meu cliente de escolha.
+
+490
+01:18:54.740 --> 01:19:09.599
+Gabriel Marcondes: Então, se eu tenho múltiplos produtos, eu posso perder clientes por eles simplesmente não terem certeza de qual ele quer, de qual ele precisa. Então, se eu já venho. Após eu ter apresentado todos com a melhor oferta. Eu tiro essa necessidade.
+
+491
+01:19:09.860 --> 01:19:18.830
+Gabriel Marcondes: Um outro ponto é trabalhar com as pessoas, e aí vem muito mais de arquétipos de modelo mental. Dessas pessoas.
+
+492
+01:19:19.970 --> 01:19:24.069
+Gabriel Marcondes: Da pessoa que ela gosta de comprar. Coisas em promoção.
+
+493
+01:19:25.750 --> 01:19:39.990
+Gabriel Marcondes: Então ela é aquela pessoa que quando tem promoções de lojas. Quando a gente vê lojas extremamente lotadas por estar em processos Black Friday dentre outras coisas, ela é aquela pessoa que pode ter várias coisas encalhadas, mas ela comprou porque estava barato.
+
+494
+01:19:39.990 --> 01:19:47.120
+Gabriel Marcondes: Então a gente atinge esse tipo de público com muita facilidade. Quando eu trago uma oferta irresistível quando eu trago a minha melhor oferta de forma visual
+
+495
+01:19:47.390 --> 01:20:01.210
+Gabriel Marcondes: e junto disso, eu trago. Eu vou ter uma forma, mas mas direcionada de explicar o produto.
+
+496
+01:20:03.030 --> 01:20:09.239
+Gabriel Marcondes: Então eu já venho com os pontos principais desse meu produto. E aí, a partir dessa oferta irresistível. Eu consigo
+
+497
+01:20:09.390 --> 01:20:20.029
+Gabriel Marcondes: quebrar todas essas objeções. Essa oferta irresistível. Eu costumo trabalhar na faixa de após a primeira, trinta a
+
+498
+01:20:20.230 --> 01:20:25.539
+Gabriel Marcondes: noventa minutos, e aí que este cliente não me retornou,
+
+499
+01:20:29.430 --> 01:20:35.270
+Gabriel Marcondes: seguido disso, nós temos escassez.
+
+500
+01:20:37.750 --> 01:20:40.430
+Gabriel Marcondes: Então, quando a gente fala de escassez,
+
+501
+01:20:40.560 --> 01:20:45.680
+Gabriel Marcondes: é para que eu busque esse meu cliente que ele tem medo de perder oportunidades.
+
+502
+01:20:47.120 --> 01:20:57.880
+Gabriel Marcondes: Então é o momento onde a Ia vem para poder falar. Olha, falei com o meu chefe. Eu só consigo manter para você esse valor hoje. Essa é uma promoção que a gente está fazendo somente durante esse período.
+
+503
+01:20:58.090 --> 01:21:15.649
+Gabriel Marcondes: Então qualquer mensagem que faça com que ele sinta que. Olha, eu tenho um curto tempo para tomada de decisão. Eu consigo trabalhar com este modelo mental, onde a pessoa tem este receio de perder oportunidade. Então eu gero essa necessidade para ela diretamente.
+
+504
+01:21:15.650 --> 01:21:19.800
+Gabriel Marcondes: E aqui a gente trabalha mais uma vez, só que na faixa de dezasseis
+
+505
+01:21:19.930 --> 01:21:24.460
+Gabriel Marcondes: a noventa minutos após. E por último,
+
+506
+01:21:25.490 --> 01:21:35.029
+Gabriel Marcondes: eu venho para o gatilho de segurança. Então é aqui que, até no caso desse cliente, é onde a gente manda um vídeo, um vídeo de uma atendente
+
+507
+01:21:36.830 --> 01:21:40.329
+Gabriel Marcondes: que pode ser feito com Ia mostrando o escritório.
+
+508
+01:21:40.590 --> 01:21:57.850
+Gabriel Marcondes: Então, para o negócio dele, que é um negócio que tem uma volumetria muito grande, onde entra em contato. A gente está falando de telefonia. Então a gente costuma receber muitas mensagens e podem ser golpes. Utilizar de um vídeo dentro desse follow up que mostra toda a operação. Eu quebro a objeção de segurança.
+
+509
+01:21:57.850 --> 01:22:01.849
+Gabriel Marcondes: Aquela pessoa que pensava que aquela operação não era segura.
+
+510
+01:22:01.850 --> 01:22:15.179
+Gabriel Marcondes: Então, aqui a gente já deixa no final da janela. Então vai ser entre um.duzentos e um.quatrocentos minutos no final da janela ali do Whatsapp para que a gente consiga quebrar essa última objeção que seria. Olha, eu estou achando que isso aqui está muito bom.
+
+511
+01:22:15.180 --> 01:22:20.590
+Gabriel Marcondes: Então poderia ser um golpe, e a gente atinge dessa forma.
+
+512
+01:22:21.240 --> 01:22:22.850
+Gabriel Marcondes: E, mais uma vez, é sempre
+
+513
+01:22:23.150 --> 01:22:38.309
+Gabriel Marcondes: importante pensar: isso aqui é dinâmico. Então é um caso para um cliente. A gente pode trabalhar com outros formatos, mas as dicas que eu trago para vocês é sempre trabalhar com esses gatilhos mentais não trabalhem somente só com atenção. E também utilize de mídias
+
+514
+01:22:38.310 --> 01:22:49.399
+Gabriel Marcondes: mídias. É algo que funciona muito quando a gente fala dessa parte conversacional, porque é muito mais atrativo e curioso para um usuário querer abrir uma imagem, um vídeo, um áudio do que uma mensagem
+
+515
+01:22:49.430 --> 01:22:51.430
+Gabriel Marcondes: porque a mensagem eu consigo ver na prévia.
+
+516
+01:22:51.600 --> 01:22:58.679
+Gabriel Marcondes: Eu já consigo ter clareza sobre ela. Agora eu chamo muito a atenção deste meu cliente. Quando eu faço o envio de uma mídia direta.
+
+517
+01:23:05.300 --> 01:23:08.940
+Gabriel Marcondes: Vamos lá. Deixa eu ver se temos mais dúvidas.
+
+518
+01:23:21.720 --> 01:23:30.750
+Gabriel Marcondes: O Elias perguntou: e como você atuaria quando um cliente fez a primeira reunião, marcou a segunda e em seguida, desmarcou, falando que precisa arrumar a casa,
+
+519
+01:23:31.160 --> 01:23:34.410
+Gabriel Marcondes: mapear os processos perfeito.
+
+520
+01:23:34.690 --> 01:23:53.650
+Gabriel Marcondes: Então, assim você trouxe aqui, nessa comunicação, arrumar a casa seria preparar a empresa dele para receber uma solução como a sua. Isso vem? Principalmente da sua comunicação. Talvez a sua comunicação. Ela trouxe para ele onde
+
+521
+01:23:53.960 --> 01:24:04.669
+Gabriel Marcondes: muito do que você apresentou teria um excesso de pré requisitos. E você não se mostrou solícito referente à construção disso. Então, quando eu converso com um cliente,
+
+522
+01:24:04.860 --> 01:24:07.880
+Gabriel Marcondes: vou dar um exemplo. O follow up. Como eu mostrei para vocês,
+
+523
+01:24:08.200 --> 01:24:15.130
+Gabriel Marcondes: ele é feito a partir de um histórico. Toda a construção de agentes. Eu faço a partir de históricos, porém, tem clientes que não tem.
+
+524
+01:24:15.540 --> 01:24:33.660
+Gabriel Marcondes: Tem clientes que ele não guardou esses históricos. Tem cliente que não gosta que ele fala. Eu tenho. Mas eu não gosto do jeito que meu time atende, que eles não atendem do jeito que eu gostaria que tivesse os processos. Então eu deixo claro, desde o começo que, olha, se você tiver
+
+525
+01:24:33.660 --> 01:24:58.520
+Gabriel Marcondes: excelente, é o melhor formato. Se você não tiver só demanda que você tenha um pouco mais de tempo para que a gente possa construir isso juntos. Mas você trazer para o seu cliente essa clareza de estou com você. Independente dessas situações, caso seja a sua vontade, pois pode ser que você fale. Olha, um cliente para mim que não tem um Crm. Não faz sentido eu atender porque ele não tem uma estrutura dos leads dele. Eu teria que levar ele do ponto A
+
+526
+01:24:58.520 --> 01:24:59.790
+Gabriel Marcondes: é o ponto B. Primeiro
+
+527
+01:25:00.160 --> 01:25:19.440
+Gabriel Marcondes: super válido. Existem diversos aspectos para mim dentro da agência que eu rejeito clientes. Hoje eu falo muito mais não para clientes do que sim e muitos dos pontos vêm disso. Vem dessa falta de estruturação, porque não faz sentido para mim eu ter que construir esses processos iniciais, que são extremamente básicos.
+
+528
+01:25:19.750 --> 01:25:30.800
+Gabriel Marcondes: Porém, pode ser um processo de vocês, pois isso gera um caixa mais fácil. Isso gera valor. Então, se ele não tem determinado aspecto, você consegue inserir dentro da empresa dele,
+
+529
+01:25:30.910 --> 01:25:48.970
+Gabriel Marcondes: então talvez você não passou esse tato de que você conseguiria auxiliar ele dentro desse aspecto e colocou diversos pré requisitos do que seria necessário para que a solução performasse. Então o ponto que eu faria pega essa reunião. Acredito que você tenha transcrito. Ela revise
+
+530
+01:25:48.970 --> 01:26:00.930
+Gabriel Marcondes: da Ia quais foram os pontos falhos da sua comunicação referente a esse aspecto. Como que eu gosto de trabalhar com a Ia nisso, faz a ia atuar como cliente. Olha, você é o meu cliente.
+
+531
+01:26:00.930 --> 01:26:16.540
+Gabriel Marcondes: O que você entendeu sobre a minha solução? O que você pensa que são os pré requisitos para que a gente faça isso. Que a partir desse ponto, você melhore a sua comunicação, você cria tapa. O que seriam esses pontos cegos que geram essas dúvidas para o seu cliente.
+
+532
+01:26:17.720 --> 01:26:34.219
+Gabriel Marcondes: Para um Retake. Já te dando uma dica. Se você identificar, perguntar para ele necessariamente o que vai ser construído durante esses processos, você já se mostrar solícito referente à utilização de a de modo que,
+
+533
+01:26:34.220 --> 01:26:39.380
+Gabriel Marcondes: olha, cara, se for pra você mapear, arrumar a sua casa sozinho. Você vai gastar
+
+534
+01:26:39.410 --> 01:27:03.850
+Gabriel Marcondes: um mês e meio e mais x pessoas do seu time. E se você me procurou. A sua operação não está saudável. Se você me procurou, tem outros pontos de atenção que você deveria, como Ceo, fundador e frente da empresa. Estar atuando em vez de mapear processos. Agora, deixa isso comigo. Eu resolvo isso para ti. Resolvo em pouco tempo, que também é algo importante para que ele, de repente, está com uma urgência para fazer a solução que ele te procurou
+
+535
+01:27:03.850 --> 01:27:08.839
+Gabriel Marcondes: a primeiro momento. Então você já embeda isso tudo? Já amarra tudo isso junto
+
+536
+01:27:08.840 --> 01:27:12.719
+Gabriel Marcondes: de forma com que você vai ter um produto muito mais atrativo e quebra a objeção desse seu cliente.
+
+537
+01:27:15.570 --> 01:27:18.360
+Gabriel Marcondes: Beleza, deixa eu ver se tem mais coisas.
+
+538
+01:27:23.710 --> 01:27:25.430
+Gabriel Marcondes: O Ramon perguntou.
+
+539
+01:27:25.980 --> 01:27:44.380
+Gabriel Marcondes: Principal dúvida. Ótima aula, grato, Ramon. A dificuldade principal é o que criar e como vender, e, principalmente, depois da criação, os processos validados, quais os passos tomar para fechar contratos no mercado, encontrar clientes e automações. Vamos lá. São várias perguntas. O que criar
+
+540
+01:27:44.440 --> 01:27:55.380
+Gabriel Marcondes: vai partir muito de ti a nível de nicho, a nível de dor que está próximo de você. Quanto as tecnologias que serão utilizadas.
+
+541
+01:27:55.380 --> 01:28:10.600
+Gabriel Marcondes: Se hoje vocês assistiram uma aula do Allan junto do José Pedro, onde eles utilizaram sistemas de multi agentes com código. Se essa for a Stec que será utilizada, já foi afunilado os problemas que podem ser solucionados a partir daquilo.
+
+542
+01:28:10.600 --> 01:28:15.539
+Gabriel Marcondes: Então você já consegue ter uma direção a nível tecnológico.
+
+543
+01:28:15.540 --> 01:28:27.850
+Gabriel Marcondes: Se você quisesse partir somente para automação, escolher uma plataforma de automação. Você afunilou. Eu quero trabalhar somente na construção de agentes conexões com Whatsapp, você afunila, você pode decidir essa Stack. Claro que,
+
+544
+01:28:27.850 --> 01:28:35.960
+Gabriel Marcondes: e o parto da dor? Eu parto para olhar o que tem a sua volta, o mais próximo com validação para depois escolher a Stack
+
+545
+01:28:36.200 --> 01:28:50.949
+Gabriel Marcondes: sempre partindo do que é da sua experiência. Da mesma forma que eu oriento todas as pessoas. Por exemplo, quando a gente fala de transição de carreira, fala de vir para o mercado de ar que é. Olha sua soft skills antes da sua Radialskill.
+
+546
+01:28:51.440 --> 01:29:03.569
+Gabriel Marcondes: Você é uma pessoa comunicativa. Você é uma pessoa que gosta de tomar iniciativa ou não. Você prefere ser guiado por outras pessoas. Isso se diz muito mais do que necessariamente. Onde você vai atuar,
+
+547
+01:29:04.220 --> 01:29:19.620
+Gabriel Marcondes: que é até um dos problemas, porque acaba que dentro da Academia. A gente fala muito da zona de genialidade e um dos maiores erros. Quando a gente vai olhar a infelicidade de muitas pessoas, profissionalmente falando, foi ter feito uma escolha a partir do Hard. Ou seja, eu escolhi a faculdade que me diziam que daria dinheiro,
+
+548
+01:29:20.150 --> 01:29:26.640
+Gabriel Marcondes: mas aquilo não condiz nem um pouco com a minha personalidade, do que é singular, meu como humano. E do que eu gosto de executar.
+
+549
+01:29:27.000 --> 01:29:37.650
+Gabriel Marcondes: Então o mesmo acontece na construção de uma solução. Então você tem que entender um pouco de como é o seu aspecto a nível de o que eu gosto de fazer.
+
+550
+01:29:37.700 --> 01:29:55.899
+Gabriel Marcondes: O que eu gosto de construir dentro dessas soluções. O que faz mais sentido para mim pode ser que você não tenha um que tão técnico, e você queira fazer somente as abordagens. E pensar no produto, e você precise, de repente de um outro braço de um sócio para isso. E super válido. Contanto que seja um passo muito bem estudado a ser feito.
+
+551
+01:29:55.990 --> 01:30:18.859
+Gabriel Marcondes: Mas você olhar para si mesmo e o seu redor próximo, para que você tenha uma tomada de decisão. Do que é a Hard Skill feito isso, você escolheu a tecnologia. Você vem olhar. Como você vai vender? Isso é uma solução. A gente está falando de soluções. Você está falando de um produto plugin play? Você está falando de um serviço diretamente.
+
+552
+01:30:18.860 --> 01:30:25.449
+Gabriel Marcondes: Então acaba que a sua pergunta é tão aberta e ela só vai ser respondida a partir desse autoconhecimento,
+
+553
+01:30:25.460 --> 01:30:50.259
+Gabriel Marcondes: desse momento introspectivo, onde não tem uma resposta padrão que eu possa te passar, que vai ser satisfatória, mas o caminho que eu te daria é justamente isso. Encontre o que te dá satisfação. E as pessoas que estão em volta de ti para fazer essa validação. E dentre as soluções tecnológicas. Pois a gente está falando de automação, inteligência artificial, o que parece ser mais atrativo para ti a nível do desenvolvimento,
+
+554
+01:30:50.260 --> 01:30:50.809
+Gabriel Marcondes: cinto as
+
+555
+01:30:50.810 --> 01:31:15.100
+Gabriel Marcondes: que condiz mais. Como é tudo muito rápido. A gente não está falando de você fazer cinco anos de uma faculdade para descobrir que não gosta. É você sentar dois dias e experimentar fazer o sistema de multi agentes e ver que talvez não é para ti. Aí você experimenta um pouco de automação. Você experimenta um Vibe Coding diretamente com outras plataformas. E você encontra o que? Olha, isso aqui faz sentido comigo. Eu ficaria dezasseis horas por dia fazendo isso daqui de uma forma extremamente gratificante
+
+556
+01:31:15.100 --> 01:31:20.299
+Gabriel Marcondes: e, a partir disso, o sucesso é consequência, contanto que ele seja direcionado e aí
+
+557
+01:31:23.420 --> 01:31:24.690
+Gabriel Marcondes: encontrar.
+
+558
+01:31:28.890 --> 01:31:29.600
+Gabriel Marcondes: E aí
+
+559
+01:31:33.050 --> 01:31:38.760
+Gabriel Marcondes: o Marcos perguntou quão extrairia esses dados numa conversa sem parecer invasivo. Pois, às vezes é apenas
+
+560
+01:31:38.820 --> 01:31:53.110
+Gabriel Marcondes: o cadastro e querer ter mais informações do cliente para uma apresentação de orçamento. Então, Marcos, quando a gente fala essa questão de ser invasivo, ela se diz a profundidade do funil, então, quanto mais
+
+561
+01:31:53.110 --> 01:32:17.720
+Gabriel Marcondes: alto estamos no funil mais aberto é difícil você fazer essas perguntas realmente. Por isso você tem que ser assertivo no que se diz ao seu Lead Scoring que é justamente o que é o Triple P. Então, quando eu vou receber um lead da agência lendária. Por exemplo, eu quero entender sobre o faturamento desta empresa. Eu quero entender a posição para que eu possa ir no tomador de decisão e referente à quantidade de leads que ele recebe quando a gente fala de um agente, por exemplo,
+
+562
+01:32:18.030 --> 01:32:29.979
+Gabriel Marcondes: porque o meu objetivo é ver qual é a margem de resultado que eu consigo causar dentro dessa operação. Se chega um cliente para mim e fala que ele tem uma conversão de cinquenta. Eu fico. Olha para que você está me procurando,
+
+563
+01:32:30.280 --> 01:32:42.750
+Gabriel Marcondes: entende? Não é por conversão. Talvez seja por volume e a gente pode partir para outra coisa. Mas dessa forma eu consigo ser mais assertivo. Então tem perguntas? Então, por exemplo, eu vou perguntar quanto que esse cliente fatura.
+
+564
+01:32:42.750 --> 01:33:05.280
+Gabriel Marcondes: Se você está sentindo e tudo é teste, então eu tentei ser muito rápido. Eu acabei não estendendo tanto a minha apresentação, mas anteriormente, de eu ser um empresário, de eu ter as minhas empresas. Eu atuei durante seis anos na área de dados. Então, engenheiro de Machine Learning, cientista de dados, analista de dados. Eu trabalhei
+
+565
+01:33:05.280 --> 01:33:07.309
+Gabriel Marcondes: durante muitos anos nessa área.
+
+566
+01:33:07.310 --> 01:33:09.510
+Gabriel Marcondes: E a partir disso,
+
+567
+01:33:09.750 --> 01:33:16.799
+Gabriel Marcondes: vem esse meu ponto de identificar quais são essas informações, para que a gente seja mais assertivo
+
+568
+01:33:17.110 --> 01:33:20.199
+Gabriel Marcondes: e com isso, uma forma que é mais
+
+569
+01:33:20.520 --> 01:33:25.040
+Gabriel Marcondes: fácil de uma aceitabilidade do seu cliente é você trabalhar com Ranges.
+
+570
+01:33:25.150 --> 01:33:27.280
+Gabriel Marcondes: Então você é testar.
+
+571
+01:33:27.560 --> 01:33:36.940
+Gabriel Marcondes: Então o ponto do dados é testa. Você vai subir um modelo, por exemplo, de captação, seja ela uma página, seja ela. Sou Ia. Seja seu atendimento direto,
+
+572
+01:33:36.940 --> 01:33:54.740
+Gabriel Marcondes: e você vai ver o índice de resposta de cada modelo. Eu estou querendo saber sobre faturamento do cliente. Eu posso perguntar para ele diretamente quanto você fatura. Eu posso fazer perguntas de lado para que eu construa essa visão. Então eu estou perguntando quantos funcionários ele tem,
+
+573
+01:33:54.740 --> 01:34:09.099
+Gabriel Marcondes: qual que é o ticket médio. E qual é a quantidade do produto que ele vende? Pode ser uma forma de eu encontrar essa resposta sem ser direto, ou até mesmo trabalhar com Ranges, que funciona muito bem. Então, em vez de você perguntar para ele, olha, você ganha tanto, é, está entre
+
+574
+01:34:09.380 --> 01:34:22.450
+Gabriel Marcondes: vinte.00 mil. Está entre cem, um.trezentos entre trezentos e um milhão. Pois, isso já faz com que ele não precisa dizer os números. Exatamente, e você já tenha uma informação um pouco mais clara.
+
+575
+01:34:32.420 --> 01:34:34.140
+Gabriel Marcondes: Vamos lá.
+
+576
+01:34:43.110 --> 01:35:07.769
+Gabriel Marcondes: O Ron falou marcondes. Me parece que você está falando de ferramentas de conversação como super agentes, mas tem uma preocupação sobre o posicionamento dessa oferta. Do ponto de vista do cliente, isso pode parecer mais um serviço tradicional de desenvolvimento do que uma solução de A. Se vendermos como desenvolvimento de A. Talvez tenhamos novamente que educar o mercado, como aconteceu no início da adoção do Ia, quando gastamos muita energia explicando o valor e funcionamento.
+
+577
+01:35:07.770 --> 01:35:20.830
+Gabriel Marcondes: A questão central é: esse produto já nasce com um valor claro para o cliente. Ou vamos enfrentar outra curva de invangelização antes de escalar as vendas. Isso impacta diretamente no ciclo de venda, a carca e velocidade de adoção
+
+578
+01:35:21.170 --> 01:35:22.689
+Gabriel Marcondes: referente a isso.
+
+579
+01:35:23.050 --> 01:35:25.579
+Gabriel Marcondes: Vamos lá, João. Quando a gente fala de uma solução,
+
+580
+01:35:25.730 --> 01:35:43.470
+Gabriel Marcondes: agora já é um momento onde atendentes diretamente já estão se tornando mais comuns. Então, por isso que a gente precisa agregar valor para o nosso cliente de diversas outras formas. Por isso que eu bato muito em dados. Eu bato muito em observabilidade. Então, por exemplo, todas as soluções que nós entregamos com
+
+581
+01:35:43.470 --> 01:36:07.809
+Gabriel Marcondes: agência hoje. Eu trago um Dashboard para esse meu cliente para que ele consiga visualizar quantos leads foram atendidos. Quais são os horários de pico? Quais são as taxas de respostas? Eu trago relatórios referentes ao dia. Então, quais foram as principais dúvidas, pois com isso, dentro dessa mesma solução, eu consigo ir agregando valor para demais setores. Como eu disse, se a minha Ia
+
+582
+01:36:07.810 --> 01:36:12.259
+Gabriel Marcondes: traz uma observabilidade sobre o Whatsapp, que geralmente é um local onde as empresas não têm,
+
+583
+01:36:12.270 --> 01:36:15.569
+Gabriel Marcondes: e com isso eu percebo perguntas frequentes.
+
+584
+01:36:15.650 --> 01:36:28.430
+Gabriel Marcondes: O que seria um normal. Eu vou pegar e retreinar minha a. Mas além disso, eu posso direcionar o time dele de marketing e de produto sobre a clareza que eles não estão tendo dentro dessa comunicação,
+
+585
+01:36:28.430 --> 01:36:35.929
+Gabriel Marcondes: pois da mesma forma que eu citei anteriormente, se está chegando a ponto da pessoa perguntar, teve várias outras que tiveram essa mesma dúvida e nem perguntaram.
+
+586
+01:36:35.930 --> 01:37:00.879
+Gabriel Marcondes: Então é uma etapa até anterior, do que o momento onde o agente entra, onde essa dúvida deveria ser sanada. E com isso, eu impacta o marketing. Eu impacta o produto quando tem uma inteligência artificial, fazendo o atendimento, conversando com essa pessoa. No modelo de Leadsom ideal. Eu começo a entender um pouco mais do meu Lead, um pouco mais do meu cliente do que aquela breve classificação de tráfego, que é uma faixa etária entre trinta e cinco e quarenta anos que tem determinado
+
+587
+01:37:00.880 --> 01:37:12.610
+Gabriel Marcondes: gostos. Ou seja, eu tenho uma clareza do meu Icp, uma clareza do meu cliente ideal, muito maior. Com isso, eu direciono o time de marketing dele a ser muito mais assertivo na aquisição desses leads.
+
+588
+01:37:12.610 --> 01:37:37.499
+Gabriel Marcondes: Eu consigo treinar o que é o modelo da Ia muito mais rápido trocando abordagens de venda. Porque eu não consigo fazer isso com um time físico de olha, a partir de amanhã a gente vai testar outra abordagem. Não é tão fácil assim. Mas eu consigo validar isso com a inteligência artificial, de modo que, uma vez feita. Caso eu não tenha feito a substituição completa deste time, eu venha trazer essa metodologia para as pessoas. Os humanos que estão executando
+
+589
+01:37:37.500 --> 01:37:48.089
+Gabriel Marcondes: a fim de melhorar essa conversão. Então perceba que eu venho com uma mesma solução, impactando diversas áreas dentro desse meu cliente. Mas por que dados? Observabilidade
+
+590
+01:37:48.420 --> 01:38:03.369
+Gabriel Marcondes: é utilizada? Aquilo que já está comigo? Eu já estou guardando essas informações. E eu poderia gerar relatórios. Eu poderia trazer muito mais visão de negócios para esse meu cliente, mas a gente joga fora. Por quê? Porque a gente está só olhando pela inovação por si só. E aí vira um chatbot
+
+591
+01:38:04.000 --> 01:38:06.990
+Gabriel Marcondes: camuflado de inovação, que não gera resultado. De fato.
+
+592
+01:38:07.280 --> 01:38:25.000
+Gabriel Marcondes: Então você sempre observar como que eu gero valor para esse meu cliente. Como que eu agrego ele com a mesma solução, com as mesmas ferramentas vão fazer com que essas soluções cada vez escalem mais, cada vez se torne um sim óbvio onde o seu cliente vai se sentir burro se ele não comprar de você. Por que você tem resultado?
+
+593
+01:38:25.510 --> 01:38:36.899
+Gabriel Marcondes: Pega um exemplo de o nosso lançamento da Black Friday, onde eu desenvolvi a recuperadora de carrinho a Lana, que é a nossa recuperadora de carrinho. Então ela recuperou mais de meio milhão de reais.
+
+594
+01:38:37.120 --> 01:38:38.650
+Gabriel Marcondes: Então pensa comigo.
+
+595
+01:38:38.940 --> 01:38:52.919
+Gabriel Marcondes: É recuperação de carrinho. Ou seja, é uma venda que não deveria acontecer. São pessoas que abandonaram e uma inteligência artificial entra em contato ativamente. Nutre esse lead e realiza a conversão. Ou seja, era um dinheiro que ia ficar parado na mesa.
+
+596
+01:38:53.010 --> 01:39:05.619
+Gabriel Marcondes: Se eu recupero meio milhão para uma operação. E eu tenho este histórico. Qual. Que é a objeção dessa pessoa? Se eu quero cobrar cento e cinquenta mil numa solução dessa. Se em um lançamento, ele vai receber três vezes o valor de volta.
+
+597
+01:39:06.910 --> 01:39:10.630
+Gabriel Marcondes: É esse o tipo de construção de argumentação que precisa ser feita.
+
+598
+01:39:11.040 --> 01:39:28.110
+Gabriel Marcondes: Pois você tem clareza do valor agregado. Você tem certeza? Pois você construiu com excelência essa solução do impacto que ela vai ter no negócio. E com isso, essa dúvida, do quanto precisa ser educado, ela deixa de existir.
+
+599
+01:39:28.830 --> 01:39:50.939
+Gabriel Marcondes: Mas um outro ponto. Vou te dar um exemplo dentro da agência lendária. Eu trago com o meu Icp. O meu cliente ideal é uma pessoa frustrada com inteligência artificial. É uma pessoa que minimamente se não aderiu. Ela já está no seu 6o sétimo orçamento. Por quê? Como eu coloco a minha solução em uma outra prateleira. Eu não posso ter o trabalho de levar ela do ponto A até o ponto B
+
+600
+01:39:50.940 --> 01:39:53.100
+Gabriel Marcondes: de ensinar para ela. O que é Aiá
+
+601
+01:39:53.100 --> 01:40:02.230
+Gabriel Marcondes: do que a Ia pode agregar. Eu prefiro que ela já tenha experimentado as outras soluções do mercado, que são medíocres, que não trouxeram resultados para ela, senão ela não estaria me procurando
+
+602
+01:40:02.230 --> 01:40:25.370
+Gabriel Marcondes: para que eu consiga colocar a minha solução ali de uma forma muito mais tangível, muito mais explicativa com que ela consiga entender realmente o porquê. Tem o valor que tem e acreditar, no impacto que vai ser. Gerado. Claro que tem as suas consequências. Qual é a consequência disso? Eu tenho que fazer quase um trabalho de psicólogo, de pegar as pessoas traumatizadas de soluções, de ar.
+
+603
+01:40:25.370 --> 01:40:30.920
+Gabriel Marcondes: Falar cara vai ser diferente. Acredita em mim, que vai ser uma experiência completamente diferente da que você teve
+
+604
+01:40:30.920 --> 01:40:32.150
+Gabriel Marcondes: em compensação.
+
+605
+01:40:32.220 --> 01:40:38.279
+Gabriel Marcondes: Eu consigo trabalhar com tickets muito maiores. E eu tenho muito menos trabalho na hora dessa conscientização e conversão.
+
+606
+01:40:54.980 --> 01:40:57.000
+Gabriel Marcondes: Vou dar uma olhada aqui,
+
+607
+01:41:01.660 --> 01:41:03.920
+Gabriel Marcondes: que está mais tranquilo.
+
+608
+01:41:06.370 --> 01:41:11.639
+Fran Martins | Lendár[IA]: E aí, galera? O que vocês estão achando aí? Ainda vai mandando aí nos comentários? Eu tô vendo o Léo Roy
+
+609
+01:41:13.140 --> 01:41:15.240
+Fran Martins | Lendár[IA]: Brother fuck.
+
+610
+01:41:15.430 --> 01:41:16.549
+Gabriel Marcondes: E aí?
+
+611
+01:41:19.700 --> 01:41:20.400
+Gabriel Marcondes: E aí?
+
+612
+01:41:20.400 --> 01:41:21.330
+Fran Martins | Lendár[IA]: Muito bom.
+
+613
+01:41:23.210 --> 01:41:24.460
+Fran Martins | Lendár[IA]: E aí?
+
+614
+01:41:24.460 --> 01:41:34.939
+Gabriel Marcondes: Lopez perguntou a nível de criação de agentes. Hoje eu preciso me aprofundar na parte técnica de um N8n, ou eu uso aia para fazer. E dedico mais tempo em Prd.
+
+615
+01:41:36.280 --> 01:41:42.080
+Gabriel Marcondes: Uma resposta difícil. Você pode ser bem sincero, porque
+
+616
+01:41:42.240 --> 01:41:57.729
+Gabriel Marcondes: depende muito do que você vai atender? E a necessidade. Então, se a gente vai pensar que você não quer atender múltiplos nichos e múltiplos tipos de serviços. Então você construir uma Iac e vai construir esses agentes. Não se torna necessário
+
+617
+01:41:58.350 --> 01:42:02.949
+Gabriel Marcondes: que até um dos pontos que é muito importante a gente ter.
+
+618
+01:42:03.300 --> 01:42:08.899
+Gabriel Marcondes: Que acontece quando a gente começa a mexer com Ia e automação, que é querer automatizar tudo.
+
+619
+01:42:09.150 --> 01:42:17.920
+Gabriel Marcondes: Porém, existem alguns processos e principalmente processos que não são repetitivos. Que você vai gastar mais tempo tentando automatizar ele do que você gasta executando.
+
+620
+01:42:18.370 --> 01:42:26.659
+Gabriel Marcondes: E se você vai fazer aquilo uma vez, duas vezes. Não necessariamente você utilizar, fazer uma automação vale o tempo que for investido.
+
+621
+01:42:26.660 --> 01:42:50.489
+Gabriel Marcondes: Então imagine que você vai construir um agente para um nicho específico. E vai aprimorar. Ele é muito mais assertivo que você. Faça ele diretamente do que você criar um sistema para a criação desses agentes. Agora, caso você venha trabalhar com escala, com uma replicabilidade, ou até mesmo em múltiplos nichos, aí se torna interessante, pois vai ser mais fácil de você abstrair isso diretamente.
+
+622
+01:42:50.490 --> 01:42:56.140
+Gabriel Marcondes: Então ela vai conseguir trazer de diversos contextos. E a partir disso, você
+
+623
+01:42:56.470 --> 01:43:06.180
+Gabriel Marcondes: conseguir externalizar o seu conhecimento. Mas um ponto importante que você entenda a nível de conseguir validar,
+
+624
+01:43:07.180 --> 01:43:26.309
+Gabriel Marcondes: pois você precisa ter esse conhecimento minimamente para saber se a Ia está fazendo certo. É o mesmo que eu falo para toda vez que eu vou prestar numa consultoria que o founder tem que ter um mínimo conhecimento sobre aquele determinado setor, principalmente quando a gente fala de empresas um pouco menores quando ela se torna muito grande, trezentos pessoas, eu tenho um corpo de direção grande. Dá para ele ignorar algumas coisas,
+
+625
+01:43:26.310 --> 01:43:38.689
+Gabriel Marcondes: mas empresas de pequeno e médio porte precisa entender para que ele possa validar se aquela tarefa está sendo feita da maneira correta, para que ele saiba se ele deve ou não cobrar ou como cobrar essas pessoas. E o mesmo vale para Ia.
+
+626
+01:43:38.690 --> 01:43:47.449
+Gabriel Marcondes: Então você não precisa entrar tão aprofundado referente a isso, mas minimamente fazer essa validação de tá, isso aqui está bom ou não está?
+
+627
+01:43:47.620 --> 01:43:59.580
+Gabriel Marcondes: Então eu pensaria dentro desse aspecto para dedicar se. Você vai construir esses sistemas, que irão fazer outras soluções. Ou se você vai dedicar diretamente para algo,
+
+628
+01:44:11.150 --> 01:44:17.579
+Gabriel Marcondes: então até um exemplo disso. Eu estou com isso aqui até do lado. Por exemplo, quando eu montei o meu modelo de consultoria. Que é isso daqui?
+
+629
+01:44:19.370 --> 01:44:23.250
+Gabriel Marcondes: Então é uma coisa bem grande. Se a gente para para olhar,
+
+630
+01:44:25.170 --> 01:44:29.009
+Gabriel Marcondes: ele é um modelo que eu executei ele
+
+631
+01:44:29.160 --> 01:44:32.320
+Gabriel Marcondes: vamos dizer assim no braço durante algumas vezes
+
+632
+01:44:32.370 --> 01:44:36.220
+Gabriel Marcondes: por um tempo. E a partir disso, eu criei
+
+633
+01:44:36.220 --> 01:44:56.640
+Gabriel Marcondes: o que seria necessário para se construir um framework. E a partir desse Framework construído hoje, eu tenho um sistema com mais de vinte agentes que executam cada uma das etapas para que eu consiga atender um número maior de clientes e levar relatórios e trazer uma presença maior referente àquele negócio.
+
+634
+01:44:56.640 --> 01:45:14.060
+Gabriel Marcondes: Então não é só a conversa comigo. Eu trago dentro de cada encontro, múltiplos entregáveis. Eu consigo dar um direcionamento individual para cada uma das pessoas que estão ali dentro. Diferentemente de quando eu atendia como pessoa singular. Mas eu tive que fazer isso algumas vezes, para que eu definisse a metodologia
+
+635
+01:45:14.060 --> 01:45:31.770
+Gabriel Marcondes: que hoje eu faço nesses quatro encontros, para que eu construísse. O que são as perguntas exatas? O que são esses formulários necessários para que depois cada um deles se tornasse um agente a nível de pergunta: interrogar essas pessoas da maneira correta e guiá las de como
+
+636
+01:45:31.770 --> 01:45:36.510
+Gabriel Marcondes: buscar a resposta correta. E a partir disso, criar um output.
+
+637
+01:45:36.820 --> 01:45:47.230
+Gabriel Marcondes: Então, com isso, sendo assertivo, a gente consegue automatizar e criar diversos processos dentro das nossas operações. Deixa eu voltar aqui.
+
+638
+01:45:47.560 --> 01:45:48.770
+Gabriel Marcondes: E.
+
+639
+01:45:50.370 --> 01:45:52.709
+Gabriel Marcondes: E eu acredito que agora
+
+640
+01:46:02.180 --> 01:46:06.990
+Gabriel Marcondes: o pessoal perguntou: o meu arroba é Marcundes Data.
+
+641
+01:46:07.540 --> 01:46:17.789
+Gabriel Marcondes: Até se vocês quiserem tirar uma foto nossa aqui. Marcar com algum comentário do que vocês estão achando nesse momento, estão achando da Live. Vou até colocar aqui, marcando. Eu
+
+642
+01:46:18.460 --> 01:46:27.630
+Gabriel Marcondes: e Academia Maccondes. Data, deixa eu encontrar.
+
+643
+01:46:28.210 --> 01:46:32.360
+Gabriel Marcondes: Vocês têm alguma mais alguma dúvida
+
+644
+01:46:52.300 --> 01:47:02.890
+Gabriel Marcondes: ferramenta para desenhar mapas mentais? Então eu tenho um problema de singularidade e ferramenta, né? Então a gente vê que, por exemplo, aqui eu faço essas minhas no whimscall.
+
+645
+01:47:03.150 --> 01:47:08.109
+Gabriel Marcondes: Gosto bastante de utilizar o Imsko para aulas. E aqui eu uso o Miro,
+
+646
+01:47:08.700 --> 01:47:17.190
+Gabriel Marcondes: pois ele é maior. Então eu consigo fazer essas megalomanias aqui com muito mais tranquilidade.
+
+647
+01:47:21.180 --> 01:47:28.620
+Gabriel Marcondes: Perfeito. Agora eu vou trazer. Pessoal, é referente
+
+648
+01:47:29.520 --> 01:47:36.490
+Gabriel Marcondes: a precificação. Vamos falar um pouco da precificação. Deixa eu achar aqui. Eu tenho também uma mental de precificação.
+
+649
+01:47:38.720 --> 01:47:40.320
+Gabriel Marcondes: Só tem que achar onde ele entrar.
+
+650
+01:47:42.130 --> 01:47:51.290
+Gabriel Marcondes: Aqui. Não, daqui também não peraí que eu vou achar
+
+651
+01:48:18.910 --> 01:48:21.700
+Gabriel Marcondes: dentro desse daqui.
+
+652
+01:48:26.540 --> 01:48:27.670
+Gabriel Marcondes: E aí.
+
+653
+01:48:43.080 --> 01:48:46.109
+Gabriel Marcondes: Então vamos falar de precificação de serviço.
+
+654
+01:48:48.380 --> 01:48:52.899
+Gabriel Marcondes: Deixa eu mandar já para vocês. Aqui o mais um bafo mental,
+
+655
+01:49:07.880 --> 01:49:11.949
+Gabriel Marcondes: esses professores, mentores e Ceos da Academia são todos da Dh para todo mundo.
+
+656
+01:49:13.440 --> 01:49:14.840
+Gabriel Marcondes: Todo mundo
+
+657
+01:49:14.950 --> 01:49:22.970
+Gabriel Marcondes: movida. Venance para conseguir estar aqui, mantendo essa dispersão que faz com que a gente construa tanta coisa.
+
+658
+01:49:23.940 --> 01:49:27.149
+Gabriel Marcondes: Mas todos nós aqui somos.
+
+659
+01:49:30.310 --> 01:49:37.890
+Gabriel Marcondes: Legal, pessoal. Vamos falar então de precificação. Tentar ser o mais breve e qualquer dúvida que vocês tiverem.
+
+660
+01:49:37.890 --> 01:50:00.990
+Gabriel Marcondes: A gente vai conversando. Quando a gente pensa em precificação de serviços, a gente precisa separar em dois aspectos. Nós temos os aspectos que são os custos fixos e nós temos os custos variáveis. Quando a gente fala de custo fixo, a gente precisa pensar inicialmente em infraestrutura, ou seja, onde estará hospedada essa minha solução.
+
+661
+01:50:00.990 --> 01:50:10.349
+Gabriel Marcondes: Então, independente de tudo que a gente conversou, se, vocês vão criar os sistemas com os modelos que o Alan e o José trouxe. Se vocês vão criar automações. Se vão ser agentes diretos,
+
+662
+01:50:10.440 --> 01:50:12.370
+Gabriel Marcondes: tudo isso fica hospedado
+
+663
+01:50:12.690 --> 01:50:18.739
+Gabriel Marcondes: dentro de um servidor para que vocês consigam oferecer serviço para um cliente. E é o primeiro custo
+
+664
+01:50:19.280 --> 01:50:38.389
+Gabriel Marcondes: que eu pensaria. Então, hoje nós temos algumas provedoras, como Hostinger Digital, Ocean Retner. Atualmente, quando a gente fala de agentes dentro da agência lendária, nós utilizamos a Hatner, pois ela funciona muito bem com um modelo chamado
+
+665
+01:50:38.390 --> 01:50:48.749
+Gabriel Marcondes: e aí, Dockerswarm é algo um pouco mais avançado, mas basicamente funciona no seguinte formato
+
+666
+01:50:49.360 --> 01:50:52.130
+Gabriel Marcondes: pensar numa forma de desenhar isso para vocês.
+
+667
+01:50:52.690 --> 01:50:55.299
+Gabriel Marcondes: E aí tá. Deixa eu colocar aqui.
+
+668
+01:50:55.410 --> 01:51:01.529
+Gabriel Marcondes: E aí o Dockerswarm? Ele funciona como uma distribuição
+
+669
+01:51:01.530 --> 01:51:19.160
+Gabriel Marcondes: de servidores. Então, quando eu tenho um servidor, existem duas formas de escalar. É que eu vou trazer isso um pouco mais profundo para vocês amanhã. Pois amanhã a gente vai falar do tá, construir minha solução. E aí o que eu faço? Como eu escalo, vou trazer também um pouco falando de vendas rápido para vocês também.
+
+670
+01:51:19.160 --> 01:51:26.139
+Gabriel Marcondes: Mas quando a gente fala dessa escala, só para aproveitar esse momento, nós temos a escala horizontal, e nós temos a escala vertical.
+
+671
+01:51:26.140 --> 01:51:50.040
+Gabriel Marcondes: A escala vertical é o mais padrão. Então a escala vertical. Eu vou ficar aumentando esse servidor. Eu tenho um servidor de quatro giga. Eu vou aumentar para oito. Eu vou aumentar para dezasseis e ter mais placas. Eu posso fazer isso. Porém, ter um custo mais elevado. E eu tenho uma escala horizontal. A escala horizontal é quando eu pego este mesmo servidor. E eu crio múltiplas versões dele espelhadas de forma com que
+
+672
+01:51:50.040 --> 01:52:18.469
+Gabriel Marcondes: somente dois no momento de maior, eu estou utilizando os quatro. Então ele traz para mim uma escala
+
+673
+01:52:18.470 --> 01:52:27.559
+Gabriel Marcondes: muito mais interessante, mas que depende da gente conseguir fazer todas essas configurações. Então
+
+674
+01:52:27.810 --> 01:52:35.909
+Gabriel Marcondes: nós trabalhamos com esse modelo do Dockerswarm também fazendo o rapton kill, que é o modelo de fila
+
+675
+01:52:36.200 --> 01:52:42.079
+Gabriel Marcondes: que a gente faz a instalação ali antes do N8 New. Então, resumidamente, para a gente não
+
+676
+01:52:42.450 --> 01:52:45.289
+Gabriel Marcondes: deixar complexo. Imagina que a gente faz a fila da fila.
+
+677
+01:52:45.560 --> 01:52:57.879
+Gabriel Marcondes: Então as requisições já são empilhadas em filas. Aí a gente faz a fila dessas filas, e essas filas são espalhadas randomicamente entre os servidores. E aí com isso. A gente consegue ter escala com,
+
+678
+01:52:57.880 --> 01:53:06.069
+Gabriel Marcondes: por exemplo, o nosso One2 batendo oitocentos mil requisições por semana, dentro de uma mesma instalação. Então nós conseguimos
+
+679
+01:53:06.140 --> 01:53:10.769
+Gabriel Marcondes: partir disso, ter bastante escala. Então nós temos aqui o servidor.
+
+680
+01:53:11.190 --> 01:53:26.740
+Gabriel Marcondes: Claro que uma coisa interessante vocês já construindo estes servidores de vocês. Existe uma possibilidade. A partir do momento que vocês já definiram. A sua ideia já tem. O seu Cnpj já tem algo um pouco mais consolidado
+
+681
+01:53:26.740 --> 01:53:48.160
+Gabriel Marcondes: de buscar créditos diretamente. Então existem várias das Big Techs que fornecem esses créditos como a Microsoft a Google, com o Gcp for status, a Ws também. E dessa forma, vocês conseguem custear esse custo referente a servidor de maneira muito mais assertiva.
+
+682
+01:53:48.560 --> 01:53:51.019
+Gabriel Marcondes: Isso, Misael a Cnpj com ele.
+
+683
+01:53:54.480 --> 01:54:02.929
+Gabriel Marcondes: Nós temos os construtores de fluxo. Estão aqui. Por quê esse mapa mental? Meu, eu estou falando de agentes, mesmo eu construí ele para isso.
+
+684
+01:54:03.590 --> 01:54:21.309
+Gabriel Marcondes: Então, se a gente não fosse trabalhar com os construtores de Fluxo, nós utilizaríamos, por exemplo, Cloud Code, e vocês teriam referente à Api referente à própria aplicação. Hoje, é mais interessante que você faça a aquisição Ali do Max, porque o custo dele em comparação da requisição direta, é mais barato.
+
+685
+01:54:21.650 --> 01:54:23.310
+Gabriel Marcondes: Então,
+
+686
+01:54:23.340 --> 01:54:41.710
+Gabriel Marcondes: se você dá uso suficiente para ter um Cloud Code Max, ele sai mais barato do que você fazer requisição direta com Api. Então a gente aqui, o Alan, que destrói várias contas no mesmo dia, e eu às vezes aqui o time bastante. Então acaba valendo bastante.
+
+687
+01:54:41.860 --> 01:54:43.240
+Gabriel Marcondes: É?
+
+688
+01:54:44.610 --> 01:55:04.470
+Gabriel Marcondes: Então, quando a gente fala de fluxo de conversa, nós podemos usar ali o Manishet, principalmente aproveitando das configurações e conexões facilitadas referente à meta. Então ele é um parceiro oficial quando a gente fala de conexão com o Instagram, principalmente, ele acaba sendo uma das melhores opções. Nós temos o nicochete. Nosso amigo Nicola, que também conecta em tudo.
+
+689
+01:55:04.470 --> 01:55:08.689
+Gabriel Marcondes: Então ele consegue realizar esse processo omnitiano para vocês
+
+690
+01:55:08.700 --> 01:55:25.370
+Gabriel Marcondes: o bode conversa. Você pode criar fluxos ali diretamente. Nós temos o tapebot, que é bom por ser open source ou até mesmo o Flow Rise, que é open source e tem um visual low code bem, interessante para ser utilizado hoje. Os construtores de fluxo de conversa. Eles também podem ser
+
+691
+01:55:25.370 --> 01:55:34.190
+Gabriel Marcondes: feitos diretamente no código. Você pode usar um agno. Você pode fazer um Python usando um Sdk da Open ai direto
+
+692
+01:55:34.270 --> 01:55:38.139
+Gabriel Marcondes: ou dentro do própria Newton, que a gente já tem os Ai Agents,
+
+693
+01:55:38.180 --> 01:55:56.549
+Gabriel Marcondes: então não necessariamente. Você precisa utilizar um construtor de fluxo, mas temos essa opção: os integradores. Então os integradores, a gente vai começar, por exemplo, mais simples, que seria um make, onde é a forma mais facilitada de se aprender a automação devido a eles já terem
+
+694
+01:55:56.900 --> 01:56:09.070
+Gabriel Marcondes: diversas conexões já pré prontas. Então eles já deixam ali. Se eu não me engano, são mais de três.quinhentos conexões que você clica na ferramenta, e ela já é facilitada para isso, porém, você tem um custo.
+
+695
+01:56:09.070 --> 01:56:14.049
+Gabriel Marcondes: Toda ferramenta. Basicamente funciona desse formato.
+
+696
+01:56:14.050 --> 01:56:38.579
+Gabriel Marcondes: Quanto maior for a curva de desenvolvimento e aprendizado. Geralmente ela costuma ser mais barata. Se ela traz formas facilitadas de você executá la, ela vai ter um custo maior para isso. Então, Make, eu vejo como uma das melhores formas de entender a automação, para que você entenda as lógicas de olha como funciona uma Pi. Como funciona as requisições? Como eu posso fazer um loop como eu conecto múltiplas plataformas,
+
+697
+01:56:38.580 --> 01:57:02.399
+Gabriel Marcondes: mas que, para um segundo momento, a gente passe diretamente para um En oito n. Passe diretamente para o código. Nós temos o zapper também, que ele é bem amigável, mas ele é mais caro e o En8n, que costuma ser a plataforma mais utilizada. Quando a gente fala de automação diretamente. Só que, diferentemente do make que ele é no code. Ou seja, ele não tem código em nenhum momento,
+
+698
+01:57:02.400 --> 01:57:04.260
+Gabriel Marcondes: o Enoito n. Ele é.
+
+699
+01:57:04.260 --> 01:57:23.679
+Gabriel Marcondes: Ele é Low Code, ou seja, ele precisa de um pouco de um breve conhecimento ali de Javascript, para que você consiga utilizar ali. De algumas, principalmente na hora que a gente vai trabalhar com text split. Ou seja, eu vou tratar os textos. Eu vou tratar as variáveis que existem ali dentro. É interessante que você saiba um pouco de código.
+
+700
+01:57:24.940 --> 01:57:38.769
+Gabriel Marcondes: Nós temos para a criação dos agentes. Quando a gente fala no code, nós temos o chat vote. Nós temos a Zaya. Temos os superagens que são plataformas que vão facilitar para vocês essa construção. Direta dos agentes.
+
+701
+01:57:38.770 --> 01:57:49.360
+Gabriel Marcondes: Nós temos as Low Cults, que é o Langflow Flow Wise e o n8 n. Que funcionam bem também, mas que vocês precisarão fazer todas essas integrações. Então, hoje, quando você entra no Super Agents, por exemplo,
+
+702
+01:57:49.360 --> 01:58:12.799
+Gabriel Marcondes: é um guia que eu brinco, que é igual instalar um programa que a gente faz. Next, next Instal não lê nada e aperta. Concluir funciona. É isso. Você vai entrar ali. Tem vários templates. Você tem conexões facilitadas para que você olha, joga uma playlist do Youtube, e isso já vem como base. De conhecimento. Eu consigo subir todos os arquivos, rápido. E isso já está dentro de um banco vetorial para ser consumido com a gente. Você tem toda essa facilidade
+
+703
+01:58:12.800 --> 01:58:28.120
+Gabriel Marcondes: e já consegue colocar isso no ar enquanto os Low Codes precisam que você configure. Então olha, um N8 on. Eu preciso ter também um banco vetorial onde vai estar armazenado todo o conhecimento. Eu preciso ter um banco normal para um banco
+
+704
+01:58:28.120 --> 01:58:47.410
+Gabriel Marcondes: relacionar o padrão Skl para que eu armazene as mensagens. As conexões são um pouco mais complicadas de serem feitas. Mas você consegue fazer isso low code e via código. Você pode fazer diretamente com a Open. Ai assistants responses. Api diretamente. Então,
+
+705
+01:58:47.620 --> 01:58:54.759
+Gabriel Marcondes: junto do Sdk. Então já dá para vocês trabalharem o Langchain, que é a plataforma, até mesmo que o 88n utiliza como base.
+
+706
+01:58:55.320 --> 01:59:04.469
+Gabriel Marcondes: E ele é excelente para modelo de multiagens. Ele é realmente muito bom. Gosto bastante do Leng Chain. Ele tem várias funcionalidades dentro dele, que permite com que
+
+707
+01:59:05.050 --> 01:59:14.630
+Gabriel Marcondes: a conversa entre os mutiagens funciona muito bem que você controla a memória que você resume a memória. Então é bem interessante. A Query, que
+
+708
+01:59:14.870 --> 01:59:22.720
+Gabriel Marcondes: utiliza do Langchain como o padrão e a Microsoft Autogen também, que funciona excelentemente.
+
+709
+01:59:26.030 --> 01:59:41.469
+Gabriel Marcondes: Vamos lá e nós temos o centralizador de conversa. Eu acho que alguém tinha perguntado alguma coisa de Chatwood. Mas foram tantas perguntas que eu não consegui acompanhar. Mas hoje, o Chatwood é o melhor centralizador de conversa. A menos que vocês queiram construir diretamente. Então, hoje, na agência, eu trabalho com os dois formatos
+
+710
+01:59:41.470 --> 02:00:06.129
+Gabriel Marcondes: para clientes que vêm de uma base de Crm. Então, como argumento de vendas, eu faço a substituição direta do Crm. Geralmente eu utilizo do próprio Chatwood porque ele tem uma base muito parecida. Então, quando você olha para um Okadesk, você olha para um rd, ele acaba tendo um formato a nível de atendimento direto junto, que é preciso colocar um Kamban, mas a nível de centralização de conversa muito próximo. Então o Chatwood é interessante.
+
+711
+02:00:06.130 --> 02:00:30.810
+Gabriel Marcondes: E para alguns atendimentos personalizados. A gente constrói diretamente com o código webcoding total. Então o Chatwood é uma plataforma open source que permite com que você integre esses chats tanto um Omnichann, permitindo com que você traga de diversos canais. Então eu tenho um agente meu no telegram. Tenho outro no meu Whatsapp. Eu conectei outro no Instagram e todos eles. Eu quero receber essas informações no mesmo local
+
+712
+02:00:30.810 --> 02:00:53.569
+Gabriel Marcondes: ou até mesmo múltiplos agentes. E você consegue controlar isso a nível de atendimento. Muito bem. Com o Chatbot, você consegue distribuir para humanos. Então se eu estou fazendo uma tarefa que hoje ela não é finalizada do ponto A até o ponto B pela Ia. E eu preciso repassar para um ano, por exemplo, fazer um fechamento, continuar um atendimento. Faz muito sentido utilizar o Chatboot e ele se torna bem interessante para que a gente faça esse trabalho.
+
+713
+02:00:55.400 --> 02:01:00.729
+Gabriel Marcondes: Nós temos os nossos impostos. Eu gosto de deixar aqui referente a isso.
+
+714
+02:01:02.000 --> 02:01:06.620
+Fran Martins | Lendár[IA]: Ô marcondes só avisando. Tá, mas
+
+715
+02:01:07.190 --> 02:01:12.910
+Fran Martins | Lendár[IA]: mais um pouquinho ali o pessoal tem que ter um intervalinho. A gente precisa. Peça às dezanove horas.
+
+716
+02:01:13.060 --> 02:01:19.429
+Fran Martins | Lendár[IA]: Aí, só sinalizando para pelo menos ter uma meia horinha para o pessoal ir pro banheiro.
+
+717
+02:01:19.430 --> 02:01:22.039
+Gabriel Marcondes: Tá bom. Eu vou ser bem rápido aqui. Dez minutinhos. Eu mato.
+
+718
+02:01:22.340 --> 02:01:23.120
+Fran Martins | Lendár[IA]: Fechou.
+
+719
+02:01:23.120 --> 02:01:23.970
+Gabriel Marcondes: Perfeito.
+
+720
+02:01:24.340 --> 02:01:28.759
+Gabriel Marcondes: Então, impostos só para a gente não esquecer.
+
+721
+02:01:29.540 --> 02:01:32.079
+Gabriel Marcondes: Então, mais uma vez, lembrando Misael
+
+722
+02:01:32.450 --> 02:01:43.629
+Gabriel Marcondes: com impostos. Então nós temos aqui. Se vocês forem mês, tem ali aquele custo fixo da guia das com limite de oitenta e um mil de faturamento anual. E vocês. Ultrapassando isso,
+
+723
+02:01:43.980 --> 02:02:01.479
+Gabriel Marcondes: temos ali o nosso Me, onde os Knights, que geralmente utilizamos para poder fazer essa prestação de serviço costuma ser o desenvolvimento de programas de computador sob medida, desenvolvimento de licenciamento de programas e o desenvolvimento de licenciamento dos não customizáveis. A gente vai trabalhar com esse formato
+
+724
+02:02:01.480 --> 02:02:05.639
+Gabriel Marcondes: varia de como você faz esse entregável. Então o serviço direto,
+
+725
+02:02:05.720 --> 02:02:17.309
+Gabriel Marcondes: geralmente você vai utilizar esses dois, e caso você faça um modelo de contratação que eu chamo de alugar solução. Essa solução já está pré definida. Você pode utilizar o não customizado
+
+726
+02:02:18.140 --> 02:02:26.129
+Gabriel Marcondes: e agora a gente vai falar sobre os custos variáveis que muitas pessoas têm dúvida de como fazer a precificação referente a esse aspecto.
+
+727
+02:02:26.850 --> 02:02:30.219
+Gabriel Marcondes: Muitos deles, estão justamente nos tokins
+
+728
+02:02:30.620 --> 02:02:48.570
+Gabriel Marcondes: os tokens. Hoje a gente trabalha com dois formatos que são os tokens de entrada e os tokens de saída. O nosso input output, os tokens de entrada, que são os mais importantes para a gente entender. E onde vai estar realmente os nossos custos onde nós conseguimos otimizar. Eles vêm de
+
+729
+02:02:49.080 --> 02:03:07.509
+Gabriel Marcondes: Prompt quando eu digo Prompt, é o System Prompt. Ou seja, o conhecimento. A instrução que existe dentro desse agente. Então, quem ele é? Qual o objetivo dele? As tarefas. O que ele faz, o que ele não faz, aquilo que a gente define. E esse System Prompt é lido todas as interações.
+
+730
+02:03:07.580 --> 02:03:25.160
+Gabriel Marcondes: E é aqui um dos primeiros aspectos de você ter um bom prompt. Bem otimizado. Ele vai te trazer uma economia grande referente a input tokins, porque se a pessoa manda. Oi, ele vai ler totalmente. Bom dia. Ele vai ler totalmente. Então é importante que você faça ele de forma otimizada.
+
+731
+02:03:25.420 --> 02:03:40.870
+Gabriel Marcondes: Nós temos a mensagem do usuário em si que é justamente o input do usuário do cliente. Então a gente conta aqueles tokins e o texto que a nossa inteligência artificial busca no Knowledge está escrito errado.
+
+732
+02:03:41.170 --> 02:03:41.870
+Gabriel Marcondes: Tchau.
+
+733
+02:03:42.160 --> 02:03:47.939
+Gabriel Marcondes: E eu acho que nem eu tenho acesso para poder editar. Cadê depois eu me dito, beleza.
+
+734
+02:03:47.980 --> 02:04:05.900
+Gabriel Marcondes: O Nolog é o nosso reggae, o retrieval Argument Generations, que é a colinha da nossa A. Então vamos entender o que são essas coisas. O Prompt é a instrução. O Prompt é o Job Description. É a instrução. A função desse meu agente é a função deste meu funcionário.
+
+735
+02:04:05.900 --> 02:04:13.220
+Gabriel Marcondes: Quem é você? Você é o João de atendimento. Seu objetivo é atender o cliente e levá lo para a venda.
+
+736
+02:04:13.220 --> 02:04:37.870
+Gabriel Marcondes: Você deve fazer no seguinte formato chamar determinadas ferramentas. E você não pode fazer isso. É a instrução dele. A base mensagem do usuário é o que entra e o texto que a Ia. Busca no Nonolog. Esse reg é a colinha que eu entrego para essa. Então toda a inteligência artificial é construída e treinada a partir das provedoras das big techs. Então, quando vocês ouvem a nossa Llm nova tem
+
+737
+02:04:38.130 --> 02:04:54.130
+Gabriel Marcondes: x bilhões de parâmetros durante o treinamento. É a volumetria de dados que foi utilizado para treinar aquele modelo, ou seja, tudo que eles entregaram de dados que está dentro do conhecimento daquela Ia, naturalmente, sem precisar de Internet, de forma com que ela saiba responder.
+
+738
+02:04:54.130 --> 02:05:01.109
+Gabriel Marcondes: Por isso não sei o uso de vocês, mas no começo, por exemplo, do chat Ept, quando ele não usava Internet.
+
+739
+02:05:01.110 --> 02:05:03.579
+Gabriel Marcondes: Quando você fazia uma pergunta muito atual.
+
+740
+02:05:03.780 --> 02:05:09.480
+Gabriel Marcondes: Eu lembro quando a gente teve uma mudança de governo, e a gente perguntava quem era o presidente atual. Ele respondia: e do antigo.
+
+741
+02:05:09.480 --> 02:05:27.280
+Gabriel Marcondes: Por quê? Porque não foi atualizada essa base de conhecimento. Ela foi treinada em momentos anteriores e ele não teria acesso à Internet. Porém, ele sabe sobre diversos aspectos. Quando entra esse knowload. Quando eu preciso trazer informações que são específicas no meu negócio, a open air não sabe do meu negócio. Para poder entregar aquilo para o agente
+
+742
+02:05:27.300 --> 02:05:43.940
+Gabriel Marcondes: ou quando eu quero dar direcionamentos claros. Então eu quero que ele use livros como base. Eu quero que ele use metodologias e Frameworks, que foram construídas por mim. Então essa colinha vem justamente para quando alguém fizer uma pergunta para o agente e eu não tenha que colocar aquilo sempre no Prompt.
+
+743
+02:05:43.940 --> 02:06:08.290
+Gabriel Marcondes: Ele perguntou para mim como que funciona a parte sobre o contrato do fechamento, não tem por que eu colocar informações dessas diretamente no Prompt? Por quê? Senão eu vou consumi la toda vez que alguém falar. Oi, tudo bem, ele está lendo. Então eu deixo essa colinha do lado. Ele vai ter aquele livro que, a partir do momento que se torna necessário que ele precise utilizar essa informação, ele busca essa colinha e responde essa pessoa.
+
+744
+02:06:08.660 --> 02:06:11.289
+Gabriel Marcondes: Então é aqui. Onde está o nosso Knowledge?
+
+745
+02:06:11.580 --> 02:06:19.200
+Gabriel Marcondes: Nós temos o token de saída, que é super autoexplicativo. É a resposta. Da Ia. É justamente o que ela entrega ali, no final,
+
+746
+02:06:20.360 --> 02:06:32.189
+Gabriel Marcondes: trazendo como exemplo a gente. Pensando num cenário, vamos pensar num cenário de um cliente que atende em média, mil leads por mês. E esses leads vão enviar, em média doze mensagens dentro dessa interação,
+
+747
+02:06:32.310 --> 02:06:35.270
+Gabriel Marcondes: trazendo um total de doze mil mensagens
+
+748
+02:06:35.600 --> 02:06:38.200
+Gabriel Marcondes: para isso. A gente vai colocar aqui,
+
+749
+02:06:38.380 --> 02:06:52.139
+Gabriel Marcondes: utilizar o modelo. Eu deixo aqui um. Vocês têm acesso a uma calculadora e vocês conseguem observar todos os modelos de inteligência artificial, desde o mais barato que o atual. É o Metalhama três.dois,
+
+750
+02:06:52.330 --> 02:06:55.630
+Gabriel Marcondes: até o mais caro que é o quatro.cinco
+
+751
+02:06:55.780 --> 02:06:58.500
+Gabriel Marcondes: que está aqui, que é o quatro.cinco cento e vinte e oito K.
+
+752
+02:06:59.130 --> 02:07:06.530
+Gabriel Marcondes: O Suzy Porto dois pro tá aqui também tem alguns modelos que já estão até obsoletos, né? Até mesmo, por exemplo,
+
+753
+02:07:06.680 --> 02:07:11.870
+Gabriel Marcondes: o Gpt quatro aqui direto, então já estão obsoletos. Não faz sentido você utilizar.
+
+754
+02:07:12.830 --> 02:07:25.880
+Gabriel Marcondes: Baseado nisso, vocês conseguem vir aqui colocar um número de input token, o número de Output Tokins, o número de Api calls. Se diz as interações se diz a chamada de Api, que é feita da seguinte forma:
+
+755
+02:07:26.190 --> 02:07:40.540
+Gabriel Marcondes: e vocês podem passar na Ia para fazer isso aqui. Eu trouxe um exemplo de um cliente trazendo algumas mensagens. Olha, estava pesquisando sobre assistentes virtuais via minha empresa, e a partir disso, você pedir para a ia contar o número de Tokins para vocês dentro dessa interação.
+
+756
+02:07:40.770 --> 02:08:02.259
+Gabriel Marcondes: Então ela vai contar as interações tanto do cliente quanto do atendente. E você vai trabalhar com isso mais os inputs output tokins e adicionar também o seu promot. Então hoje é bem tranquilo de você entregar para a Ia em cima de uma conversa simulada de um histórico que você tenha para que ela calcula quantos tokins são gastos naquela conversa média.
+
+757
+02:08:02.260 --> 02:08:06.550
+Gabriel Marcondes: E com isso vocês virem aqui dentro da nossa calculadora, e
+
+758
+02:08:06.550 --> 02:08:11.890
+Gabriel Marcondes: colocar o número de put tokenizar o Deput Tokins, para que vocês tenham uma média de custo.
+
+759
+02:08:12.060 --> 02:08:18.639
+Gabriel Marcondes: Então, aqui no caso, quando eu trouxe, tinha dado um custo: Cadê vamos pegar.
+
+760
+02:08:20.320 --> 02:08:24.570
+Gabriel Marcondes: Se eu colocar assim, vou botar um input token de um.duzentos tokins.
+
+761
+02:08:27.750 --> 02:08:43.439
+Gabriel Marcondes: E o meu output é sempre pequeno, então vou ter um output de trezentos tolkien para mil api calls. Então aqui ele vai trazer para mim quanto que eu gasto com cada um dos provedores e vocês vão conseguir utilizar. Vão olhar. Olha, eu quero montar o meu agente em cima do.
+
+762
+02:08:45.160 --> 02:08:47.600
+Gabriel Marcondes: Deixa eu ver. Um boom aqui
+
+763
+02:08:48.100 --> 02:08:53.250
+Gabriel Marcondes: o outras mini, por exemplo, ou quatro mini. Ele vai ter um custo de dois,sessenta e quatro
+
+764
+02:08:53.470 --> 02:08:56.470
+Gabriel Marcondes: e, a partir disso, a gente tem uma certa previsibilidade,
+
+765
+02:08:56.850 --> 02:09:10.289
+Gabriel Marcondes: mas já trazendo para vocês que muita dessa dúvida que vem referente a essa precificação dinâmica de token, que é como eu apresento isso para o meu cliente. Como que eu consigo trabalhar com o meu cliente referente a essa precificação, que é dinâmica,
+
+766
+02:09:10.880 --> 02:09:17.200
+Gabriel Marcondes: mesmo que você atue em setores com grande replicabilidade, ainda vai continuar sendo dinâmico.
+
+767
+02:09:17.360 --> 02:09:19.120
+Gabriel Marcondes: Então
+
+768
+02:09:19.570 --> 02:09:37.560
+Gabriel Marcondes: existem algumas formas de você executar esse processo hoje, eu costumo trazer uma previsibilidade a nível histórico. Olha, eu tenho clientes parecidos com o seu negócio, que o custo é esse, mas ele pode alterar se a sua base de conhecimento for maior. Se você colocar mais metodologias ou até mesmo menos,
+
+769
+02:09:37.560 --> 02:09:46.649
+Gabriel Marcondes: ou até mesmo optar por outros modelos a partir da sua escolha. Mas hoje eu gosto de definir o modelo diretamente
+
+770
+02:09:47.090 --> 02:09:56.300
+Gabriel Marcondes: com isso. Eu costumo já fazer esse repasse. Ou em alguns clientes. Eu assumo o custo referente ao primeiro mês,
+
+771
+02:09:56.460 --> 02:10:10.210
+Gabriel Marcondes: pois dessa forma eu não trago. E aí eu, obviamente, eu já coloco isso dentro da precificação inicial que eu passo para ele. Mas está sendo diluído. Mas dessa forma, eu trago para ele. Olha, vai ficar comigo esse primeiro mês, para que quando passe para você esse custo,
+
+772
+02:10:10.340 --> 02:10:26.349
+Gabriel Marcondes: você já tem a transparência. Já tem a previsibilidade. Porque se ele vê na primeira semana que esse curso está elevado e vai ser passado para ele. Ele vai falar. Tá bom, então eu quero reduzir um pouco da base de conhecimento. Olha, não precisava de tanta informação. Vamos tentar trabalhar com um modelo um pouco mais simples.
+
+773
+02:10:26.490 --> 02:10:39.469
+Gabriel Marcondes: Podemos fazer esses ajustes, e ele é feito previamente para que não seja em cima da hora. Mas com isso, você consegue garantir que o seu cliente tem observabilidade e, ao mesmo tempo, você consiga
+
+774
+02:10:39.760 --> 02:10:44.949
+Gabriel Marcondes: não ter problemas com ele ao longo do tempo. Sobre esses custos dinâmicos,
+
+775
+02:10:45.680 --> 02:10:47.759
+Gabriel Marcondes: temos custo também referente a pessoas.
+
+776
+02:10:48.420 --> 02:11:04.230
+Gabriel Marcondes: Então, quando a gente pensa numa estrutura básica referente de uma agência, se vocês irão pensar em time, nós temos um time de tecnologia, onde vocês podem trabalhar tanto com remuneração fixa mais bonificação ou remuneração variável. Mais isso em cima do desenvolvimento
+
+777
+02:11:04.230 --> 02:11:14.950
+Gabriel Marcondes: é sempre importante ter um variável. Porque quando a gente fala de serviço, a produtividade é literalmente um botão para que você possa retornar esse dinheiro.
+
+778
+02:11:15.260 --> 02:11:26.159
+Gabriel Marcondes: Então, quanto mais você conseguir instigar essa produtividade das pessoas que estão em volta das pessoas que fazem parte do seu time, você vai conseguir obter mais resultados.
+
+779
+02:11:26.600 --> 02:11:29.899
+Gabriel Marcondes: Quando a gente fala do time de vendas, remuneração em comissão direta,
+
+780
+02:11:30.250 --> 02:11:45.300
+Gabriel Marcondes: é realmente o melhor modelo e a gente tem as partes de experiência dos clientes onde nós temos os account managers, que são as pessoas que estarão diretamente em contato com o cliente fazendo o gerenciamento dessa conta, sendo o sucesso desse seu cliente,
+
+781
+02:11:45.380 --> 02:11:54.239
+Gabriel Marcondes: pois é necessário dentro do desenvolvimento, pois são vários pontos de contato. É necessário que você tenha essa pessoa que vai, como eu digo,
+
+782
+02:11:54.950 --> 02:12:04.939
+Gabriel Marcondes: vamos dizer, mastigar um pouco dessa solicitação do cliente para o seu time de desenvolvimento para que não chegue para eles tão abstrato. E para que não tenha necessidade desse contato diretamente.
+
+783
+02:12:04.970 --> 02:12:18.609
+Gabriel Marcondes: Então você ter essa pessoa. Esse account manager que ele é responsável. Você pode comissioná lo referente à retenção destes seus clientes. É sempre bem interessante, pois ele vai tentar tratá los e fazer essas experiências da forma mais interessante possível,
+
+784
+02:12:18.980 --> 02:12:28.640
+Gabriel Marcondes: a nível dele, receber essa comissão e o suporte onde a gente terá ali para que você consiga trazer isso para os seus clientes
+
+785
+02:12:28.910 --> 02:12:31.910
+Gabriel Marcondes: aqui. Eu deixei o modelo de Partners porque é um modelo que eu
+
+786
+02:12:31.950 --> 02:12:54.660
+Gabriel Marcondes: trabalhei. Trabalho em alguns casos ainda na agência, que é você trabalhar com modelo de filiados. Então você ter pessoas que irão trazer leads para você diretamente. E você irá comissioná los referente ao fechamento após o fechamento desses leads. Então, dentro da agência, eu sempre trabalhei com lead morno. Ou seja, não trabalha com lista fria. Se você me mandar uma, lista, não irei fazer contato direto.
+
+787
+02:12:54.660 --> 02:13:10.990
+Gabriel Marcondes: Esse lead morno. É um lead que ele sabe da dor. Ele tem ciência da dor. Ele já sabe que existe inteligência artificial e que pode solucionar o problema dele, mas ele ainda precisa ver referente a tempo prazo dessa sua solução, valores. Você ainda precisa fazer um trabalho de fechamento.
+
+788
+02:13:10.990 --> 02:13:19.600
+Gabriel Marcondes: Lead kind tem consciência disso tudo e tem consciência referente ao seu ticket médio referente ao seu tempo de entrega. Então é só tirar algumas dúvidas e fazer esse fechamento.
+
+789
+02:13:19.640 --> 02:13:27.779
+Gabriel Marcondes: E temos o modelo ali do Account manager, que são os clientes que já fazem o fechamento para ti. Eu tenho alguns que eles só falam para mim. Marconi me manda o contrato que eu já fechei com a pessoa.
+
+790
+02:13:27.780 --> 02:13:41.289
+Gabriel Marcondes: Então, em contrapartida, de eu trazer uma remuneração um pouco maior. Ele faz todo esse processo de contato com o cliente diretamente. Então ele que gerencia esse cliente, a gente fica só por conta de fazer a entrega do desenvolvimento.
+
+791
+02:13:42.250 --> 02:13:49.919
+Gabriel Marcondes: Entre os modelos de custo por projeto, são os modelos de precificação que vocês podem utilizar.
+
+792
+02:13:50.090 --> 02:13:53.270
+Gabriel Marcondes: Nós temos que são os métodos de cobrança.
+
+793
+02:13:53.740 --> 02:13:57.639
+Gabriel Marcondes: O custo por projeto direto. Então
+
+794
+02:13:58.040 --> 02:14:10.459
+Gabriel Marcondes: é um modelo onde a gente vai trabalhar com setup setap recorrência. Somente recorrência. Isso vai variar do formato escolhido. Eu particularmente gosto bastante de trabalhar com setup e recorrência.
+
+795
+02:14:10.730 --> 02:14:21.860
+Gabriel Marcondes: E com ele, você tem a vantagem de ter um escopo muito mais bem detalhado, porque, como você fez essa precificação anteriormente. Então necessita que você já tenha esse escopo, as horas, os recursos necessários.
+
+796
+02:14:21.860 --> 02:14:45.199
+Gabriel Marcondes: Você já consegue definir? Então você tem previsibilidade referente à escala de mais pessoas que vão ser adquiridas pela sua empresa e um cronograma muito mais claro. As desvantagens são: se tiver mais trabalho, se for mais complexo, a sua margem de lucro pode ser reduzida referente às horas empregadas. Então, se você não conseguiu fazer uma análise boa de desculpa inicial fechou por um valor e isso tomou muito mais tempo. Você está tomando prejuízo
+
+797
+02:14:45.200 --> 02:15:01.280
+Gabriel Marcondes: ou menos lucro referente àquela entrega. O prazo apertado pode levar a entrega de menor qualidade. Se você não conseguir tangibilizar isso para o cliente referente ao desenvolvimento da sua equipe e as alterações. Desculpe, novas necessidades podem cumprometer o prazo e aumentar os custos.
+
+798
+02:15:01.980 --> 02:15:10.309
+Gabriel Marcondes: Então aqui eu trouxe como exemplo. Então, trabalhar, por exemplo, um agente Sdr e você colocar um valor de Setap, esse valor de setup na comunicação com o cliente, ele sempre vai ser.
+
+799
+02:15:10.530 --> 02:15:34.310
+Gabriel Marcondes: Olha o tempo que eu estou colocando o meu e do meu time para que ele configure a solução para ti. Então é um momento, onde demanda mais de energia do time para essa construção. Por isso tem um valor mais elevado. Enquanto a recorrência é todo esse acompanhamento, recorrência. Eu nunca gosto de trabalhar numa narrativa de manutenção. Não faz sentido trabalhar numa narrativa de manutenção. Faz sentido você trazer como acompanhamento.
+
+800
+02:15:34.610 --> 02:15:53.690
+Gabriel Marcondes: Estou garantindo o funcionamento da solução. Eu vou manter ela atualizada. Vou trazer os melhores modelos, mas eu estou junto do seu time mostrando para você, a partir das inteligências de dados geradas por essa solução direcionamento, então esse acompanhamento se torna algo muito mais valoroso do que simplesmente manutenção. Porque nenhum cliente quer pagar a manutenção.
+
+801
+02:15:54.450 --> 02:16:03.369
+Gabriel Marcondes: Existem modelos que vocês podem trabalhar aqui. Então, dar desconto à vista no setup com contrato de doze meses mínimo, ou diluir o valor do setup nas demais parcelas do contrato
+
+802
+02:16:03.830 --> 02:16:15.959
+Gabriel Marcondes: ou até mesmo cinquenta. Geralmente, os meus clientes trabalham com esses dois modelos. Ou faz cinquenta por cinquenta ou dilui o valor nas demais parcelas. Claro que aqui eu coloco uma taxa de juros na faixa de quinze por cento.
+
+803
+02:16:16.320 --> 02:16:35.409
+Gabriel Marcondes: Se ele quer dividir isso, pois a gente vai pensar em caixa, né? Então eu preciso ter capital de giro dentro da empresa. Então, se eu estou dividindo esse momento, onde eu estou colocando o meu time com maior peso. Isso tem um custo para mim. Eu preciso receber um bônus referente a isso. Que seria esses juros, que é um juros meu, não é um juros do cartão,
+
+804
+02:16:35.440 --> 02:16:48.280
+Gabriel Marcondes: pois, dividindo quando a gente fala de serviço, a gente está falando de outros modelos de pagamento? Não necessariamente. O cliente vai dividir no cartão. Eu consigo garantir pelo menos uma margem maior referente a isso. Como tem um contrato, se torna algo tranquilo,
+
+805
+02:16:48.570 --> 02:16:55.190
+Gabriel Marcondes: um outro modelo é o custo por hora. Então o custo por hora, você vai pegar o preço base, mais as horas que serão gastas. Então
+
+806
+02:16:55.299 --> 02:17:06.790
+Gabriel Marcondes: ele tem uma vantagem de você ter um controle mais rigoroso referente às mudanças. Então, se você está com clientes que são problemáticos e que constantemente fazem mudanças e pedem mais coisas. Isso pode ser um modelo interessante, pois ele vai
+
+807
+02:17:06.790 --> 02:17:16.430
+Gabriel Marcondes: pensar duas vezes. Ele vai conseguir calcular muito mais antes de fazer qualquer solicitação, pois todas elas têm um custo agregado. Então se traz para você um pouco mais de segurança referente a esse ponto.
+
+808
+02:17:16.430 --> 02:17:19.060
+Gabriel Marcondes: As desvantagens tem o risco de rejeição, porque
+
+809
+02:17:19.059 --> 02:17:26.210
+Gabriel Marcondes: um modelo que o cliente não consegue ter uma clareza cem de como vai ficar. O custo final é igual obra.
+
+810
+02:17:26.209 --> 02:17:45.140
+Gabriel Marcondes: Então o pedreiro pode me cobrar um valor e que pode se tornar completamente outro. O que ele pode me falar? Que aquele material dá para determinado cômodo. E de repente, eu preciso de muito mais. Então você pode ter problemas referentes a isso. Exige muito mais transparência de relatório. Então vai mais processos dentro da sua operação
+
+811
+02:17:45.360 --> 02:17:54.889
+Gabriel Marcondes: e o controle das horas que vai exigir que você consiga fazer isso com o seu time quase tal qual um microgerenciamento. Mas vocês podem trabalhar com modelo de Pock Mvp
+
+812
+02:17:55.059 --> 02:18:11.090
+Gabriel Marcondes: com esse modelo, para que em seguida, faça o fechamento direto e o último modelo. A gente tem ali o aluguel de estrutura já pronto, então eu tenho uma solução que é tão replicável que eu consigo já definir um valor fixo, quase como se fosse um Sass. E eu já consigo definir ali o.
+
+813
+02:18:11.389 --> 02:18:16.979
+Gabriel Marcondes: A minha margem de lucro. O tempo de configuração é muito menor, então as vantagens é a redução de custo inicial
+
+814
+02:18:17.080 --> 02:18:24.220
+Gabriel Marcondes: e a rápida implementação. As desvantagens é que a solução, consequentemente, vai ser mais engessada como qualquer solução do mercado, que é mais pronta
+
+815
+02:18:24.219 --> 02:18:48.579
+Gabriel Marcondes: e precisa de trabalhar muito. A retenção do cliente, porque se ela é muito rápida de ser implementada. Ela é muito engessada. Quando aparecer uma outra solução levemente melhor, ele te troca se aparecer uma solução levemente mais barata. Ele te troca porque ele não teve que fazer um projeto de treze, catorze e cinto, dias, fornecer várias informações, assinar um contrato e ter algo grande referente a isso. Então o seu risco de Charlie desse cliente se torna muito maior.
+
+816
+02:18:49.129 --> 02:19:00.589
+Gabriel Marcondes: E com isso, vocês podem trabalhar com valor de recorrência e custos dinâmico, aplicando, referente ao uso direto dessa plataforma, ou um valor fixo com.
+
+817
+02:19:00.790 --> 02:19:02.549
+Gabriel Marcondes: Sem ser um pacote direto.
+
+818
+02:19:04.920 --> 02:19:18.550
+Gabriel Marcondes: Então, pessoal, acho que, de forma geral, é isso, porque aqui estava a questão do curso de oportunidade que eu falei com vocês. Então tem o valor agregado que é sempre importante vocês colocarem. Quando a gente trabalha com um mercado que ele não é commodity,
+
+819
+02:19:18.549 --> 02:19:28.569
+Gabriel Marcondes: não existe o parâmetro de comparação. Então, com isso, contanto que você tenha muito resultado, o seu cliente não tem. Ah, mas o de fulano é mais barato,
+
+820
+02:19:28.820 --> 02:19:34.890
+Gabriel Marcondes: porque se a sua solução resolve um problema com o resultado, e é grande o suficiente, dificilmente você vai ter concorrente
+
+821
+02:19:35.379 --> 02:19:52.000
+Gabriel Marcondes: Saving, como a gente conversou. Então, quanto você economiza em horas e dinheiro, o potencial de escalabilidade desse projeto, a replicabilidade dele, o impacto na sua reputação. Então, de respeito, o que você vai ter referente à sua reputação, que, consequentemente, vai gerar mais fechamento a partir desse projeto
+
+822
+02:19:52.000 --> 02:20:00.950
+Gabriel Marcondes: aprendizado e experiência. Então, construir mais essa carteira de problemas que foram resolvidos, que vão fazer com que minhas próximas soluções sejam mais rápidas e assertivas
+
+823
+02:20:00.990 --> 02:20:09.650
+Gabriel Marcondes: relacionamento com o meu cliente. Então esse cliente é específico. Ele vai trazer mais oportunidades futuras, seja por ele mesmo ou por outros. Então tem clientes, a qual eu cobrei
+
+824
+02:20:09.650 --> 02:20:28.549
+Gabriel Marcondes: trinta, quarenta mais barato numa primeira solução, mas que ele fechou três soluções seguintes comigo na próxima semana. Alguns casos, até mesmo na mesma semana. Então é importante que você só entre dentro desse terreno, pois se você constrói tudo com excelência e gera valor para ele ele contratar mais serviço seu é simplesmente consequência a questão de tempo.
+
+825
+02:20:28.830 --> 02:20:29.600
+Gabriel Marcondes: E aí
+
+826
+02:20:29.890 --> 02:20:48.140
+Gabriel Marcondes: aqui é você fazer essa avaliação de prioridades, eu digo avaliação de prioridades. Pois a partir do momento que vocês cheguem num momento da operação, onde você já sabe o valor de retorno. Então assim eu peguei uma solução, peguei um Sdr e eu já sei quanto que eu venho do Sdr. E quanto que isso custa? De tempo do meu time.
+
+827
+02:20:48.140 --> 02:20:55.230
+Gabriel Marcondes: Toda vez que eu olhar um outro tipo de solução, você deixa de ver o custo. E sim o que você está deixando de ganhar.
+
+828
+02:20:56.240 --> 02:21:11.429
+Gabriel Marcondes: Então, quanto que meu time geraria de caixa para mim? Com este tempo, essa solução, essa pessoa vai me pagar o equivalente. Então essa pessoa está me pedindo uma solução personalizada, que é o tempo de três sds. Ela me pagou orçamento de três Sds. Não, não, paga
+
+829
+02:21:11.630 --> 02:21:15.240
+Gabriel Marcondes: ou ela entra em algum desses aspectos, ou já é um claro, não.
+
+830
+02:21:15.890 --> 02:21:23.930
+Gabriel Marcondes: Então é sempre importante você fazer essa avaliação de prioridade na hora de aceitar qualquer tipo de projeto perfeito.
+
+831
+02:21:27.060 --> 02:21:31.330
+Gabriel Marcondes: Pessoal, acredito que, de maneira geral, é isso
+
+832
+02:21:32.150 --> 02:21:38.289
+Gabriel Marcondes: para a gente não estender tanto. Eu vou retornar amanhã.
+
+833
+02:21:38.530 --> 02:21:43.660
+Gabriel Marcondes: Então, trazendo um pouco mais para vocês. Referente a
+
+834
+02:21:44.150 --> 02:22:02.650
+Gabriel Marcondes: a parte. O que a gente faz depois de construir. Então vocês vão ter ali todo o acompanhamento do José junto do Alan também. Então, o que a gente faz a nível de escala, distribuição dessa solução? Eu vou separar um tempo também para a gente falar rapidamente sobre essa questão de abordagem desse fechamento que eu vi. Que tem muita dúvida sobre isso.
+
+835
+02:22:02.650 --> 02:22:06.039
+Gabriel Marcondes: Me deixa à disposição pessoal. Mais uma vez
+
+836
+02:22:06.040 --> 02:22:10.359
+Gabriel Marcondes: trouxe para vocês ali, meu. Instagram, marcondes, datas. Se vocês quiserem
+
+837
+02:22:10.800 --> 02:22:22.170
+Gabriel Marcondes: tirar a foto, comentar o que vocês gostarem, qualquer dúvida, vocês me mandam que quando eu tiver tempo, eu consigo. Sim, dar uma olhada. E eu desejo todo sucesso para vocês. Construam tudo com excelência.
+
+838
+02:22:22.300 --> 02:22:25.400
+Gabriel Marcondes: Pois o sucesso é consequência a partir disso.
+
+839
+02:22:25.720 --> 02:22:28.640
+Fran Martins | Lendár[IA]: E amanhã tem mais marcantes.
+
+840
+02:22:29.070 --> 02:22:29.980
+Gabriel Marcondes: Isso mesmo.
+
+841
+02:22:30.350 --> 02:22:41.200
+Fran Martins | Lendár[IA]: Galera. Obrigada, Marcos. Realmente, a galera está explodindo ali com a tua apresentação. A tua explicação tua didática.
+
+842
+02:22:41.400 --> 02:22:43.669
+Fran Martins | Lendár[IA]: Enfim, muito claro,
+
+843
+02:22:43.930 --> 02:23:01.609
+Fran Martins | Lendár[IA]: pessoal. Amanhã, então, às oito horas, o José vai fazer um over delivery para fazer um overview do nosso sábado, das oito às nove. Ali tem rapidinho. Agora, às 19h, a gente começa o nosso Ps,
+
+844
+02:23:01.690 --> 02:23:04.330
+Fran Martins | Lendár[IA]: mas que?
+
+845
+02:23:04.910 --> 02:23:08.329
+Fran Martins | Lendár[IA]: Espera só um pouquinho.
+
+846
+02:23:08.910 --> 02:23:12.340
+Fran Martins | Lendár[IA]: Às dezanove horas, a gente começa o nosso Ps.
+
+847
+02:23:12.700 --> 02:23:17.340
+Fran Martins | Lendár[IA]: Só que assim, só para vocês entenderem como funciona o nosso Ps
+
+848
+02:23:17.460 --> 02:23:20.939
+Fran Martins | Lendár[IA]: é mais um tira dúvidas, ou seja,
+
+849
+02:23:21.110 --> 02:23:29.440
+Fran Martins | Lendár[IA]: começa às dezanove e termina às vinte e três. O pessoal fala, cara, eu vou ali jantar e já volto. Não precisa entrar às 19h em ponto.
+
+850
+02:23:29.840 --> 02:23:36.369
+Fran Martins | Lendár[IA]: Então, quem entrar às dezanove horas, a gente vai ter um espaço. Tem mais de um especialista ali para falar.
+
+851
+02:23:36.660 --> 02:23:46.359
+Fran Martins | Lendár[IA]: Então fiquem tranquilos na questão de cara. Vou adiantar tomar um banho rápido e volto. Dá tempo. A gente vai estar aqui até às vinte e três horas nessas quatro salas.
+
+852
+02:23:46.580 --> 02:23:57.730
+Fran Martins | Lendár[IA]: Deixa eu só abrir aqui para vocês entenderem como vai funcionar,
+
+853
+02:24:03.710 --> 02:24:05.090
+Fran Martins | Lendár[IA]: planeta.
+
+854
+02:24:10.610 --> 02:24:13.509
+Fran Martins | Lendár[IA]: Vou mostrar para vocês o link das
+
+855
+02:24:13.910 --> 02:24:20.250
+Fran Martins | Lendár[IA]: é o carinho de vocês lá ali na frente e para si próximo.
+
+856
+02:24:23.040 --> 02:24:23.959
+Fran Martins | Lendár[IA]: Eu estou ligando
+
+857
+02:24:27.450 --> 02:24:34.320
+Fran Martins | Lendár[IA]: mostrar, só para vocês entenderem como é a divisão das salas
+
+858
+02:24:36.060 --> 02:24:40.970
+Fran Martins | Lendár[IA]: Eita. Não abri o documento. Peraí. Agora vai.
+
+859
+02:24:42.230 --> 02:24:45.319
+Fran Martins | Lendár[IA]: Não sei vocês, mas tenho trocentas armas abertas.
+
+860
+02:24:45.730 --> 02:24:46.550
+Fran Martins | Lendár[IA]: E aí?
+
+861
+02:24:47.250 --> 02:24:50.500
+Fran Martins | Lendár[IA]: E aí pronto,
+
+862
+02:25:02.820 --> 02:25:05.230
+Fran Martins | Lendár[IA]: marcos, tá que eu vou tirar até lá.
+
+863
+02:25:07.190 --> 02:25:08.500
+Gabriel Marcondes: Não. Já tirei a tela.
+
+864
+02:25:08.500 --> 02:25:10.150
+Fran Martins | Lendár[IA]: Obrigado, tchau.
+
+865
+02:25:10.260 --> 02:25:13.050
+Fran Martins | Lendár[IA]: Agora tá vendo, beleza?
+
+866
+02:25:13.340 --> 02:25:22.719
+Fran Martins | Lendár[IA]: Bom, ali a gente vai ter quatro salas divididos como sala D, sala o X, sala A e Sala B. Que benção é essa?
+
+867
+02:25:23.400 --> 02:25:35.779
+Fran Martins | Lendár[IA]: A sala D. É para você falar sobre organizações e informações ali dentro. A gente vai ter o Bruno Gentil e o Klaus na sala o X, que é sobre interface e experiência.
+
+868
+02:25:35.940 --> 02:25:39.900
+Fran Martins | Lendár[IA]: É na sala que vai estar o João Pedro, a Érica
+
+869
+02:25:40.090 --> 02:25:54.060
+Fran Martins | Lendár[IA]: e o Lucas charam na sala a que é a conexão entre sistemas problemas. De algum acesso que vocês tentaram conectar com alguma plataforma interna ou alguma documentação de vocês.
+
+870
+02:25:54.420 --> 02:25:59.199
+Fran Martins | Lendár[IA]: Enfim, quem conseguiu chegar até na parte? Eu vi ali no chat alguém falando sobre
+
+871
+02:25:59.780 --> 02:26:09.999
+Fran Martins | Lendár[IA]: Super Bays. Então ali, banco de dados. Então daria para vocês entrar nessa sala. Lá que ali vai estar o Adávio e o Cid e o João Lozano
+
+872
+02:26:10.460 --> 02:26:26.300
+Fran Martins | Lendár[IA]: na Sala P, que é a parte de comunicação e a que é sobre engenharia de prompt conte contexto para você dar ali no a Studio para você formalizar mais a habilidade de dar input
+
+873
+02:26:26.300 --> 02:26:37.409
+Fran Martins | Lendár[IA]: a ja até brincou, falando que daria para fazer uma camiseta disso. Então é nessa sala que você entra ali para resolver a comunicação, você espalhar
+
+874
+02:26:37.690 --> 02:26:43.489
+Fran Martins | Lendár[IA]: esses quatro links vão ser enviados ali no grupo. Vou reforçar mais uma vez.
+
+875
+02:26:44.790 --> 02:26:49.680
+Fran Martins | Lendár[IA]: Sim? O João vai estar nessa sala ali.
+
+876
+02:26:50.410 --> 02:27:07.420
+Fran Martins | Lendár[IA]: Esses links vão ser enviados dentro do grupo separadinho ali. Vocês podem entrar em todas. Vão ficar gravadas. Vocês podem entrar em uma entrar em outra. Ah, estou com dúvida. O que seria a minha ordem, tá? O que eu falaria para vocês
+
+877
+02:27:08.700 --> 02:27:13.680
+Fran Martins | Lendár[IA]: se vocês têm dúvidas nos quatro pontos, entrem nas quatro. Vocês têm até as onze horas para isso.
+
+878
+02:27:14.220 --> 02:27:18.490
+Fran Martins | Lendár[IA]: Respirem um pouco. Tomem um banho, voltem
+
+879
+02:27:18.610 --> 02:27:36.339
+Fran Martins | Lendár[IA]: entre na sala específica e tá tudo bem. Pode vir com calma. A gente vai ajudar vocês. Essa galera que está aqui comprometida com vocês são extremamente capacitadas. Elas, assim como vocês estão aqui num sábado à noite, para realmente se comprometer em fazer acontecer com vocês.
+
+880
+02:27:36.510 --> 02:27:37.440
+Fran Martins | Lendár[IA]: Então,
+
+881
+02:27:37.630 --> 02:27:46.530
+Fran Martins | Lendár[IA]: entre com esse objetivo, a gente está junto, a gente vai realmente construir o primeiro sistema de vocês funcionando.
+
+882
+02:27:46.610 --> 02:27:58.999
+Fran Martins | Lendár[IA]: Então venha já com as dúvidas pré prontas. A galera está realmente aqui, a postos para ajudar vocês. Essa é uma experiência que alguns aqui, que já são alunos, já têm ali dentro
+
+883
+02:27:59.000 --> 02:28:08.960
+Fran Martins | Lendár[IA]: da formação lendária e do gestor de A. Então é mais ou menos a mesma dinâmica. A diferença é que ali dentro do Ps, vocês têm uma hora, uma hora e meia.
+
+884
+02:28:08.980 --> 02:28:20.000
+Fran Martins | Lendár[IA]: Mas aqui vocês vão ter até as onze horas da noite. Então é realmente para tirar as travas que vocês estão tendo hoje, durante o dia todo, fechou. Alguma dúvida? Pode mandar ali no chat?
+
+885
+02:28:23.620 --> 02:28:28.760
+Fran Martins | Lendár[IA]: Deixa eu ver. É bom que a galera tem dúvida vocês mesmo você respondem
+
+886
+02:28:31.410 --> 02:28:35.330
+Fran Martins | Lendár[IA]: sem o ar para a desorganização. Não tem graça.
+
+887
+02:28:35.540 --> 02:28:48.779
+Fran Martins | Lendár[IA]: Enfim, a gente já está. Acho que vocês, a galera, principalmente quem é aluno, já sabe muito bem como é o aluno ali. Ele dá um caos na nossa cabeça. Mas depois a gente junta todas as pecinhas. A gente monta esse quebra cabeça junto com vocês.
+
+888
+02:28:55.790 --> 02:29:03.359
+Fran Martins | Lendár[IA]: Bom, sem mais delongas, o link está sendo enviado lá nos grupos e a gente se vê.
+
+889
+02:29:04.680 --> 02:29:06.050
+Fran Martins | Lendár[IA]: Vou encerrar aqui.
+

@@ -1,0 +1,163 @@
+id: priorizar-tarefas
+nome: Priorizar Lista de Tarefas
+descricao: Aplicar frameworks de priorização (Eisenhower + ABC) para organizar tarefas por importância e urgência
+agente: estrategista-prioridades
+comando: /priorizar-tarefas
+versao: "1.0"
+categoria: analise
+
+entradas:
+  obrigatorias:
+    - nome: lista_tarefas
+      pergunta: "Quais tarefas você precisa priorizar? (uma por linha ou separadas por vírgula)"
+      tipo: lista
+      exemplo:
+        - "Finalizar proposta para cliente X"
+        - "Responder emails pendentes"
+        - "Preparar apresentação trimestral"
+        - "Reunião com equipe"
+        - "Organizar arquivos"
+
+  opcionais:
+    - nome: contexto_adicional
+      pergunta: "Existe algum contexto adicional? (prazos urgentes, dependências, etc.)"
+      tipo: texto
+      padrao: "Sem contexto adicional"
+
+    - nome: criterio_foco
+      pergunta: "Qual critério é mais importante agora?"
+      tipo: escolha
+      opcoes: ["impacto", "urgência", "esforço", "balanceado"]
+      padrao: "balanceado"
+
+passos:
+  - numero: 1
+    acao: "Analisar cada tarefa individualmente"
+    detalhes:
+      - "Avaliar urgência: Existe prazo REAL? Consequência de atrasar?"
+      - "Avaliar importância: Qual o impacto nos objetivos?"
+      - "Estimar esforço: Quanto tempo e energia requer?"
+      - "Identificar dependências: Alguém está bloqueado por isso?"
+
+  - numero: 2
+    acao: "Aplicar Matriz de Eisenhower"
+    detalhes:
+      - "Quadrante 1: Urgente E Importante → FAZER AGORA"
+      - "Quadrante 2: Importante mas Não Urgente → AGENDAR (foco estratégico!)"
+      - "Quadrante 3: Urgente mas Não Importante → DELEGAR ou minimizar"
+      - "Quadrante 4: Nem Urgente, Nem Importante → ELIMINAR"
+
+  - numero: 3
+    acao: "Aplicar Sistema ABC"
+    detalhes:
+      - "A: Crítico - consequências SÉRIAS se não for feito (hoje/amanhã)"
+      - "B: Importante - consequências MODERADAS (3-4 dias)"
+      - "C: Desejável - consequências MÍNIMAS (semanas ou eliminar)"
+
+  - numero: 4
+    acao: "Ordenar por prioridade"
+    detalhes:
+      - "Dentro de cada quadrante, ordenar por impacto e esforço"
+      - "Considerar dependências (o que bloqueia outros)"
+      - "Balancear entre urgente e importante"
+
+  - numero: 5
+    acao: "Gerar lista priorizada com ações específicas"
+    detalhes:
+      - "Lista clara e ordenada"
+      - "Ações específicas para cada tarefa"
+      - "Justificativa da classificação"
+      - "Próximos passos recomendados"
+
+saida:
+  formato: markdown
+  template: |
+    # 🎯 Lista Priorizada de Tarefas
+
+    ## Quadrante 1: Fazer AGORA ⚡ (Urgente + Importante)
+
+    ### [A] Tarefa 1
+    - **Por quê:** [Justificativa de urgência e importância]
+    - **Prazo:** [Quando]
+    - **Esforço:** [Tempo estimado]
+    - **Ação:** FAZER IMEDIATAMENTE
+
+    ### [A] Tarefa 2
+    [Mesma estrutura]
+
+    ---
+
+    ## Quadrante 2: Agendar 📅 (Importante, Não Urgente - FOCO!)
+
+    ### [A/B] Tarefa Estratégica 1
+    - **Por quê:** [Justificativa de importância estratégica]
+    - **Sugestão:** [Quando bloquear tempo na agenda]
+    - **Esforço:** [Tempo estimado]
+    - **Ação:** PROTEGER TEMPO NA AGENDA
+
+    ### [B] Tarefa Estratégica 2
+    [Mesma estrutura]
+
+    💡 **Lembre-se:** Q2 é onde está o crescimento real! Investir aqui previne crises futuras.
+
+    ---
+
+    ## Quadrante 3: Delegar 👥 (Urgente, Não Importante)
+
+    ### [C] Tarefa Delegável 1
+    - **Por quê:** [Por que delegar]
+    - **Delegar para:** [Quem poderia fazer]
+    - **Ação:** DELEGAR OU AUTOMATIZAR
+
+    ---
+
+    ## Quadrante 4: Eliminar 🗑️ (Nem Urgente, Nem Importante)
+
+    - Tarefa Eliminável 1 - **Recomendação:** Não fazer ou fazer apenas se sobrar tempo
+
+    ---
+
+    ## 📊 Resumo Executivo
+
+    - **Total de tarefas analisadas:** [X]
+    - **Prioridade A (fazer hoje):** [X] tarefas
+    - **Prioridade B (esta semana):** [X] tarefas
+    - **Prioridade C (quando possível):** [X] tarefas
+    - **Para eliminar:** [X] tarefas
+
+    ## 🎬 Próximos Passos Recomendados
+
+    1. **Comece por:** [Tarefa mais importante]
+    2. **Reserve tempo para:** [Tarefa estratégica Q2]
+    3. **Considere delegar:** [Tarefa Q3]
+
+    ---
+
+    ## 💡 Dicas Importantes
+
+    - **Foque no Quadrante 2** para evitar crises futuras
+    - **Questione Q3:** Isso é urgente para QUEM? Realmente preciso fazer?
+    - **Elimine Q4 sem culpa:** Não fazer essas tarefas é a decisão certa
+    - **Proteja Q2:** Bloquear tempo na agenda como compromisso inegociável
+
+    ---
+
+    **Priorizado em:** [Data e hora]
+
+conhecimento:
+  - conhecimento/matriz-eisenhower.md
+  - conhecimento/sistema-abc.md
+  - conhecimento/decision-frameworks.md
+
+gates:
+  - "Todas as tarefas estão classificadas em um quadrante?"
+  - "As justificativas fazem sentido e são objetivas?"
+  - "Há distinção clara entre urgente e importante?"
+  - "Pelo menos 20-30% do tempo está alocado para Q2 (estratégico)?"
+  - "Tarefas Q3 foram questionadas quanto à necessidade real?"
+  - "Tarefas Q4 foram identificadas para eliminação?"
+
+proximos_passos:
+  - "/organizar-agenda - Agendar tarefas priorizadas"
+  - "/briefing-diario - Criar briefing com prioridades do dia"
+  - "/resolver-conflito - Decidir entre prioridades conflitantes"

@@ -1,0 +1,38 @@
+id: relatorio-produtividade
+nome: Relatório de Produtividade
+descricao: Analisar execução e sugerir melhorias baseado em padrões identificados
+agente: coordenador
+comando: /relatorio-produtividade
+versao: "1.0"
+categoria: analise
+
+entradas:
+  obrigatorias:
+    - nome: periodo
+      pergunta: "Período para analisar?"
+      tipo: escolha
+      opcoes: ["hoje", "esta semana", "este mês"]
+
+passos:
+  - numero: 1
+    acao: "Coletar dados (planejado vs feito)"
+
+  - numero: 2
+    acao: "Analisar padrões"
+
+  - numero: 3
+    acao: "Identificar gaps e desperdícios"
+
+  - numero: 4
+    acao: "Sugerir melhorias específicas"
+
+saida:
+  formato: markdown
+
+conhecimento:
+  - conhecimento/matriz-eisenhower.md
+  - conhecimento/time-blocking.md
+
+gates:
+  - "Dados são factuais?"
+  - "Sugestões são acionáveis?"

@@ -1,0 +1,41 @@
+id: resolver-conflito
+nome: Resolver Conflito de Prioridades
+descricao: Decidir objetivamente entre prioridades conflitantes usando frameworks
+agente: estrategista-prioridades
+comando: /resolver-conflito
+versao: "1.0"
+categoria: decisao
+
+entradas:
+  obrigatorias:
+    - nome: tarefa_a
+      pergunta: "Primeira tarefa em conflito?"
+      tipo: texto
+
+    - nome: tarefa_b
+      pergunta: "Segunda tarefa em conflito?"
+      tipo: texto
+
+passos:
+  - numero: 1
+    acao: "Entender o conflito"
+
+  - numero: 2
+    acao: "Avaliar critérios objetivos (impacto, urgência, dependências)"
+
+  - numero: 3
+    acao: "Aplicar framework de decisão"
+
+  - numero: 4
+    acao: "Decidir e justificar"
+
+saida:
+  formato: markdown
+
+conhecimento:
+  - conhecimento/decision-frameworks.md
+  - conhecimento/matriz-eisenhower.md
+
+gates:
+  - "Decisão é fundamentada em critérios objetivos?"
+  - "Justificativa está clara?"

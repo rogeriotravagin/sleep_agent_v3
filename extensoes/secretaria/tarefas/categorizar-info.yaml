@@ -1,0 +1,36 @@
+id: categorizar-info
+nome: Categorizar Informações por Contexto
+descricao: Organizar informações dispersas por contexto, projeto ou área
+agente: organizador
+comando: /categorizar-info
+versao: "1.0"
+categoria: organizacao
+
+entradas:
+  obrigatorias:
+    - nome: informacoes
+      pergunta: "Quais informações precisa organizar?"
+      tipo: lista
+
+passos:
+  - numero: 1
+    acao: "Identificar categorias naturais"
+
+  - numero: 2
+    acao: "Agrupar por similaridade"
+
+  - numero: 3
+    acao: "Criar estrutura lógica"
+
+  - numero: 4
+    acao: "Indexar para fácil recuperação"
+
+saida:
+  formato: markdown
+
+conhecimento:
+  - conhecimento/gtd.md
+
+gates:
+  - "Categorização é consistente?"
+  - "Fácil encontrar informação?"

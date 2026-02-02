@@ -1,0 +1,51 @@
+id: organizar-agenda
+nome: Organizar Agenda com Time Blocking
+descricao: Criar agenda otimizada aplicando time blocking para tarefas priorizadas
+agente: coordenador
+comando: /organizar-agenda
+versao: "1.0"
+categoria: planejamento
+
+entradas:
+  obrigatorias:
+    - nome: tarefas_priorizadas
+      pergunta: "Quais as principais tarefas para agendar?"
+      tipo: lista
+
+    - nome: compromissos_fixos
+      pergunta: "Quais compromissos já agendados? (reuniões, horários fixos)"
+      tipo: lista
+
+  opcionais:
+    - nome: periodo
+      pergunta: "Período para organizar?"
+      tipo: escolha
+      opcoes: ["hoje", "amanhã", "esta semana"]
+      padrao: "hoje"
+
+passos:
+  - numero: 1
+    acao: "Mapear energia e disponibilidade"
+
+  - numero: 2
+    acao: "Alocar blocos de tempo"
+
+  - numero: 3
+    acao: "Detectar e resolver conflitos"
+
+  - numero: 4
+    acao: "Adicionar buffers (20-30%)"
+
+  - numero: 5
+    acao: "Gerar agenda visual"
+
+saida:
+  formato: markdown
+
+conhecimento:
+  - conhecimento/time-blocking.md
+
+gates:
+  - "Blocos de foco profundo estão nos melhores horários?"
+  - "Há buffer suficiente (20-30%)?"
+  - "Q2 (estratégico) está protegido?"

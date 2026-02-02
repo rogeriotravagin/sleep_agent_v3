@@ -1,0 +1,55 @@
+id: organizacao-completa
+nome: Organização Executiva Completa
+descricao: Processo completo de organização em 7 fases, desde captura até revisão
+comando: /organizacao-completa
+versao: "1.0"
+
+visao_geral:
+  objetivo: "Transformar caos em clareza: capturar, priorizar e executar com foco"
+  duracao_estimada: "2-4 horas"
+  resultado: "Sistema organizado com prioridades claras e agenda estruturada"
+
+fases:
+  - numero: 1
+    nome: CAPTURA
+    descricao: "Coletar todas as demandas e informações"
+    agente: organizador
+    checkpoint:
+      pergunta: "Todas as demandas foram capturadas?"
+      acao_se_nao: "Continuar capturando até esgotar"
+
+  - numero: 2
+    nome: CATEGORIZAÇÃO
+    descricao: "Organizar por contexto e projeto"
+    agente: organizador
+
+  - numero: 3
+    nome: PRIORIZAÇÃO
+    descricao: "Aplicar Eisenhower + ABC"
+    agente: estrategista-prioridades
+
+  - numero: 4
+    nome: PLANEJAMENTO
+    descricao: "Alocar tempo na agenda"
+    agente: coordenador
+
+  - numero: 5
+    nome: EXECUÇÃO FOCADA
+    descricao: "Seguir plano com disciplina"
+
+  - numero: 6
+    nome: REVISÃO
+    descricao: "Avaliar progresso e ajustar"
+    agente: coordenador
+
+  - numero: 7
+    nome: ENTREGA
+    descricao: "Consolidar resultados e próximos passos"
+
+entrega_final:
+  formato: pacote
+  inclui:
+    - "Demandas capturadas e estruturadas"
+    - "Lista priorizada (Eisenhower + ABC)"
+    - "Agenda organizada com time blocking"
+    - "Briefing executivo"

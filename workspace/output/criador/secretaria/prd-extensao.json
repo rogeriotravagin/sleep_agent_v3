@@ -1,0 +1,252 @@
+{
+  "projeto": "Secretaria",
+  "tipo": "extensao",
+  "versao": "1.0",
+  "descricao": "Extensão completa para gerenciamento inteligente de demandas, organização de informações e priorização estratégica",
+
+  "contexto": {
+    "publico_alvo": "Profissionais não-técnicos (empreendedores, executivos, gestores de projetos, consultores) que precisam organizar múltiplas demandas, priorizar tarefas estrategicamente e manter controle sobre informações e compromissos sem se perder em ferramentas complexas",
+    "problemas_resolvidos": [
+      "Sobrecarga de demandas sem clareza de prioridades",
+      "Perda de informações importantes dispersas em múltiplos canais",
+      "Dificuldade em distinguir urgente vs importante",
+      "Falta de sistema para capturar e organizar ideias e tarefas",
+      "Desorganização de compromissos e prazos",
+      "Ausência de visão clara do que precisa ser feito agora vs depois"
+    ],
+    "resultados_esperados": [
+      "Sistema de priorização com classificação A/B/C e matriz Eisenhower",
+      "Listas de tarefas organizadas por contexto e urgência",
+      "Captura estruturada de demandas com informações completas",
+      "Resumos executivos de status e próximos passos",
+      "Agendas organizadas com checagem de conflitos",
+      "Relatórios de produtividade e acompanhamento de metas",
+      "Briefings diários com o que realmente importa"
+    ]
+  },
+
+  "agentes": [
+    {
+      "id": "organizador",
+      "nome": "Organizador de Demandas",
+      "slug": "ORGANIZADOR-DEMANDAS",
+      "especialidade": "Captura, categorização e estruturação de demandas",
+      "frameworks": ["GTD (Getting Things Done)", "Inbox Zero"]
+    },
+    {
+      "id": "estrategista-prioridades",
+      "nome": "Estrategista de Prioridades",
+      "slug": "ESTRATEGISTA-PRIORIDADES",
+      "especialidade": "Priorização estratégica usando frameworks comprovados",
+      "frameworks": ["Eisenhower Matrix", "ABC Priority System", "MoSCoW Method"]
+    },
+    {
+      "id": "coordenador",
+      "nome": "Coordenador de Workflows",
+      "slug": "COORDENADOR-WORKFLOWS",
+      "especialidade": "Gestão de fluxos de trabalho, agendas e acompanhamento",
+      "frameworks": ["Kanban", "Time Blocking", "Executive Briefings"]
+    }
+  ],
+
+  "user_stories": [
+    {
+      "id": "US001",
+      "titulo": "Criar estrutura da extensão",
+      "descricao": "Criar extensao.yaml, README.md e estrutura de diretórios completa",
+      "criterios_aceitacao": [
+        "extensao.yaml com configurações válidas",
+        "README.md com documentação completa sobre gerenciamento de demandas e priorização",
+        "Diretórios agentes/, conhecimento/, tarefas/, workflows/ criados",
+        "Nomenclatura seguindo padrão kebab-case",
+        ".claude/CLAUDE.md com instruções específicas da extensão"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/extensao.yaml",
+        "extensoes/secretaria/README.md",
+        "extensoes/secretaria/.claude/CLAUDE.md"
+      ],
+      "prioridade": "alta",
+      "estimativa": "1 iteração"
+    },
+    {
+      "id": "US002",
+      "titulo": "Criar agentes especializados",
+      "descricao": "Criar 3 agentes com identidade e especialidades definidas",
+      "criterios_aceitacao": [
+        "Organizador de Demandas com foco em captura e categorização",
+        "Estrategista de Prioridades com frameworks de priorização",
+        "Coordenador de Workflows com gestão de agendas e briefings",
+        "Cada agente com identidade clara e única",
+        "Processo de trabalho detalhado",
+        "Base de conhecimento referenciada"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/agentes/ORGANIZADOR-DEMANDAS.md",
+        "extensoes/secretaria/agentes/ESTRATEGISTA-PRIORIDADES.md",
+        "extensoes/secretaria/agentes/COORDENADOR-WORKFLOWS.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "estimativa": "2-3 iterações"
+    },
+    {
+      "id": "US003",
+      "titulo": "Criar base de conhecimento",
+      "descricao": "Desenvolver arquivos de conhecimento sobre organização e priorização",
+      "criterios_aceitacao": [
+        "Matriz de Eisenhower documentada com exemplos",
+        "Sistema ABC de priorização explicado",
+        "GTD (Getting Things Done) com aplicação prática",
+        "Frameworks de decisão executiva",
+        "Time Blocking e Context Switching",
+        "Executive Briefings e Daily Planning",
+        "Mínimo de 8 arquivos de conhecimento"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/conhecimento/matriz-eisenhower.md",
+        "extensoes/secretaria/conhecimento/sistema-abc.md",
+        "extensoes/secretaria/conhecimento/gtd.md",
+        "extensoes/secretaria/conhecimento/moscow.md",
+        "extensoes/secretaria/conhecimento/inbox-zero.md",
+        "extensoes/secretaria/conhecimento/time-blocking.md",
+        "extensoes/secretaria/conhecimento/executive-briefings.md",
+        "extensoes/secretaria/conhecimento/decision-frameworks.md"
+      ],
+      "dependencias": ["US001"],
+      "prioridade": "alta",
+      "estimativa": "3-4 iterações"
+    },
+    {
+      "id": "US004",
+      "titulo": "Criar tarefas principais",
+      "descricao": "Criar 7 tarefas que cobrem os principais casos de uso",
+      "criterios_aceitacao": [
+        "Capturar demanda com estruturação completa",
+        "Priorizar tarefas com classificação A/B/C e Eisenhower",
+        "Organizar agenda com detecção de conflitos",
+        "Gerar briefing diário executivo",
+        "Categorizar informações por contexto",
+        "Resolver conflitos de prioridades",
+        "Criar relatório de produtividade",
+        "Cada tarefa com entradas obrigatórias e opcionais",
+        "Templates de saída completos",
+        "Gates de qualidade definidos"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/tarefas/capturar-demanda.yaml",
+        "extensoes/secretaria/tarefas/priorizar-tarefas.yaml",
+        "extensoes/secretaria/tarefas/organizar-agenda.yaml",
+        "extensoes/secretaria/tarefas/briefing-diario.yaml",
+        "extensoes/secretaria/tarefas/categorizar-info.yaml",
+        "extensoes/secretaria/tarefas/resolver-conflito.yaml",
+        "extensoes/secretaria/tarefas/relatorio-produtividade.yaml"
+      ],
+      "dependencias": ["US002", "US003"],
+      "prioridade": "media",
+      "estimativa": "4-5 iterações"
+    },
+    {
+      "id": "US005",
+      "titulo": "Criar workflow completo",
+      "descricao": "Criar workflow profissional de organização executiva",
+      "criterios_aceitacao": [
+        "5-7 fases: Captura, Categorização, Priorização, Planejamento, Execução, Revisão",
+        "Agente responsável por cada fase",
+        "Checkpoints de validação",
+        "Entrega final especificada",
+        "Mensagens de início e conclusão"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/workflows/organizacao-completa.yaml"
+      ],
+      "dependencias": ["US004"],
+      "prioridade": "media",
+      "estimativa": "2 iterações"
+    },
+    {
+      "id": "US006",
+      "titulo": "Criar modo iniciante",
+      "descricao": "Criar workflow rápido de organização",
+      "criterios_aceitacao": [
+        "5 perguntas essenciais sobre situação atual",
+        "Processamento automático",
+        "Geração de plano de ação priorizado",
+        "Fallbacks documentados"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/workflows/modo-iniciante-secretaria.yaml"
+      ],
+      "dependencias": ["US005"],
+      "prioridade": "media",
+      "estimativa": "2 iterações"
+    },
+    {
+      "id": "US007",
+      "titulo": "Criar core/orquestrador",
+      "descricao": "Criar sistema de delegação para a extensão",
+      "criterios_aceitacao": [
+        "delegacao.yaml com regras de roteamento",
+        "Gatilhos para cada agente",
+        "Comandos mapeados corretamente"
+      ],
+      "arquivos": [
+        "extensoes/secretaria/core/orquestrador/delegacao.yaml"
+      ],
+      "dependencias": ["US002"],
+      "prioridade": "alta",
+      "estimativa": "1 iteração"
+    },
+    {
+      "id": "US008",
+      "titulo": "Integrar no sistema",
+      "descricao": "Atualizar delegacao.yaml e CLAUDE.md para registrar a extensão",
+      "criterios_aceitacao": [
+        "Extensão adicionada em core/orquestrador/delegacao.yaml",
+        "Gatilhos configurados para cada agente",
+        ".claude/CLAUDE.md atualizado com nova extensão",
+        "Comandos documentados",
+        "Output directories criados em workspace/"
+      ],
+      "arquivos": [
+        "core/orquestrador/delegacao.yaml",
+        ".claude/CLAUDE.md"
+      ],
+      "dependencias": ["US007"],
+      "prioridade": "alta",
+      "estimativa": "1 iteração"
+    }
+  ],
+
+  "arquitetura": {
+    "padrao": "Clean Architecture",
+    "estrutura": {
+      "raiz": "extensoes/secretaria/",
+      "agentes": "extensoes/secretaria/agentes/",
+      "conhecimento": "extensoes/secretaria/conhecimento/",
+      "tarefas": "extensoes/secretaria/tarefas/",
+      "workflows": "extensoes/secretaria/workflows/",
+      "core": "extensoes/secretaria/core/orquestrador/"
+    }
+  },
+
+  "validacao": {
+    "gates": [
+      "extensao.yaml existe e é válido",
+      "3 agentes com identidades completas",
+      "Mínimo 8 arquivos de conhecimento sobre priorização e organização",
+      "7 tarefas funcionais",
+      "2 workflows (completo + iniciante)",
+      "Sistema de delegação configurado",
+      "core/orquestrador/delegacao.yaml global atualizado",
+      ".claude/CLAUDE.md atualizado"
+    ]
+  },
+
+  "configuracao_ralph": {
+    "max_iteracoes": 30,
+    "paralelismo": false,
+    "validacao_continua": true,
+    "output_dir": "extensoes/secretaria/"
+  }
+}

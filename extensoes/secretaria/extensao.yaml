@@ -1,0 +1,59 @@
+id: secretaria
+nome: Secretaria Executiva
+versao: "1.0"
+descricao: Gerenciamento inteligente de demandas, organização e priorização estratégica
+comando: /secretaria
+
+agentes:
+  - id: organizador
+    nome: Organizador de Demandas
+    arquivo: agentes/ORGANIZADOR-DEMANDAS.md
+    comando: /organizador
+    especialidade: "Captura, categorização e estruturação de demandas"
+
+  - id: estrategista-prioridades
+    nome: Estrategista de Prioridades
+    arquivo: agentes/ESTRATEGISTA-PRIORIDADES.md
+    comando: /estrategista-prioridades
+    especialidade: "Priorização estratégica com frameworks comprovados"
+
+  - id: coordenador
+    nome: Coordenador de Workflows
+    arquivo: agentes/COORDENADOR-WORKFLOWS.md
+    comando: /coordenador
+    especialidade: "Gestão de fluxos, agendas e acompanhamento"
+
+tarefas:
+  - capturar-demanda
+  - priorizar-tarefas
+  - organizar-agenda
+  - briefing-diario
+  - categorizar-info
+  - resolver-conflito
+  - relatorio-produtividade
+
+workflows:
+  - organizacao-completa
+  - modo-iniciante-secretaria
+
+conhecimento:
+  - matriz-eisenhower.md
+  - sistema-abc.md
+  - gtd.md
+  - moscow.md
+  - inbox-zero.md
+  - time-blocking.md
+  - executive-briefings.md
+  - decision-frameworks.md
+
+outputs:
+  - tipo: demandas
+    descricao: Demandas capturadas e estruturadas
+  - tipo: prioridades
+    descricao: Listas priorizadas
+  - tipo: agendas
+    descricao: Agendas organizadas
+  - tipo: briefings
+    descricao: Briefings diários e executivos
+  - tipo: relatorios
+    descricao: Relatórios de produtividade

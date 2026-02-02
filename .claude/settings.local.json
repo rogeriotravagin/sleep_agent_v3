@@ -88,7 +88,13 @@
       "Bash(start \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_v3\\\\workspace\\\\exemplo-sleep-agent\\\\landing-pages\\\\index-racing.html\")",
       "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_v3\\\\workspace\\\\exemplo-sleep-agent\\\\landing-pages\\\\index-racing-v2-otimizado.html\")",
       "Bash(vercel:*)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:cohorts.academialendaria.ai)",
+      "Bash(xdg-open:*)",
+      "Bash(google-chrome:*)",
+      "Bash(firefox:*)",
+      "Bash(chromium-browser:*)"
     ]
   }
 }

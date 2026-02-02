@@ -1,0 +1,135 @@
+# Sistema de Delegação - Extensão Secretaria
+
+extensao: secretaria
+versao: "1.0"
+
+# Gatilhos que ativam a extensão
+gatilhos_extensao:
+  keywords:
+    - "organizar"
+    - "priorizar"
+    - "demanda"
+    - "tarefa"
+    - "agenda"
+    - "briefing"
+    - "produtividade"
+  comandos:
+    - "/secretaria"
+    - "/iniciante-secretaria"
+    - "/organizacao-completa"
+
+# Regras de delegação para cada agente
+agentes:
+  - id: organizador
+    nome: Organizador de Demandas
+    comando: /organizador
+
+    gatilhos:
+      keywords:
+        - "capturar"
+        - "organizar informação"
+        - "categorizar"
+        - "estruturar"
+        - "captura de demanda"
+      comandos:
+        - "/capturar-demanda"
+        - "/categorizar-info"
+
+    responsabilidades:
+      - "Capturar novas demandas com informações completas"
+      - "Organizar informações dispersas"
+      - "Categorizar por contexto e projeto"
+      - "Estruturar dados para priorização"
+
+    nao_delegar_para:
+      - "Priorização (usar estrategista-prioridades)"
+      - "Agendamento (usar coordenador)"
+
+  - id: estrategista-prioridades
+    nome: Estrategista de Prioridades
+    comando: /estrategista-prioridades
+
+    gatilhos:
+      keywords:
+        - "priorizar"
+        - "prioridade"
+        - "urgente"
+        - "importante"
+        - "conflito"
+        - "eisenhower"
+        - "ABC"
+      comandos:
+        - "/priorizar-tarefas"
+        - "/resolver-conflito"
+
+    responsabilidades:
+      - "Priorizar listas de tarefas"
+      - "Aplicar frameworks (Eisenhower, ABC, MoSCoW)"
+      - "Resolver conflitos de prioridade"
+      - "Distinguir urgente vs importante"
+
+    nao_delegar_para:
+      - "Captura inicial (usar organizador)"
+      - "Agendamento (usar coordenador)"
+
+  - id: coordenador
+    nome: Coordenador de Workflows
+    comando: /coordenador
+
+    gatilhos:
+      keywords:
+        - "agenda"
+        - "agendar"
+        - "time blocking"
+        - "briefing"
+        - "relatório"
+        - "produtividade"
+      comandos:
+        - "/organizar-agenda"
+        - "/briefing-diario"
+        - "/relatorio-produtividade"
+
+    responsabilidades:
+      - "Organizar agendas com time blocking"
+      - "Gerar briefings executivos"
+      - "Criar relatórios de produtividade"
+      - "Coordenar execução e acompanhamento"
+
+    nao_delegar_para:
+      - "Captura (usar organizador)"
+      - "Priorização (usar estrategista-prioridades)"
+
+# Fluxo de trabalho típico
+workflow_padrao:
+  - etapa: 1
+    agente: organizador
+    acao: "Capturar e estruturar demandas"
+
+  - etapa: 2
+    agente: estrategista-prioridades
+    acao: "Priorizar demandas capturadas"
+
+  - etapa: 3
+    agente: coordenador
+    acao: "Agendar e criar briefings"
+
+# Regras de escalonamento
+escalonamento:
+  - condicao: "Demanda vaga ou incompleta"
+    acao: "Organizador questiona e clarifica antes de passar adiante"
+
+  - condicao: "Lista muito grande (>15 tarefas)"
+    acao: "Estrategista sugere quebrar em sublistas por contexto"
+
+  - condicao: "Agenda sobrecarregada"
+    acao: "Coordenador alerta e sugere repriorização"
+
+# Comandos que devem ir direto ao agente correto
+roteamento_direto:
+  "/capturar-demanda": organizador
+  "/categorizar-info": organizador
+  "/priorizar-tarefas": estrategista-prioridades
+  "/resolver-conflito": estrategista-prioridades
+  "/organizar-agenda": coordenador
+  "/briefing-diario": coordenador
+  "/relatorio-produtividade": coordenador

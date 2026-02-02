@@ -1,0 +1,49 @@
+id: briefing-diario
+nome: Gerar Briefing Diário Executivo
+descricao: Criar resumo executivo conciso com top prioridades, compromissos e alertas do dia
+agente: coordenador
+comando: /briefing-diario
+versao: "1.0"
+categoria: comunicacao
+
+entradas:
+  obrigatorias:
+    - nome: tarefas_do_dia
+      pergunta: "Quais as tarefas/prioridades do dia?"
+      tipo: lista
+
+  opcionais:
+    - nome: compromissos
+      pergunta: "Compromissos agendados?"
+      tipo: lista
+
+    - nome: alertas
+      pergunta: "Algum alerta ou atenção especial?"
+      tipo: texto
+
+passos:
+  - numero: 1
+    acao: "Identificar Top 3 prioridades"
+
+  - numero: 2
+    acao: "Listar compromissos com horários"
+
+  - numero: 3
+    acao: "Destacar alertas críticos"
+
+  - numero: 4
+    acao: "Sugerir próximos passos"
+
+  - numero: 5
+    acao: "Formatar briefing executivo (máx 1 página)"
+
+saida:
+  formato: markdown
+
+conhecimento:
+  - conhecimento/executive-briefings.md
+
+gates:
+  - "É conciso (1 página ou menos)?"
+  - "Top 3 estão claramente priorizados?"
+  - "Próximos passos são acionáveis?"
