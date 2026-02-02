@@ -1,54 +1,72 @@
 # Comando /ajuda
 
-Quando o usuário digitar `/ajuda`, exibir:
+Quando o usuario digitar `/ajuda`, exibir:
 
 ---
 
 ## Sleep Agent - Ajuda
 
-### O que é o Sleep Agent?
+### O que e o Sleep Agent?
 
-Um assistente inteligente com agentes especializados para ajudar profissionais em tarefas de marketing, jurídico e contábil.
+Um assistente inteligente com agentes especializados para ajudar profissionais nao-tecnicos a realizarem tarefas complexas de forma simples.
 
-### Comandos Disponíveis
+O Sleep Agent funciona com **extensoes** - modulos independentes que adicionam capacidades especificas.
 
-**Gerais:**
+### Comandos Globais
+
 | Comando | O que faz |
 |---------|-----------|
 | `/ajuda` | Mostra esta mensagem |
-| `/extensoes` | Lista extensões disponíveis |
-| `/status` | Mostra extensão ativa |
-| `/salvar` | Salva o último resultado |
+| `/setup` | Configurar ou reconfigurar workspace |
+| `/extensoes` | Lista extensoes instaladas |
+| `/status` | Mostra extensao ativa e configuracao |
+| `/salvar` | Salva o ultimo resultado |
+| `/ralph` | Ativa modo autonomo Ralph |
 
-**Marketing** (ativar com `/marketing`):
-| Comando | O que faz |
-|---------|-----------|
-| `/copy` | Ativa agente Copywriter |
-| `/estrategia` | Ativa agente Estrategista |
-| `/ads` | Ativa agente de Tráfego |
-| `/criar-oferta` | Tarefa: criar oferta completa |
-| `/criar-headline` | Tarefa: criar headlines |
-| `/criar-email` | Tarefa: escrever emails |
-| `/lancamento` | Workflow: preparar lançamento |
+### Como Descobrir Comandos de uma Extensao
+
+1. Digite o comando da extensao (ex: `/marketing`)
+2. O sistema mostrara todos os comandos disponiveis
 
 ### Como Usar
 
-1. **Ative uma extensão**: `/marketing`
-2. **Faça seu pedido**: "Crie uma headline para meu curso de inglês"
-3. **Refine se necessário**: "Faça mais curta" ou "Com mais urgência"
-4. **Salve o resultado**: `/salvar`
+1. **Configure o workspace** (primeira vez): O sistema perguntara sobre sua estrutura
+2. **Ative uma extensao**: Digite o comando da extensao desejada
+3. **Faca seu pedido**: Descreva o que precisa
+4. **Refine se necessario**: Peca ajustes ou variacoes
+5. **Salve o resultado**: `/salvar`
+
+### Estrutura do Workspace
+
+O Sleep Agent organiza seus outputs automaticamente:
+
+```
+workspace/
+└── [sua-empresa-ou-produto]/
+    ├── referencias/           # Docs que voce ja tinha
+    └── [extensao]/            # Outputs organizados por extensao
+        └── [tipo]/            # Tipo de conteudo gerado
+```
 
 ### Dicas
 
-- Você não precisa usar comandos. Pode simplesmente descrever o que precisa.
-- Quanto mais contexto você der, melhor o resultado.
-- Peça variações: "Me dê 5 opções" ou "Tente de outro ângulo"
+- Voce nao precisa usar comandos. Pode simplesmente descrever o que precisa.
+- Quanto mais contexto voce der, melhor o resultado.
+- Peca variacoes: "Me de 5 opcoes" ou "Tente de outro angulo"
+- O sistema detecta automaticamente qual agente usar
+
+### Modos Iniciante
+
+Cada extensao tem um modo iniciante para comecar rapidamente:
+- Responda 5 perguntas simples
+- O sistema processa automaticamente
+- Receba resultado completo via Ralph
 
 ### Precisa de Mais Ajuda?
 
 - Leia o guia completo em `docs/PRIMEIROS-PASSOS.md`
-- Veja exemplos em `extensoes/marketing/exemplos/`
+- Veja exemplos dentro de cada extensao em `extensoes/[nome]/exemplos/`
 
 ---
 
-**Versão:** Sleep Agent v1.0
+**Versao:** Sleep Agent v2.0

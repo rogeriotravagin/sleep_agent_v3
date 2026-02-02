@@ -1,0 +1,77 @@
+nome: deploy
+versao: 1.0.0
+descricao: Deploy automatico de paginas e sites com configuracao de dominio
+
+autor: Sleep Agent
+categoria: infraestrutura
+
+comandos:
+  - comando: /deploy
+    descricao: Faz deploy da pagina para producao
+    exemplos:
+      - /deploy
+      - /deploy --domain meusite.com.br
+      - /deploy --preview
+
+  - comando: /preview
+    descricao: Gera URL de preview para cliente visualizar
+    exemplos:
+      - /preview
+      - /preview --branch develop
+
+  - comando: /domains
+    descricao: Gerencia dominios customizados
+    exemplos:
+      - /domains list
+      - /domains add meusite.com.br
+      - /domains verify meusite.com.br
+      - /domains remove meusite.com.br
+
+  - comando: /deploy-status
+    descricao: Verifica status do ultimo deploy
+    exemplos:
+      - /deploy-status
+      - /deploy-status --url
+
+dependencias:
+  - git
+  - node
+  - vercel-cli (opcional, instalado automaticamente)
+
+providers_suportados:
+  - name: Vercel
+    auto: true
+    dns_api: false
+  - name: Netlify
+    auto: true
+    dns_api: false
+  - name: Cloudflare Pages
+    auto: true
+    dns_api: true
+  - name: GitHub Pages
+    auto: true
+    dns_api: false
+
+dns_providers_api:
+  - Cloudflare DNS
+  - Route 53 (AWS)
+  - Google Cloud DNS
+
+integracao:
+  git_required: true
+  github_required: true
+  auto_commit: true
+  auto_push: true
+
+outputs:
+  - deploy-logs/
+  - domain-configs/
+  - ssl-certificates/
+
+configuracao:
+  arquivo: workspace/.config/deploy-config.yaml
+  campos:
+    - provider: vercel
+    - auto_deploy: true
+    - domain_provider: manual
+    - notifications: true

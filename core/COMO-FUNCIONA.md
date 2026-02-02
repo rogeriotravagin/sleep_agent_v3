@@ -1,51 +1,81 @@
 # Como o Sleep Agent Funciona
 
-## Visão Geral
+## Visao Geral
 
-O Sleep Agent é um framework que usa o Claude Code como motor para coordenar agentes especializados. Não há código para rodar - tudo funciona através de arquivos de configuração que o Claude lê e segue.
+O Sleep Agent e um framework que usa o Claude Code como motor para coordenar agentes especializados. Nao ha codigo para rodar - tudo funciona atraves de arquivos de configuracao que o Claude le e segue.
+
+## Arquitetura Modular
+
+O Sleep Agent funciona como um sistema de plugins:
+
+- **Core**: Motor generico e agnostico
+- **Extensoes**: Modulos independentes e autocontidos
+- **Workspace**: Area de trabalho adaptativa do usuario
 
 ## Conceitos Principais
 
-### 1. Extensões
+### 1. Extensoes
 
-Extensões são módulos que adicionam capacidades ao Sleep Agent. Cada extensão contém:
+Extensoes sao modulos que adicionam capacidades ao Sleep Agent. Cada extensao contem:
 
-- **Agentes**: Personas especializadas (ex: Copywriter, Estrategista)
-- **Tarefas**: Fluxos predefinidos para resultados específicos
-- **Workflows**: Sequências de tarefas para projetos maiores
+- **Agentes**: Personas especializadas
+- **Tarefas**: Fluxos predefinidos para resultados especificos
+- **Workflows**: Sequencias de tarefas para projetos maiores
 - **Conhecimento**: Base de conhecimento que fundamenta as respostas
+- **Delegacao**: Regras proprias de delegacao
 
 ### 2. Agentes
 
-Agentes são personas que o Claude assume para executar tarefas específicas. Cada agente tem:
+Agentes sao personas que o Claude assume para executar tarefas especificas. Cada agente tem:
 
 - Nome e especialidade
-- Tom de voz próprio
-- Conhecimentos específicos
+- Tom de voz proprio
+- Conhecimentos especificos
 - Formato de entrega
 
 ### 3. Tarefas
 
-Tarefas são fluxos estruturados que guiam o agente. Incluem:
+Tarefas sao fluxos estruturados que guiam o agente. Incluem:
 
-- Perguntas a fazer ao usuário
+- Perguntas a fazer ao usuario
 - Passos a seguir
-- Formato esperado de saída
+- Formato esperado de saida
 
 ### 4. Workflows
 
-Workflows são sequências de tarefas que produzem um resultado maior. Por exemplo, um "lançamento" pode incluir:
+Workflows sao sequencias de tarefas que produzem um resultado maior.
 
-1. Definir oferta
-2. Criar headlines
-3. Escrever emails
-4. Configurar campanha
+### 5. Workspace
+
+Area de trabalho do usuario que se adapta ao contexto:
+
+- **Holding**: Para multiplas empresas
+- **Empresa**: Para uma empresa com produtos
+- **Produto**: Para um unico produto
 
 ## Fluxo de Uso
 
 ```
 ┌─────────────────┐
-│   Você digita   │
+│  Usuario inicia │
+│   Sleep Agent   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Setup verifica │
+│    workspace    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Sistema escaneia│
+│    extensoes    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│   Voce digita   │
 │   um comando    │
 └────────┬────────┘
          │
@@ -53,14 +83,14 @@ Workflows são sequências de tarefas que produzem um resultado maior. Por exemp
 ┌─────────────────┐
 │  Orquestrador   │
 │   identifica    │
-│    intenção     │
+│    extensao     │
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│    Delega ao    │
+│ Carrega extensao│
+│   e delega ao   │
 │     agente      │
-│  especializado  │
 └────────┬────────┘
          │
          ▼
@@ -72,6 +102,12 @@ Workflows são sequências de tarefas que produzem um resultado maior. Por exemp
          │
          ▼
 ┌─────────────────┐
+│   Salva no      │
+│   workspace     │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
 │    Entrega o    │
 │    resultado    │
 └─────────────────┘
@@ -79,11 +115,16 @@ Workflows são sequências de tarefas que produzem um resultado maior. Por exemp
 
 ## Salvando Resultados
 
-Todos os resultados podem ser salvos na pasta `projetos/`. Use `/salvar` ou aceite quando o agente oferecer.
+Todos os resultados sao salvos automaticamente no workspace, organizados por:
 
-## Personalizando
+```
+workspace/[estrutura]/[extensao]/[tipo]/
+```
 
-Você pode:
-- Editar arquivos de conhecimento para adicionar suas preferências
-- Criar novas tarefas copiando templates existentes
-- Adicionar exemplos próprios na pasta `exemplos/`
+## Adicionando Extensoes
+
+Para adicionar uma nova extensao:
+
+1. Copie a pasta da extensao para `extensoes/`
+2. O sistema detecta automaticamente na proxima execucao
+3. Os comandos da extensao ficam disponiveis

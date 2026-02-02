@@ -1,63 +1,106 @@
-# Sistema de Orquestração
+# Sistema de Orquestracao
 
 ## Papel do Orquestrador
 
-O Orquestrador é o cérebro do Sleep Agent. Ele:
+O Orquestrador e o cerebro do Sleep Agent. Ele:
 
-1. Recebe pedidos do usuário
-2. Identifica a intenção
-3. Seleciona o agente adequado
-4. Monitora a execução
-5. Garante qualidade da entrega
+1. Verifica se o workspace esta configurado
+2. Recebe pedidos do usuario
+3. Identifica a intencao e extensao adequada
+4. Carrega a extensao e seus agentes
+5. Delega para o agente correto
+6. Monitora a execucao
+7. Garante qualidade da entrega
+8. Salva resultados no workspace
 
-## Processo de Decisão
+---
+
+## Processo de Decisao
+
+### Passo 0: Verificar Setup
+
+Antes de qualquer coisa:
+1. Verificar `workspace/.config/sleep-agent.yaml`
+2. Se nao existe, executar `core/setup/SETUP.md`
+3. Se existe, carregar extensoes descobertas
 
 ### Passo 1: Entender o Pedido
 
 Antes de agir, sempre:
-- Identificar o que o usuário quer alcançar
-- Verificar se há contexto anterior na conversa
-- Confirmar ambiguidades se necessário
+- Identificar o que o usuario quer alcanzar
+- Verificar se ha contexto anterior na conversa
+- Confirmar ambiguidades se necessario
 
-### Passo 2: Classificar a Intenção
+### Passo 2: Classificar a Intencao
 
 Categorias principais:
 
-| Categoria | Exemplos | Ação |
+| Categoria | Exemplos | Acao |
 |-----------|----------|------|
-| Comando | `/marketing`, `/ajuda` | Executar comando |
-| Tarefa específica | "criar headline" | Delegar ao agente |
+| Comando de extensao | `/marketing`, `/branding` | Carregar extensao |
+| Comando global | `/ajuda`, `/setup` | Executar comando global |
+| Tarefa especifica | "criar headline" | Identificar extensao e delegar |
 | Pedido amplo | "preciso vender mais" | Explorar necessidade |
-| Dúvida | "o que é copy?" | Responder diretamente |
+| Duvida | "o que e copy?" | Responder diretamente |
 
-### Passo 3: Delegar
+### Passo 3: Identificar Extensao
 
-Consultar `delegacao.yaml` para:
+Para pedidos que nao sao comandos diretos:
+1. Escanear lista de extensoes em `sleep-agent.yaml`
+2. Para cada extensao, verificar gatilhos em `extensao.yaml`
+3. Selecionar extensao mais adequada
+4. Carregar a extensao
+
+### Passo 4: Carregar Extensao
+
+Quando uma extensao e selecionada:
+1. Ler `extensoes/[nome]/extensao.yaml`
+2. Ler `extensoes/[nome]/.claude/CLAUDE.md` (instrucoes especificas)
+3. Carregar `extensoes/[nome]/core/orquestrador/delegacao.yaml`
+4. Ler agentes disponiveis
+
+### Passo 5: Delegar
+
+Usar `delegacao.yaml` DA EXTENSAO para:
 - Identificar qual agente atende melhor
-- Verificar se há tarefa predefinida
-- Carregar conhecimento necessário
+- Verificar se ha tarefa predefinida
+- Carregar conhecimento necessario
 
-### Passo 4: Executar
+### Passo 6: Executar
 
 Ao assumir o agente:
-- Adotar tom de voz específico
+- Adotar tom de voz especifico
 - Seguir processo definido na tarefa
-- Usar conhecimento da extensão
+- Usar conhecimento da extensao
 - Entregar no formato esperado
 
-### Passo 5: Verificar Qualidade
+### Passo 7: Salvar Output
+
+Salvar resultado no workspace:
+1. Identificar estrutura atual (holding/empresa/produto)
+2. Identificar se e nivel empresa ou produto
+3. Criar pasta da extensao se nao existir
+4. Salvar em `workspace/[estrutura]/[extensao]/[tipo]/`
+
+### Passo 8: Verificar Qualidade
 
 Antes de entregar, verificar:
 - Resultado atende ao pedido?
-- Segue padrões da extensão?
-- Está completo?
+- Segue padroes da extensao?
+- Esta completo?
+
+---
 
 ## Regras de Ouro
 
-1. **Nunca adivinhe** - Pergunte se não tiver certeza
-2. **Seja específico** - Dê opções concretas, não vagas
-3. **Mantenha contexto** - Lembre do que foi discutido
-4. **Ofereça próximos passos** - Sempre sugira continuação
+1. **Verificar setup primeiro** - Nunca operar sem workspace configurado
+2. **Nunca adivinhe** - Pergunte se nao tiver certeza
+3. **Carregue a extensao** - Sempre ler instrucoes especificas antes de agir
+4. **Seja especifico** - De opcoes concretas, nao vagas
+5. **Mantenha contexto** - Lembre do que foi discutido
+6. **Ofereca proximos passos** - Sempre sugira continuacao
+
+---
 
 ## Tratamento de Erros
 
@@ -66,9 +109,56 @@ Se algo der errado:
 - Sugira alternativa
 - Pergunte como prefere prosseguir
 
-## Transições Entre Agentes
+---
 
-Quando mudar de agente durante uma conversa:
-- Informar a mudança: "Vou passar para o Estrategista..."
+## Transicoes Entre Extensoes
+
+Quando mudar de extensao durante uma conversa:
+1. Informar a mudanca: "Vou carregar a extensao de Marketing..."
+2. Carregar a nova extensao
+3. Manter contexto do que foi discutido
+4. Conectar as entregas entre extensoes
+
+---
+
+## Transicoes Entre Agentes
+
+Dentro de uma extensao, quando mudar de agente:
+- Informar a mudanca: "Vou passar para o Estrategista..."
 - Manter contexto do que foi discutido
 - Conectar as entregas entre agentes
+
+---
+
+## Organizacao de Outputs
+
+### Regra Geral
+
+Todo output vai para:
+```
+workspace/[estrutura]/[nivel]/[extensao]/[tipo]/
+```
+
+### Exemplos
+
+| Output | Caminho |
+|--------|---------|
+| Landing page de produto | `workspace/empresa/produtos/curso-x/marketing/paginas-html/` |
+| Email sequencia empresa | `workspace/empresa/marketing/emails/` |
+| Logo de produto | `workspace/empresa/produtos/app-y/branding/logos/` |
+
+### Antes de Salvar
+
+1. Verificar se pasta da extensao existe
+2. Se nao, criar: `[extensao]/`
+3. Verificar se pasta do tipo existe
+4. Se nao, criar: `[extensao]/[tipo]/`
+5. Salvar arquivo
+
+---
+
+## Referencias
+
+- Setup: `core/setup/SETUP.md`
+- Ajuda: `core/comandos/AJUDA.md`
+- Templates: `core/templates/`

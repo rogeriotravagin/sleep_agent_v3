@@ -1,0 +1,215 @@
+# Delegação de Tarefas - Extensão Deploy
+
+regras:
+  - trigger:
+      - /deploy
+      - quero publicar
+      - subir para produção
+      - colocar no ar
+      - fazer deploy
+    agente: deploy-engineer
+    tarefa: executar-deploy
+    prioridade: alta
+    contexto_necessario:
+      - git_status
+      - provider_config
+      - arquivos_para_deploy
+
+  - trigger:
+      - /preview
+      - gerar preview
+      - url de teste
+      - mostrar para cliente
+    agente: deploy-engineer
+    tarefa: gerar-preview
+    prioridade: media
+    contexto_necessario:
+      - git_branch
+      - provider_config
+
+  - trigger:
+      - /domains
+      - configurar domínio
+      - adicionar domínio
+      - domínio customizado
+    agente: dns-specialist
+    tarefa: gerenciar-dominio
+    prioridade: alta
+    contexto_necessario:
+      - domain_name
+      - dns_provider
+      - project_url
+
+  - trigger:
+      - /deploy-status
+      - status do deploy
+      - verificar deploy
+      - deploy funcionou
+    agente: qa-validator
+    tarefa: verificar-status
+    prioridade: media
+    contexto_necessario:
+      - ultimo_deploy
+      - url_producao
+
+agentes:
+  deploy-engineer:
+    especialidade: Deploy e Git Operations
+    responsabilidades:
+      - Executar deploys
+      - Gerenciar Git (commit, push)
+      - Configurar providers (Vercel, Netlify)
+      - Monitorar builds
+      - Gerar URLs
+    ferramentas:
+      - git
+      - vercel-cli
+      - netlify-cli
+      - gh (GitHub CLI)
+    arquivo: agentes/deploy-engineer.md
+
+  dns-specialist:
+    especialidade: Configuração de DNS e Domínios
+    responsabilidades:
+      - Adicionar domínios via API
+      - Gerar registros DNS
+      - Instruções específicas por provedor
+      - Verificar propagação DNS
+      - Troubleshooting DNS
+    ferramentas:
+      - dig
+      - nslookup
+      - curl
+      - provider-apis
+    arquivo: agentes/dns-specialist.md
+
+  qa-validator:
+    especialidade: Validação e Qualidade
+    responsabilidades:
+      - Testar URLs finais
+      - Verificar HTTPS ativo
+      - Validar assets carregando
+      - Testar responsividade
+      - Gerar relatórios de status
+    ferramentas:
+      - curl
+      - lighthouse-cli
+      - browser-automation
+    arquivo: agentes/qa-validator.md
+
+fluxos:
+  deploy-completo:
+    etapas:
+      - agente: deploy-engineer
+        tarefa: validar-requisitos
+        saida: requisitos_ok
+
+      - agente: deploy-engineer
+        tarefa: git-operations
+        saida: git_ok
+
+      - agente: deploy-engineer
+        tarefa: executar-build
+        saida: build_ok
+
+      - agente: qa-validator
+        tarefa: validar-deploy
+        saida: validacao_ok
+
+      - agente: dns-specialist
+        tarefa: configurar-dominio
+        condicao: se_dominio_especificado
+        saida: dominio_ok
+
+  deploy-com-dominio:
+    etapas:
+      - agente: deploy-engineer
+        tarefa: executar-deploy
+        saida: url_producao
+
+      - agente: dns-specialist
+        tarefa: adicionar-dominio-api
+        saida: dominio_adicionado
+
+      - agente: dns-specialist
+        tarefa: gerar-instrucoes-dns
+        saida: instrucoes_geradas
+
+      - agente: dns-specialist
+        tarefa: verificar-propagacao
+        saida: dns_propagado
+
+      - agente: qa-validator
+        tarefa: validar-https
+        saida: https_ok
+
+  preview-rapido:
+    etapas:
+      - agente: deploy-engineer
+        tarefa: push-branch
+        saida: branch_pushed
+
+      - agente: deploy-engineer
+        tarefa: gerar-preview-url
+        saida: preview_url
+
+validacoes:
+  pre_deploy:
+    - Git inicializado
+    - Remote configurado
+    - index.html existe
+    - Provider conectado
+
+  pre_dominio:
+    - Deploy já realizado
+    - URL de produção disponível
+    - Domínio válido
+    - Provider suporta domínios customizados
+
+quality_gates:
+  deploy:
+    - Build sem erros
+    - Assets todos carregando
+    - HTTPS ativo (se provider suporta)
+    - Response time < 3s
+
+  dominio:
+    - DNS propagado
+    - HTTPS certificado válido
+    - Redirect funcionando (www → não-www)
+    - Response time < 3s
+
+outputs:
+  estrutura: workspace/[empresa-ou-produto]/deploy/
+  tipos:
+    - logs/deploy-{timestamp}.log
+    - domains/{domain}.yaml
+    - config/deploy-config.yaml
+    - reports/qa-report-{timestamp}.md
+
+notificacoes:
+  deploy_sucesso:
+    mensagem: "🎉 Deploy concluído! URL: {url}"
+    incluir:
+      - url_producao
+      - tempo_build
+      - metricas
+
+  deploy_falha:
+    mensagem: "❌ Deploy falhou. Verificando logs..."
+    incluir:
+      - erro
+      - logs_relevantes
+      - sugestoes_correcao
+
+  dns_propagado:
+    mensagem: "✅ DNS configurado! Site disponível em: {domain}"
+    incluir:
+      - dominio
+      - url_https
+      - tempo_propagacao
+
+  aguardando_dns:
+    mensagem: "⏱️ Aguardando propagação DNS... ({tempo_decorrido})"
+    intervalo: 30s
+    timeout: 30min

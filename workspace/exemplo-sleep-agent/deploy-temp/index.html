@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Agent Marketing - Seu Time de Marketing em 5 Minutos</title>
+    <meta name="description" content="4 sistemas de especialistas integrados trabalhando pra você. Crie ofertas, páginas de vendas, funis, identidade visual e campanhas completas em minutos, sem ser copywriter ou programador.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        :root {
+            --black: #000000;
+            --black-soft: #0a0a0a;
+            --gray-dark: #111111;
+            --gray-border: #1a1a1a;
+            --orange-racing: #ff6b00;
+            --orange-mclaren: #ff8000;
+            --cyan-electric: #00e5ff;
+            --blue-tech: #0099ff;
+            --white: #ffffff;
+            --gray-light: #e0e0e0;
+            --gray-medium: #808080;
+            --gray-dark-text: #404040;
+        }
+
+        /* Tipografia Racing */
+        .racing-title {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 0.95;
+        }
+
+        .tech-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--orange-racing);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(255, 107, 0, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .hero-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--orange-racing);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 100px;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--cyan-electric);
+        }
+
+        .hero h1 .sub {
+            display: block;
+            font-size: 72px;
+            color: var(--gray-medium);
+            margin-top: 8px;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.15em;
+            color: var(--gray-medium);
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tagline strong {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .btn-racing {
+            background: var(--orange-racing);
+            border: none;
+            padding: 18px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-racing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-racing:hover::before {
+            left: 100%;
+        }
+
+        .btn-racing:hover {
+            background: var(--orange-mclaren);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 107, 0, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            padding: 18px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--white);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: #000000;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-medium);
+        }
+
+        .hero-badge svg {
+            color: var(--cyan-electric);
+        }
+
+        /* STATS BAR */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--gray-border);
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .stat {
+            padding: 48px 32px;
+            text-align: center;
+            border-right: 1px solid var(--gray-border);
+            transition: all 0.3s ease;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat:hover {
+            background: var(--gray-dark);
+        }
+
+        .stat__number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: #ff4444;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat__number span {
+            color: var(--orange-racing);
+        }
+
+        .stat__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-medium);
+        }
+
+        .stat__source {
+            font-size: 10px;
+            color: var(--gray-dark-text);
+            margin-top: 4px;
+        }
+
+        /* PROBLEM SECTION */
+        .problem-section {
+            padding: 120px 48px;
+            background: var(--black-soft);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 span {
+            color: var(--cyan-electric);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--black);
+            border: 1px solid var(--gray-border);
+            padding: 64px;
+        }
+
+        .problem-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .problem-column h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #ff4444;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .problem-column h4.yellow {
+            color: #ffa500;
+        }
+
+        .problem-list {
+            list-style: none;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--gray-light);
+        }
+
+        .problem-list li svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .problem-list li strong {
+            color: var(--white);
+        }
+
+        .problem-conclusion {
+            margin-top: 48px;
+            padding: 40px;
+            background: var(--gray-dark);
+            text-align: center;
+            border-left: 4px solid var(--orange-racing);
+        }
+
+        .problem-conclusion p {
+            font-size: 18px;
+            color: var(--gray-light);
+        }
+
+        .problem-conclusion strong {
+            color: var(--white);
+        }
+
+        .problem-conclusion .highlight {
+            display: block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            color: var(--cyan-electric);
+            margin-top: 12px;
+        }
+
+        /* SOLUTION SECTION */
+        .solution-section {
+            padding: 120px 48px;
+            position: relative;
+        }
+
+        .solution-section::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+            filter: blur(60px);
+        }
+
+        /* Systems Grid */
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--gray-border);
+            max-width: 1400px;
+            margin: 0 auto 80px;
+        }
+
+        .system-card {
+            background: var(--black);
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .system-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--orange-racing);
+            transition: width 0.3s ease;
+        }
+
+        .system-card:hover {
+            background: var(--gray-dark);
+        }
+
+        .system-card:hover::after {
+            width: 100%;
+        }
+
+        .system-card__icon {
+            width: 48px;
+            height: 48px;
+            background: var(--orange-racing);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .system-card__icon svg {
+            width: 24px;
+            height: 24px;
+            color: #000000;
+        }
+
+        .system-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .system-card p {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 20px;
+        }
+
+        .system-card ul {
+            list-style: none;
+        }
+
+        .system-card ul li {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--cyan-electric);
+            margin-bottom: 6px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .system-card ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--orange-racing);
+        }
+
+        /* Create Box */
+        .create-box {
+            background: var(--black-soft);
+            border: 1px solid var(--gray-border);
+            padding: 80px 64px;
+            max-width: 1400px;
+            margin: 0 auto 80px;
+        }
+
+        .create-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .create-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--gray-border);
+        }
+
+        .create-item {
+            background: var(--black);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .create-item:hover {
+            background: var(--gray-dark);
+        }
+
+        .create-item svg {
+            width: 36px;
+            height: 36px;
+            color: var(--orange-racing);
+            margin-bottom: 16px;
+        }
+
+        .create-item h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .create-item p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--gray-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* How It Works */
+        .how-box {
+            background: var(--black-soft);
+            border: 1px solid var(--gray-border);
+            padding: 80px 64px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .how-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 72px;
+            color: var(--orange-racing);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .step h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--gray-medium);
+        }
+
+        .time-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .time-badge {
+            background: var(--black);
+            border: 1px solid var(--orange-racing);
+            padding: 24px 48px;
+            text-align: center;
+        }
+
+        .time-badge .time {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--cyan-electric);
+        }
+
+        .time-badge .desc {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--gray-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* REFERENCES SECTION */
+        .references-section {
+            padding: 120px 48px;
+            background: var(--black-soft);
+        }
+
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--gray-border);
+            max-width: 1400px;
+            margin: 0 auto 64px;
+        }
+
+        .ref-card {
+            background: var(--black);
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .ref-card:hover {
+            background: var(--gray-dark);
+        }
+
+        .ref-card h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--orange-racing);
+            margin-bottom: 16px;
+        }
+
+        .ref-card p {
+            font-size: 13px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .conversion-box {
+            background: var(--black);
+            border: 1px solid var(--cyan-electric);
+            padding: 64px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .conversion-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .conversion-box .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-medium);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .conversion-box .numbers {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .conversion-box .numbers .green {
+            color: #39ff14;
+        }
+
+        .conversion-box .numbers .red {
+            color: #ff4444;
+        }
+
+        .conversion-box .note {
+            font-size: 15px;
+            color: var(--gray-medium);
+            margin-top: 16px;
+            position: relative;
+        }
+
+        /* FOR WHO SECTION */
+        .for-who-section {
+            padding: 120px 48px;
+        }
+
+        .for-who-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--gray-border);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .for-who-card {
+            background: var(--black);
+            padding: 48px 40px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .for-who-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--orange-racing);
+            transition: height 0.3s ease;
+        }
+
+        .for-who-card:hover {
+            background: var(--gray-dark);
+        }
+
+        .for-who-card:hover::before {
+            height: 100%;
+        }
+
+        .for-who-card__icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--orange-racing);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .for-who-card__icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--orange-racing);
+        }
+
+        .for-who-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .for-who-card p {
+            font-size: 15px;
+            color: var(--gray-light);
+            margin-bottom: 20px;
+        }
+
+        .for-who-card .highlight {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--cyan-electric);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* OFFER SECTION */
+        .offer-section {
+            padding: 120px 48px;
+            background: var(--black-soft);
+        }
+
+        .offer-stack {
+            background: var(--black);
+            border: 1px solid var(--gray-border);
+            padding: 64px;
+            max-width: 1000px;
+            margin: 0 auto 64px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .offer-item:last-child {
+            border-bottom: none;
+        }
+
+        .offer-item svg {
+            flex-shrink: 0;
+            color: var(--cyan-electric);
+            margin-top: 2px;
+        }
+
+        .offer-item__content {
+            flex-grow: 1;
+        }
+
+        .offer-item h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .offer-item p {
+            font-size: 14px;
+            color: var(--gray-medium);
+        }
+
+        .offer-item .price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--gray-dark-text);
+            text-decoration: line-through;
+        }
+
+        .offer-total {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-border);
+        }
+
+        .offer-total .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-medium);
+            margin-bottom: 8px;
+        }
+
+        .offer-total .value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--gray-dark-text);
+            text-decoration: line-through;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--gray-border);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--black);
+            padding: 48px 40px;
+        }
+
+        .pricing-card.featured {
+            background: var(--gray-dark);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--orange-racing);
+            color: #000000;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            padding: 8px;
+            letter-spacing: 0.2em;
+        }
+
+        .pricing-card.featured {
+            padding-top: 80px;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .subtitle {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 32px;
+        }
+
+        .pricing-card .price {
+            margin-bottom: 32px;
+        }
+
+        .pricing-card .price .value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+        }
+
+        .pricing-card.featured .price .value {
+            color: var(--cyan-electric);
+        }
+
+        .pricing-card .price .term {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--gray-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-left: 8px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .pricing-card ul li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--gray-light);
+            margin-bottom: 12px;
+        }
+
+        .pricing-card ul li svg {
+            flex-shrink: 0;
+            color: var(--cyan-electric);
+        }
+
+        .pricing-card ul li strong {
+            color: var(--white);
+        }
+
+        .pricing-card .btn-racing,
+        .pricing-card .btn-outline {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Compare */
+        .compare-box {
+            background: var(--black);
+            border: 1px solid var(--gray-border);
+            padding: 64px;
+            max-width: 1000px;
+            margin: 64px auto 0;
+        }
+
+        .compare-box h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            text-align: center;
+        }
+
+        .compare-item .label {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 12px;
+        }
+
+        .compare-item .value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: #ff4444;
+            margin-bottom: 8px;
+        }
+
+        .compare-item .note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--gray-dark-text);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* GUARANTEE SECTION */
+        .guarantee-section {
+            padding: 120px 48px;
+        }
+
+        .guarantee-box {
+            background: var(--black-soft);
+            border: 1px solid var(--gray-border);
+            padding: 80px 64px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .guarantee-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #39ff14;
+        }
+
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #39ff14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .guarantee-icon svg {
+            width: 40px;
+            height: 40px;
+            color: #39ff14;
+        }
+
+        .guarantee-box h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .guarantee-box p {
+            font-size: 18px;
+            color: var(--gray-light);
+            margin-bottom: 16px;
+        }
+
+        .guarantee-box p strong {
+            color: var(--white);
+        }
+
+        .guarantee-box .note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--gray-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 24px;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 120px 48px;
+            background: var(--black-soft);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--black);
+            border: 1px solid var(--gray-border);
+            margin-bottom: 2px;
+        }
+
+        .faq-item summary {
+            padding: 24px 32px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary:hover {
+            background: var(--gray-dark);
+        }
+
+        .faq-item summary .icon {
+            font-size: 24px;
+            color: var(--orange-racing);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item .content {
+            padding: 0 32px 32px;
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            border-top: 1px solid var(--gray-border);
+            margin-top: -1px;
+            padding-top: 24px;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 160px 48px;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 60%);
+            filter: blur(60px);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 80px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--gray-medium);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .final-cta .badges {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--gray-dark-text);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-top: 32px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 48px;
+            border-top: 1px solid var(--gray-border);
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--gray-dark-text);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .systems-grid,
+            .create-grid,
+            .ref-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 24px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .hero h1 .sub {
+                font-size: 40px;
+            }
+
+            .hero-tagline {
+                font-size: 16px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn-racing,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-bar,
+            .systems-grid,
+            .create-grid,
+            .steps-grid,
+            .ref-grid,
+            .for-who-grid,
+            .pricing-grid,
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-header h2 {
+                font-size: 40px;
+            }
+
+            .time-badges {
+                flex-direction: column;
+            }
+
+            .problem-section,
+            .solution-section,
+            .references-section,
+            .for-who-section,
+            .offer-section,
+            .guarantee-section,
+            .faq-section {
+                padding: 80px 24px;
+            }
+
+            .problem-box,
+            .create-box,
+            .how-box,
+            .offer-stack,
+            .compare-box,
+            .guarantee-box {
+                padding: 40px 24px;
+            }
+
+            .final-cta h2 {
+                font-size: 48px;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="hero-label">// Para empreendedores digitais e freelancers</p>
+
+            <!-- Badge Anti-Curso -->
+            <div style="display: inline-flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; padding: 16px 32px; background: rgba(255, 68, 68, 0.08); border: 1px solid #ff4444;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #ff4444;">❌ NÃO É CURSO</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gray-medium);">(você não vai estar no grupo de 85% que não conclui)</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #39ff14;">✅ É EXECUÇÃO</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gray-medium);">(resultado em 5 min, não 40h de teoria)</span>
+            </div>
+
+            <h1>
+                SEU TIME DE MARKETING EM <span>5 MINUTOS</span>
+                <span class="sub">PORQUE VOCÊ NÃO TEM 40H PRA MAIS UM CURSO</span>
+            </h1>
+
+            <p class="hero-tagline">
+                Não é curso (85% não concluem). É um sistema que EXECUTA o marketing enquanto você trabalha 40h+/semana.
+                4 especialistas integrados criam ofertas, páginas, funis e campanhas em minutos.
+                <strong>Sem teoria. Sem ser copywriter. Sem programar.</strong>
+            </p>
+
+            <div class="btn-group">
+                <a href="#oferta" class="btn-racing">
+                    QUERO MEU TIME DE MARKETING
+                    <span>&#8599;</span>
+                </a>
+                <a href="#como-funciona" class="btn-outline">
+                    Ver Como Funciona
+                </a>
+            </div>
+
+            <div class="hero-badges">
+                <span class="hero-badge">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Página pronta em 5 min
+                </span>
+                <span class="hero-badge">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Funil completo em 15 min
+                </span>
+                <span class="hero-badge">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Acesso por 1 ano
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="stat">
+            <div class="stat__number">5-15<span>%</span></div>
+            <div class="stat__label">Taxa de conclusão de cursos online</div>
+            <div class="stat__source">Fonte: MOOCs Research</div>
+        </div>
+        <div class="stat">
+            <div class="stat__number">83<span>%</span></div>
+            <div class="stat__label">Marketeiros já sofreram burnout</div>
+            <div class="stat__source">Maior taxa de qualquer indústria</div>
+        </div>
+        <div class="stat">
+            <div class="stat__number">61<span>%</span></div>
+            <div class="stat__label">Criadores em burnout agora</div>
+            <div class="stat__source">Fonte: ConvertKit 2022</div>
+        </div>
+        <div class="stat">
+            <div class="stat__number">70<span>%</span></div>
+            <div class="stat__label">Não implementam o que aprendem</div>
+            <div class="stat__source">Mesmo dos que concluem</div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
+        <div class="section-header">
+            <h2>O PROBLEMA QUE <span>NINGUEM FALA</span></h2>
+            <p>Todo mundo sabe que precisa de marketing. Poucos conseguem executar.</p>
+        </div>
+
+        <div class="problem-box">
+            <div style="background: rgba(255, 68, 68, 0.05); border-left: 4px solid #ff4444; padding: 32px; margin-bottom: 48px; text-align: left;">
+                <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: #ff4444; margin-bottom: 16px;">// OS DADOS QUE PROVAM</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);"><strong>5-15%</strong> é a taxa de conclusão de cursos online (Fonte: MOOCs Research)</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);"><strong>Menos de 30%</strong> completam infoprodutos no Brasil (Fonte: EAD Plataforma 2026)</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);"><strong>70%</strong> dos que concluem NÃO conseguem implementar o que aprenderam</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);"><strong>84%</strong> dos empreendedores trabalham mais de 40h/semana (Fonte: HubSpot)</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);"><strong>Menos de 1h/dia</strong> dedicado ao marketing (Fonte: Constant Contact)</li>
+                </ul>
+                <p style="margin-top: 24px; font-size: 16px; color: var(--orange-racing); font-weight: 600;">Como você vai implementar um curso de 40 horas se trabalha 40h+/semana e tem menos de 1h/dia pro marketing?</p>
+            </div>
+
+            <h3>E O RESULTADO?</h3>
+
+            <div class="problem-grid">
+                <div class="problem-column">
+                    <h4>// O que você já tentou</h4>
+                    <ul class="problem-list">
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ff4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <span><strong>ChatGPT</strong> — textos genéricos que não vendem</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ff4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <span><strong>Templates</strong> — não sabe adaptar pro seu negócio</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ff4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <span><strong>Cursos de copy</strong> — aprende teoria, não executa</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ff4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <span><strong>Terceirizar</strong> — R$ 500 a R$ 2.000 por página</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ff4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <span><strong>Lovable/builders</strong> — foco em código, não em conversão</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="problem-column">
+                    <h4 class="yellow">// Os números provam</h4>
+                    <ul class="problem-list">
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ffa500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            <span>Taxa média de conversão de landing page: <strong>apenas 4-6%</strong></span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ffa500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            <span><strong>2 em cada 3</strong> marketeiros têm conversão menor que 10%</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ffa500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            <span><strong>42%</strong> admitem não conseguir atingir o público certo</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ffa500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            <span><strong>38%</strong> das empresas trabalham SEM estratégia de marketing</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" fill="none" stroke="#ffa500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            <span>Pode levar <strong>até 3 anos</strong> para se recuperar de burnout</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="problem-conclusion">
+                <p>
+                    <strong>Os dados provam:</strong> O problema não é falta de conhecimento. 85-95% não concluem cursos. 70% não implementam.
+                    <span class="highlight">Você não precisa de mais teoria. Precisa de um sistema que EXECUTA.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU TRIED SECTION -->
+    <section style="padding: 120px 48px; background: var(--gray-dark);">
+        <div class="section-header">
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; text-transform: uppercase; margin-bottom: 16px; text-align: center;">
+                VOCÊ JÁ <span style="color: var(--orange-racing);">TENTOU</span>
+            </h2>
+            <p style="font-size: 18px; color: var(--gray-medium); max-width: 600px; margin: 0 auto; text-align: center;">E não funcionou. E não é culpa sua.</p>
+        </div>
+
+        <div style="max-width: 1000px; margin: 64px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-border);">
+            <!-- Item 1 -->
+            <div style="background: var(--black); padding: 40px; border-left: 3px solid #ff4444;">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-transform: uppercase; color: #ff4444; margin-bottom: 16px;">❌ COMPROU CURSO DE COPY</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Taxa de conclusão: <strong>5-15%</strong></li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Mesmo se concluir: <strong>70% não implementam</strong></li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Investimento: <strong>R$ 1.500-3.000</strong></li>
+                    <li style="font-size: 14px; color: #ff4444; margin-top: 16px;"><strong>→ Resultado: Nada no ar</strong></li>
+                </ul>
+            </div>
+
+            <!-- Item 2 -->
+            <div style="background: var(--black); padding: 40px; border-left: 3px solid #ff4444;">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-transform: uppercase; color: #ff4444; margin-bottom: 16px;">❌ USOU CHATGPT / IA</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Copy genérica sem estratégia</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Taxa média de conversão: <strong>4-6%</strong></li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Sem contexto do seu negócio</li>
+                    <li style="font-size: 14px; color: #ff4444; margin-top: 16px;"><strong>→ Resultado: Textos que não vendem</strong></li>
+                </ul>
+            </div>
+
+            <!-- Item 3 -->
+            <div style="background: var(--black); padding: 40px; border-left: 3px solid #ff4444;">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-transform: uppercase; color: #ff4444; margin-bottom: 16px;">❌ CONTRATOU FREELANCER</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Preço: <strong>R$ 500 a R$ 2.000 por página</strong></li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Tempo: <strong>3-5 dias de espera</strong></li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Resultado genérico (não conhece SEU negócio)</li>
+                    <li style="font-size: 14px; color: #ff4444; margin-top: 16px;"><strong>→ Resultado: Caro e demorado</strong></li>
+                </ul>
+            </div>
+
+            <!-- Item 4 -->
+            <div style="background: var(--black); padding: 40px; border-left: 3px solid #ff4444;">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-transform: uppercase; color: #ff4444; margin-bottom: 16px;">❌ TENTOU FAZER SOZINHO</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Você trabalha <strong>40h+/semana</strong> (84% dos empreendedores)</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• Tem <strong>menos de 1h/dia</strong> para marketing</li>
+                    <li style="margin-bottom: 12px; font-size: 14px; color: var(--gray-light);">• <strong>83%</strong> dos marketeiros em burnout</li>
+                    <li style="font-size: 14px; color: #ff4444; margin-top: 16px;"><strong>→ Resultado: Burnout ou não faz</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusão -->
+        <div style="max-width: 800px; margin: 64px auto 0; text-align: center; padding: 48px; background: rgba(0, 229, 255, 0.05); border: 1px solid var(--cyan-electric);">
+            <p style="font-size: 18px; color: var(--gray-light); margin-bottom: 16px;">
+                <strong style="color: var(--white);">A verdade que os dados provam:</strong>
+            </p>
+            <p style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; text-transform: uppercase; color: var(--cyan-electric); line-height: 1.2;">
+                O problema nunca foi falta de conhecimento. Foi que te venderam INFORMAÇÃO quando você precisava de EXECUÇÃO.
+            </p>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section" id="como-funciona">
+        <div class="section-header">
+            <p class="tech-label" style="margin-bottom: 16px;">// A SOLUÇÃO</p>
+            <h2>4 SISTEMAS DE ESPECIALISTAS<br><span>TRABALHANDO PRA VOCÊ</span></h2>
+            <p>
+                Não é mais um curso. Não é uma ferramenta que você precisa aprender.
+                É um sistema completo que executa o trabalho.
+            </p>
+        </div>
+
+        <!-- Systems Grid -->
+        <div class="systems-grid">
+            <div class="system-card">
+                <div class="system-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3>SISTEMA DE ESTRATEGIA</h3>
+                <p>Funis de vendas, sequências de email, nutrição e jornada do cliente.</p>
+                <ul>
+                    <li>Funis estruturados</li>
+                    <li>Sequências de email</li>
+                    <li>Pesquisa e ICP</li>
+                    <li>Ofertas irresistíveis</li>
+                </ul>
+            </div>
+
+            <div class="system-card">
+                <div class="system-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                    </svg>
+                </div>
+                <h3>SISTEMA DE COPY</h3>
+                <p>Da pesquisa à criação. Headlines, páginas, emails e scripts de VSL.</p>
+                <ul>
+                    <li>Headlines (50+ fórmulas)</li>
+                    <li>Páginas de vendas</li>
+                    <li>Emails persuasivos</li>
+                    <li>Scripts de vídeo</li>
+                </ul>
+            </div>
+
+            <div class="system-card">
+                <div class="system-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                </div>
+                <h3>SISTEMA DE TRAFEGO</h3>
+                <p>Estratégias de anúncios e posicionamento para os melhores canais.</p>
+                <ul>
+                    <li>Meta, Google, YouTube, TikTok</li>
+                    <li>Posicionamento orgânico</li>
+                    <li>Melhor canal pra você</li>
+                    <li>Estrutura de campanhas</li>
+                </ul>
+            </div>
+
+            <div class="system-card">
+                <div class="system-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                    </svg>
+                </div>
+                <h3>SISTEMA DE DESIGN</h3>
+                <p>Identidade visual, UI/UX, landing pages de alta conversão e brand strategy.</p>
+                <ul>
+                    <li>Logo e identidade visual</li>
+                    <li>Paleta de cores e tipografia</li>
+                    <li>Landing pages otimizadas</li>
+                    <li>Posicionamento de marca</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Create Box -->
+        <div class="create-box">
+            <h3>O QUE VOCE CONSEGUE CRIAR</h3>
+
+            <div class="create-grid">
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <h4>Páginas de Vendas</h4>
+                    <p>HTML pronto para publicar</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <h4>Sequências de Email</h4>
+                    <p>Welcome, vendas, abandono</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    <h4>Funis Completos</h4>
+                    <p>Do topo ao fundo</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                    </svg>
+                    <h4>Campanhas de Ads</h4>
+                    <p>Copy + estratégia + públicos</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h4>Ofertas Irresistíveis</h4>
+                    <p>Stack de valor completo</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <h4>Personas e ICP</h4>
+                    <p>Público-alvo definido</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                    </svg>
+                    <h4>Identidade Visual</h4>
+                    <p>Logo, cores, tipografia</p>
+                </div>
+
+                <div class="create-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <h4>Personal Branding</h4>
+                    <p>Marca pessoal completa</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="how-box">
+            <h3>COMO FUNCIONA (NA PRATICA)</h3>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h4>RESPONDA 5 PERGUNTAS</h4>
+                    <p>O que vende, pra quem, resultado, preço, diferencial</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h4>SISTEMAS ASSUMEM</h4>
+                    <p>Estratégia + Copy + Tráfego trabalham integrados</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h4>ENTREGA COMPLETA</h4>
+                    <p>Oferta + Copy + Página + Funil + Emails</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h4>VOCE PUBLICA</h4>
+                    <p>Revisa, ajusta se quiser, e coloca no ar</p>
+                </div>
+            </div>
+
+            <div class="time-badges">
+                <div class="time-badge">
+                    <p class="time">5 MIN</p>
+                    <p class="desc">Página de vendas funcional</p>
+                </div>
+                <div class="time-badge">
+                    <p class="time">15 MIN</p>
+                    <p class="desc">Oferta + Funil completo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section class="references-section">
+        <div class="section-header">
+            <p class="tech-label" style="margin-bottom: 16px;">// BASEADO NAS PRINCIPAIS REFERÊNCIAS</p>
+            <h2>OS ESPECIALISTAS QUE SEU GURU<br><span>SE INSPIROU (OU COPIOU)</span></h2>
+            <p style="margin-top: 16px;">
+                Nosso sistema foi treinado com as metodologias originais dos maiores nomes do marketing mundial.
+            </p>
+        </div>
+
+        <div class="ref-grid">
+            <div class="ref-card">
+                <h4>// Copywriting</h4>
+                <p>Gary Halbert, Eugene Schwartz, David Ogilvy, Claude Hopkins, Dan Kennedy, Gary Bencivenga, John Carlton, Joe Sugarman, Stefan Georgi, Kevin Rogers</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Ofertas e Funis</h4>
+                <p>Alex Hormozi, Jay Abraham, Russell Brunson, Jeff Walker, Todd Brown, Ryan Deiss, Pedro Adão</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Email Marketing</h4>
+                <p>André Chaperon, Ben Settle, Frank Kern, Daniel Throssell, Ian Stanley</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Tráfego Pago</h4>
+                <p>Nicholas Kusmich, Depesh Mandalia, Perry Marshall, Tom Breeze, Dennis Yu</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Branding</h4>
+                <p>Al Ries, Jack Trout, Marty Neumeier, David Aaker, Simon Sinek, Seth Godin</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Design</h4>
+                <p>Paul Rand, Saul Bass, Milton Glaser, Massimo Vignelli, Pentagram, Landor</p>
+            </div>
+            <div class="ref-card">
+                <h4>// UI/UX</h4>
+                <p>Oli Gardner, Jakob Nielsen, Brad Frost, Tim Ash, IDEO</p>
+            </div>
+            <div class="ref-card">
+                <h4>// Personal Branding</h4>
+                <p>Gary Vaynerchuk, Dorie Clark, Chris Ducker, Austin Kleon</p>
+            </div>
+        </div>
+
+        <div class="conversion-box">
+            <p class="label">// Dado importante</p>
+            <p class="numbers">
+                Copy simples converte <span class="green">11,1%</span>
+                vs <span class="red">5,3%</span> texto complexo
+            </p>
+            <p class="note">Os sistemas já foram programados para escrever direto, simples, que vende.</p>
+        </div>
+    </section>
+
+    <!-- FOR WHO SECTION -->
+    <section class="for-who-section">
+        <div class="section-header">
+            <h2>PARA QUEM E O <span>SLEEP AGENT</span></h2>
+        </div>
+
+        <div class="for-who-grid">
+            <div class="for-who-card">
+                <div class="for-who-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3>EMPREENDEDOR DIGITAL SOLO</h3>
+                <p>Vende curso, mentoria, serviço. Fatura até R$ 20k. Faz tudo sozinho e não tem tempo pro marketing.</p>
+                <span class="highlight">> One Person Business real.</span>
+            </div>
+
+            <div class="for-who-card">
+                <div class="for-who-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3>PROFISSIONAL EM TRANSICAO</h3>
+                <p>Quer sair do CLT. Vê oportunidade em prestar serviço digital mas não sabe por onde começar.</p>
+                <span class="highlight">> Comece a faturar criando ofertas e páginas.</span>
+            </div>
+
+            <div class="for-who-card">
+                <div class="for-who-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3>FREELANCER DE MARKETING</h3>
+                <p>Já vende serviço, mas entrega manual. Gasta horas fazendo o que poderia ser automatizado.</p>
+                <span class="highlight">> Escale sem contratar equipe.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER SECTION -->
+    <section class="offer-section" id="oferta">
+        <div class="section-header">
+            <p class="tech-label" style="margin-bottom: 16px;">// OFERTA ESPECIAL</p>
+            <h2>TUDO QUE VOCE <span>RECEBE HOJE</span></h2>
+        </div>
+
+        <div class="offer-stack">
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>4 SISTEMAS DE ESPECIALISTAS INTEGRADOS</h4>
+                    <p>Estratégia + Copy + Tráfego + Design trabalhando juntos</p>
+                </div>
+                <span class="price">R$ 3.000</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>MODO INICIANTE</h4>
+                    <p>5 perguntas → Página pronta em 5 minutos</p>
+                </div>
+                <span class="price">R$ 500</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>MODO OFERTA COMPLETA</h4>
+                    <p>7 fases: pesquisa, ICP, oferta, copy, funil, emails, tráfego</p>
+                </div>
+                <span class="price">R$ 1.500</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>GERADOR DE FUNIS DE EMAIL</h4>
+                    <p>Welcome sequence, vendas, abandono, reengajamento</p>
+                </div>
+                <span class="price">R$ 800</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>SISTEMA DE BRANDING COMPLETO</h4>
+                    <p>Logo, identidade visual, paleta de cores, design system, personal brand</p>
+                </div>
+                <span class="price">R$ 1.500</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>GUIA DE INSTALACAO PASSO A PASSO</h4>
+                    <p>Mesmo sem nunca ter aberto VS Code na vida</p>
+                </div>
+                <span class="price">R$ 200</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>AULAS GRAVADAS</h4>
+                    <p>Explicando cada comando e cada sistema</p>
+                </div>
+                <span class="price">R$ 500</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>BASE DE CONHECIMENTO 60+ REFERENCIAS</h4>
+                    <p>Frameworks originais dos maiores nomes do marketing</p>
+                </div>
+                <span class="price">R$ 800</span>
+            </div>
+
+            <div class="offer-item">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <div class="offer-item__content">
+                    <h4>ATUALIZACOES POR 1 ANO</h4>
+                    <p>Novos sistemas e funcionalidades durante 12 meses</p>
+                </div>
+                <span class="price">R$ 1.000</span>
+            </div>
+
+            <div class="offer-total">
+                <p class="label">// Valor total</p>
+                <p class="value">R$ 8.800</p>
+            </div>
+        </div>
+
+        <!-- Transparência de Custos -->
+        <div style="max-width: 1000px; margin: 64px auto; background: rgba(0, 229, 255, 0.05); border: 1px solid var(--cyan-electric); padding: 48px;">
+            <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; text-transform: uppercase; margin-bottom: 32px; text-align: center;">INVESTIMENTO REAL E TRANSPARENTE</h4>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px;">
+                <div>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-medium); margin-bottom: 12px;">Sleep Agent (pagamento único)</p>
+                    <p style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--cyan-electric); line-height: 1;">R$ 497</p>
+                </div>
+                <div>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-medium); margin-bottom: 12px;">Custo de uso (API Anthropic)</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-size: 14px; color: var(--gray-light); margin-bottom: 8px;">• Página de vendas simples: <strong>~R$ 0,50 - R$ 2,00</strong></li>
+                        <li style="font-size: 14px; color: var(--gray-light); margin-bottom: 8px;">• Oferta completa + funil: <strong>~R$ 5,00 - R$ 10,00</strong></li>
+                        <li style="font-size: 14px; color: var(--gray-light);">• Sequência de 7 emails: <strong>~R$ 3,00 - R$ 8,00</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 32px; background: var(--black); border-left: 4px solid var(--orange-racing);">
+                <p style="font-size: 16px; color: var(--gray-light); margin-bottom: 16px;">
+                    Ou seja: Por <strong style="color: var(--cyan-electric);">menos de R$ 10</strong>, você tem oferta + página + funil + 7 emails prontos.
+                </p>
+                <p style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-transform: uppercase; color: var(--white);">
+                    Compare: Freelancer cobra <span style="color: #ff4444;">R$ 500 - R$ 2.000</span> só pela página.
+                </p>
+                <p style="font-size: 14px; color: var(--gray-medium); margin-top: 16px;">
+                    Depois de 1 página criada, você já economizou o investimento.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>ESSENCIAL</h3>
+                <p class="subtitle">Acesso completo ao sistema</p>
+
+                <div class="price">
+                    <span class="value">R$ 497</span>
+                    <span class="term">único</span>
+                </div>
+
+                <ul>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        4 sistemas de especialistas integrados
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Páginas, funis, emails, anúncios, branding
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Guia de instalação + Aulas gravadas
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Base com 60+ referências
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Atualizações por 1 ano
+                    </li>
+                </ul>
+
+                <a href="#" class="btn-outline">QUERO O ESSENCIAL</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>ACOMPANHADO</h3>
+                <p class="subtitle">Sistema + Suporte direto</p>
+
+                <div class="price">
+                    <span class="value">R$ 997</span>
+                    <span class="term">único</span>
+                </div>
+
+                <ul>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <strong>Tudo do plano Essencial</strong>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        4 encontros ao vivo por mês
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Suporte WhatsApp (15h às 19h)
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Tire dúvidas em tempo real
+                    </li>
+                    <li>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Garantia de implementação
+                    </li>
+                </ul>
+
+                <a href="#" class="btn-racing">QUERO COM ACOMPANHAMENTO <span>&#8599;</span></a>
+            </div>
+        </div>
+
+        <!-- Compare -->
+        <div class="compare-box">
+            <h4>COMPARE COM O MERCADO</h4>
+            <div class="compare-grid">
+                <div class="compare-item">
+                    <p class="label">Contratar copywriter</p>
+                    <p class="value">R$ 500 - R$ 2.000</p>
+                    <p class="note">por página</p>
+                </div>
+                <div class="compare-item">
+                    <p class="label">Curso de copywriting</p>
+                    <p class="value">R$ 1.500 - R$ 3.000</p>
+                    <p class="note">e você ainda precisa executar</p>
+                </div>
+                <div class="compare-item">
+                    <p class="label">Ferramentas de AI</p>
+                    <p class="value">R$ 200 - R$ 500/mês</p>
+                    <p class="note">para sempre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE SECTION -->
+    <section class="guarantee-section">
+        <div class="guarantee-box">
+            <div class="guarantee-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+            </div>
+
+            <h2>GARANTIA ANTI-CURSO</h2>
+            <p style="font-family: 'Bebas Neue', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan-electric); margin-bottom: 24px;">
+                7 DIAS — MESMO QUE VOCÊ NÃO "CONCLUA" NADA
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left; margin: 32px 0;">
+                <div style="padding: 24px; background: rgba(255, 68, 68, 0.05); border-left: 3px solid #ff4444;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #ff4444; margin-bottom: 12px;">Cursos Normais</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-size: 14px; color: var(--gray-medium); margin-bottom: 8px;">• "Você não se esforçou"</li>
+                        <li style="font-size: 14px; color: var(--gray-medium); margin-bottom: 8px;">• "Assistiu só 20% das aulas"</li>
+                        <li style="font-size: 14px; color: var(--gray-medium);">• Não devolvem</li>
+                    </ul>
+                </div>
+                <div style="padding: 24px; background: rgba(57, 255, 20, 0.05); border-left: 3px solid #39ff14;">
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #39ff14; margin-bottom: 12px;">Sleep Agent</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-size: 14px; color: var(--gray-light); margin-bottom: 8px;">✓ Não precisa "concluir" nada</li>
+                        <li style="font-size: 14px; color: var(--gray-light); margin-bottom: 8px;">✓ Cria página em 5 minutos</li>
+                        <li style="font-size: 14px; color: var(--gray-light);">✓ <strong style="color: #39ff14;">Devolve 100%</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="text-align: center;">
+                Instale, crie sua primeira página em 5 minutos, veja funcionando.
+                Se não servir: <strong>100% do valor de volta</strong>.
+            </p>
+            <p style="text-align: center; margin-top: 16px;">
+                Sem perguntas. Sem burocracia. Sem "você não assistiu todas as aulas".
+            </p>
+            <p class="note" style="margin-top: 24px; font-size: 14px;">
+                <strong style="color: var(--cyan-electric);">O risco é TODO MEU.</strong> Porque eu sei que funciona. E sei que você VAI ter resultado em minutos.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>PERGUNTAS <span>FREQUENTES</span></h2>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>
+                    PRECISO SABER PROGRAMAR?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Não. O sistema roda no VS Code com Claude Code, mas você não precisa escrever código. O guia de instalação mostra tudo passo a passo, mesmo que você nunca tenha aberto um terminal na vida.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    QUANTO CUSTA PRA USAR DEPOIS DE COMPRAR?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    O Sleep Agent usa o Claude Code da Anthropic. O custo de uso é muito baixo — geralmente centavos por página criada. Você paga pelo uso direto pra Anthropic, não existe mensalidade do Sleep Agent.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    FUNCIONA PRA QUALQUER NICHO?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Sim. Os sistemas foram treinados com frameworks de copy que funcionam em qualquer mercado. Você responde sobre SEU negócio e o sistema adapta tudo automaticamente.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    POR QUE VOCÊS "ATACAM" TANTO OS CURSOS?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Não atacamos. Apenas mostramos os dados: <strong>5-15% de conclusão, 70% insatisfeitos, 70% não implementam</strong> (fontes: MOOCs research, EAD Plataforma 2026, CR News). Cursos são bons para quem quer aprender. Mas a maioria das pessoas precisa de <strong>EXECUÇÃO</strong>, não teoria. E é isso que entregamos.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    COMO GARANTEM QUE NÃO É MAIS DO MESMO?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Simples: você cria uma página de vendas funcional <strong>em 5 minutos</strong>. Não em 5 dias depois de assistir 40 horas. <strong>EM 5 MINUTOS</strong> você já tem o HTML pronto pra publicar. Não prometemos que você vai aprender. Prometemos que você vai <strong>TER o resultado</strong>.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    E SE EU FOR DO GRUPO DE 85% QUE NÃO CONCLUI?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Você não precisa "concluir" nada. Não tem aulas pra assistir. Não tem tarefas. Você <strong>responde 5 perguntas</strong> e o sistema <strong>CRIA a página</strong>. Se mesmo assim não servir, garantia de 7 dias e 100% do dinheiro de volta. Sem "você não se esforçou".
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    POSSO USAR PRA VENDER COMO SERVICO?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Sim! Muitos freelancers usam o Sleep Agent pra criar ofertas, páginas e funis para clientes. Você pode cobrar R$ 500 a R$ 2.000 por entrega e produzir em minutos.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    E SE EU TRAVAR NA INSTALACAO?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    O guia é bem detalhado, mas se travar, você pode tirar dúvida nas aulas gravadas. No plano Acompanhado, você tem suporte direto no WhatsApp e encontros ao vivo pra resolver qualquer problema.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    POR QUANTO TEMPO TENHO ACESSO?
+                    <span class="icon">+</span>
+                </summary>
+                <div class="content">
+                    Acesso ao sistema e todas as atualizações por 12 meses. Após esse período, você continua usando o sistema, apenas sem receber novas atualizações.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>VOCÊ JÁ TENTOU CURSOS (85% NÃO CONCLUEM)</h2>
+            <p style="font-size: 22px; margin-bottom: 16px;">
+                Já tentou sozinho (burnout). Já gastou R$ 1.500-3.000 em teoria que não implementou.
+            </p>
+            <p style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; text-transform: uppercase; color: var(--cyan-electric); margin-bottom: 32px;">
+                Agora tenha um sistema que EXECUTA em 5 minutos o que levaria 40 horas.
+            </p>
+
+            <a href="#oferta" class="btn-racing">
+                QUERO MEU TIME DE MARKETING
+                <span>&#8599;</span>
+            </a>
+
+            <p class="badges">
+                Garantia de 7 dias &bull; Acesso por 1 ano &bull; Atualizações inclusas
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Sleep Agent Marketing</p>
+        <p>Este produto usa Claude Code da Anthropic. Os custos de uso da API são cobrados separadamente.</p>
+    </footer>
+
+</body>
+</html>

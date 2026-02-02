@@ -67,7 +67,28 @@
       "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" log --oneline -5)",
       "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" remote -v)",
       "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" diff --stat)",
-      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" add .claude/CLAUDE.md .claude/settings.local.json core/orquestrador/delegacao.yaml extensoes/branding/ extensoes/criador/ extensoes/customer-success/ extensoes/dados/ extensoes/educacional/ extensoes/produtos/ frameworks/ralph/templates/prd-curso.json frameworks/ralph/templates/prd-extensao.json frameworks/ralph/templates/prompt-curso.md frameworks/ralph/templates/prompt-extensao.md output/branding-design-analyst-agent/ output/criador/ output/sleep-agent-marketing/)"
+      "Bash(git -C \"c:/Users/daian/Projetos/sleep_agent_Vtotal\" add .claude/CLAUDE.md .claude/settings.local.json core/orquestrador/delegacao.yaml extensoes/branding/ extensoes/criador/ extensoes/customer-success/ extensoes/dados/ extensoes/educacional/ extensoes/produtos/ frameworks/ralph/templates/prd-curso.json frameworks/ralph/templates/prd-extensao.json frameworks/ralph/templates/prompt-curso.md frameworks/ralph/templates/prompt-extensao.md output/branding-design-analyst-agent/ output/criador/ output/sleep-agent-marketing/)",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(gh release create:*)",
+      "Bash(gh repo edit:*)",
+      "Bash(start \"\" \"c:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_v3\\\\workspace\\\\advocacia-inss\\\\index.html\")",
+      "Bash(findstr:*)",
+      "Bash(chmod:*)",
+      "Bash(./frameworks/ralph/scripts/ralph.sh:*)",
+      "Bash(bash frameworks/ralph/scripts/ralph.sh:*)",
+      "Bash(for file in frameworks/ralph/checklists/*.md)",
+      "Bash(do sed -i 's/AIOS Framework/Sleep Agent Framework \\(SAF\\)/g; s/AIOS Integration/SAF Integration/g; s/AIOS Principle/SAF Principle/g; s/AIOS Quality Gates/SAF Quality Gates/g; s/AIOS Compliance/SAF Compliance/g; s/description: AIOS Quality Gates/description: SAF Quality Gates/g' \"$file\")",
+      "Bash(for file in frameworks/ralph/tasks/*.md)",
+      "Bash(do sed -i 's/author: AIOS Framework/author: Sleep Agent Framework/g; s/author: AIOS Ralph/author: Sleep Agent Ralph/g; s/aios_integration:/saf_integration:/g' \"$file\")",
+      "Bash(xargs -I {} sed -i 's/AIOS Framework/Sleep Agent Framework \\(SAF\\)/g; s/AIOS Integration/SAF Integration/g; s/AIOS Principle/SAF Principle/g; s/AIOS-FULLSTACK/SAF-FULLSTACK/g; s/maintainer: \"\"AIOS Pipeline\"\"/maintainer: \"\"Sleep Agent Pipeline\"\"/g; s/\"\"author\"\": \"\"AIOS Ralph PRD Generator\"\"/\"\"author\"\": \"\"Sleep Agent Ralph PRD Generator\"\"/g; s/author: AIOS Ralph/author: Sleep Agent Ralph/g; s/Part of the AIOS Expansion Pack/Part of the Sleep Agent Expansion Pack/g; s/extractor: \"\"AIOS extract-frameworks/extractor: \"\"SAF extract-frameworks/g; s/\"\"aiosArtifacts\"\"/\"\"safArtifacts\"\"/g; s/\"\"category\"\": \"\"aios-artifacts\"\"/\"\"category\"\": \"\"saf-artifacts\"\"/g; s/Follow AIOS task format/Follow SAF task format/g; s/phase1_artifacts\"\": \"\"US-001 to US-013 \\(AIOS tasks/phase1_artifacts\"\": \"\"US-001 to US-013 \\(SAF tasks/g; s/Create reusable AIOS artifacts/Create reusable SAF artifacts/g; s/Principios AIOS/Princípios SAF/g; s/Copy Workflows YOLO/Copy Workflows YOLO/g; s/Compatible with: AIOS-FULLSTACK/Compatible with: SAF-FULLSTACK/g; s/CopywriterOS - AIOS Expansion Pack/CopywriterOS - SAF Expansion Pack/g; s/Part of the AIOS Expansion Pack System/Part of the Sleep Agent Expansion Pack System/g; s/author: \"\"AIOS Copy Workflows YOLO\"\"/author: \"\"Sleep Agent Copy Workflows YOLO\"\"/g' {})",
+      "Bash(yamllint:*)",
+      "Bash(python3:*)",
+      "Bash(git log:*)",
+      "Bash(start \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_v3\\\\workspace\\\\exemplo-sleep-agent\\\\landing-pages\\\\index-racing.html\")",
+      "Bash(start \"\" \"C:\\\\Users\\\\daian\\\\Projetos\\\\sleep_agent_v3\\\\workspace\\\\exemplo-sleep-agent\\\\landing-pages\\\\index-racing-v2-otimizado.html\")",
+      "Bash(vercel:*)",
+      "Bash(npm i:*)"
     ]
   }
 }
