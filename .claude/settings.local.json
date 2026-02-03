@@ -94,7 +94,9 @@
       "Bash(xdg-open:*)",
       "Bash(google-chrome:*)",
       "Bash(firefox:*)",
-      "Bash(chromium-browser:*)"
+      "Bash(chromium-browser:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)"
     ]
   }
 }
