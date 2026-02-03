@@ -96,7 +96,8 @@
       "Bash(firefox:*)",
       "Bash(chromium-browser:*)",
       "Bash(git fetch:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git push:*)"
     ]
   }
 }
