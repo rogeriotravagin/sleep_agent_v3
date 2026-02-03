@@ -1,26 +1,31 @@
 /**
- * Design Tokens: Cohort Essentials
+ * Design Tokens: Cohort Fundamentals
  * Academia Lendária - Sistema de Grade Curricular Pedagógica
  *
- * Baseado na análise de: https://cohorts.academialendaria.ai/
+ * Baseado na logo oficial: Avatar-Cohort-F.png
  * Gerado por: Design Analyst - Sleep Agent
  * Data: 2026-02-02
+ * Versão: 2.0 (Atualizado com identidade Teal)
  */
 
 :root {
   /* ============================================
-     CORES - PRIMARY
+     CORES - PRIMARY (Teal Brand Identity)
      ============================================ */
-  --color-primary-gold: #C9A227;
-  --color-secondary-purple: #A855F7;
-  --color-accent-teal: #134E4A;
+  --color-primary-teal: #14B8A6;
+  --color-secondary-teal-dark: #0D9488;
+  --color-accent-teal-deep: #134E4A;
+  --color-accent-white: #FFFFFF;
 
   /* ============================================
-     CORES - BACKGROUND (Dark Mode)
+     CORES - BACKGROUND (Dark Mode + Gradients)
      ============================================ */
-  --color-bg-primary: #0A0A0A;
+  --color-bg-primary: #000000;
+  --color-bg-gradient-start: #000000;
+  --color-bg-gradient-end: #0A2E2C;
   --color-bg-secondary: #0F0F0F;
   --color-bg-card: #1A1A1A;
+  --color-bg-card-hover: rgba(20, 184, 166, 0.05);
   --color-bg-modal: #252525;
 
   /* ============================================
@@ -43,6 +48,8 @@
      ============================================ */
   --color-border-standard: #2A2A2A;
   --color-border-light: #3A3A3A;
+  --color-border-teal: #14B8A6;
+  --color-border-white: #FFFFFF;
 
   /* ============================================
      SPACING (Sistema 8pt)
@@ -113,15 +120,27 @@
   --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.4);
   --shadow-elevated: 0 10px 25px rgba(0, 0, 0, 0.5);
 
-  /* Glows */
-  --shadow-glow-gold: 0 0 20px rgba(201, 162, 39, 0.15);
-  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.15);
+  /* Glows - Teal Brand */
+  --shadow-glow-teal: 0 0 20px rgba(20, 184, 166, 0.2);
+  --shadow-glow-teal-subtle: 0 0 15px rgba(20, 184, 166, 0.1);
+  --shadow-glow-teal-strong: 0 0 30px rgba(20, 184, 166, 0.3);
+
+  /* Focus State */
+  --focus-ring-teal: 0 0 0 3px rgba(20, 184, 166, 0.1);
 
   /* ============================================
      TRANSITIONS
      ============================================ */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
+
+  /* ============================================
+     GRADIENTS (Teal Brand Identity)
+     ============================================ */
+  --gradient-hero: linear-gradient(180deg, #000000 0%, #0A2E2C 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, transparent 100%);
+  --gradient-radial-teal: radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%);
+  --gradient-pill-bg: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.1), transparent);
 
   /* ============================================
      LAYOUT
@@ -131,12 +150,36 @@
   --layout-breakpoint-mobile: 768px;
 
   /* ============================================
+     COMPONENTS - Pill/Cápsula (Novo - Brand Identity)
+     ============================================ */
+  --pill-border-radius: var(--radius-full);
+  --pill-padding: var(--space-3) var(--space-6);
+  --pill-border-width: 2px;
+  --pill-font-weight: var(--font-weight-medium);
+  --pill-transition: var(--transition-fast);
+
+  /* Variantes Pill */
+  --pill-hero-border: var(--color-border-white);
+  --pill-hero-color: var(--color-accent-white);
+  --pill-interactive-border: var(--color-border-teal);
+  --pill-interactive-color: var(--color-primary-teal);
+  --pill-interactive-bg: rgba(20, 184, 166, 0.1);
+
+  /* ============================================
      COMPONENTS - Button
      ============================================ */
-  --button-border-radius: var(--radius-md);
+  --button-border-radius: var(--radius-full);
   --button-padding: var(--space-3) var(--space-6);
   --button-font-weight: var(--font-weight-medium);
   --button-transition: var(--transition-fast);
+
+  /* Variantes Button */
+  --button-primary-bg: var(--color-primary-teal);
+  --button-primary-color: #000000;
+  --button-primary-hover-bg: var(--color-secondary-teal-dark);
+  --button-outline-border: 2px solid var(--color-primary-teal);
+  --button-outline-color: var(--color-primary-teal);
+  --button-outline-hover-bg: rgba(20, 184, 166, 0.1);
 
   /* ============================================
      COMPONENTS - Card
@@ -164,12 +207,21 @@
   --input-padding: var(--space-3) var(--space-4);
   --input-font-size: var(--font-size-base);
 
+  /* Estados Input */
+  --input-focus-border: 2px solid var(--color-primary-teal);
+  --input-focus-outline: var(--focus-ring-teal);
+
   /* ============================================
      COMPONENTS - Progress Step
      ============================================ */
   --progress-step-size: 44px;
   --progress-step-border: 2px solid var(--color-border-light);
   --progress-step-font-size: var(--font-size-base);
+
+  /* Estados Progress Step */
+  --progress-step-active-bg: var(--color-primary-teal);
+  --progress-step-active-color: #000000;
+  --progress-step-active-shadow: var(--shadow-glow-teal-subtle);
 }
 
 /* ============================================
@@ -186,13 +238,14 @@
 .text-primary { color: var(--color-text-primary); }
 .text-secondary { color: var(--color-text-secondary); }
 .text-muted { color: var(--color-text-muted); }
-.text-gold { color: var(--color-primary-gold); }
-.text-purple { color: var(--color-secondary-purple); }
+.text-teal { color: var(--color-primary-teal); }
+.text-teal-dark { color: var(--color-secondary-teal-dark); }
 
 /* Border Colors */
 .border-standard { border-color: var(--color-border-standard); }
 .border-light { border-color: var(--color-border-light); }
-.border-gold { border-color: var(--color-primary-gold); }
+.border-teal { border-color: var(--color-border-teal); }
+.border-white { border-color: var(--color-border-white); }
 
 /* Spacing - Padding */
 .p-0 { padding: var(--space-0); }
@@ -223,8 +276,9 @@
 .shadow-subtle { box-shadow: var(--shadow-subtle); }
 .shadow-card { box-shadow: var(--shadow-card); }
 .shadow-elevated { box-shadow: var(--shadow-elevated); }
-.shadow-glow-gold { box-shadow: var(--shadow-glow-gold); }
-.shadow-glow-purple { box-shadow: var(--shadow-glow-purple); }
+.shadow-glow-teal { box-shadow: var(--shadow-glow-teal); }
+.shadow-glow-teal-subtle { box-shadow: var(--shadow-glow-teal-subtle); }
+.shadow-glow-teal-strong { box-shadow: var(--shadow-glow-teal-strong); }
 
 /* Typography */
 .font-normal { font-weight: var(--font-weight-normal); }
@@ -235,3 +289,40 @@
 /* Transitions */
 .transition-fast { transition: var(--transition-fast); }
 .transition-normal { transition: var(--transition-normal); }
+
+/* Background Gradients */
+.bg-gradient-hero { background: var(--gradient-hero); }
+.bg-gradient-card-hover { background: var(--gradient-card-hover); }
+.bg-gradient-radial-teal { background: var(--gradient-radial-teal); }
+.bg-gradient-pill { background: var(--gradient-pill-bg); }
+
+/* Background Colors - Teal */
+.bg-teal { background-color: var(--color-primary-teal); }
+.bg-teal-dark { background-color: var(--color-secondary-teal-dark); }
+.bg-teal-subtle { background-color: rgba(20, 184, 166, 0.1); }
+
+/* Pill Component Utilities */
+.pill {
+  border-radius: var(--pill-border-radius);
+  padding: var(--pill-padding);
+  font-weight: var(--pill-font-weight);
+  transition: var(--pill-transition);
+  display: inline-block;
+}
+
+.pill-hero {
+  border: var(--pill-border-width) solid var(--pill-hero-border);
+  color: var(--pill-hero-color);
+  background: transparent;
+}
+
+.pill-interactive {
+  border: var(--pill-border-width) solid var(--pill-interactive-border);
+  color: var(--pill-interactive-color);
+  background: var(--pill-interactive-bg);
+}
+
+.pill-interactive:hover {
+  box-shadow: var(--shadow-glow-teal);
+  background: rgba(20, 184, 166, 0.15);
+}

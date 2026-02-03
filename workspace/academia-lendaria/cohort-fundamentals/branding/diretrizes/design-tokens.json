@@ -1,14 +1,18 @@
 {
   "colors": {
     "primary": {
-      "gold": "#C9A227",
-      "purple": "#A855F7",
-      "teal": "#134E4A"
+      "teal": "#14B8A6",
+      "tealDark": "#0D9488",
+      "tealDeep": "#134E4A",
+      "white": "#FFFFFF"
     },
     "background": {
-      "primary": "#0A0A0A",
+      "primary": "#000000",
+      "gradientStart": "#000000",
+      "gradientEnd": "#0A2E2C",
       "secondary": "#0F0F0F",
       "card": "#1A1A1A",
+      "cardHover": "rgba(20, 184, 166, 0.05)",
       "modal": "#252525"
     },
     "state": {
@@ -24,7 +28,9 @@
     },
     "border": {
       "standard": "#2A2A2A",
-      "light": "#3A3A3A"
+      "light": "#3A3A3A",
+      "teal": "#14B8A6",
+      "white": "#FFFFFF"
     }
   },
   "spacing": {
@@ -83,8 +89,15 @@
     "subtle": "0 1px 2px rgba(0,0,0,0.3)",
     "card": "0 4px 6px rgba(0,0,0,0.4)",
     "elevated": "0 10px 25px rgba(0,0,0,0.5)",
-    "glowGold": "0 0 20px rgba(201, 162, 39, 0.15)",
-    "glowPurple": "0 0 20px rgba(168, 85, 247, 0.15)"
+    "glowTeal": "0 0 20px rgba(20, 184, 166, 0.2)",
+    "glowTealSubtle": "0 0 15px rgba(20, 184, 166, 0.1)",
+    "glowTealStrong": "0 0 30px rgba(20, 184, 166, 0.3)"
+  },
+  "gradients": {
+    "hero": "linear-gradient(180deg, #000000 0%, #0A2E2C 100%)",
+    "cardHover": "linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, transparent 100%)",
+    "radialTeal": "radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%)",
+    "pillBackground": "radial-gradient(ellipse at center, rgba(20, 184, 166, 0.1), transparent)"
   },
   "transitions": {
     "fast": "0.2s ease",
@@ -103,15 +116,50 @@
     }
   },
   "components": {
+    "pill": {
+      "borderRadius": "9999px",
+      "padding": "0.75rem 1.5rem",
+      "border": "2px solid",
+      "fontWeight": "500",
+      "transition": "0.2s ease",
+      "variants": {
+        "hero": {
+          "borderColor": "#FFFFFF",
+          "color": "#FFFFFF",
+          "background": "transparent"
+        },
+        "interactive": {
+          "borderColor": "#14B8A6",
+          "color": "#14B8A6",
+          "background": "rgba(20, 184, 166, 0.1)"
+        },
+        "label": {
+          "borderColor": "#14B8A6",
+          "padding": "0.5rem 1rem",
+          "fontSize": "0.875rem"
+        }
+      }
+    },
     "button": {
-      "borderRadius": "0.75rem",
+      "borderRadius": "9999px",
       "padding": "0.75rem 1.5rem",
       "fontWeight": "500",
-      "transition": "0.2s ease"
+      "transition": "0.2s ease",
+      "variants": {
+        "primary": {
+          "background": "#14B8A6",
+          "color": "#000000"
+        },
+        "outline": {
+          "background": "transparent",
+          "border": "2px solid #14B8A6",
+          "color": "#14B8A6"
+        }
+      }
     },
     "card": {
       "background": "#1A1A1A",
-      "borderRadius": "0.75rem",
+      "borderRadius": "1rem",
       "padding": "1.5rem",
       "border": "1px solid #2A2A2A"
     },
@@ -119,19 +167,30 @@
       "borderRadius": "9999px",
       "padding": "0.25rem 0.75rem",
       "fontSize": "0.75rem",
-      "fontWeight": "500"
+      "fontWeight": "500",
+      "variants": {
+        "teal": {
+          "background": "rgba(20, 184, 166, 0.15)",
+          "color": "#14B8A6"
+        }
+      }
     },
     "input": {
       "background": "#1A1A1A",
       "border": "1px solid #2A2A2A",
       "borderRadius": "0.75rem",
       "padding": "0.75rem 1rem",
-      "fontSize": "1rem"
+      "fontSize": "1rem",
+      "focusBorder": "2px solid #14B8A6"
     },
     "progressStep": {
       "size": "44px",
       "border": "2px solid #3A3A3A",
-      "fontSize": "1rem"
+      "fontSize": "1rem",
+      "active": {
+        "background": "#14B8A6",
+        "color": "#000000"
+      }
     }
   }
 }

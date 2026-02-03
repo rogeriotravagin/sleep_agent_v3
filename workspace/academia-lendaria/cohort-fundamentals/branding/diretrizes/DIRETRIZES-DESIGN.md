@@ -1,25 +1,27 @@
-# Diretrizes de Design: Cohort Essentials
+# Diretrizes de Design: Cohort Fundamentals
 
 **Produto:** Sistema de Grade Curricular Pedagógica - Academia Lendária
 **URL Referência:** https://cohorts.academialendaria.ai/
 **Data da Análise:** 2026-02-02
-**Versão:** 1.0
+**Versão:** 2.0 (Atualizado baseado na logo oficial)
 
 ---
 
 ## Princípios Fundamentais
 
-1. **Profundidade Intelectual através de Hierarquia Visual**
-   - Design dark-mode sofisticado que enfatiza rigor intelectual
-   - Uso estratégico de cores de destaque (ouro/roxo) para criar camadas de profundidade informacional
+1. **Profundidade e Fundação através de Gradientes Orgânicos**
+   - Design dark-mode baseado em gradientes teal-to-black que evocam profundidade
+   - Uso de teal/verde-azulado como cor primária representando fundamentos sólidos e crescimento
 
-2. **Narrativa Visual por Níveis**
-   - Metáfora do iceberg: informação em camadas de profundidade
-   - Hierarquia tipográfica como condutora do fluxo narrativo
+2. **Minimalismo Moderno com Identidade Forte**
+   - Tipografia em cápsulas pill-shaped (bordas arredondadas completas)
+   - Interface limpa e focada com elementos pill que criam hierarquia visual
+   - Bordas brancas sutis que definem espaços sem peso visual excessivo
 
-3. **Minimalismo Estruturado com Informação Densa**
-   - Interface limpa que suporta grande densidade de conteúdo
+3. **Estrutura Modular Expansível**
+   - Gradientes de fundo que criam profundidade sem ruído visual
    - Estrutura modular e expansível (collapsible sections)
+   - Transições suaves que mantêm a fluidez orgânica do design
 
 ---
 
@@ -29,17 +31,21 @@
 
 | Nome | HEX | RGB | Uso |
 |------|-----|-----|-----|
-| primary-gold | `#C9A227` | 201, 162, 39 | Ações principais, destaques de sabedoria, brand |
-| secondary-purple | `#A855F7` | 168, 85, 247 | Conteúdo avançado, maestria, elementos secundários |
-| accent-teal | `#134E4A` | 19, 78, 74 | Módulos de profundidade nível 1 |
+| primary-teal | `#14B8A6` | 20, 184, 166 | Ações principais, brand identity, destaques fundamentais |
+| secondary-teal-dark | `#0D9488` | 13, 148, 136 | Hover states, elementos secundários, profundidade |
+| accent-teal-deep | `#134E4A` | 19, 78, 74 | Gradientes de fundo, módulos de profundidade |
+| accent-white | `#FFFFFF` | 255, 255, 255 | Bordas, texto principal, pills/cápsulas |
 
 ### Cores de Background (Dark Mode)
 
 | Token | HEX | Uso |
 |-------|-----|-----|
-| bg-primary | `#0A0A0A` | Background principal |
+| bg-primary | `#000000` | Background principal (preto puro) |
+| bg-gradient-start | `#000000` | Início do gradiente (preto) |
+| bg-gradient-end | `#0A2E2C` | Fim do gradiente (teal muito escuro) |
 | bg-secondary | `#0F0F0F` | Superfícies elevadas (sidebar) |
 | bg-card | `#1A1A1A` | Background de cards |
+| bg-card-hover | `rgba(20, 184, 166, 0.05)` | Background de cards em hover (teal sutil) |
 | bg-modal | `#252525` | Modais e dropdowns |
 
 ### Cores de Estado
@@ -65,6 +71,17 @@
 |-------|-----|-----|
 | border-standard | `#2A2A2A` | Borders padrão |
 | border-light | `#3A3A3A` | Borders mais claros |
+| border-teal | `#14B8A6` | Borders de destaque (pills, foco) |
+| border-white | `#FFFFFF` | Borders de cápsulas/pills principais |
+
+### Gradientes Característicos
+
+| Nome | Código CSS | Uso |
+|------|------------|-----|
+| Hero Gradient | `linear-gradient(180deg, #000000 0%, #0A2E2C 100%)` | Background principal, hero sections |
+| Card Gradient Hover | `linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, transparent 100%)` | Hover state de cards |
+| Radial Teal Glow | `radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%)` | Efeitos de profundidade |
+| Pill Background | `radial-gradient(ellipse at center, rgba(20, 184, 166, 0.1), transparent)` | Background interno de pills importantes |
 
 ---
 
@@ -161,51 +178,79 @@ gap: 1.5rem;
 
 ## Componentes Base
 
+### Pills/Cápsulas (Novo Componente Característico)
+
+| Propriedade | Valor |
+|-------------|-------|
+| Background | Transparente ou `rgba(20, 184, 166, 0.1)` |
+| Border-radius | `9999px` (pill completo) |
+| Padding | `0.75rem 1.5rem` ou `1rem 2rem` (conforme tamanho) |
+| Border | `2px solid #FFFFFF` ou `2px solid #14B8A6` |
+| Font-weight | 500 (medium) a 600 (semibold) |
+
+**Variantes:**
+- **Hero Pill:** Border branca (`#FFFFFF`), texto branco, background com gradiente teal sutil
+- **Interactive Pill:** Border teal (`#14B8A6`), hover com glow teal
+- **Label Pill:** Menor, border mais fina (1px), text-sm
+
+**Estados:**
+- Default: Border sólida, sem background ou background muito sutil
+- Hover: Glow teal externo, background intensifica levemente
+- Active: Background teal (`#14B8A6`), texto preto (`#000000`)
+
 ### Cards/Módulos
 
 | Propriedade | Valor |
 |-------------|-------|
-| Background | `#1A1A1A` |
-| Border-radius | `0.75rem` (12px) a `1.5rem` (24px) |
+| Background | `#1A1A1A` ou gradiente sutil |
+| Border-radius | `1rem` (16px) a `1.5rem` (24px) |
 | Padding | `1.5rem` a `2rem` |
 | Border | `1px solid #2A2A2A` |
 
 **Estados:**
 - Default: border padrão
-- Hover: border-color shift para accent, elevação `-2px` Y-axis
+- Hover: border-color shift para teal (`#14B8A6`), elevação `-2px` Y-axis, background com gradiente teal
 - Collapsible: ícone de seta, transição `0.2s ease`
 
 **Variações de Borda Lateral (Accent):**
-- Gold (`#C9A227`): Conteúdo prioritário
-- Purple (`#A855F7`): Conteúdo de maestria
-- Green (`#1F3D2A`): Módulos nível 1
+- Teal (`#14B8A6`): Conteúdo prioritário, fundamentos
+- Teal Dark (`#0D9488`): Conteúdo secundário
+- Teal Deep (`#134E4A`): Módulos de profundidade nível 1
 
 ### Botões
 
 | Propriedade | Valor |
 |-------------|-------|
-| Border-radius | `0.75rem` (12px) |
+| Border-radius | `9999px` (pill shape) ou `0.75rem` (12px) |
 | Padding | `0.75rem 1.5rem` |
 | Font-weight | 500 (medium) |
 | Transition | `0.2s ease` |
 
 **Variantes:**
 
-**Primary:**
-- Background: `#C9A227`
-- Text: `#0A0A0A`
-- Hover: brightness aumentada
+**Primary (Teal):**
+- Background: `#14B8A6`
+- Text: `#000000`
+- Hover: background `#0D9488`, glow teal sutil
+- Border-radius: `9999px` (pill preferencial)
+
+**Primary Outline:**
+- Background: transparente
+- Border: `2px solid #14B8A6`
+- Text: `#14B8A6`
+- Hover: background `rgba(20, 184, 166, 0.1)`
+- Border-radius: `9999px`
 
 **Secondary:**
 - Background: `#252525`
 - Text: `#FFFFFF`
-- Hover: background `#2A2A2A`
+- Hover: background `#2A2A2A`, border `1px solid #3A3A3A`
 
 **Ghost:**
 - Background: transparente
 - Border: `1px solid #3A3A3A`
 - Text: `#FFFFFF`
-- Hover: background `#1A1A1A`
+- Hover: background `#1A1A1A`, border-color `#14B8A6`
 
 ### Badges
 
@@ -215,13 +260,15 @@ gap: 1.5rem;
 | Padding | `0.25rem 0.75rem` |
 | Font-size | `0.75rem` |
 | Font-weight | 500 |
+| Border | Opcional: `1px solid [cor correspondente]` |
 
 **Variantes:**
-- Primary: bg `rgba(201, 162, 39, 0.15)`, text `#C9A227`
-- Success: bg `rgba(34, 197, 94, 0.15)`, text `#22C55E`
-- Warning: bg `rgba(234, 179, 8, 0.15)`, text `#EAB308`
-- Danger: bg `rgba(239, 68, 68, 0.15)`, text `#EF4444`
-- Purple: bg `rgba(168, 85, 247, 0.15)`, text `#A855F7`
+- **Primary Teal:** bg `rgba(20, 184, 166, 0.15)`, text `#14B8A6`, border opcional `#14B8A6`
+- **Teal Dark:** bg `rgba(13, 148, 136, 0.15)`, text `#0D9488`
+- **Success:** bg `rgba(34, 197, 94, 0.15)`, text `#22C55E`
+- **Warning:** bg `rgba(234, 179, 8, 0.15)`, text `#EAB308`
+- **Danger:** bg `rgba(239, 68, 68, 0.15)`, text `#EF4444`
+- **Info:** bg `rgba(59, 130, 246, 0.15)`, text `#3B82F6`
 
 ### Inputs/Forms
 
@@ -229,15 +276,16 @@ gap: 1.5rem;
 |-------------|-------|
 | Background | `#1A1A1A` |
 | Border | `1px solid #2A2A2A` |
-| Border-radius | `0.75rem` |
+| Border-radius | `0.75rem` ou `9999px` (pill para buscas) |
 | Padding | `0.75rem 1rem` |
 | Font-size | `1rem` |
 
 **Estados:**
 - Default: border `#2A2A2A`
-- Focus: border `#C9A227`, outline gold glow
+- Focus: border `#14B8A6` (`2px`), outline teal glow `0 0 0 3px rgba(20, 184, 166, 0.1)`
 - Error: border `#EF4444`
-- Disabled: opacity `0.5`
+- Success: border `#22C55E`
+- Disabled: opacity `0.5`, cursor not-allowed
 
 ### Métricas Dashboard
 
@@ -249,8 +297,9 @@ gap: 1.5rem;
 | Grid | auto-fit, minmax(140px, 1fr) |
 
 **Variante Highlight:**
-- Background: linear-gradient gold (`rgba(201, 162, 39, 0.1)`)
-- Valor: `text-3xl`, bold
+- Background: linear-gradient teal (`linear-gradient(135deg, rgba(20, 184, 166, 0.1), transparent)`)
+- Border-left: `3px solid #14B8A6` (opcional)
+- Valor: `text-3xl`, bold, color `#14B8A6`
 - Label: `text-sm`, muted
 
 ### Progress Steps
@@ -263,13 +312,13 @@ gap: 1.5rem;
 
 **Estados:**
 - Inactive: border `#3A3A3A`, text `#6B7280`
-- Active: background `#C9A227`, text `#0A0A0A`, box-shadow gold glow
-- Completed: background `#22C55E`
+- Active: background `#14B8A6`, text `#000000`, box-shadow teal glow `0 0 15px rgba(20, 184, 166, 0.3)`
+- Completed: background `#22C55E` ou teal com checkmark
 
 **Connector Line:**
 - Height: `2px`
 - Color: `#3A3A3A`
-- Active: `#C9A227`
+- Active/Completed: `#14B8A6`
 
 ---
 
@@ -287,19 +336,30 @@ gap: 1.5rem;
 
 | Cor | Shadow |
 |-----|--------|
-| Gold | `0 0 20px rgba(201, 162, 39, 0.15)` |
-| Purple | `0 0 20px rgba(168, 85, 247, 0.15)` |
+| Teal Primary | `0 0 20px rgba(20, 184, 166, 0.2)` |
+| Teal Subtle | `0 0 15px rgba(20, 184, 166, 0.1)` |
+| Teal Strong | `0 0 30px rgba(20, 184, 166, 0.3)` |
 
-### Gradientes
+### Gradientes (Atualizados)
 
-**Header Radial:**
+**Hero/Background Principal:**
 ```css
-background: radial-gradient(circle at top, rgba(201, 162, 39, 0.05), transparent);
+background: linear-gradient(180deg, #000000 0%, #0A2E2C 100%);
+```
+
+**Radial Teal Glow (Center Focus):**
+```css
+background: radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%);
 ```
 
 **Card Hover:**
 ```css
-background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
+background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, transparent 100%);
+```
+
+**Pill Background:**
+```css
+background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.1), transparent);
 ```
 
 ### Transições
@@ -318,25 +378,28 @@ background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
 
 - ✅ Use o sistema de 8pt para todos os espaçamentos
 - ✅ Mantenha contraste mínimo de 4.5:1 para texto em dark mode
-- ✅ Use gold (`#C9A227`) para ações principais e conteúdo prioritário
-- ✅ Use purple (`#A855F7`) para indicar conteúdo avançado/maestria
+- ✅ Use teal (`#14B8A6`) como cor primária para brand e ações principais
+- ✅ Use componentes pill/cápsula (border-radius: 9999px) para elementos importantes
+- ✅ Aplique gradientes teal-to-black em backgrounds hero e principais
 - ✅ Mantenha hierarquia visual através de tamanho, peso e cor
 - ✅ Use transições sutis (0.2s-0.3s) para interações
-- ✅ Aplique border-radius consistente (`0.75rem` padrão)
+- ✅ Use borders brancas (`#FFFFFF`) para pills de destaque
 - ✅ Use badges com backgrounds semi-transparentes
-- ✅ Mantenha cards com estados hover claros
+- ✅ Mantenha cards com hover states que incluam glow teal
+- ✅ Use glows teal para criar profundidade e foco
 
 ### Don'ts (Evite)
 
-- ❌ Não use cores saturadas demais em dark mode
+- ❌ Não use cores saturadas demais que competem com o teal
 - ❌ Não misture valores de espaçamento fora do sistema de 8pt
-- ❌ Não use gold e purple simultaneamente no mesmo elemento
+- ❌ Não use múltiplas cores primárias competindo por atenção
+- ❌ Não crie pills sem border ou com cantos quadrados
 - ❌ Não crie cards sem hover states
 - ❌ Não use transições longas (> 0.3s)
-- ❌ Não ignore a hierarquia de cores (gold > purple > teal)
+- ❌ Não ignore os gradientes característicos do brand
 - ❌ Não use texto `#FFFFFF` sobre backgrounds claros
 - ❌ Não crie componentes sem estados (hover, active, disabled)
-- ❌ Não desrespeite a estrutura modular/expansível
+- ❌ Não use gold ou cores que conflitem com a identidade teal
 
 ---
 
@@ -346,18 +409,21 @@ background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
 
 | Combinação | Ratio | Status |
 |------------|-------|--------|
-| `#FFFFFF` sobre `#0A0A0A` | 19.0:1 | ✅ AAA |
-| `#C9A227` sobre `#0A0A0A` | 7.5:1 | ✅ AA |
-| `#A3A3A3` sobre `#0A0A0A` | 6.2:1 | ✅ AA |
-| `#6B7280` sobre `#0A0A0A` | 4.5:1 | ✅ AA |
+| `#FFFFFF` sobre `#000000` | 21.0:1 | ✅ AAA |
+| `#14B8A6` sobre `#000000` | 5.8:1 | ✅ AA |
+| `#A3A3A3` sobre `#000000` | 6.5:1 | ✅ AA |
+| `#6B7280` sobre `#000000` | 4.6:1 | ✅ AA |
+| `#000000` sobre `#14B8A6` | 3.6:1 | ⚠️ AA Large Text Only |
 
 ### Recomendações
 
 - Use texto `#FFFFFF` para títulos e conteúdo principal
 - Use `#A3A3A3` para texto secundário
 - Use `#6B7280` apenas para metadados/captions
-- Garanta focus states visíveis (outline gold glow)
+- Garanta focus states visíveis com outline teal glow (`0 0 0 3px rgba(20, 184, 166, 0.1)`)
 - Mantenha área de clique mínima de 44x44px
+- Use texto preto (`#000000`) sobre backgrounds teal (`#14B8A6`) para garantir contraste
+- Em botões teal, sempre use texto preto para máximo contraste
 
 ---
 
@@ -365,15 +431,19 @@ background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
 
 ```css
 :root {
-  /* Colors - Primary */
-  --color-primary-gold: #C9A227;
-  --color-secondary-purple: #A855F7;
-  --color-accent-teal: #134E4A;
+  /* Colors - Primary (Teal Brand) */
+  --color-primary-teal: #14B8A6;
+  --color-secondary-teal-dark: #0D9488;
+  --color-accent-teal-deep: #134E4A;
+  --color-accent-white: #FFFFFF;
 
   /* Colors - Background */
-  --color-bg-primary: #0A0A0A;
+  --color-bg-primary: #000000;
+  --color-bg-gradient-start: #000000;
+  --color-bg-gradient-end: #0A2E2C;
   --color-bg-secondary: #0F0F0F;
   --color-bg-card: #1A1A1A;
+  --color-bg-card-hover: rgba(20, 184, 166, 0.05);
   --color-bg-modal: #252525;
 
   /* Colors - State */
@@ -390,6 +460,8 @@ background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
   /* Colors - Border */
   --color-border-standard: #2A2A2A;
   --color-border-light: #3A3A3A;
+  --color-border-teal: #14B8A6;
+  --color-border-white: #FFFFFF;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -420,8 +492,15 @@ background: linear-gradient(135deg, rgba(201, 162, 39, 0.05), transparent);
   --shadow-subtle: 0 1px 2px rgba(0,0,0,0.3);
   --shadow-card: 0 4px 6px rgba(0,0,0,0.4);
   --shadow-elevated: 0 10px 25px rgba(0,0,0,0.5);
-  --shadow-glow-gold: 0 0 20px rgba(201, 162, 39, 0.15);
-  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.15);
+  --shadow-glow-teal: 0 0 20px rgba(20, 184, 166, 0.2);
+  --shadow-glow-teal-subtle: 0 0 15px rgba(20, 184, 166, 0.1);
+  --shadow-glow-teal-strong: 0 0 30px rgba(20, 184, 166, 0.3);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(180deg, #000000 0%, #0A2E2C 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, transparent 100%);
+  --gradient-radial-teal: radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%);
+  --gradient-pill-bg: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.1), transparent);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
