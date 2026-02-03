@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIOS Advanced - Guia do Aluno</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Colors - Primary (Red Brand - Dark Luxury) */
+      --color-primary-red: #FF2D55;
+      --color-primary-red-transparent: rgba(255, 45, 85, 0.08);
+      --color-primary-red-border: rgba(255, 45, 85, 0.12);
+      --color-primary-red-strong: rgba(255, 45, 85, 0.25);
+
+      /* Colors - Background (Dark Luxury) */
+      --color-bg-main: #080404;
+      --color-bg-card: #0C0606;
+      --color-bg-secondary: #080404;
+
+      /* Colors - State */
+      --color-success: #34C759;
+      --color-success-bg: rgba(52, 199, 89, 0.12);
+
+      /* Colors - Text */
+      --color-text-primary: #FAFAFA;
+      --color-text-white: #FFFFFF;
+      --color-text-light: #E8E0E0;
+      --color-text-light-secondary: #E0D8D8;
+      --color-text-medium: #A09090;
+      --color-text-gray: #908080;
+      --color-text-gray-dark: #706060;
+
+      /* Colors - Border */
+      --color-border-main: #2D1518;
+      --color-border-white: #FFFFFF;
+
+      /* Spacing */
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+
+      /* Border Radius */
+      --radius-lg: 1.25rem;
+      --radius-xl: 1.5rem;
+      --radius-2xl: 2.5rem;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-card: 0 4px 60px rgba(255, 45, 85, 0.08);
+      --shadow-glow-red: 0 0 20px rgba(255, 45, 85, 0.2);
+
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, #000000 0%, #1A0508 40%, #2D0A10 70%, #3D0D15 100%);
+      color: var(--color-text-medium);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+      padding: var(--space-12) var(--space-8);
+      background: radial-gradient(circle at center, rgba(255, 45, 85, 0.15), transparent 70%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border-main);
+    }
+
+    .badge-pill {
+      display: inline-block;
+      border: 2px solid var(--color-border-white);
+      border-radius: 100px;
+      padding: 0.75rem 2rem;
+      background: radial-gradient(ellipse at center, rgba(255, 45, 85, 0.1), transparent);
+      margin-bottom: var(--space-4);
+    }
+
+    .badge-pill .aios {
+      color: var(--color-primary-red);
+      font-size: 1.375rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .badge-pill .advanced {
+      color: var(--color-text-white);
+      font-size: 1.375rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-text-medium);
+      letter-spacing: 0px;
+      margin-top: 0.5rem;
+    }
+
+    h1 {
+      color: var(--color-text-primary);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-top: var(--space-6);
+    }
+
+    .program-badge {
+      display: inline-block;
+      background: rgba(255, 45, 85, 0.15);
+      border: 1px solid var(--color-primary-red-strong);
+      border-radius: 100px;
+      padding: 0.375rem 1rem;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: var(--color-primary-red);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+    }
+
+    .metric-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-main);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-fast);
+    }
+
+    .metric-card:hover {
+      border-color: var(--color-primary-red);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    .metric-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: var(--color-text-gray);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: var(--space-12);
+    }
+
+    .section-header {
+      font-size: 0.5625rem;
+      font-weight: 800;
+      color: var(--color-primary-red);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: var(--space-6);
+    }
+
+    /* Program Structure */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+
+    .phase-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-main);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .phase-card:hover {
+      border-color: var(--color-primary-red);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    .phase-card.active {
+      background: linear-gradient(135deg, var(--color-primary-red-border) 0%, transparent 100%);
+      border-left: 3px solid var(--color-primary-red);
+    }
+
+    .phase-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-main);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-gray);
+    }
+
+    .phase-card.active .phase-number {
+      background: var(--color-primary-red);
+      border-color: var(--color-primary-red);
+      color: var(--color-text-white);
+    }
+
+    .phase-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+      padding-right: 3rem;
+    }
+
+    .phase-subtitle {
+      font-size: 0.875rem;
+      color: var(--color-text-medium);
+      line-height: 1.5;
+    }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+
+    .info-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-main);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-fast);
+    }
+
+    .info-card:hover {
+      border-color: var(--color-primary-red);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    .info-card.highlight {
+      background: linear-gradient(135deg, var(--color-primary-red-border) 0%, transparent 100%);
+      border-left: 3px solid var(--color-primary-red);
+    }
+
+    .info-card-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--color-text-gray-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      line-height: 1.65;
+    }
+
+    .info-card-value.large {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary-red);
+    }
+
+    /* Callout */
+    .callout {
+      background: linear-gradient(135deg, var(--color-primary-red-border) 0%, rgba(255, 45, 85, 0.04) 100%);
+      border: 1px solid var(--color-primary-red-strong);
+      border-left: 3px solid var(--color-primary-red);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      margin-bottom: var(--space-8);
+      box-shadow: var(--shadow-card);
+    }
+
+    .callout-header {
+      font-size: 0.5625rem;
+      font-weight: 800;
+      color: var(--color-primary-red);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.875rem;
+    }
+
+    .callout-text {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      line-height: 1.65;
+    }
+
+    .callout-text strong {
+      color: var(--color-primary-red);
+      font-weight: 600;
+    }
+
+    /* Calendar Table */
+    .calendar-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-main);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      margin-bottom: var(--space-8);
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar-table thead tr {
+      background: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border-main);
+    }
+
+    .calendar-table th {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.5625rem;
+      font-weight: 700;
+      color: var(--color-text-gray-dark);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .calendar-table td {
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid var(--color-border-main);
+      font-size: 0.8125rem;
+    }
+
+    .calendar-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .calendar-table tbody tr.highlight {
+      background: var(--color-primary-red-transparent);
+    }
+
+    .calendar-table tbody tr.highlight td:first-child {
+      border-left: 3px solid var(--color-primary-red);
+    }
+
+    .date-cell {
+      font-weight: 600;
+      color: var(--color-text-gray);
+      white-space: nowrap;
+    }
+
+    .date-cell.highlight {
+      font-weight: 700;
+      color: var(--color-primary-red);
+    }
+
+    .topic-cell {
+      font-weight: 600;
+      color: var(--color-text-light-secondary);
+    }
+
+    .calendar-table tbody tr.highlight .topic-cell {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* Requirements List */
+    .requirements-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .requirements-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 0.9375rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .requirements-list li::before {
+      content: "✓";
+      color: var(--color-primary-red);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--color-border-main);
+    }
+
+    .footer-links {
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-link {
+      color: var(--color-primary-red);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin: 0 0.75rem;
+      transition: var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      opacity: 0.8;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--color-text-gray-dark);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .header {
+        padding: var(--space-8) var(--space-4);
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .structure-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-value {
+        font-size: 2rem;
+      }
+
+      .calendar-table th,
+      .calendar-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+      }
+
+      .date-cell {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-pill">
+        <span class="aios">AIOS</span><span class="advanced"> Advanced.</span>
+      </div>
+      <div class="subtitle">De Usuário para Arquiteto - Documentação Pedagógica Completa</div>
+      <h1>Guia de Consulta Rápida</h1>
+      <div class="program-badge">GRADE CURRICULAR • 8 ENCONTROS</div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">8</div>
+        <div class="metric-label">Semanas</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">8</div>
+        <div class="metric-label">Encontros</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">8</div>
+        <div class="metric-label">PS Sessions</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">96h</div>
+        <div class="metric-label">Total</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">≥30%</div>
+        <div class="metric-label">IEM Meta</div>
+      </div>
+    </div>
+
+    <!-- Program Structure -->
+    <section class="section">
+      <h2 class="section-header">ESTRUTURA DO PROGRAMA</h2>
+
+      <div class="structure-grid">
+        <div class="phase-card active">
+          <div class="phase-number">1</div>
+          <div class="phase-title">Cases + Estrutura</div>
+          <div class="phase-subtitle">Fundamentos e casos práticos de arquitetura de sistemas com agentes</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">2</div>
+          <div class="phase-title">Tasks + Agents</div>
+          <div class="phase-subtitle">Construção e orquestração de tarefas com agentes especializados</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">3</div>
+          <div class="phase-title">Workflows + Squads</div>
+          <div class="phase-subtitle">Criação de fluxos complexos e equipes de agentes colaborativos</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">4</div>
+          <div class="phase-title">Escala + Deploy</div>
+          <div class="phase-subtitle">Estratégias de escalabilidade e implantação em produção</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendário -->
+    <section class="section">
+      <h2 class="section-header">CALENDÁRIO COMPLETO DAS AULAS</h2>
+
+      <div class="info-grid" style="margin-bottom: var(--space-6);">
+        <div class="info-card highlight">
+          <div class="info-card-label">Início do Programa</div>
+          <div class="info-card-value large">11 de Fevereiro de 2026</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Formato das Aulas</div>
+          <div class="info-card-value">Encontros semanais<br>+ PS Sessions intercaladas</div>
+        </div>
+      </div>
+
+      <div class="calendar-card">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Data</th>
+              <th>Aula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell">04/02 Qua</td>
+              <td class="topic-cell">Primeiro encontro</td>
+            </tr>
+            <tr class="highlight">
+              <td class="date-cell highlight">11/02 Qua</td>
+              <td class="topic-cell">Aula 1: Como Alan Começa</td>
+            </tr>
+            <tr>
+              <td class="date-cell">18/02 Qua</td>
+              <td class="topic-cell">Aula 2: Design System</td>
+            </tr>
+            <tr>
+              <td class="date-cell">25/02 Qua</td>
+              <td class="topic-cell">Aula 3: AIOS Total + PRD</td>
+            </tr>
+            <tr>
+              <td class="date-cell">04/03 Qua</td>
+              <td class="topic-cell">Aula 4: Workflows + Squads</td>
+            </tr>
+            <tr>
+              <td class="date-cell">11/03 Qua</td>
+              <td class="topic-cell">Aula 5: Supabase + RAG</td>
+            </tr>
+            <tr>
+              <td class="date-cell">18/03 Qua</td>
+              <td class="topic-cell">Aula 6: Qualidade + Tokens</td>
+            </tr>
+            <tr>
+              <td class="date-cell">25/03 Qua</td>
+              <td class="topic-cell">Aula 7: Segurança + Deploy</td>
+            </tr>
+            <tr>
+              <td class="date-cell">01/04 Qua</td>
+              <td class="topic-cell">Aula 8: Showcase</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-header">PS SESSIONS (PROBLEM SOLVING)</div>
+        <p class="callout-text">
+          Entre as aulas principais, teremos <strong>8 sessões PS</strong> para resolução de problemas reais, debugging e mentoria técnica individual. Os horários serão definidos com a turma.
+        </p>
+      </div>
+    </section>
+
+    <!-- Info Cards Principais -->
+    <section class="section">
+      <h2 class="section-header">INFORMAÇÕES PRINCIPAIS</h2>
+
+      <div class="info-grid">
+        <div class="info-card highlight">
+          <div class="info-card-label">Nível do Programa</div>
+          <div class="info-card-value large">Avançado</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Duração Total</div>
+          <div class="info-card-value">8 semanas intensivas<br>96 horas totais</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Formato</div>
+          <div class="info-card-value">8 encontros ao vivo + 8 PS Sessions<br>+ gravações vitalícias</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Meta IEM</div>
+          <div class="info-card-value">≥30% de implementação<br>em casos reais</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requisitos -->
+    <section class="section">
+      <h2 class="section-header">PRÉ-REQUISITOS</h2>
+
+      <div class="callout">
+        <div class="callout-header">IMPORTANTE</div>
+        <p class="callout-text">
+          O <strong>AIOS Advanced</strong> é um programa de nível avançado. Recomendamos que você tenha experiência prévia com agentes de IA ou tenha concluído o <strong>Cohort Fundamentals</strong>.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <ul class="requirements-list">
+          <li><strong>Experiência com agentes de IA</strong> - Conhecimento básico de prompts, contexto e orquestração de agentes.</li>
+          <li><strong>Claude Pro ativo</strong> - Aproximadamente US$20/mês. Ferramenta principal do programa.</li>
+          <li><strong>Disponibilidade integral</strong> - Compromisso com 100% de presença nos encontros e sessões PS.</li>
+          <li><strong>Projeto real em andamento</strong> - Para aplicar os conceitos e atingir a meta IEM de 30%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Links Importantes -->
+    <section class="section">
+      <h2 class="section-header">LINKS IMPORTANTES</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-label">Comunidade Exclusiva</div>
+          <div class="info-card-value">
+            <a href="#" class="footer-link">Entrar no Grupo Advanced</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Claude Pro</div>
+          <div class="info-card-value">
+            <a href="https://claude.ai/upgrade" class="footer-link">Ativar Claude Pro</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Plataforma de Aulas</div>
+          <div class="info-card-value">
+            <a href="https://membros.academialendaria.ai/m/lessons/cohort-aios-avancado-1769713560236" class="footer-link">Acessar Plataforma</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suporte -->
+    <section class="section">
+      <h2 class="section-header">SUPORTE</h2>
+
+      <div class="info-card">
+        <div class="info-card-value">
+          <div style="margin-bottom: 0.75rem;">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5548988000116" class="footer-link">+55 48 8800-0116</a>
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <strong>Email:</strong> <a href="mailto:suporte@academialendaria.ai" class="footer-link">suporte@academialendaria.ai</a>
+          </div>
+          <div>
+            <strong>Portal:</strong> <a href="https://academialendaria.ai/suporte" class="footer-link">academialendaria.ai/suporte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-links">
+        <span class="footer-text">Academia Lendária - AIOS Advanced 2026</span>
+      </div>
+      <div class="footer-text">
+        De Usuário para Arquiteto
+      </div>
+    </div>
+  </div>
+</body>
+</html>
