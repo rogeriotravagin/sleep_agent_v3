@@ -19,10 +19,10 @@ mensagem_ativacao: |
   Toda peca deve ser revisada por advogado inscrito na OAB.
 
   **Agentes Disponiveis:**
-  - `/defesa` - Criminalista (defesa em crimes diversos)
-  - `/juri` - Especialista em Tribunal do Juri
-  - `/execucao` - Especialista em Execucao Penal
-  - `/recursos` - Especialista em Recursos e HC
+  - `@crim-defesa` - Criminalista (defesa em crimes diversos)
+  - `@crim-juri` - Especialista em Tribunal do Juri
+  - `@crim-execucao` - Especialista em Execucao Penal
+  - `@crim-recursos` - Especialista em Recursos e HC
 
   **Workflows Completos:**
   - `/defesa-completa` - Estrategia de defesa do inicio ao fim
@@ -50,9 +50,9 @@ mensagem_ativacao: |
 # =====================================================
 
 agentes:
-  - id: criminalista
-    arquivo: agentes/CRIMINALISTA.md
-    comando: /defesa
+  - id: crim-defesa
+    arquivo: agentes/CRIM-DEFESA.md
+    comando: "@crim-defesa"
     especialidades:
       - Defesa em crimes comuns
       - Estrategia de defesa
@@ -60,9 +60,9 @@ agentes:
       - Dosimetria da pena
       - Atenuantes e causas de diminuicao
 
-  - id: juri
-    arquivo: agentes/JURI.md
-    comando: /juri
+  - id: crim-juri
+    arquivo: agentes/CRIM-JURI.md
+    comando: "@crim-juri"
     especialidades:
       - Crimes dolosos contra a vida
       - Pronuncia e impronuncia
@@ -70,9 +70,9 @@ agentes:
       - Plenario do juri
       - Quesitacao
 
-  - id: execucao
-    arquivo: agentes/EXECUCAO.md
-    comando: /execucao
+  - id: crim-execucao
+    arquivo: agentes/CRIM-EXECUCAO.md
+    comando: "@crim-execucao"
     especialidades:
       - Progressao de regime
       - Livramento condicional
@@ -80,9 +80,9 @@ agentes:
       - Saida temporaria
       - Indulto e comutacao
 
-  - id: recursos
-    arquivo: agentes/RECURSOS.md
-    comando: /recursos
+  - id: crim-recursos
+    arquivo: agentes/CRIM-RECURSOS.md
+    comando: "@crim-recursos"
     especialidades:
       - Habeas corpus
       - Apelacao criminal
@@ -210,31 +210,31 @@ framework_execucao:
     - numero: 1
       nome: ANALISE
       tarefas: [parecer-criminal, tese-defesa]
-      agente: criminalista
+      agente: crim-defesa
       descricao: Analisar autos, identificar nulidades, definir tese
 
     - numero: 2
       nome: DEFESA_PRELIMINAR
       tarefas: [resposta-acusacao, pedido-liberdade, relaxamento, revogacao-preventiva]
-      agente: criminalista
+      agente: crim-defesa
       descricao: Defesa inicial, combater prisao cautelar
 
     - numero: 3
       nome: INSTRUCAO
       tarefas: [quesitos-juri, alegacoes-finais]
-      agente: criminalista
+      agente: crim-defesa
       descricao: Producao de provas, alegacoes finais
 
     - numero: 4
       nome: RECURSOS
       tarefas: [habeas-corpus, apelacao, agravo-execucao]
-      agente: recursos
+      agente: crim-recursos
       descricao: Impugnar decisoes desfavoraveis
 
     - numero: 5
       nome: EXECUCAO
       tarefas: [pedido-progressao]
-      agente: execucao
+      agente: crim-execucao
       descricao: Beneficios da execucao penal
 
 # =====================================================

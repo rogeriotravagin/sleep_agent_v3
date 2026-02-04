@@ -52,9 +52,9 @@ objetivo: |
 # ============================================
 
 agentes:
-  - id: analista-processos
-    arquivo: agentes/ANALISTA-PROCESSOS.md
-    comando: /analista-processos
+  - id: ti-processos
+    arquivo: agentes/TI-PROCESSOS.md
+    comando: @ti-processos
     especialidades:
       - Análise de processos manuais
       - Identificação de gargalos
@@ -63,9 +63,9 @@ agentes:
       - Levantamento de requisitos
       - Mapeamento de fluxos
 
-  - id: especialista-integracoes
-    arquivo: agentes/ESPECIALISTA-INTEGRACOES.md
-    comando: /especialista-integracoes
+  - id: ti-integracoes
+    arquivo: agentes/TI-INTEGRACOES.md
+    comando: @ti-integracoes
     especialidades:
       - APIs REST e GraphQL
       - Autenticação (OAuth, API Keys, JWT)
@@ -74,9 +74,9 @@ agentes:
       - Documentação de APIs
       - Testes de integração
 
-  - id: engenheiro-automacao
-    arquivo: agentes/ENGENHEIRO-AUTOMACAO.md
-    comando: /engenheiro-automacao
+  - id: ti-automacao
+    arquivo: agentes/TI-AUTOMACAO.md
+    comando: @ti-automacao
     especialidades:
       - Playwright e Puppeteer
       - Web scraping
@@ -94,65 +94,65 @@ tarefas:
   - fase: descoberta
     comando: /analisar-processo
     arquivo: tarefas/analisar-processo.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Analisar processo manual atual do cliente
 
   - fase: descoberta
     comando: /questionar-cliente
     arquivo: tarefas/questionar-cliente.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Fazer perguntas para entender cenário completo
 
   # Fase: Proposta
   - fase: proposta
     comando: /propor-solucao
     arquivo: tarefas/propor-solucao.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Apresentar solução técnica em linguagem clara
 
   - fase: proposta
     comando: /analisar-viabilidade
     arquivo: tarefas/analisar-viabilidade.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Avaliar viabilidade técnica e esforço
 
   # Fase: Desenvolvimento - APIs
   - fase: desenvolvimento
     comando: /integrar-api
     arquivo: tarefas/integrar-api.yaml
-    agente: especialista-integracoes
+    agente: ti-integracoes
     descricao: Criar integração com API externa
 
   - fase: desenvolvimento
     comando: /testar-api
     arquivo: tarefas/testar-api.yaml
-    agente: especialista-integracoes
+    agente: ti-integracoes
     descricao: Testar endpoints e fluxos da API
 
   # Fase: Desenvolvimento - Automação
   - fase: desenvolvimento
     comando: /criar-automacao
     arquivo: tarefas/criar-automacao.yaml
-    agente: engenheiro-automacao
+    agente: ti-automacao
     descricao: Desenvolver script de automação com Playwright
 
   - fase: desenvolvimento
     comando: /testar-automacao
     arquivo: tarefas/testar-automacao.yaml
-    agente: engenheiro-automacao
+    agente: ti-automacao
     descricao: Testar automação em diferentes cenários
 
   # Fase: Entrega
   - fase: entrega
     comando: /documentar
     arquivo: tarefas/documentar.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Documentar solução em linguagem não-técnica
 
   - fase: entrega
     comando: /validar
     arquivo: tarefas/validar.yaml
-    agente: analista-processos
+    agente: ti-processos
     descricao: Validar solução com cliente
 
 # ============================================

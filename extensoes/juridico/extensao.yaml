@@ -19,9 +19,9 @@ mensagem_ativacao: |
   - Propriedade intelectual
 
   **Agentes Disponiveis:**
-  - `/contratos` - Especialista em Contratos (elaboracao, revisao, analise)
-  - `/empresarial` - Advogado Empresarial (societario, M&A, governanca)
-  - `/compliance` - Especialista em Compliance (LGPD, politicas, auditorias)
+  - `@legal-contratos` - Especialista em Contratos (elaboracao, revisao, analise)
+  - `@legal-empresarial` - Advogado Empresarial (societario, M&A, governanca)
+  - `@legal-compliance` - Especialista em Compliance (LGPD, politicas, auditorias)
 
   **Workflows Completos:**
   - `/due-diligence` - Analise completa para aquisicoes
@@ -45,9 +45,9 @@ mensagem_ativacao: |
 # =====================================================
 
 agentes:
-  - id: contratos
-    arquivo: agentes/CONTRATOS.md
-    comando: /contratos
+  - id: legal-contratos
+    arquivo: agentes/LEGAL-CONTRATOS.md
+    comando: "@legal-contratos"
     especialidades:
       - Contratos comerciais
       - Contratos de prestacao de servicos
@@ -55,9 +55,9 @@ agentes:
       - Termos e politicas
       - NDAs e confidencialidade
 
-  - id: empresarial
-    arquivo: agentes/EMPRESARIAL.md
-    comando: /empresarial
+  - id: legal-empresarial
+    arquivo: agentes/LEGAL-EMPRESARIAL.md
+    comando: "@legal-empresarial"
     especialidades:
       - Direito societario
       - Fusoes e aquisicoes
@@ -65,9 +65,9 @@ agentes:
       - Estruturacao empresarial
       - Reorganizacao societaria
 
-  - id: compliance
-    arquivo: agentes/COMPLIANCE.md
-    comando: /compliance
+  - id: legal-compliance
+    arquivo: agentes/LEGAL-COMPLIANCE.md
+    comando: "@legal-compliance"
     especialidades:
       - LGPD e protecao de dados
       - Compliance corporativo
@@ -169,32 +169,32 @@ framework_execucao:
     - numero: 1
       nome: DESCOBERTA
       tarefas: [analise-necessidade]
-      agente: empresarial
+      agente: legal-empresarial
 
     - numero: 2
       nome: ANALISE
       tarefas: [analise-risco, criar-parecer]
-      agente: empresarial
+      agente: legal-empresarial
 
     - numero: 3
       nome: ESTRUTURACAO
       tarefas: [estrutura-juridica]
-      agente: empresarial
+      agente: legal-empresarial
 
     - numero: 4
       nome: DOCUMENTACAO
       tarefas: [criar-contrato, criar-nda, termos-uso]
-      agente: contratos
+      agente: legal-contratos
 
     - numero: 5
       nome: COMPLIANCE
       tarefas: [politica-privacidade, programa-compliance]
-      agente: compliance
+      agente: legal-compliance
 
     - numero: 6
       nome: REVISAO
       tarefas: [revisar-contrato, validacao-final]
-      agente: contratos
+      agente: legal-contratos
 
 # =====================================================
 # REFERENCIAS INCLUIDAS

@@ -23,10 +23,10 @@ mensagem_ativacao: |
   - Jason Lemkin (SaaStr)
 
   **Agentes Disponiveis:**
-  - `/csm-estrategia` - Estrategista CS (metricas, health score, segmentacao)
-  - `/onboarding` - Especialista Onboarding (ativacao, TTFV, playbooks)
-  - `/retencao` - Especialista Retencao (anti-churn, expansion, NPS)
-  - `/casos-criticos` - Especialista Casos Criticos (CDC, riscos juridicos, de-escalation)
+  - `@cs-estrategia` - Estrategista CS (metricas, health score, segmentacao)
+  - `@cs-onboarding` - Especialista Onboarding (ativacao, TTFV, playbooks)
+  - `@cs-retencao` - Especialista Retencao (anti-churn, expansion, NPS)
+  - `@cs-criticos` - Especialista Casos Criticos (CDC, riscos juridicos, de-escalation)
 
   **Workflows Completos:**
   - `/cs-completo` - Programa CS do zero (6 fases)
@@ -56,9 +56,9 @@ mensagem_ativacao: |
 # =====================================================
 
 agentes:
-  - id: csm-estrategista
-    arquivo: agentes/CSM-ESTRATEGISTA.md
-    comando: /csm-estrategia
+  - id: cs-estrategista
+    arquivo: agentes/CS-ESTRATEGISTA.md
+    comando: "@cs-estrategia"
     especialidades:
       - Estrategia de Customer Success
       - Health Score e metricas
@@ -66,9 +66,9 @@ agentes:
       - Planejamento de jornadas
       - Analise de churn
 
-  - id: onboarding-specialist
-    arquivo: agentes/ONBOARDING-SPECIALIST.md
-    comando: /onboarding
+  - id: cs-onboarding
+    arquivo: agentes/CS-ONBOARDING.md
+    comando: "@cs-onboarding"
     especialidades:
       - Design de onboarding
       - Time to First Value
@@ -76,9 +76,9 @@ agentes:
       - Marcos de sucesso
       - Sequencias de comunicacao
 
-  - id: retention-expert
-    arquivo: agentes/RETENTION-EXPERT.md
-    comando: /retencao
+  - id: cs-retencao
+    arquivo: agentes/CS-RETENCAO.md
+    comando: "@cs-retencao"
     especialidades:
       - Estrategias anti-churn
       - Prevencao de churn
@@ -86,9 +86,9 @@ agentes:
       - NPS e pesquisas
       - Reativacao de clientes
 
-  - id: critical-cases-specialist
-    arquivo: agentes/CRITICAL-CASES.md
-    comando: /casos-criticos
+  - id: cs-criticos
+    arquivo: agentes/CS-CRITICOS.md
+    comando: "@cs-criticos"
     especialidades:
       - Analise de casos criticos
       - Codigo de Defesa do Consumidor (CDC)
@@ -110,82 +110,82 @@ tarefas:
     arquivo: tarefas/analise-base-clientes.yaml
     comando: /analise-clientes
     fase: diagnostico
-    agente: csm-estrategista
+    agente: cs-estrategista
 
   - id: criar-health-score
     arquivo: tarefas/criar-health-score.yaml
     comando: /health-score
     fase: diagnostico
-    agente: csm-estrategista
+    agente: cs-estrategista
 
   - id: mapear-jornada
     arquivo: tarefas/mapear-jornada.yaml
     comando: /mapear-jornada
     fase: diagnostico
-    agente: csm-estrategista
+    agente: cs-estrategista
 
   # Fase 2: Onboarding
   - id: criar-playbook-onboarding
     arquivo: tarefas/criar-playbook-onboarding.yaml
     comando: /playbook-onboarding
     fase: onboarding
-    agente: onboarding-specialist
+    agente: cs-onboarding
 
   - id: criar-checklist-ativacao
     arquivo: tarefas/criar-checklist-ativacao.yaml
     comando: /checklist-ativacao
     fase: onboarding
-    agente: onboarding-specialist
+    agente: cs-onboarding
 
   - id: criar-sequencia-boas-vindas
     arquivo: tarefas/criar-sequencia-boas-vindas.yaml
     comando: /boas-vindas
     fase: onboarding
-    agente: onboarding-specialist
+    agente: cs-onboarding
 
   # Fase 3: Retencao
   - id: criar-plano-retencao
     arquivo: tarefas/criar-plano-retencao.yaml
     comando: /plano-retencao
     fase: retencao
-    agente: retention-expert
+    agente: cs-retencao
 
   - id: criar-qbr
     arquivo: tarefas/criar-qbr.yaml
     comando: /criar-qbr
     fase: retencao
-    agente: retention-expert
+    agente: cs-retencao
 
   - id: criar-plano-risco
     arquivo: tarefas/criar-plano-risco.yaml
     comando: /plano-risco
     fase: retencao
-    agente: retention-expert
+    agente: cs-retencao
 
   # Fase 4: Casos Criticos
   - id: analisar-caso-critico
     arquivo: tarefas/analisar-caso-critico.yaml
     comando: /caso-critico
     fase: casos-criticos
-    agente: critical-cases-specialist
+    agente: cs-criticos
 
   - id: avaliar-risco-juridico
     arquivo: tarefas/avaliar-risco-juridico.yaml
     comando: /risco-juridico
     fase: casos-criticos
-    agente: critical-cases-specialist
+    agente: cs-criticos
 
   - id: criar-plano-resolucao
     arquivo: tarefas/criar-plano-resolucao.yaml
     comando: /plano-resolucao
     fase: casos-criticos
-    agente: critical-cases-specialist
+    agente: cs-criticos
 
   - id: documentar-caso-critico
     arquivo: tarefas/documentar-caso.yaml
     comando: /documentar-caso
     fase: casos-criticos
-    agente: critical-cases-specialist
+    agente: cs-criticos
 
 # =====================================================
 # WORKFLOWS
@@ -235,32 +235,32 @@ framework_execucao:
     - numero: 1
       nome: DIAGNOSTICO
       tarefas: [analise-base-clientes, criar-health-score, mapear-jornada]
-      agente: csm-estrategista
+      agente: cs-estrategista
 
     - numero: 2
       nome: ESTRATEGIA
       tarefas: [definir-segmentos, criar-playbooks-base]
-      agente: csm-estrategista
+      agente: cs-estrategista
 
     - numero: 3
       nome: ONBOARDING
       tarefas: [criar-playbook-onboarding, criar-checklist-ativacao, criar-sequencia-boas-vindas]
-      agente: onboarding-specialist
+      agente: cs-onboarding
 
     - numero: 4
       nome: ACOMPANHAMENTO
       tarefas: [criar-qbr, touchpoints-regulares]
-      agente: retention-expert
+      agente: cs-retencao
 
     - numero: 5
       nome: RETENCAO
       tarefas: [criar-plano-retencao, criar-plano-risco]
-      agente: retention-expert
+      agente: cs-retencao
 
     - numero: 6
       nome: EXPANSION
       tarefas: [estrategia-upsell, programa-advocacy]
-      agente: retention-expert
+      agente: cs-retencao
 
 # =====================================================
 # REFERENCIAS INCLUIDAS

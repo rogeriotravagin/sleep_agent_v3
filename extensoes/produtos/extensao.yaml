@@ -71,9 +71,9 @@ resultados:
 # ============================================
 
 agentes:
-  - id: product-strategist
-    arquivo: agentes/PRODUCT-STRATEGIST.md
-    comando: /estrategista
+  - id: prod-estrategista
+    arquivo: agentes/PROD-ESTRATEGISTA.md
+    comando: @prod-estrategia
     especialidades:
       - Estrategia de produto (Visao, Missao, Estrategia)
       - OKRs e planejamento estrategico
@@ -82,9 +82,9 @@ agentes:
       - Go-to-Market strategy
       - Product Operating Model (SVPG)
 
-  - id: discovery-lead
-    arquivo: agentes/DISCOVERY-LEAD.md
-    comando: /discovery
+  - id: prod-discovery
+    arquivo: agentes/PROD-DISCOVERY.md
+    comando: @prod-discovery
     especialidades:
       - Continuous Discovery (Teresa Torres)
       - Opportunity Solution Trees
@@ -93,9 +93,9 @@ agentes:
       - Validacao de hipoteses
       - Dual-Track Agile (discovery + delivery)
 
-  - id: delivery-manager
-    arquivo: agentes/DELIVERY-MANAGER.md
-    comando: /delivery
+  - id: prod-delivery
+    arquivo: agentes/PROD-DELIVERY.md
+    comando: @prod-delivery
     especialidades:
       - Priorizacao (RICE, MoSCoW, Kano)
       - Roadmap management
@@ -113,57 +113,57 @@ tarefas:
   - fase: estrategia
     comando: /definir-visao
     arquivo: tarefas/definir-visao.yaml
-    agente: product-strategist
+    agente: prod-estrategista
     descricao: Definir visao e missao do produto
 
   - fase: estrategia
     comando: /criar-okrs
     arquivo: tarefas/criar-okrs.yaml
-    agente: product-strategist
+    agente: prod-estrategista
     descricao: Criar OKRs de produto alinhados a estrategia
 
   - fase: estrategia
     comando: /validar-pmf
     arquivo: tarefas/validar-pmf.yaml
-    agente: product-strategist
+    agente: prod-estrategista
     descricao: Validar Product-Market Fit
 
   # Fase: Discovery
   - fase: discovery
     comando: /mapear-oportunidades
     arquivo: tarefas/mapear-oportunidades.yaml
-    agente: discovery-lead
+    agente: prod-discovery
     descricao: Criar Opportunity Solution Tree
 
   - fase: discovery
     comando: /planejar-entrevistas
     arquivo: tarefas/planejar-entrevistas.yaml
-    agente: discovery-lead
+    agente: prod-discovery
     descricao: Planejar entrevistas de discovery
 
   - fase: discovery
     comando: /analisar-jobs
     arquivo: tarefas/analisar-jobs.yaml
-    agente: discovery-lead
+    agente: prod-discovery
     descricao: Analisar Jobs to Be Done dos usuarios
 
   # Fase: Delivery
   - fase: delivery
     comando: /priorizar-backlog
     arquivo: tarefas/priorizar-backlog.yaml
-    agente: delivery-manager
+    agente: prod-delivery
     descricao: Priorizar backlog com RICE ou Kano
 
   - fase: delivery
     comando: /criar-roadmap
     arquivo: tarefas/criar-roadmap.yaml
-    agente: delivery-manager
+    agente: prod-delivery
     descricao: Criar roadmap outcome-driven
 
   - fase: delivery
     comando: /definir-metricas
     arquivo: tarefas/definir-metricas.yaml
-    agente: delivery-manager
+    agente: prod-delivery
     descricao: Definir North Star e metricas do produto
 
 # ============================================

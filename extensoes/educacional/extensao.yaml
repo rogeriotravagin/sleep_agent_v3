@@ -20,9 +20,9 @@ descricao: |
 # ============================================
 
 agentes:
-  - id: designer-instrucional
-    arquivo: agentes/DESIGNER-INSTRUCIONAL.md
-    comando: /design-instrucional
+  - id: edu-arquiteto
+    arquivo: agentes/EDU-ARQUITETO.md
+    comando: "@edu-arquiteto"
     especialidades:
       - Arquitetura de cursos
       - Design de aprendizagem
@@ -33,9 +33,9 @@ agentes:
       - Microlearning
       - Trilhas de aprendizagem
 
-  - id: conteudista
-    arquivo: agentes/CONTEUDISTA.md
-    comando: /conteudo
+  - id: edu-conteudista
+    arquivo: agentes/EDU-CONTEUDISTA.md
+    comando: "@edu-conteudo"
     especialidades:
       - Criação de aulas
       - Roteiros de vídeo-aulas
@@ -45,9 +45,9 @@ agentes:
       - Infográficos
       - Recursos de apoio
 
-  - id: especialista-avaliacao
-    arquivo: agentes/ESPECIALISTA-AVALIACAO.md
-    comando: /avaliacao
+  - id: edu-avaliador
+    arquivo: agentes/EDU-AVALIADOR.md
+    comando: "@edu-avaliacao"
     especialidades:
       - Provas e testes
       - Exercícios práticos

@@ -20,9 +20,9 @@ mensagem_ativacao: |
   - E mais 20+ especialistas
 
   **Agentes Disponiveis:**
-  - `/copy` - Copywriter (headlines, emails, paginas)
-  - `/estrategia` - Estrategista (pesquisa, oferta, posicionamento)
-  - `/ads` - Trafego Pago (anuncios, campanhas)
+  - `@mkt-copy` - Copywriter (headlines, emails, paginas)
+  - `@mkt-estrategia` - Estrategista (pesquisa, oferta, posicionamento)
+  - `@mkt-trafego` - Trafego Pago (anuncios, campanhas)
 
   **Workflows Completos:**
   - `/oferta-completa` - Do zero ao lancamento (7 fases)
@@ -46,9 +46,9 @@ mensagem_ativacao: |
 # =====================================================
 
 agentes:
-  - id: copywriter
-    arquivo: agentes/COPYWRITER.md
-    comando: /copy
+  - id: mkt-copywriter
+    arquivo: agentes/MKT-COPYWRITER.md
+    comando: "@mkt-copy"
     especialidades:
       - Headlines e titulos
       - Emails de venda
@@ -56,9 +56,9 @@ agentes:
       - Bullets e fascinations
       - VSLs e scripts
 
-  - id: estrategista
-    arquivo: agentes/ESTRATEGISTA.md
-    comando: /estrategia
+  - id: mkt-estrategista
+    arquivo: agentes/MKT-ESTRATEGISTA.md
+    comando: "@mkt-estrategia"
     especialidades:
       - Pesquisa de mercado
       - Definicao de ICP e Persona
@@ -66,9 +66,9 @@ agentes:
       - Construcao de ofertas
       - Funis de vendas
 
-  - id: trafego
-    arquivo: agentes/TRAFEGO.md
-    comando: /ads
+  - id: mkt-trafego
+    arquivo: agentes/MKT-TRAFEGO.md
+    comando: "@mkt-trafego"
     especialidades:
       - Meta Ads
       - Google Ads

@@ -5,22 +5,22 @@ descricao: Gerenciamento inteligente de demandas, organização e priorização 
 comando: /secretaria
 
 agentes:
-  - id: organizador
+  - id: sec-demandas
     nome: Organizador de Demandas
-    arquivo: agentes/ORGANIZADOR-DEMANDAS.md
-    comando: /organizador
+    arquivo: agentes/SEC-DEMANDAS.md
+    comando: "@sec-demandas"
     especialidade: "Captura, categorização e estruturação de demandas"
 
-  - id: estrategista-prioridades
+  - id: sec-prioridades
     nome: Estrategista de Prioridades
-    arquivo: agentes/ESTRATEGISTA-PRIORIDADES.md
-    comando: /estrategista-prioridades
+    arquivo: agentes/SEC-PRIORIDADES.md
+    comando: "@sec-prioridades"
     especialidade: "Priorização estratégica com frameworks comprovados"
 
-  - id: coordenador
+  - id: sec-coordenador
     nome: Coordenador de Workflows
-    arquivo: agentes/COORDENADOR-WORKFLOWS.md
-    comando: /coordenador
+    arquivo: agentes/SEC-COORDENADOR.md
+    comando: "@sec-coordenador"
     especialidade: "Gestão de fluxos, agendas e acompanhamento"
 
 tarefas:

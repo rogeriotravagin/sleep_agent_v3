@@ -22,10 +22,10 @@ mensagem_ativacao: |
   - Josef Muller-Brockmann, Dieter Rams (Analise Visual)
 
   **Agentes Disponiveis:**
-  - `/designer` - Designer Visual (logos, identidade, graficos)
-  - `/uiux` - UI/UX Specialist (interfaces, landing pages)
-  - `/brand` - Brand Strategist (estrategia, posicionamento)
-  - `/design-analyst` - Design Analyst (analise de referencias, diretrizes)
+  - `@brand-designer` - Designer Visual (logos, identidade, graficos)
+  - `@brand-ux` - UI/UX Specialist (interfaces, landing pages)
+  - `@brand-estrategia` - Brand Strategist (estrategia, posicionamento)
+  - `@brand-analista` - Design Analyst (analise de referencias, diretrizes)
 
   **Workflows Completos:**
   - `/brand-completo` - Do zero a identidade completa (8 fases)
@@ -52,9 +52,9 @@ mensagem_ativacao: |
 # =====================================================
 
 agentes:
-  - id: designer
-    arquivo: agentes/DESIGNER.md
-    comando: /designer
+  - id: brand-designer
+    arquivo: agentes/BRAND-DESIGNER.md
+    comando: "@brand-designer"
     especialidades:
       - Logo design
       - Identidade visual
@@ -62,9 +62,9 @@ agentes:
       - Tipografia
       - Paleta de cores
 
-  - id: uiux
-    arquivo: agentes/UI-UX.md
-    comando: /uiux
+  - id: brand-ux
+    arquivo: agentes/BRAND-UX.md
+    comando: "@brand-ux"
     especialidades:
       - Landing pages
       - Interfaces de usuario
@@ -73,9 +73,9 @@ agentes:
       - Prototipagem
       - Design systems
 
-  - id: brand-strategist
-    arquivo: agentes/BRAND-STRATEGIST.md
-    comando: /brand
+  - id: brand-estrategista
+    arquivo: agentes/BRAND-ESTRATEGISTA.md
+    comando: "@brand-estrategia"
     especialidades:
       - Estrategia de marca
       - Posicionamento
@@ -83,9 +83,9 @@ agentes:
       - Arquitetura de marca
       - Personal branding
 
-  - id: design-analyst
-    arquivo: agentes/DESIGN-ANALYST.md
-    comando: /design-analyst
+  - id: brand-analista
+    arquivo: agentes/BRAND-ANALISTA.md
+    comando: "@brand-analista"
     especialidades:
       - Analise de referencias visuais
       - Reverse engineering de design
@@ -207,48 +207,48 @@ framework_execucao:
     - numero: 0
       nome: ANALISE
       tarefas: [analisar-referencia, extrair-diretrizes, criar-styleguide]
-      agente: design-analyst
+      agente: brand-analista
       descricao: Analisar referencias visuais e criar diretrizes de design
 
     - numero: 1
       nome: DESCOBERTA
       tarefas: [pesquisa-visual, analise-concorrentes]
-      agente: brand-strategist
+      agente: brand-estrategista
 
     - numero: 2
       nome: ESTRATEGIA
       tarefas: [posicionamento-marca, brand-archetype]
-      agente: brand-strategist
+      agente: brand-estrategista
 
     - numero: 3
       nome: IDENTIDADE VERBAL
       tarefas: [brand-voice, tom-comunicacao, messaging]
-      agente: brand-strategist
+      agente: brand-estrategista
 
     - numero: 4
       nome: IDENTIDADE VISUAL
       tarefas: [criar-logo, paleta-cores, tipografia]
-      agente: designer
+      agente: brand-designer
 
     - numero: 5
       nome: SISTEMA
       tarefas: [design-system, guidelines]
-      agente: designer
+      agente: brand-designer
 
     - numero: 6
       nome: UI/UX
       tarefas: [wireframes, prototipo, landing-page]
-      agente: uiux
+      agente: brand-ux
 
     - numero: 7
       nome: APLICACAO
       tarefas: [criar-landing, materiais-marketing]
-      agente: uiux
+      agente: brand-ux
 
     - numero: 8
       nome: PERSONAL BRAND
       tarefas: [posicionamento-empresario, presenca-digital]
-      agente: brand-strategist
+      agente: brand-estrategista
 
 # =====================================================
 # REFERENCIAS INCLUIDAS

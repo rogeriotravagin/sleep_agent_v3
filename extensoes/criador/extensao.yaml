@@ -23,9 +23,9 @@ tipo: interno  # Extensão especial para administração do sistema
 # ============================================
 
 agentes:
-  - id: arquiteto-extensoes
-    arquivo: agentes/ARQUITETO-EXTENSOES.md
-    comando: /arquiteto
+  - id: meta-extensoes
+    arquivo: agentes/META-EXTENSOES.md
+    comando: @meta-extensoes
     especialidades:
       - Arquitetura de extensões
       - Estrutura de diretórios
@@ -34,9 +34,9 @@ agentes:
       - Planejamento de módulos
       - Integração entre extensões
 
-  - id: designer-agentes
-    arquivo: agentes/DESIGNER-AGENTES.md
-    comando: /designer-agente
+  - id: meta-agentes
+    arquivo: agentes/META-AGENTES.md
+    comando: @meta-agentes
     especialidades:
       - Criação de agentes
       - Definição de personas
@@ -45,9 +45,9 @@ agentes:
       - Especialidades e competências
       - Regras de comportamento
 
-  - id: criador-workflows
-    arquivo: agentes/CRIADOR-WORKFLOWS.md
-    comando: /criar-workflow
+  - id: meta-workflows
+    arquivo: agentes/META-WORKFLOWS.md
+    comando: @meta-workflows
     especialidades:
       - Design de workflows
       - Fases e etapas
@@ -65,53 +65,53 @@ tarefas:
   - fase: planejamento
     comando: /planejar-extensao
     arquivo: tarefas/planejar-extensao.yaml
-    agente: arquiteto-extensoes
+    agente: meta-extensoes
     descricao: Planejar nova extensão com escopo e estrutura
 
   # Fase: Estrutura
   - fase: estrutura
     comando: /criar-extensao
     arquivo: tarefas/criar-extensao.yaml
-    agente: arquiteto-extensoes
+    agente: meta-extensoes
     descricao: Criar estrutura completa de nova extensão
 
   - fase: estrutura
     comando: /criar-agente
     arquivo: tarefas/criar-agente.yaml
-    agente: designer-agentes
+    agente: meta-agentes
     descricao: Criar novo agente especializado
 
   # Fase: Funcionalidades
   - fase: funcionalidades
     comando: /criar-tarefa
     arquivo: tarefas/criar-tarefa.yaml
-    agente: criador-workflows
+    agente: meta-workflows
     descricao: Criar nova tarefa para extensão
 
   - fase: funcionalidades
     comando: /criar-workflow-extensao
     arquivo: tarefas/criar-workflow-extensao.yaml
-    agente: criador-workflows
+    agente: meta-workflows
     descricao: Criar novo workflow completo
 
   # Fase: Conhecimento
   - fase: conhecimento
     comando: /criar-conhecimento
     arquivo: tarefas/criar-conhecimento.yaml
-    agente: arquiteto-extensoes
+    agente: meta-extensoes
     descricao: Criar base de conhecimento para extensão
 
   # Fase: Integração
   - fase: integracao
     comando: /integrar-ralph
     arquivo: tarefas/integrar-ralph.yaml
-    agente: criador-workflows
+    agente: meta-workflows
     descricao: Criar templates Ralph para extensão
 
   - fase: integracao
     comando: /finalizar-extensao
     arquivo: tarefas/finalizar-extensao.yaml
-    agente: arquiteto-extensoes
+    agente: meta-extensoes
     descricao: Finalizar e registrar extensão no sistema
 
 # ============================================
