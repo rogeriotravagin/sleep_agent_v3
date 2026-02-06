@@ -17,12 +17,17 @@ O Orquestrador e o cerebro do Sleep Agent. Ele:
 
 ## Processo de Decisao
 
-### Passo 0: Verificar Setup
+### Passo 0: Verificar Setup e Memoria
 
 Antes de qualquer coisa:
 1. Verificar `workspace/.config/sleep-agent.yaml`
 2. Se nao existe, executar `core/setup/SETUP.md`
 3. Se existe, carregar extensoes descobertas
+4. Consultar `workspace/.memoria/` para contexto relevante:
+   - Insights que podem ajudar
+   - Decisoes anteriores a respeitar
+   - Padroes a seguir
+   - Alertas a evitar
 
 ### Passo 1: Entender o Pedido
 
@@ -31,9 +36,20 @@ Antes de agir, sempre:
 - Verificar se ha contexto anterior na conversa
 - Confirmar ambiguidades se necessario
 
-### Passo 2: Classificar a Intencao
+### Passo 2: Classificar a Intencao (Matching Inteligente)
 
-Categorias principais:
+Usar sistema de matching (ver `core/orquestrador/matching.yaml`) para entender o pedido:
+
+**Niveis de Confianca:**
+
+| Confianca | Acao | Exemplo |
+|-----------|------|---------|
+| 95%+ (Exato) | Executar direto | "/marketing" |
+| 80-94% (Alto) | Confirmar rapidamente | "fazer copy" → "Criar copy, certo?" |
+| 60-79% (Medio) | Oferecer opcoes | "propaganda" → "Anuncio, email ou landing?" |
+| <60% (Baixo) | Listar comandos | "ajuda" → "Comandos disponiveis:..." |
+
+**Categorias de pedido:**
 
 | Categoria | Exemplos | Acao |
 |-----------|----------|------|
@@ -82,12 +98,31 @@ Salvar resultado no workspace:
 3. Criar pasta da extensao se nao existir
 4. Salvar em `workspace/[estrutura]/[extensao]/[tipo]/`
 
-### Passo 8: Verificar Qualidade
+### Passo 8: Verificar Qualidade (3 Niveis)
 
-Antes de entregar, verificar:
-- Resultado atende ao pedido?
-- Segue padroes da extensao?
-- Esta completo?
+Executar Quality Gates em 3 niveis (ver `core/qualidade/QUALITY-GATES.md`):
+
+**Nivel 1: Automatico**
+- Formato do arquivo correto?
+- Campos obrigatorios preenchidos?
+- Tamanho adequado?
+
+**Nivel 2: Agente Revisor** (se aplicavel)
+- Consistencia com padroes?
+- Qualidade tecnica adequada?
+- Alinhamento com marca/estrategia?
+
+**Nivel 3: Aprovacao Humana**
+- Resultado atende expectativas do usuario?
+- Algo precisa ser ajustado?
+- Pode salvar e continuar?
+
+### Passo 9: Capturar Aprendizados
+
+Apos completar tarefa:
+1. Verificar se houve novo insight (registrar em `.memoria/insights.yaml`)
+2. Verificar se tomou decisao importante (registrar em `.memoria/decisoes.yaml`)
+3. Verificar se encontrou armadilha (registrar em `.memoria/alertas.yaml`)
 
 ---
 
@@ -162,3 +197,6 @@ workspace/[estrutura]/[nivel]/[extensao]/[tipo]/
 - Setup: `core/setup/SETUP.md`
 - Ajuda: `core/comandos/AJUDA.md`
 - Templates: `core/templates/`
+- Memoria: `core/memoria/MEMORIA.md`
+- Quality Gates: `core/qualidade/QUALITY-GATES.md`
+- Matching: `core/orquestrador/matching.yaml`

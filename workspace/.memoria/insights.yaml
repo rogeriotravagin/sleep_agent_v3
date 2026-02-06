@@ -1,0 +1,16 @@
+# Insights do Sleep Agent
+# Aprendizados e descobertas capturados durante o trabalho
+#
+# Formato:
+#   - data: "YYYY-MM-DD"
+#     categoria: "publico|marca|oferta|comunicacao|outro"
+#     insight: "Descricao do aprendizado"
+#     contexto: "Onde/como foi descoberto"
+#     confianca: "alta|media|baixa"
+
+# Exemplo (remova quando adicionar seus proprios):
+- data: "2026-02-06"
+  categoria: "sistema"
+  insight: "Sleep Agent v4 inicializado com sistema de memoria"
+  contexto: "Configuracao inicial"
+  confianca: "alta"

@@ -1,0 +1,21 @@
+# Status Atual do Sleep Agent
+# Atualizado automaticamente durante execucao de tarefas
+
+tarefa: null  # Nenhuma tarefa em andamento
+
+# Quando uma tarefa estiver em andamento:
+# tarefa:
+#   id: criar-headline-12345
+#   nome: "Nome da tarefa"
+#   extensao: marketing
+#   agente: copywriter
+#   inicio: "2026-02-06T14:30:00"
+#
+# progresso:
+#   passo_atual: 1
+#   total_passos: 5
+#   descricao_passo: "Descricao do passo atual"
+#
+# contexto:
+#   produto: "Nome do produto"
+#   empresa: "Nome da empresa"

@@ -55,6 +55,16 @@ agentes:
   - id: brand-designer
     arquivo: agentes/BRAND-DESIGNER.md
     comando: "@brand-designer"
+    maturidade: 3  # Completo
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: true
+      exemplos: true
+      gates: true
     especialidades:
       - Logo design
       - Identidade visual
@@ -65,6 +75,16 @@ agentes:
   - id: brand-ux
     arquivo: agentes/BRAND-UX.md
     comando: "@brand-ux"
+    maturidade: 2  # Intermediario
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: false
+      exemplos: false
+      gates: false
     especialidades:
       - Landing pages
       - Interfaces de usuario
@@ -76,6 +96,16 @@ agentes:
   - id: brand-estrategista
     arquivo: agentes/BRAND-ESTRATEGISTA.md
     comando: "@brand-estrategia"
+    maturidade: 2  # Intermediario
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: false
+      exemplos: false
+      gates: false
     especialidades:
       - Estrategia de marca
       - Posicionamento
@@ -86,6 +116,16 @@ agentes:
   - id: brand-analista
     arquivo: agentes/BRAND-ANALISTA.md
     comando: "@brand-analista"
+    maturidade: 1  # Basico
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: false
+      workflows: false
+      templates: false
+      exemplos: false
+      gates: false
     especialidades:
       - Analise de referencias visuais
       - Reverse engineering de design

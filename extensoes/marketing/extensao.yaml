@@ -49,6 +49,16 @@ agentes:
   - id: mkt-copywriter
     arquivo: agentes/MKT-COPYWRITER.md
     comando: "@mkt-copy"
+    maturidade: 3  # Completo
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: true
+      exemplos: true
+      gates: true
     especialidades:
       - Headlines e titulos
       - Emails de venda
@@ -59,6 +69,16 @@ agentes:
   - id: mkt-estrategista
     arquivo: agentes/MKT-ESTRATEGISTA.md
     comando: "@mkt-estrategia"
+    maturidade: 2  # Intermediario
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: false
+      exemplos: false
+      gates: false
     especialidades:
       - Pesquisa de mercado
       - Definicao de ICP e Persona
@@ -69,6 +89,16 @@ agentes:
   - id: mkt-trafego
     arquivo: agentes/MKT-TRAFEGO.md
     comando: "@mkt-trafego"
+    maturidade: 2  # Intermediario
+    checklist:
+      persona: true
+      processo: true
+      tarefas: true
+      conhecimento: true
+      workflows: true
+      templates: false
+      exemplos: false
+      gates: false
     especialidades:
       - Meta Ads
       - Google Ads

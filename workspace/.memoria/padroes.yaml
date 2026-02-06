@@ -1,0 +1,19 @@
+# Padroes do Sleep Agent
+# Padroes que devem ser seguidos consistentemente
+#
+# Formato:
+#   - area: "comunicacao|visual|tecnico|processo|outro"
+#     padrao: "Descricao do padrao"
+#     aplicacao: "Onde aplicar este padrao"
+#     obrigatorio: true|false
+
+# Exemplo (remova quando adicionar seus proprios):
+- area: "comunicacao"
+  padrao: "Usar linguagem acessivel, sem jargoes tecnicos"
+  aplicacao: "Toda comunicacao com usuario"
+  obrigatorio: true
+
+- area: "processo"
+  padrao: "Verificar memoria antes de iniciar tarefa"
+  aplicacao: "Todas as tarefas"
+  obrigatorio: true
