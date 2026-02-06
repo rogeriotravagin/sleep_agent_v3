@@ -1,0 +1,16 @@
+# Alertas do Sleep Agent
+# Armadilhas e erros a evitar
+#
+# Formato:
+#   - data: "YYYY-MM-DD"
+#     alerta: "Descricao do que evitar"
+#     motivo: "Por que isso e problematico"
+#     severidade: "critica|alta|media|baixa"
+#     area: "comunicacao|legal|tecnico|processo|outro"
+
+# Exemplo (remova quando adicionar seus proprios):
+- data: "2026-02-06"
+  alerta: "Nao fazer promessas de resultado garantido"
+  motivo: "Pode gerar problemas juridicos e quebra de expectativa"
+  severidade: "critica"
+  area: "legal"

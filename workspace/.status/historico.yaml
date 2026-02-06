@@ -1,0 +1,16 @@
+# Historico de Execucoes do Sleep Agent
+# Ultimas 50 tarefas executadas
+
+execucoes: []
+
+# Formato de cada entrada:
+# - id: tarefa-id-12345
+#   nome: "Nome da tarefa"
+#   extensao: marketing
+#   agente: copywriter
+#   inicio: "2026-02-06T14:30:00"
+#   fim: "2026-02-06T14:35:00"
+#   duracao_segundos: 300
+#   resultado: sucesso  # sucesso, ajuste, cancelado
+#   arquivo_gerado: "caminho/para/arquivo.md"
+#   aprovado_usuario: true

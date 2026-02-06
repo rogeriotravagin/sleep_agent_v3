@@ -1,0 +1,16 @@
+# Decisoes do Sleep Agent
+# Historico de decisoes importantes tomadas
+#
+# Formato:
+#   - data: "YYYY-MM-DD"
+#     decisao: "Descricao da decisao"
+#     motivo: "Por que essa decisao foi tomada"
+#     area: "branding|marketing|oferta|produto|outro"
+#     reversivel: true|false
+
+# Exemplo (remova quando adicionar seus proprios):
+- data: "2026-02-06"
+  decisao: "Adotar sistema de memoria persistente"
+  motivo: "Manter consistencia e aprender com o tempo"
+  area: "sistema"
+  reversivel: true

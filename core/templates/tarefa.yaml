@@ -58,11 +58,23 @@ conhecimento:
   - caminho/para/arquivo1.md
   - caminho/para/arquivo2.md
 
-# Qualidade
+# Qualidade (3 Niveis)
+# Ver: core/qualidade/QUALITY-GATES.md
 gates:
-  - O resultado atende ao objetivo?
-  - Está no formato correto?
-  - Usa o conhecimento adequado?
+  # Nivel 1: Verificacao automatica (Sleep Agent verifica sozinho)
+  nivel_1_automatico:
+    - verificacao: "Formato do arquivo esta correto?"
+      tipo: formato
+    - verificacao: "Campos obrigatorios preenchidos?"
+      tipo: completude
+
+  # Nivel 2: Validacao por agente (outro agente revisa)
+  # Deixe vazio se nao precisar de revisao por agente
+  nivel_2_agente: []
+
+  # Nivel 3: Aprovacao humana (usuario decide)
+  nivel_3_humano:
+    - verificacao: "O resultado atende suas expectativas?"
 
 # Próximos passos sugeridos
 proximos_passos:

@@ -1,0 +1,61 @@
+# Registry do Sleep Agent
+# Cache centralizado de extensoes e capacidades
+# Atualizado automaticamente pelo Setup
+
+versao: "4.0"
+ultima_atualizacao: null
+
+# ============================================================
+# EXTENSOES REGISTRADAS
+# ============================================================
+extensoes:
+  # Sera populado automaticamente ao executar setup
+  # Formato:
+  # marketing:
+  #   status: ativo
+  #   versao: "2.0"
+  #   caminho: extensoes/marketing
+  #   agentes:
+  #     - nome: copywriter
+  #       maturidade: 3
+  #     - nome: estrategista
+  #       maturidade: 2
+  #   comandos:
+  #     - /marketing
+  #     - /copy
+  #     - /headline
+  #   tarefas: 8
+  #   workflows: 3
+
+# ============================================================
+# MAPEAMENTO DE COMANDOS
+# ============================================================
+comandos:
+  # Sera populado automaticamente
+  # Formato:
+  # /marketing: marketing
+  # /copy: marketing
+  # /brand: branding
+  # /logo: branding
+
+# ============================================================
+# CAPACIDADES DO SISTEMA
+# ============================================================
+capacidades:
+  total_extensoes: 0
+  total_agentes: 0
+  total_tarefas: 0
+  total_workflows: 0
+
+  por_nivel_maturidade:
+    nivel_3: 0
+    nivel_2: 0
+    nivel_1: 0
+
+# ============================================================
+# INTEGRIDADES
+# ============================================================
+integridade:
+  ultima_verificacao: null
+  status: desconhecido
+  problemas: []

@@ -1,0 +1,25 @@
+# Metricas do Sleep Agent
+# Estatisticas agregadas de uso
+
+periodo: "2026-02"
+
+total_tarefas: 0
+
+por_extensao: {}
+# marketing: 0
+# branding: 0
+
+por_resultado:
+  sucesso: 0
+  ajuste_necessario: 0
+  cancelado: 0
+
+taxa_aprovacao: 0
+
+tempo_medio_segundos: {}
+# headline: 0
+# email: 0
+
+agentes_mais_usados: []
+# - copywriter: 0
+# - estrategista: 0

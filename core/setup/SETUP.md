@@ -10,9 +10,16 @@ O Setup Agent configura a estrutura do workspace de forma inteligente e adaptati
 
 Sempre que uma conversa comeca:
 
-1. Verificar se `workspace/.config/sleep-agent.yaml` existe
-2. Se existe, carregar e usar configuracao salva
-3. Se NAO existe, iniciar processo de setup
+1. Executar **Health Check** (ver `core/saude/HEALTH-CHECK.md`)
+   - Verificar integridade do workspace
+   - Corrigir problemas automaticamente (nivel 1)
+   - Alertar sobre problemas que precisam atencao (nivel 2-3)
+
+2. Verificar se `workspace/.config/sleep-agent.yaml` existe
+3. Se existe, carregar e usar configuracao salva
+4. Se NAO existe, iniciar processo de setup
+5. Verificar se pasta `.memoria/` existe (criar se nao)
+6. Verificar se pasta `.status/` existe (criar se nao)
 
 ---
 
@@ -253,3 +260,5 @@ Sleep Agent: Otimo! Criei a estrutura:
 
 - Config salva: `workspace/.config/sleep-agent.yaml`
 - Este documento: `core/setup/SETUP.md`
+- Health Check: `core/saude/HEALTH-CHECK.md`
+- Verificacoes: `core/saude/verificacoes.yaml`
